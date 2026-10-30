@@ -1,0 +1,148 @@
+title,layer,asset_ids,stride_primary,goals,tier,evidence_support,severity,commonly_overlooked,model,run,k,map_class,catalogue_id
+Undetected onboard clock bias,L1,A1.5;A1.2;A2.1,tau,Displacement;Deception,T2,E1,5.0,False,chatgpt,1.0,0,C,T1.11
+Forged or misleading aircraft reports,L1,A1.1;A2.1,S,Displacement;Denial;Deception,T1p,E3,5.0,False,chatgpt,1.0,1,C,T1.01
+Compromised integrity-monitoring logic,L3,A3.4;A3.5;A3.6,T,Displacement;Deception,T3,P,5.0,False,chatgpt,1.0,2,C,T3.02
+Compromised central processing platform,L3,A3.7;A3.1;A3.2;A3.3;A3.4;A3.5;A3.6,E,Displacement;Denial;Deception;Disclosure,T2,E3,5.0,False,chatgpt,1.0,3,C,T3.12
+Malicious or compromised software update,L4,A4.4;A2.5;A1.4;A1.6;A3.4;A3.5,T,Displacement;Denial;Deception;Disclosure,T3x,E3,5.0,False,chatgpt,1.0,4,C,T4.06
+Ephemeris corruption causing systematic localisation error,L4,A4.2;A3.2;A3.3,T,Displacement;Denial;Deception,T2,E1,5.0,True,chatgpt,1.0,5,C,T4.02
+Integrity-threshold manipulation,L4,A4.4;A4.1;A3.4;A3.5,T,Displacement;Denial;Deception,T2,P,5.0,True,chatgpt,1.0,6,C,T3.06
+Telemetry manipulation through link compromise,L2,A2.2;A2.4;A2.1,T,Displacement;Denial;Deception,T2,E1,5.0,False,chatgpt,1.0,7,C,T2.01
+Malicious telecommand execution,L2,A2.5;A1.6;A1.4;A1.5,E,Displacement;Denial;Deception,T3,E3,5.0,False,chatgpt,1.0,8,C,T2.11
+Key compromise across mission communications,L4,A4.3;A2.5;A2.2;A2.4,E,Displacement;Denial;Deception;Disclosure,T2,E3,5.0,False,chatgpt,1.0,9,C,T4.04
+False aircraft observations from coordinated emitters,L1,A1.1;A1.3;A1.4;A2.1,S,Displacement;Denial;Deception,T2,E1,5.0,False,chatgpt,1.0,10,C,T1.05
+GNSS-dependent timing degradation,L1,A1.2;A1.5;A1.4,tau,Displacement;Denial;Deception,T2,E3,5.0,False,chatgpt,1.0,11,C,T1.10
+PTP time-transfer manipulation,L2,A2.3;A1.5;A1.4,tau,Displacement;Denial;Deception,T2,E1,5.0,True,chatgpt,1.0,12,C,T2.06
+Payload measurement extraction compromise,L1,A1.4;A1.3;A2.1,T,Displacement;Denial;Deception,T2,E1,5.0,False,chatgpt,1.0,13,C,T1.14
+RF front-end interference or saturation,L1,A1.3;A1.4;A2.1,D,Denial;Displacement,T1p,E2,4.0,False,chatgpt,1.0,14,C,T1.04
+Satellite platform compromise,L1,A1.6;A1.4;A1.5;A2.2,E,Displacement;Denial;Deception;Disclosure,T3,E1,5.0,False,chatgpt,1.0,15,C,T1.13
+Ground-station command-path compromise,L1,A1.7;A2.5;A1.6,E,Denial;Deception,T2,E1,5.0,False,chatgpt,1.0,16,C,T1.15
+Observable replay or freshness failure,L2,A2.1;A2.2;A2.4;A3.1,T,Displacement;Denial;Deception,T2,E1,4.0,True,chatgpt,1.0,17,P,T2.03
+Measurement association poisoning,L3,A3.1;A2.1;A3.3,T,Displacement;Denial;Deception,T2,E1,5.0,False,chatgpt,1.0,18,C,T3.01
+Solver or tracker state manipulation,L3,A3.3;A3.1;A3.2,T,Displacement;Denial;Deception,T2,E1,5.0,False,chatgpt,1.0,19,C,T3.04
+Integrity-monitor false acceptance,L3,A3.4;A3.3;A3.5,T,Displacement;Deception,T2,E1,5.0,False,chatgpt,1.0,20,N,
+Integrity-monitor false rejection,L3,A3.4;A3.5;A3.6,T,Denial;Deception,T2,E1,4.0,True,chatgpt,1.0,21,N,
+Ephemeris or clock-state database tampering,L3,A3.2;A3.3;A3.4,T,Displacement;Denial;Deception,T2,E1,5.0,False,chatgpt,1.0,22,C,T3.03
+ASTERIX report alteration or misencoding,L3,A3.6;A4.5;A4.6,T,Displacement;Denial;Deception,T2,E1,5.0,True,chatgpt,1.0,23,C,T3.09
+Central processing resource exhaustion,L3,A3.7;A3.1;A3.3;A3.4;A3.6,D,Denial,T2,E2,4.0,False,chatgpt,1.0,24,C,T3.05
+Synchronisation policy compromise,L4,A4.1;A1.5;A2.3,T,Displacement;Denial;Deception,T2,P,5.0,True,chatgpt,1.0,25,C,T4.01
+Orbit-determination service compromise,L4,A4.2;A3.2;A4.8,E,Displacement;Denial;Deception;Disclosure,T2,E1,5.0,True,chatgpt,1.0,26,C,T4.02
+Credential theft and privilege escalation,L4,A4.3;A4.8;A4.4;A3.7,E,Displacement;Denial;Deception;Disclosure,T2,E3,5.0,False,chatgpt,1.0,27,C,T4.15
+Sensitive mission data disclosure,L4,A4.3;A4.2;A4.4;A4.8;A2.1,I,Disclosure,T2,E2,4.0,False,chatgpt,1.0,28,C,T4.11
+Insider misuse or supplier compromise,L4,A4.7;A4.8;A4.4;A4.3,E,Displacement;Denial;Deception;Disclosure,T3x,E3,5.0,False,chatgpt,1.0,29,C,T4.12
+Management network and audit-log compromise,L4,A4.8;A4.1;A4.2;A4.3;A4.4,E,Denial;Deception;Disclosure,T2,E3,5.0,False,chatgpt,1.0,30,C,T4.15
+Surveillance feed interruption or degradation,L4,A4.5;A4.6;A3.6,D,Denial,T2,E2,5.0,False,chatgpt,1.0,31,C,T4.09
+ATM misinterpretation of integrity annotations,L4,A4.5;A4.6;A3.6,T,Displacement;Denial;Deception,T2,P,5.0,True,chatgpt,1.0,32,N,
+Inter-satellite link availability loss,L2,A2.2;A2.1;A2.4,D,Denial;Displacement,T2,E2,4.0,False,chatgpt,1.0,33,C,T2.05
+Downlink and backhaul availability loss,L2,A2.4;A1.7;A3.7,D,Denial,T1c,E2,4.0,False,chatgpt,1.0,34,P,T1.16
+Satellite geometry degradation,L1,A1.3;A1.4;A2.1;A4.2,D,Denial;Displacement,T2,E1,4.0,True,chatgpt,1.0,35,N,
+Inadequate cryptographic attribution,L2,A2.1;A2.2;A2.4;A2.5,R,Deception;Denial,T2,P,4.0,True,chatgpt,1.0,36,P,T2.02
+Insufficient fault independence across checks,L3,A3.4;A3.5;A3.2;A3.3,T,Displacement;Deception,T2,P,5.0,True,chatgpt,1.0,37,N,
+Inadequate configuration provenance and rollback,L4,A4.4;A4.8;A2.5;A1.4,T,Denial;Deception;Displacement,T2,P,4.0,True,chatgpt,1.0,38,P,T4.14
+RF measurement bias from environmental effects,L1,A1.3;A1.4;A2.1,T,Displacement;Denial;Deception,T2,E2,4.0,True,chatgpt,1.0,39,P,T1.09
+Repudiation through insufficient audit evidence,L4,A4.7;A4.8;A4.3;A4.4,R,Disclosure,T2,P,3.0,True,chatgpt,1.0,40,C,T4.14
+Incorrect aircraft identity or track association,L3,A3.1;A3.3;A3.5;A4.6,S,Displacement;Denial;Deception,T2,E1,5.0,True,chatgpt,1.0,41,P,T3.01
+Time-transfer message offset or asymmetry on satellite clocks,L2,A2.3;A1.5,tau,Displacement,T3,E1,5.0,True,claude,1.0,42,C,T2.06
+GNSS-based manipulation of onboard clock discipline,L1,A1.2;A1.5,tau,Displacement,T3,E1,5.0,False,claude,1.0,43,C,T1.11
+Weakening of synchronisation policy and conformance thresholds,L4,A4.1;A1.5,tau,Displacement;Deception,T3x,P,5.0,True,claude,1.0,44,C,T4.01
+Malicious telecommand or software-update injection,L2,A2.5;A1.6,E,Displacement;Denial;Deception,T3,E1,5.0,False,claude,1.0,45,C,T2.11
+Tampering with integrity thresholds and filter parameters,L4,A4.4;A3.4,T,Displacement;Deception,T2,P,5.0,False,claude,1.0,46,C,T3.06
+Exploiting weak-geometry stealth window,L3,A3.4;A3.5,tau,Displacement,T3,E0,4.0,True,claude,1.0,47,P,T2.04
+Coordinated multi-satellite or common-mode bias beyond single-fault model,L3,A3.4;A1.5,tau,Displacement;Deception,T3,E1,4.0,True,claude,1.0,48,N,
+Coordinated displacement with consistent falsified self-report,L3,A3.5;A1.1,S,Deception;Displacement,T3x,E0,4.0,True,claude,1.0,49,C,T3.07
+Payload extraction firmware implant,L1,A1.4,E,Displacement;Deception,T3x,E0,4.0,False,claude,1.0,50,C,T1.14
+Compromise or exfiltration of keys and credentials,L4,A4.3,I,Disclosure,T2,E3,4.0,False,claude,1.0,51,C,T4.04
+In-transit modification of unauthenticated observable reports,L2,A2.1;A2.4,T,Displacement;Deception,T2,E0,4.0,False,claude,1.0,52,C,T2.01
+Poisoning of orbit-determination products,L4,A4.2,T,Displacement,T3,E0,4.0,True,claude,1.0,53,C,T4.02
+Tampering with the ephemeris and clock-state database,L3,A3.2,T,Displacement,T2,P,4.0,False,claude,1.0,54,C,T3.03
+Association confusion between receptions of different transmissions,L3,A3.1,T,Displacement;Deception,T2,E1,4.0,True,claude,1.0,55,C,T3.01
+Delayed replay of recorded emissions,L1,A1.1;A2.1,S,Displacement;Deception,T2,E2,4.0,False,claude,1.0,56,C,T1.02
+Synchronised multi-emitter generation of ghost targets,L1,A1.1;A1.3,S,Deception,T2,E1,4.0,False,claude,1.0,57,C,T1.05
+Driving tracker divergence with crafted measurement sequences,L3,A3.3,T,Displacement,T2,E1,4.0,True,claude,1.0,58,P,T3.05
+Manipulation of the ASTERIX integrity indicator,L3,A3.6,T,Deception;Displacement,T2,P,4.0,False,claude,1.0,59,C,T3.09
+Compromise of the processing station hosting platform,L3,A3.7,E,Displacement;Denial;Deception,T2,E3,4.0,False,claude,1.0,60,C,T3.12
+Hijack of ground-station uplink path,L1,A1.7;A2.5,S,Denial;Displacement,T3,E1,4.0,False,claude,1.0,61,C,T1.15
+On-orbit bus and flight software compromise,L1,A1.6,E,Denial;Displacement,T3,E1,4.0,False,claude,1.0,62,C,T1.13
+Interception or modification of the ATM data feed,L4,A4.5,T,Deception;Displacement,T2,E1,4.0,False,claude,1.0,63,C,T4.08
+Insider misuse of authorised access to configuration,L4,A4.7;A4.4,E,Displacement;Deception,T3x,E3,4.0,False,claude,1.0,64,C,T4.12
+Supplier software supply-chain compromise,L4,A4.7;A3.7,T,Displacement;Deception,T3,E3,4.0,False,claude,1.0,65,C,T4.13
+Intrusion into operations centre via remote access,L4,A4.8,E,Displacement;Deception;Disclosure,T2,E3,4.0,False,claude,1.0,66,C,T4.15
+GNSS denial forcing clock holdover and PTP reliance,L1,A1.2;A1.5,D,Denial;Displacement,T1c,E3,4.0,True,claude,1.0,67,C,T1.10
+Falsified clock-quality metadata in reports,L2,A2.1;A1.5,T,,T2,P,4.0,True,claude,1.0,68,P,T2.01
+Channel saturation exhausting extraction capacity,L1,A1.3;A1.4,D,Denial,T1c,E2,4.0,False,claude,1.0,69,C,T1.08
+Tampering or replay on inter-satellite links,L2,A2.2,T,Denial;Displacement,T3,E0,3.0,False,claude,1.0,70,P,T2.03
+Regional jamming of the 1090 MHz band,L1,A1.3,D,Denial,T1p,E3,3.0,False,claude,1.0,71,C,T1.04
+Jamming of downlinks and ground antennas,L1,A1.7;A2.4,D,Denial,T1c,E3,3.0,False,claude,1.0,72,C,T1.16
+Angle-of-arrival distortion by directional emitters,L1,A1.3,S,Displacement;Deception,T2,E1,3.0,True,claude,1.0,73,C,T1.09
+Aircraft broadcasting a falsified self-reported position,L1,A1.1,S,Deception,T1p,E3,3.0,False,claude,1.0,74,C,T1.03
+Deceived aircraft through GNSS spoofing causing false discrepancies,L1,A1.2;A1.1,S,Deception,T2,E3,3.0,True,claude,1.0,75,C,T3.08
+Track database tampering,L3,A3.3;A3.7,T,Deception;Displacement,T2,P,3.0,False,claude,1.0,76,P,T3.04
+Induced false verdicts in the cross-check,L3,A3.5,T,Deception,T2,E0,3.0,False,claude,1.0,77,C,T3.08
+Natural clock faults masking or mimicking a malicious offset,L1,A1.5,tau,Displacement,T3,E0,3.0,True,claude,1.0,78,N,
+Denial of service on the ATM feed,L4,A4.5;A4.6,D,Denial,T1c,E3,3.0,False,claude,1.0,79,C,T4.09
+Induced nuisance alerts eroding controller trust,L4,A4.6,D,Deception,T2,E1,3.0,True,claude,1.0,80,N,
+Social engineering of operator staff,L4,A4.7,S,Disclosure;Displacement,T1c,E3,3.0,False,claude,1.0,81,N,
+Audit-log tampering and attribution loss,L4,A4.8;A4.3,R,,T2,E3,3.0,True,claude,1.0,82,C,T4.14
+Compromise of ground-station modem firmware,L1,A1.7,T,Denial;Displacement,T3,P,3.0,True,claude,1.0,83,C,T1.15
+Disclosure of precise ephemerides and ephemeris data,L4,A4.2;A3.2,I,Disclosure,T1p,E0,2.0,False,claude,1.0,84,C,T4.11
+Eavesdropping on downlink revealing system health,L2,A2.4;A2.1,I,Disclosure,T1c,E1,2.0,True,claude,1.0,85,C,T2.08
+Replay of stale reports over the backhaul,L2,A2.4,T,Deception,T2,E0,2.0,False,claude,1.0,86,P,T2.03
+Unauthenticated ADS-B self-report spoofing,L1,A1.1,S,Deception;Displacement,T1c,E2,5.0,False,deepseek,1.0,87,C,T1.01
+GNSS spoofing of position and timing,L1,A1.2;A1.5,S,Displacement;Deception;Denial,T2,E3,5.0,False,deepseek,1.0,88,C,T1.11
+Covert onboard clock step bias,L1,A1.5;A2.3,tau,Displacement;Deception,T3,E1,5.0,True,deepseek,1.0,89,C,T1.11
+PTP time-transfer message tampering,L2,A2.3;A2.2,tau,Displacement;Deception,T3,E1,5.0,True,deepseek,1.0,90,C,T2.06
+Telecommand or update compromise,L2,A2.5;A1.6;A4.4;A4.3,E,Displacement;Denial;Deception,T3x,E1,5.0,False,deepseek,1.0,91,C,T2.11
+Key management credential compromise,L4,A4.3,I,Disclosure,T3x,E2,5.0,False,deepseek,1.0,92,C,T4.04
+Integrity threshold and filter poisoning,L4,A4.4;A3.4;A3.5;A4.1,T,Deception;Displacement;Denial,T3x,E1,5.0,True,deepseek,1.0,93,C,T3.06
+Synchronisation policy manipulation,L4,A4.1,tau,Displacement;Deception;Denial,T3x,E1,5.0,True,deepseek,1.0,94,C,T4.01
+Ephemeris and orbit product poisoning,L3,A3.2;A4.2,T,Displacement;Deception;Denial,T3,E1,5.0,True,deepseek,1.0,95,C,T3.03
+Solver tracker database manipulation,L3,A3.3,T,Displacement;Deception,T3x,E1,5.0,False,deepseek,1.0,96,C,T3.01
+Integrity monitor tampering,L3,A3.4,T,Deception;Displacement,T3x,E1,5.0,False,deepseek,1.0,97,C,T3.02
+Cross-check verdict manipulation,L3,A3.5,T,Deception,T3x,E1,5.0,True,deepseek,1.0,98,C,T3.02
+Central processing platform compromise,L3,A3.7,E,Displacement;Denial;Deception;Disclosure,T3x,E2,5.0,False,deepseek,1.0,99,C,T3.12
+Payload processor firmware compromise,L1,A1.4;A1.6,E,Displacement;Deception;Denial,T3x,E1,5.0,True,deepseek,1.0,100,C,T1.14
+Satellite bus flight software compromise,L1,A1.6,E,Displacement;Denial;Deception;Disclosure,T3x,E1,5.0,False,deepseek,1.0,101,C,T1.13
+ASTERIX encoder gateway injection,L3,A3.6,T,Displacement;Deception;Denial,T3x,E1,5.0,False,deepseek,1.0,102,C,T3.09
+ATM surveillance feed manipulation,L4,A4.5,T,Displacement;Deception;Denial,T3x,E1,5.0,False,deepseek,1.0,103,C,T4.08
+ATM system and display compromise,L4,A4.6,T,Displacement;Deception;Denial,T3x,E1,5.0,False,deepseek,1.0,104,C,T4.10
+Insider or supplier privileged misuse,L4,A4.7,R,Displacement;Disclosure;Denial,T3x,E2,5.0,False,deepseek,1.0,105,C,T4.12
+Mission operations network compromise,L4,A4.8,E,Disclosure;Displacement;Denial,T3x,E2,5.0,False,deepseek,1.0,106,C,T4.15
+Observable report tampering in transit,L2,A2.1;A2.2;A2.4,T,Displacement;Deception;Denial,T3,E1,4.0,True,deepseek,1.0,107,C,T2.01
+Downlink and backhaul interception,L2,A2.4,I,Disclosure,T2,E2,4.0,False,deepseek,1.0,108,C,T2.08
+ISL relay jamming or injection,L2,A2.2,D,Denial;Displacement,T2,E1,4.0,True,deepseek,1.0,109,C,T2.05
+Ground station modem compromise,L1,A1.7,E,Displacement;Denial;Disclosure,T2,E1,4.0,True,deepseek,1.0,110,C,T1.15
+RF front-end jamming or saturation,L1,A1.3,D,Denial,T1p,E3,4.0,False,deepseek,1.0,111,C,T1.04
+Measurement association poisoning,L3,A3.1,T,Displacement;Deception;Denial,T2,E1,4.0,True,deepseek,1.0,112,C,T3.01
+Ghost aircraft injection via 1090ES spoofing,L1,A1.1,S,Deception,T1c,E3,4.0,False,gemini,2.0,113,C,T1.01
+GNSS spoofing to induce satellite clock drift,L1,A1.2;A1.5,tau,Displacement,T3,E1,5.0,False,gemini,2.0,114,C,T1.11
+RF jamming of payload phased-array antennas,L1,A1.3,D,Denial,T2,E3,4.0,False,gemini,2.0,115,C,T1.04
+Payload processor DoS via malformed messages,L1,A1.4,D,Denial,T1c,P,3.0,True,gemini,2.0,116,C,T1.08
+Telecommand spoofing leading to satellite takeover,L1,A1.6,E,Denial;Deception,T3,E2,5.0,False,gemini,2.0,117,C,T2.11
+Ground station downlink RF jamming,L1,A1.7,D,Denial,T2,E3,4.0,False,gemini,2.0,118,C,T1.16
+In-transit tampering of observable reports,L2,A2.1;A2.4,T,Displacement;Deception,T2,E2,5.0,False,gemini,2.0,119,C,T2.01
+Inter-satellite link jamming and disruption,L2,A2.2,D,Denial,T3,E0,3.0,True,gemini,2.0,120,C,T2.05
+PTP delay asymmetry injection over ISL,L2,A2.3,tau,Displacement,T3,E1,4.0,True,gemini,2.0,121,C,T2.06
+Ground backhaul DDoS,L2,A2.4,D,Denial,T2,E3,4.0,False,gemini,2.0,122,P,T2.12
+Replay of outdated firmware packages,L2,A2.5,T,,T2,E2,3.0,True,gemini,2.0,123,C,T2.11
+Measurement association confusion via saturation,L3,A3.1,D,Denial;Deception,T2,E1,3.0,True,gemini,2.0,124,C,T3.01
+Ephemeris database poisoning,L3,A3.2,T,Displacement,T2,E2,5.0,False,gemini,2.0,125,C,T3.03
+Algorithmic complexity DoS on tracker,L3,A3.3,D,Denial,T1c,P,3.0,True,gemini,2.0,126,C,T3.05
+Integrity monitor evasion during WEAK passes,L3,A3.4,T,Displacement,T3,E1,4.0,False,gemini,2.0,127,P,T1.11
+Synchronized E-MLAT/ADS-B spoofing,L3,A3.5,S,Deception,T2,E1,5.0,False,gemini,2.0,128,C,T3.07
+ASTERIX report interception and suppression,L3,A3.6,T,Denial,T2,E2,4.0,False,gemini,2.0,129,C,T3.09
+CPS virtualization escape,L3,A3.7,E,,T2,E3,5.0,False,gemini,2.0,130,C,T3.12
+Synchronization policy downgrade,L4,A4.1,T,,T2,E2,4.0,True,gemini,2.0,131,C,T4.01
+Orbit determination feed spoofing,L4,A4.2,S,Displacement,T3,E1,4.0,True,gemini,2.0,132,N,
+Telecommand key exfiltration,L4,A4.3,I,Disclosure,T3,E3,5.0,False,gemini,2.0,133,C,T4.04
+Supply chain poisoning of firmware baseline,L4,A4.4,T,Deception;Denial,T3x,E3,5.0,False,gemini,2.0,134,C,T4.13
+ATM surveillance feed BGP hijacking,L4,A4.5,D,Denial;Deception,T2,E3,4.0,False,gemini,2.0,135,P,T4.08
+ATM controller display saturation,L4,A4.6,D,Denial,T1c,E2,4.0,False,gemini,2.0,136,P,T4.10
+Insider manipulation of integrity thresholds,L4,A4.7;A4.4,T,,T3x,E3,4.0,False,gemini,2.0,137,C,T4.12
+Ransomware on mission-operations network,L4,A4.8,D,Denial,T2,E3,5.0,False,gemini,2.0,138,P,T4.07
+Eavesdropping on observable reports,L2,A2.1,I,Disclosure,T1c,E2,2.0,False,gemini,2.0,139,C,T2.08
+Physical tampering of aircraft transponder,L1,A1.1,T,Deception,T1p,E3,3.0,True,gemini,2.0,140,C,T1.03
+GNSS multipath exploitation to mask displacement,L1,A1.2,tau,,T3,P,3.0,True,gemini,2.0,141,P,T1.11
+False positive flooding of integrity monitor,L3,A3.4,T,Denial,T2,E1,4.0,True,gemini,2.0,142,N,
+,,,,,,,,,chatgpt,,12,C,T2.07
+,,,,,,,,,deepseek,,90,C,T2.07
+PTP time-transfer manipulation [second mapping],L2,,,,,,,,chatgpt,,12,C,T2.07
+PTP time-transfer message tampering [second mapping],L2,,,,,,,,deepseek,,90,C,T2.07
