@@ -1,0 +1,103 @@
+
+=== COVERAGE (status of run 1 per file set; ids covered = threats with a usable rating)
+  chatgpt   A:OK  B1a:OK  B1b:OK  B1c:OK  B1d:OK  B2a:OK  B2b:OK  B2c:OK  B3a:OK  B3b:OK  B3c:OK  B4a:OK  B4b:OK  B4c:OK  B4d:OK   | threats rated: 55/55
+  claude    A:OK  B1:OK  B2:OK  B3:OK  B4:OK   | threats rated: 55/55
+  deepseek  A:OK  B1:OK  B2:OK  B3:OK  B4:OK   | threats rated: 55/55
+  gemini    A:OK  B1:OK  B2:OK  B3:OK  B4:OK   | threats rated: 55/55
+[NAME] README.txt: does not match <model>__<prompt>__run<N>[__fix<K>].json, ignored
+
+=== chatgpt A run1: OK  (chatgpt__A__run1.json)
+  [warn] meta.n_threats=38 but 42 threats present
+
+=== chatgpt B1a run1: OK  (chatgpt__B1a__run1.json)
+  [auto-fix] chatgpt__B1a__run1.json: code fence removed
+
+=== chatgpt B1a run2: OK  (chatgpt__B1a__run2.json)
+  [auto-fix] chatgpt__B1a__run2.json: code fence removed
+
+=== chatgpt B1b run1: OK  (chatgpt__B1b__run1.json)
+  [auto-fix] chatgpt__B1b__run1.json: code fence removed
+
+=== chatgpt B1c run1: OK  (chatgpt__B1c__run1.json)
+  [auto-fix] chatgpt__B1c__run1.json: code fence removed
+
+=== chatgpt B1d run1: OK  (chatgpt__B1d__run1.json)
+  [auto-fix] chatgpt__B1d__run1.json: code fence removed
+  [warn] T1.13: R=3 but evidence E2/analogue=False gives 4
+
+=== chatgpt B2a run1: OK  (chatgpt__B2a__run1.json)
+  [auto-fix] chatgpt__B2a__run1.json: code fence removed
+  [warn] T2.04: enabler but goals given
+
+=== chatgpt B2b run1: OK  (chatgpt__B2b__run1.json)
+  [auto-fix] chatgpt__B2b__run1.json: code fence removed
+  [warn] T2.08: enabler but goals given
+
+=== chatgpt B2c run1: OK  (chatgpt__B2c__run1.json)
+  [auto-fix] chatgpt__B2c__run1.json: code fence removed
+  [warn] T2.10: enabler but goals given
+
+=== chatgpt B3a run1: OK  (chatgpt__B3a__run1.json)
+  [auto-fix] chatgpt__B3a__run1.json: code fence removed
+
+=== chatgpt B3b run1: OK  (chatgpt__B3b__run1.json)
+  [auto-fix] chatgpt__B3b__run1.json: code fence removed
+  [warn] T3.06: enabler but goals given
+
+=== chatgpt B3c run1: OK  (chatgpt__B3c__run1.json)
+  [auto-fix] chatgpt__B3c__run1.json: code fence removed
+
+=== chatgpt B4a run1: OK  (chatgpt__B4a__run1.json)
+  [auto-fix] chatgpt__B4a__run1.json: code fence removed
+  [warn] T4.04: enabler but goals given
+
+=== chatgpt B4b run1: OK  (chatgpt__B4b__run1.json)
+  [auto-fix] chatgpt__B4b__run1.json: code fence removed
+
+=== chatgpt B4c run1: OK  (chatgpt__B4c__run1.json)
+  [auto-fix] chatgpt__B4c__run1.json: code fence removed
+  [warn] T4.11: enabler but goals given
+
+=== chatgpt B4d run1: OK  (chatgpt__B4d__run1.json)
+  [auto-fix] chatgpt__B4d__run1.json: code fence removed
+  [warn] T4.14: enabler but goals given
+  [warn] T4.15: R=3 but evidence E3/analogue=True gives 4
+
+=== claude A run1: OK  (claude__A__run1.json)
+  [auto-fix] claude__A__run1.json: code fence removed
+
+=== claude B1 run1: OK  (claude__B1__run1.json)
+  [auto-fix] claude__B1__run1.json: code fence removed
+
+=== claude B2 run1: OK  (claude__B2__run1.json)
+  [auto-fix] claude__B2__run1.json: code fence removed
+
+=== claude B3 run1: OK  (claude__B3__run1.json)
+  [auto-fix] claude__B3__run1.json: code fence removed
+
+=== claude B4 run1: OK  (claude__B4__run1.json)
+  [auto-fix] claude__B4__run1.json: code fence removed
+
+=== deepseek A run1: OK  (deepseek__A__run1.json)
+
+=== deepseek B1 run1: OK  (deepseek__B1__run1.json)
+
+=== deepseek B2 run1: OK  (deepseek__B2__run1.json)
+
+=== deepseek B3 run1: OK  (deepseek__B3__run1.json)
+
+=== deepseek B4 run1: OK  (deepseek__B4__run1.json)
+
+=== gemini A run1: OK  (gemini__A__run1.json)
+  [auto-fix] gemini__A__run1.json: code fence removed
+
+=== gemini B1 run1: OK  (gemini__B1__run1.json)
+  [auto-fix] gemini__B1__run1.json: code fence removed
+
+=== gemini B2 run1: OK  (gemini__B2__run1.json)
+  [auto-fix] gemini__B2__run1.json: code fence removed
+
+=== gemini B3 run1: OK  (gemini__B3__run1.json)
+  [auto-fix] gemini__B3__run1.json: code fence removed
+
+=== gemini B4 run1: OK  (gemini__B4__run1.json)
