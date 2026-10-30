@@ -1,0 +1,153 @@
+json
+
+```
+{
+  "meta": {
+    "model_self_report": "GPT-6",
+    "prompt_id": "B4c",
+    "n_ratings": 4
+  },
+  "ratings": [
+    {
+      "id": "T4.09",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L4",
+      "asset_ids": ["A4.5", "A4.6"],
+      "trust_boundary": ["TB0", "TB3"],
+      "stride_primary": "D",
+      "stride_secondary": ["T"],
+      "goals": ["Denial"],
+      "is_enabler": false,
+      "adversary_class": ["AC5", "AC6"],
+      "tier": "T2",
+      "evidence": "P",
+      "analogue_only": false,
+      "unknown_sources": [78],
+      "D": 3,
+      "R": 1,
+      "E": 3,
+      "A": 4,
+      "Di_strong": 2,
+      "Di_weak": 2,
+      "confidence": 4,
+      "rationale": "Interrupting ATM delivery directly causes surveillance denial, potentially across several footprints. Link or ground-system access is plausible, but the cited NATS incident concerns non-malicious flight-planning failure and cannot establish malicious attack evidence. Delivery monitoring should detect interruption at L4.",
+      "issue": "The cited incident is non-malicious path evidence, not attack evidence. Scope the affected-user count to the delivery architecture and distinguish interruption from degradation that leaves misleading reports."
+    },
+    {
+      "id": "T4.10",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L4",
+      "asset_ids": ["A4.6"],
+      "trust_boundary": ["TB0"],
+      "stride_primary": "T",
+      "stride_secondary": ["S", "E"],
+      "goals": ["Displacement", "Denial", "Deception"],
+      "is_enabler": false,
+      "adversary_class": ["AC6"],
+      "tier": "T2",
+      "evidence": "P",
+      "analogue_only": false,
+      "unknown_sources": [],
+      "D": 4,
+      "R": 1,
+      "E": 3,
+      "A": 2,
+      "Di_strong": 4,
+      "Di_weak": 4,
+      "confidence": 3,
+      "rationale": "Controller-interface manipulation can bypass upstream surveillance checks and produce false or suppressed displayed information. Tampering is primary; spoofing applies when fabricated targets are introduced. No source establishes this specific mechanism, and privileged workstation compromise is assumed.",
+      "issue": "The record conflates fabricated content, suppression and display-only alteration, which have different consequences. Define the protected interface and distinguish ATM presentation tampering from upstream report manipulation."
+    },
+    {
+      "id": "T4.11",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L4",
+      "asset_ids": ["A4.2", "A4.5", "A4.8"],
+      "trust_boundary": ["TB3"],
+      "stride_primary": "I",
+      "stride_secondary": [],
+      "goals": ["Disclosure"],
+      "is_enabler": true,
+      "adversary_class": ["AC6", "AC7"],
+      "tier": "T2",
+      "evidence": "P",
+      "analogue_only": false,
+      "unknown_sources": [],
+      "D": null,
+      "R": 1,
+      "E": 3,
+      "A": 4,
+      "Di_strong": 4,
+      "Di_weak": 4,
+      "confidence": 3,
+      "rationale": "Exposure of precise orbit and coverage information is an information-disclosure threat that can facilitate other attacks but does not itself alter a target report. A4.5 is an imprecise asset choice; orbit products and operations systems are more direct sources. No supporting source is cited.",
+      "issue": "The record mixes ephemeris disclosure with coverage disclosure and identifies the ATM feed rather than the primary orbit-data assets. Treat this as an enabler and clarify whether the information is genuinely non-public."
+    },
+    {
+      "id": "T4.12",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L4",
+      "asset_ids": ["A4.7", "A4.8", "A4.1", "A4.2", "A4.3", "A4.4"],
+      "trust_boundary": ["TB3", "TB0"],
+      "stride_primary": "T",
+      "stride_secondary": ["I", "E"],
+      "goals": ["Displacement", "Denial", "Deception", "Disclosure"],
+      "is_enabler": false,
+      "adversary_class": ["AC7"],
+      "tier": "T3",
+      "evidence": "E1",
+      "analogue_only": true,
+      "unknown_sources": [67, 30],
+      "D": 5,
+      "R": 2,
+      "E": 2,
+      "A": 4,
+      "Di_strong": 3,
+      "Di_weak": 5,
+      "confidence": 3,
+      "rationale": "Authorised personnel can misuse governance privileges to alter configuration, ephemerides or keys, potentially causing displacement, deception, denial or disclosure. The broad mechanism is credible, but the cited materials were not independently assessed; space-platform and aircraft-security evidence may be analogue rather than direct.",
+      "issue": "This bundles distinct insider actions with different consequences and detection paths. Separate configuration tampering, credential misuse and disclosure; specify whether changes are authorised-but-malicious or enabled by privilege escalation."
+    }
+  ],
+  "batch_comments": {
+    "missing_threats": [
+      {
+        "title": "Malicious ATM feed modification in transit",
+        "layer": "L2",
+        "asset_ids": ["A2.4", "A4.5"],
+        "why": "Delivery interruption is covered, but unauthorised modification or replay of reports before ATM consumption deserves a distinct threat."
+      },
+      {
+        "title": "Compromise of orbit determination products",
+        "layer": "L4",
+        "asset_ids": ["A4.2", "A3.2"],
+        "why": "Ephemeris integrity compromise can systematically bias localisation independently of disclosure or general insider misuse."
+      },
+      {
+        "title": "Malicious integrity-policy change",
+        "layer": "L4",
+        "asset_ids": ["A4.1", "A4.4", "A3.4", "A3.5"],
+        "why": "Threshold or policy changes that suppress discrepancy flags warrant explicit treatment because nominally plausible outputs may evade operational detection."
+      },
+      {
+        "title": "ATM display or workstation compromise through external access",
+        "layer": "L4",
+        "asset_ids": ["A4.6", "A4.8"],
+        "why": "The interface-deception record assumes access but does not separately model remote compromise, malicious software or compromised supplier pathways."
+      }
+    ],
+    "rubric_ambiguities": [
+      "The evidence rubric does not specify how to score a cited source that is known by title but cannot be independently assessed; conservative P ratings are used.",
+      "Discoverability specifies the first layer where a predicate is true, but does not define detection predicates for compromised ATM displays or insider actions.",
+      "The affected-user scale does not clearly distinguish the number of ATM users from the geographic footprint served by a shared feed.",
+      "Disclosure-only enablers have null Damage, but the total-score bands are defined for five numeric dimensions and therefore cannot be applied directly.",
+      "The tier mapping does not directly distinguish ordinary authorised insiders from state-level insiders or establish the minimum capability needed for each bundled action."
+    ],
+    "overall": "The four records describe plausible but differently scoped risks. T4.09 is a direct denial threat, T4.10 a presentation-integrity threat, T4.11 an information-disclosure enabler, and T4.12 a broad insider-abuse category. Evidence is weak or unverified for the specific mechanisms. Asset mapping, detection assumptions and separation of distinct consequences require refinement before prioritisation."
+  }
+}
+```

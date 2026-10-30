@@ -1,0 +1,158 @@
+json
+```
+{
+  "meta": {
+    "model_self_report": "GPT-6",
+    "prompt_id": "B2a",
+    "n_ratings": 4
+  },
+  "ratings": [
+    {
+      "id": "T2.01",
+      "validity": "valid",
+      "related_id": "T2.03",
+      "layer": "L2",
+      "asset_ids": ["A2.1", "A2.4"],
+      "trust_boundary": ["TB1", "TB2"],
+      "stride_primary": "T",
+      "stride_secondary": ["S"],
+      "goals": ["Displacement", "Deception"],
+      "is_enabler": false,
+      "adversary_class": ["AC5"],
+      "tier": "T2",
+      "evidence": "E1",
+      "analogue_only": true,
+      "unknown_sources": [17, 18, 39],
+      "D": 5,
+      "R": 2,
+      "E": 3,
+      "A": 3,
+      "Di_strong": 3,
+      "Di_weak": 5,
+      "confidence": 3,
+      "rationale": "In-transit alteration of existing measurements is tampering, potentially producing nominally trusted displacement or deception. Cyber-physical false-data-injection literature is analogous, not direct LEO-MLAT evidence. W4 removes L2 authentication detection; downstream checks differ between strong and weak geometry.",
+      "issue": "The cited power-grid and control-system literature supports analogy, not this system's specific effects. Distinguish report tampering from selective delay, which overlaps T2.03."
+    },
+    {
+      "id": "T2.02",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L2",
+      "asset_ids": ["A2.1", "A2.2", "A2.4", "A4.3"],
+      "trust_boundary": ["TB1", "TB2"],
+      "stride_primary": "S",
+      "stride_secondary": ["E"],
+      "goals": ["Displacement", "Deception"],
+      "is_enabler": false,
+      "adversary_class": ["AC5"],
+      "tier": "T2",
+      "evidence": "E1",
+      "analogue_only": true,
+      "unknown_sources": [50, 51, 14],
+      "D": 5,
+      "R": 2,
+      "E": 3,
+      "A": 3,
+      "Di_strong": 3,
+      "Di_weak": 5,
+      "confidence": 2,
+      "rationale": "Fabricated reports attributed to a relay are spoofing; successful injection can corrupt association and localisation. Satellite communication spoofing and transmitter fingerprinting are relevant analogues, but do not establish feasibility against this architecture. Strong-pass checks may detect inconsistent solutions; weak-pass checks may not.",
+      "issue": "Node impersonation and fabricated measurements are conflated. Authentication, source identity, and physical plausibility checks are distinct controls; the cited evidence does not establish successful LEO-MLAT report injection."
+    },
+    {
+      "id": "T2.03",
+      "validity": "valid",
+      "related_id": "T2.01",
+      "layer": "L2",
+      "asset_ids": ["A2.1", "A2.4"],
+      "trust_boundary": ["TB1", "TB2"],
+      "stride_primary": "T",
+      "stride_secondary": ["D"],
+      "goals": ["Displacement", "Denial", "Deception"],
+      "is_enabler": false,
+      "adversary_class": ["AC5"],
+      "tier": "T2",
+      "evidence": "E1",
+      "analogue_only": true,
+      "unknown_sources": [51, 40],
+      "D": 5,
+      "R": 2,
+      "E": 3,
+      "A": 3,
+      "Di_strong": 3,
+      "Di_weak": 5,
+      "confidence": 3,
+      "rationale": "Selective delay and reordering tamper with report delivery and can degrade temporal consistency or measurement association. PTP delay-attack research is an analogue, not proof of this report-level effect. Impact depends on freshness checks, timestamp semantics, and solver handling; W2 and W3 govern downstream detectability.",
+      "issue": "The record mixes delay, reordering, and modification, which have different mechanisms and outcomes. Delaying a report does not necessarily bias TOA if measurement timestamps remain trustworthy and freshness is enforced."
+    },
+    {
+      "id": "T2.04",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L2",
+      "asset_ids": ["A2.2", "A2.4", "A3.1", "A3.3", "A3.4"],
+      "trust_boundary": ["TB1", "TB2"],
+      "stride_primary": "D",
+      "stride_secondary": ["T"],
+      "goals": ["Denial", "Displacement", "Deception"],
+      "is_enabler": true,
+      "adversary_class": ["AC5"],
+      "tier": "T2",
+      "evidence": "E1",
+      "analogue_only": true,
+      "unknown_sources": [13, 16, 21],
+      "D": null,
+      "R": 2,
+      "E": 3,
+      "A": 3,
+      "Di_strong": 3,
+      "Di_weak": 5,
+      "confidence": 3,
+      "rationale": "Selective report loss degrades measurement availability and geometry. Its stated principal role is widening another error's stealth window, making it an enabler with null Damage under this rubric. LEO-network DoS work supports analogy, but geometry-dependent MLAT consequences require system-specific validation.",
+      "issue": "The record combines direct denial with an enabling effect. If dropping alone breaches coverage or accuracy requirements, rate that consequence separately; the claimed stealth-window widening is not demonstrated by the cited network studies."
+    }
+  ],
+  "batch_comments": {
+    "missing_threats": [
+      {
+        "title": "Compromised report timestamps or clock-quality metadata",
+        "layer": "L2",
+        "asset_ids": ["A2.1"],
+        "why": "Metadata tampering can undermine freshness and timing-quality checks even when TOA, FOA, and AOA values remain unchanged."
+      },
+      {
+        "title": "Replay of previously valid observable reports",
+        "layer": "L2",
+        "asset_ids": ["A2.1", "A2.4"],
+        "why": "Unauthenticated reports may be replayed or duplicated, creating stale or inconsistent associations unless freshness and replay controls are effective."
+      },
+      {
+        "title": "Credential compromise enabling link manipulation",
+        "layer": "L2",
+        "asset_ids": ["A4.3", "A2.2", "A2.4"],
+        "why": "Compromised link credentials can enable broader report injection, modification, or suppression and should be distinguished from unauthenticated RF impersonation."
+      },
+      {
+        "title": "Crosslink routing or forwarding manipulation",
+        "layer": "L2",
+        "asset_ids": ["A2.2"],
+        "why": "Malicious forwarding, route manipulation, or selective relay isolation can disrupt report delivery beyond individual packet loss."
+      },
+      {
+        "title": "Report loss concealment through misleading quality metadata",
+        "layer": "L2",
+        "asset_ids": ["A2.1", "A2.2"],
+        "why": "Misrepresenting completeness or quality could prevent downstream components from recognising that geometrically important measurements are missing."
+      }
+    ],
+    "rubric_ambiguities": [
+      "The evidence rubric does not specify how to score multiple cited sources when only some support the exact mechanism and others support a broader analogue.",
+      "The relationship between report delay, altered measurement timestamps, and actual TDOA bias depends on timestamp semantics not specified in the architecture.",
+      "An enabler's Damage is null, but the stated total-score bands assume five numeric dimensions and do not define how enabler totals are interpreted.",
+      "Discoverability is defined by the first true detection predicate, but W2 and W3 do not identify the specific monitor or detection layer for every report-level threat.",
+      "The affected-user rubric does not specify whether a footprint or aircraft count is measured before or after constellation-wide aggregation and ATM distribution."
+    ],
+    "overall": "All four mechanisms are plausible L2 security concerns, but evidence for their precise effects on LEO multilateration is predominantly analogous rather than system-specific. T2.01 and T2.03 overlap but remain distinguishable as value modification versus delivery-time manipulation. T2.02 requires clearer separation of identity spoofing from report fabrication. T2.04 is primarily an availability threat and an enabler of stealthier errors; its direct consequence should be assessed independently. The discoverability scores are conditional on W2 and W3, not demonstrated detection performance."
+  }
+}
+```

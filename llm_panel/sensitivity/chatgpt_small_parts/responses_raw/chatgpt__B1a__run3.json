@@ -1,0 +1,149 @@
+{
+  "meta": {
+    "model_self_report": "GPT-6",
+    "prompt_id": "B1a",
+    "n_ratings": 4
+  },
+  "ratings": [
+    {
+      "id": "T1.01",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L1",
+      "asset_ids": ["A1.1"],
+      "trust_boundary": ["TB0"],
+      "stride_primary": "S",
+      "stride_secondary": ["T"],
+      "goals": ["Deception"],
+      "is_enabler": false,
+      "adversary_class": ["AC2"],
+      "tier": "T1p",
+      "evidence": "E2",
+      "analogue_only": false,
+      "unknown_sources": [59],
+      "D": 4,
+      "R": 4,
+      "E": 5,
+      "A": 2,
+      "Di_strong": 3,
+      "Di_weak": 3,
+      "confidence": 4,
+      "rationale": "Unauthenticated fabricated emissions constitute spoofing and create false targets. Practical ADS-B attack demonstrations support E2, although satellite-specific consequences are less established. Cross-checking may expose fabricated targets independently of HDOP; W2 and W3 concern single-satellite timing bias, not this mechanism.",
+      "issue": "Asset scope omits A1.3 and A1.4, which receive and extract the fabricated emissions."
+    },
+    {
+      "id": "T1.02",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L1",
+      "asset_ids": ["A1.1", "A1.4"],
+      "trust_boundary": ["TB0", "TB1"],
+      "stride_primary": "S",
+      "stride_secondary": ["T"],
+      "goals": ["Deception"],
+      "is_enabler": false,
+      "adversary_class": ["AC2"],
+      "tier": "T1c",
+      "evidence": "E2",
+      "analogue_only": false,
+      "unknown_sources": [59, 7],
+      "D": 4,
+      "R": 3,
+      "E": 4,
+      "A": 2,
+      "Di_strong": 3,
+      "Di_weak": 3,
+      "confidence": 3,
+      "rationale": "Rebroadcasting genuine messages creates stale or geographically misleading observations, combining source spoofing with replay tampering. Practical ADS-B replay evidence supports the mechanism, but the cited evidence does not establish its effectiveness against satellite multilateration. Cross-checking and temporal consistency may expose discrepancies.",
+      "issue": "Replay is distinct from fabrication, but freshness and duplicate-message handling are unspecified; the claimed displaced-position consequence is conditional."
+    },
+    {
+      "id": "T1.03",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L1",
+      "asset_ids": ["A1.1", "A1.2"],
+      "trust_boundary": ["TB0"],
+      "stride_primary": "T",
+      "stride_secondary": ["S"],
+      "goals": ["Displacement", "Deception"],
+      "is_enabler": false,
+      "adversary_class": ["AC1"],
+      "tier": "T1c",
+      "evidence": "E1",
+      "analogue_only": true,
+      "unknown_sources": [72, 56, 6],
+      "D": 5,
+      "R": 2,
+      "E": 4,
+      "A": 2,
+      "Di_strong": 3,
+      "Di_weak": 3,
+      "confidence": 2,
+      "rationale": "A genuine aircraft transmitting an incorrect position tampers with its self-reported data while retaining genuine reception geometry. Independent localisation can identify the discrepancy, making a missed cross-check essential to deception. Evidence for the exact satellite architecture is insufficient; cited source details and applicability remain uncertain.",
+      "issue": "The masking chain is not specified. A wrong broadcast position alone does not defeat independent localisation or establish a nominal integrity verdict."
+    },
+    {
+      "id": "T1.04",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L1",
+      "asset_ids": ["A1.3", "A1.4"],
+      "trust_boundary": ["TB0", "TB1"],
+      "stride_primary": "D",
+      "stride_secondary": [],
+      "goals": ["Denial"],
+      "is_enabler": false,
+      "adversary_class": ["AC2"],
+      "tier": "T1c",
+      "evidence": "E2",
+      "analogue_only": false,
+      "unknown_sources": [],
+      "D": 3,
+      "R": 3,
+      "E": 4,
+      "A": 3,
+      "Di_strong": 1,
+      "Di_weak": 1,
+      "confidence": 4,
+      "rationale": "In-band interference degrades reception and prevents valid measurement extraction, constituting denial rather than spoofing. Practical terrestrial ADS-B interference evidence supports the mechanism, but satellite-specific evidence is weaker. RF monitoring or reception-quality checks can identify interference at L1 independently of timing-pass conditions.",
+      "issue": "The stated mechanism supports denial, but affected geographic coverage and constellation-wide consequences are not quantified."
+    }
+  ],
+  "batch_comments": {
+    "missing_threats": [
+      {
+        "title": "GNSS reception or timing disruption",
+        "layer": "L1",
+        "asset_ids": ["A1.2", "A1.5"],
+        "why": "GNSS disruption can corrupt onboard timing and positioning dependencies independently of fabricated ADS-B content."
+      },
+      {
+        "title": "Payload measurement extraction compromise",
+        "layer": "L1",
+        "asset_ids": ["A1.4"],
+        "why": "Compromised extraction firmware could alter TOA, FOA or AOA while preserving apparently valid reports."
+      },
+      {
+        "title": "Onboard oscillator instability",
+        "layer": "L1",
+        "asset_ids": ["A1.5"],
+        "why": "Clock drift or disciplining failure can create systematic measurement errors without deliberate RF interference."
+      },
+      {
+        "title": "Antenna beam manipulation or degradation",
+        "layer": "L1",
+        "asset_ids": ["A1.3"],
+        "why": "Antenna faults or manipulation can corrupt AOA measurements or reduce reception independently of jamming."
+      }
+    ],
+    "rubric_ambiguities": [
+      "W2 and W3 specify detection of single-satellite timing bias, not detection of fabricated, replayed or falsified ADS-B messages.",
+      "Di is defined by detection predicates, but no explicit predicates or detection coverage are supplied for these four threats.",
+      "Evidence levels do not distinguish practical terrestrial demonstrations from satellite-specific demonstrations except through analogue_only.",
+      "The affected-user scale does not define how multiple aircraft affected within one satellite footprint should be counted.",
+      "A false aircraft position can produce displacement or deception depending on whether the fabricated target is genuine or nonexistent."
+    ],
+    "overall": "All four mechanisms are distinct and defensively relevant. Fabrication, replay, falsified self-reported position and RF denial should not be collapsed into one threat. The largest modelling weakness is transferring terrestrial ADS-B attack evidence directly to LEO multilateration without establishing the corresponding satellite-system consequences. Detection ratings also require threat-specific predicates rather than automatically inheriting the timing assumptions."
+  }
+}

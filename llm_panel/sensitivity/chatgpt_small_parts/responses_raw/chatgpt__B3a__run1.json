@@ -1,0 +1,152 @@
+json
+
+```
+{
+  "meta": {
+    "model_self_report": "GPT-6",
+    "prompt_id": "B3a",
+    "n_ratings": 4
+  },
+  "ratings": [
+    {
+      "id": "T3.01",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L3",
+      "asset_ids": ["A3.1", "A3.3"],
+      "trust_boundary": ["TB2"],
+      "stride_primary": "T",
+      "stride_secondary": ["D", "S"],
+      "goals": ["Denial", "Deception"],
+      "is_enabler": false,
+      "adversary_class": ["AC6"],
+      "tier": "T3",
+      "evidence": "P",
+      "analogue_only": false,
+      "unknown_sources": [],
+      "D": 4,
+      "R": 1,
+      "E": 2,
+      "A": 3,
+      "Di_strong": 3,
+      "Di_weak": 3,
+      "confidence": 4,
+      "rationale": "Association tampering changes measurement-to-track relationships, potentially merging genuine targets, fabricating tracks, or losing coverage. No mechanism or evidence is cited. Host-level exploitation is plausible; the stated record does not establish constellation-wide impact. L3 consistency checks may detect anomalies, but W2 and W3 specifically constrain single-satellite timing bias, not association corruption.",
+      "issue": "W2 and W3 do not establish detection behavior for association tampering. The mechanism conflates track fabrication with denial and lacks a defined consequence threshold."
+    },
+    {
+      "id": "T3.02",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L3",
+      "asset_ids": ["A3.4", "A3.5", "A3.3"],
+      "trust_boundary": ["TB3"],
+      "stride_primary": "T",
+      "stride_secondary": ["D"],
+      "goals": ["Displacement", "Deception", "Denial"],
+      "is_enabler": false,
+      "adversary_class": ["AC6"],
+      "tier": "T3",
+      "evidence": "P",
+      "analogue_only": false,
+      "unknown_sources": [],
+      "D": 5,
+      "R": 1,
+      "E": 2,
+      "A": 3,
+      "Di_strong": 5,
+      "Di_weak": 5,
+      "confidence": 4,
+      "rationale": "Altering integrity-test or cross-check logic can suppress warnings or create false alarms, enabling wrongly annotated positions or deception. The mechanism is postulated without cited evidence. A compromised monitor may evade its own checks under either pass; W2's guarantee concerns single-satellite bias, not malicious modification of the detection logic.",
+      "issue": "The record names A3.4 but also implicates A3.5. W2 cannot guarantee detection when the detection logic itself is compromised; consequences depend on which tests are altered."
+    },
+    {
+      "id": "T3.03",
+      "validity": "valid",
+      "related_id": "T3.04",
+      "layer": "L3",
+      "asset_ids": ["A3.2", "A3.3"],
+      "trust_boundary": ["TB3"],
+      "stride_primary": "T",
+      "stride_secondary": ["tau"],
+      "goals": ["Displacement", "Deception"],
+      "is_enabler": false,
+      "adversary_class": ["AC6"],
+      "tier": "T3",
+      "evidence": "P",
+      "analogue_only": false,
+      "unknown_sources": [],
+      "D": 5,
+      "R": 1,
+      "E": 2,
+      "A": 4,
+      "Di_strong": 3,
+      "Di_weak": 5,
+      "confidence": 3,
+      "rationale": "Corrupting solver ephemerides or clock states alters trusted localisation inputs and can bias multiple tracks. This is data tampering, not necessarily tau: authentication-invariance does not make a database alteration a time-reference attack. Weak-pass stealth is plausible by analogy to the supplied bias model, but the record supplies no evidence.",
+      "issue": "The claimed clock-bias equivalence is underspecified. Ephemeris corruption and clock-state corruption have different error signatures; impact and detection cannot be inferred uniformly from W2 and W3."
+    },
+    {
+      "id": "T3.04",
+      "validity": "valid",
+      "related_id": "T3.03",
+      "layer": "L3",
+      "asset_ids": ["A3.3", "A2.1"],
+      "trust_boundary": ["TB2"],
+      "stride_primary": "T",
+      "stride_secondary": ["S"],
+      "goals": ["Displacement", "Deception", "Denial"],
+      "is_enabler": false,
+      "adversary_class": ["AC6"],
+      "tier": "T3",
+      "evidence": "P",
+      "analogue_only": false,
+      "unknown_sources": [],
+      "D": 5,
+      "R": 1,
+      "E": 2,
+      "A": 3,
+      "Di_strong": 3,
+      "Di_weak": 5,
+      "confidence": 3,
+      "rationale": "Directly modifying solver inputs is tampering with existing observables and can corrupt localisation or track continuity. It is distinct from database corruption by the modified data object, but overlaps in trust assumptions and consequences. No mechanism is evidenced. W2/W3 do not directly specify detection of arbitrary post-association data changes.",
+      "issue": "The entry point is ambiguous: A2.1 is the observable asset, while A3.3 is the processing consumer. Define the exact modification point and whether the attack overlaps database corruption."
+    }
+  ],
+  "batch_comments": {
+    "missing_threats": [
+      {
+        "title": "Compromised processing host",
+        "layer": "L3",
+        "asset_ids": ["A3.7"],
+        "why": "Host or virtualisation compromise could undermine several processing modules and their outputs, exceeding the scope of individual logic or data-store tampering."
+      },
+      {
+        "title": "AST​​ERIX output tampering",
+        "layer": "L3",
+        "asset_ids": ["A3.6", "A4.5"],
+        "why": "Modification of encoded reports or integrity annotations after processing could mislead ATM independently of solver correctness."
+      },
+      {
+        "title": "Measurement-association resource exhaustion",
+        "layer": "L3",
+        "asset_ids": ["A3.1", "A3.7"],
+        "why": "Exhaustion of processing resources could prevent timely association and track updates, causing surveillance degradation without changing measurement contents."
+      },
+      {
+        "title": "Configuration and threshold tampering",
+        "layer": "L4",
+        "asset_ids": ["A4.4", "A4.8"],
+        "why": "Unauthorised changes to integrity thresholds or configuration could systematically weaken detection across multiple L3 components."
+      }
+    ],
+    "rubric_ambiguities": [
+      "W2 and W3 constrain single-satellite timing bias, but do not specify detection of association corruption, arbitrary database changes, or malicious modification of integrity logic.",
+      "The rubric does not specify how to score a postulated threat with potentially critical consequences but no evidence or defined affected-user extent.",
+      "The tier definitions map T3x to an insider or two adversary classes, but do not clearly distinguish a privileged ground intruder from an insider.",
+      "The authentication-invariance test distinguishes tau from tampering, but corrupted clock-state data may imitate timing bias without actually offsetting an asset's time reference."
+    ],
+    "overall": "All four records describe plausible L3 security concerns, but each is postulated and has no cited mechanism. T3.02 is especially consequential because it compromises the detection function itself. T3.03 and T3.04 overlap but remain distinguishable by the data object altered. The supplied timing assumptions do not establish detection behavior for these general processing attacks; their scores should therefore be treated as provisional."
+  }
+}
+```

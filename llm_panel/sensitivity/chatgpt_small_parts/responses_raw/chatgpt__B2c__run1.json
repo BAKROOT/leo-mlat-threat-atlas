@@ -1,0 +1,152 @@
+json
+```
+{
+  "meta": {
+    "model_self_report": "GPT-6",
+    "prompt_id": "B2c",
+    "n_ratings": 4
+  },
+  "ratings": [
+    {
+      "id": "T2.09",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L2",
+      "asset_ids": ["A2.4", "A2.1"],
+      "trust_boundary": ["TB2"],
+      "stride_primary": "S",
+      "stride_secondary": ["T"],
+      "goals": ["Deception", "Displacement"],
+      "is_enabler": false,
+      "adversary_class": ["AC5"],
+      "tier": "T2",
+      "evidence": "E2",
+      "analogue_only": true,
+      "unknown_sources": [],
+      "D": 5,
+      "R": 3,
+      "E": 3,
+      "A": 4,
+      "Di_strong": 3,
+      "Di_weak": 5,
+      "confidence": 3,
+      "rationale": "Accepted fabricated reports can create ghost targets and mislead ATM. Spoofing is primary, with tampering secondary if existing traffic is overwritten. Downlink-overshadowing evidence is relevant but not direct LEO-MLAT validation; analogue adjustment gives R=3. Network-level reach may span footprints. Strong-pass detection is L3; weak-pass detection may fail.",
+      "issue": "The cited downlink-overshadowing work may not establish injection into this specific relay architecture. Authentication, replay handling, and report provenance are unspecified."
+    },
+    {
+      "id": "T2.10",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L2",
+      "asset_ids": ["A2.5", "A4.3"],
+      "trust_boundary": ["TB1", "TB3"],
+      "stride_primary": "I",
+      "stride_secondary": [],
+      "goals": ["Disclosure"],
+      "is_enabler": true,
+      "adversary_class": ["AC5"],
+      "tier": "T2",
+      "evidence": "E1",
+      "analogue_only": true,
+      "unknown_sources": [66, 41],
+      "D": null,
+      "R": 2,
+      "E": 3,
+      "A": 4,
+      "Di_strong": 5,
+      "Di_weak": 5,
+      "confidence": 2,
+      "rationale": "Passive interception primarily exposes command and update information, potentially enabling later command forgery. It has no direct target-report consequence, so it is an enabler and Damage is null. The cited works were not independently verified; available descriptions do not establish direct applicability to this architecture.",
+      "issue": "Passive reception is conditional on link observability and traffic protection. Disclosure of formats or timing does not establish key compromise or command acceptance."
+    },
+    {
+      "id": "T2.11",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L2",
+      "asset_ids": ["A2.5", "A1.6", "A4.4"],
+      "trust_boundary": ["TB1", "TB3"],
+      "stride_primary": "T",
+      "stride_secondary": ["E"],
+      "goals": ["Deception", "Denial", "Displacement"],
+      "is_enabler": false,
+      "adversary_class": ["AC5", "AC6"],
+      "tier": "T3",
+      "evidence": "E2",
+      "analogue_only": true,
+      "unknown_sources": [67, 15, 60],
+      "D": 5,
+      "R": 3,
+      "E": 2,
+      "A": 4,
+      "Di_strong": 3,
+      "Di_weak": 5,
+      "confidence": 2,
+      "rationale": "Accepted forged commands can modify satellite configuration or firmware, potentially corrupting measurements and causing misleading or unavailable tracks. Tampering is primary; elevation of privilege is secondary when command acceptance grants control. Spacecraft and aircraft-security demonstrations are analogues, not direct evidence for this system.",
+      "issue": "Key disclosure and weak authentication are prerequisites rather than demonstrated universal conditions. The record overlaps the consequences of platform compromise and does not distinguish command forgery from replay."
+    },
+    {
+      "id": "T2.12",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L2",
+      "asset_ids": ["A2.4", "A2.2", "A1.7"],
+      "trust_boundary": ["TB1", "TB2"],
+      "stride_primary": "E",
+      "stride_secondary": ["T", "D"],
+      "goals": ["Denial", "Deception", "Displacement"],
+      "is_enabler": false,
+      "adversary_class": ["AC5", "AC6"],
+      "tier": "T2",
+      "evidence": "E2",
+      "analogue_only": true,
+      "unknown_sources": [65, 61],
+      "D": 4,
+      "R": 3,
+      "E": 3,
+      "A": 3,
+      "Di_strong": 2,
+      "Di_weak": 5,
+      "confidence": 3,
+      "rationale": "Compromise of a relay or network device provides control to modify or suppress reports. Elevation of privilege is primary, with tampering and denial secondary. SATCOM-terminal and spacecraft vulnerability demonstrations provide analogue support, not direct proof against this network. Strong-pass checks may detect corrupted measurements at L3; weak-pass effects can escape.",
+      "issue": "The record combines routers, gateways, and terminals with different trust boundaries. Remote exposure and successful compromise are assumed, and effects overlap with report injection and forged commands."
+    }
+  ],
+  "batch_comments": {
+    "missing_threats": [
+      {
+        "title": "Compromise of report association and provenance",
+        "layer": "L3",
+        "asset_ids": ["A3.1", "A3.3"],
+        "why": "Incorrect cross-satellite association can corrupt tracks even when individual reports remain unmodified in transit."
+      },
+      {
+        "title": "Integrity failure in time-transfer messages",
+        "layer": "L2",
+        "asset_ids": ["A2.3", "A1.5"],
+        "why": "Manipulated PTP time transfer can bias measurements through the clock dependency, independently of command-channel compromise."
+      },
+      {
+        "title": "Credential theft and key-management compromise",
+        "layer": "L4",
+        "asset_ids": ["A4.3", "A4.8"],
+        "why": "Compromise of credentials or key distribution can enable multiple link and command attacks and merits a distinct root-cause record."
+      },
+      {
+        "title": "Suppression or selective loss of reports",
+        "layer": "L2",
+        "asset_ids": ["A2.2", "A2.4"],
+        "why": "Traffic dropping can degrade coverage or remove targets without requiring fabricated reports or persistent device compromise."
+      }
+    ],
+    "rubric_ambiguities": [
+      "The evidence rubric does not specify how to rate a threat supported by several sources with different evidence levels when none directly matches the target architecture.",
+      "The analogue-only adjustment is defined for Reproducibility but does not specify how to treat mixed direct and analogue evidence.",
+      "Discoverability depends on whether checks detect the attack mechanism or only its downstream measurement consequences; the distinction is not fully defined.",
+      "Damage distinguishes deception from displacement, but the ghost-target mechanism can produce both consequences simultaneously.",
+      "Adversary tiers do not uniquely map to link attackers; remote access, proximity, and required persistence can imply different tiers."
+    ],
+    "overall": "All four records describe plausible defensive concerns, but evidence strength and architecture-specific applicability vary. T2.10 is an enabling disclosure threat rather than a direct report-integrity attack. T2.11 and T2.12 can overlap through platform control, while T2.09 concerns injected reports. The model should separate prerequisites, root compromises, and downstream consequences, and document detection assumptions explicitly."
+  }
+}
+```

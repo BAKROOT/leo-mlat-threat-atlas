@@ -1,0 +1,153 @@
+json
+
+```
+{
+  "meta": {
+    "model_self_report": "GPT-6",
+    "prompt_id": "B4b",
+    "n_ratings": 4
+  },
+  "ratings": [
+    {
+      "id": "T4.05",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L4",
+      "asset_ids": ["A4.3", "A4.8"],
+      "trust_boundary": ["TB3"],
+      "stride_primary": "E",
+      "stride_secondary": ["T", "S"],
+      "goals": ["Deception", "Denial", "Disclosure"],
+      "is_enabler": false,
+      "adversary_class": ["AC7", "AC6"],
+      "tier": "T3x",
+      "evidence": "E0",
+      "analogue_only": false,
+      "unknown_sources": [35, 34],
+      "D": 5,
+      "R": 2,
+      "E": 1,
+      "A": 5,
+      "Di_strong": 5,
+      "Di_weak": 5,
+      "confidence": 3,
+      "rationale": "Compromised key governance can undermine node and controller authentication, enabling broad deception or denial. The entry is L4, crossing TB3. The cited publications are not independently assessable here; their stated attack-evidence descriptions do not establish a specific demonstrated incident or evidence level.",
+      "issue": "The mechanism conflates authorised abuse with system compromise and does not establish that every node or controller shares a common trust domain. T3x assumes an insider or two adversary classes."
+    },
+    {
+      "id": "T4.06",
+      "validity": "valid",
+      "related_id": "T4.07",
+      "layer": "L4",
+      "asset_ids": ["A4.4", "A4.8"],
+      "trust_boundary": ["TB3"],
+      "stride_primary": "T",
+      "stride_secondary": ["E"],
+      "goals": ["Displacement", "Deception", "Denial"],
+      "is_enabler": false,
+      "adversary_class": ["AC6", "AC7"],
+      "tier": "T2",
+      "evidence": "E1",
+      "analogue_only": true,
+      "unknown_sources": [74, 67],
+      "D": 5,
+      "R": 2,
+      "E": 3,
+      "A": 4,
+      "Di_strong": 3,
+      "Di_weak": 5,
+      "confidence": 3,
+      "rationale": "Unauthorised or malicious changes to configuration and firmware can compromise solver integrity, integrity thresholds, or payload measurements. Tampering is primary; platform control may enable it. The cited incidents and exercise are not independently assessed, and neither establishes LEO-MLAT-specific effects.",
+      "issue": "Overlaps T4.07 in the management and update path. Separate integrity-affecting configuration changes from destructive commands and firmware wiping; the claimed consequence depends on which setting changes."
+    },
+    {
+      "id": "T4.07",
+      "validity": "valid",
+      "related_id": "T4.06",
+      "layer": "L4",
+      "asset_ids": ["A4.4", "A4.8", "A2.5", "A1.6", "A1.4"],
+      "trust_boundary": ["TB3", "TB1"],
+      "stride_primary": "D",
+      "stride_secondary": ["T", "E"],
+      "goals": ["Denial"],
+      "is_enabler": false,
+      "adversary_class": ["AC6", "AC7"],
+      "tier": "T2",
+      "evidence": "E1",
+      "analogue_only": true,
+      "unknown_sources": [74],
+      "D": 3,
+      "R": 2,
+      "E": 3,
+      "A": 4,
+      "Di_strong": 2,
+      "Di_weak": 2,
+      "confidence": 3,
+      "rationale": "Destructive commands or updates can disable payloads and terminals, reducing measurement availability and potentially degrading regional surveillance. Denial is the primary effect. The cited KA-SAT incident is an analogue, and its stated path evidence does not establish the same consequences in this satellite architecture.",
+      "issue": "Shares its entry path with T4.06 but has a distinct destructive outcome. Detection scores assume operational health monitoring exposes the outage at L2; the record specifies no detection mechanism or recovery assumptions."
+    },
+    {
+      "id": "T4.08",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L4",
+      "asset_ids": ["A4.5", "A3.6", "A4.6"],
+      "trust_boundary": ["TB3", "TB0"],
+      "stride_primary": "T",
+      "stride_secondary": ["S"],
+      "goals": ["Displacement", "Deception"],
+      "is_enabler": false,
+      "adversary_class": ["AC6", "AC7"],
+      "tier": "T2",
+      "evidence": "E0",
+      "analogue_only": true,
+      "unknown_sources": [78],
+      "D": 5,
+      "R": 1,
+      "E": 3,
+      "A": 4,
+      "Di_strong": 5,
+      "Di_weak": 5,
+      "confidence": 3,
+      "rationale": "Tampering with delivered reports after L3 validation can bypass the solver's integrity checks and alter the ATM picture or verdict. The consequence can be displacement or deception. The cited non-malicious flight-planning failure is path evidence only and cannot establish malicious tampering or raise evidence above P.",
+      "issue": "The record does not distinguish report modification from fabricated reports or identify which downstream controls remain. The cited non-malicious incident supports neither malicious exploitation nor the claimed surveillance-specific impact."
+    }
+  ],
+  "batch_comments": {
+    "missing_threats": [
+      {
+        "title": "Insider compromise of synchronisation policy",
+        "layer": "L4",
+        "asset_ids": ["A4.1", "A4.8"],
+        "why": "Malicious governance changes could weaken time-conformance checks and enable downstream temporal-integrity threats without directly altering individual observables."
+      },
+      {
+        "title": "Ephemeris product manipulation",
+        "layer": "L4",
+        "asset_ids": ["A4.2", "A3.2"],
+        "why": "Compromised orbit products can bias localisation independently of key abuse, destructive updates, or delivery-stage tampering."
+      },
+      {
+        "title": "Surveillance feed substitution or replay",
+        "layer": "L4",
+        "asset_ids": ["A4.5", "A4.6"],
+        "why": "Delivery-stage replay, stale-feed substitution, or source confusion could affect ATM freshness and authenticity even without modifying the underlying solver."
+      },
+      {
+        "title": "Management audit-log suppression",
+        "layer": "L4",
+        "asset_ids": ["A4.8", "A4.4", "A4.3"],
+        "why": "Compromising management logs can impede incident attribution and conceal configuration or key-management abuse."
+      }
+    ],
+    "rubric_ambiguities": [
+      "Evidence levels are defined, but cited source descriptions do not reliably identify whether the specific mechanism was demonstrated; conservative ratings may therefore understate support.",
+      "The rubric does not explicitly map evidence from a related but non-equivalent satellite system to analogue-only status when the cited mechanism is generic.",
+      "Discoverability specifies the first true detection predicate, but operational outage monitoring and its layer are not defined for destructive updates.",
+      "Affected users can mean constellation coverage or affected aircraft; the rubric does not specify how to rate a payload outage whose geographic impact varies over time.",
+      "A key-management compromise may be a distinct privilege-escalation threat or the enabling condition for spoofing and tampering; the record does not distinguish these outcomes."
+    ],
+    "overall": "All four records describe plausible, distinct defensive concerns, although T4.06 and T4.07 share a management entry path and require outcome-based separation. T4.08 is plausible but weakly evidenced by the cited non-malicious incident. Evidence ratings remain conservative because the cited sources could not be independently assessed. Risk depends on trust-domain separation, monitoring, recovery, and downstream controls."
+  }
+}
+```
