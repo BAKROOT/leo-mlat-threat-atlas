@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+.venv/
+.pytest_cache/
+.DS_Store
+# scratch output of `make panel`
+llm_panel/results_rebuilt/
+llm_panel/results_sens/
+llm_panel/figures/out_rebuilt/
+# the answer key must never be pasted into a chat; keep local copies out of version control
+reference/

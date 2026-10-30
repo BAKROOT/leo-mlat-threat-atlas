@@ -1,0 +1,40 @@
+cff-version: 1.2.0
+message: "If you use this repository, please cite it together with the manuscript below."
+title: "LEO-MLAT Threat Atlas: threat catalogue, evidence atlas, LLM review panel and analysis code for GNSS-independent space-based multilateration"
+type: dataset
+version: "1.0.0"
+date-released: "2026-10-30"
+license: CC-BY-4.0
+authors:
+  - family-names: Kamal
+    given-names: Bilal Ahmad
+    affiliation: "Centre for Informatics and Systems of the University of Coimbra (CISUC), Department of Informatics Engineering, University of Coimbra, Portugal"
+    email: bilal@dei.uc.pt
+  - family-names: Ivaki
+    given-names: Naghmeh
+    affiliation: "Centre for Informatics and Systems of the University of Coimbra (CISUC), Department of Informatics Engineering, University of Coimbra, Portugal"
+  - family-names: Madeira
+    given-names: Henrique
+    affiliation: "Centre for Informatics and Systems of the University of Coimbra (CISUC), Department of Informatics Engineering, University of Coimbra, Portugal"
+keywords:
+  - threat modelling
+  - cross-layer attacks
+  - multilateration
+  - ADS-B
+  - low Earth orbit
+  - STRIDE
+  - air traffic management
+repository-code: "https://github.com/BAKROOT/leo-mlat-threat-atlas"
+preferred-citation:
+  type: article
+  status: in-preparation
+  title: "Cross-Layer Threat Modelling of GNSS-Independent Space-Based Multilateration for Air Traffic Surveillance"
+  authors:
+    - family-names: Kamal
+      given-names: Bilal Ahmad
+    - family-names: Ivaki
+      given-names: Naghmeh
+    - family-names: Madeira
+      given-names: Henrique
+  year: 2026
+  journal: "IEEE Transactions on Dependable and Secure Computing"
