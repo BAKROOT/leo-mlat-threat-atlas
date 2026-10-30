@@ -1,0 +1,2 @@
+file,model_version,thinking_mode,date,notes
+chatgpt__B3__run2.json,GPT-6,Think (composer mode),2026-10-29,"test-retest of chatgpt__B3__run1.json: identical full prompt, new temporary chat; not part of the main panel; prompt hash-checked; reply hash-verified"
