@@ -1,0 +1,24 @@
+PA-DREAD rubric and lookup tables,,,,,,,,,,,,
+"Every score in the Catalogue is computed from these tables (the paper, Sec. 4.8). Change a value here and all scores, bands and checks recalculate.",,,,,,,,,,,,
+Evidence level,Base R,,Tier code,E,Meaning,,Damage class (goal),D,Rule,,Band lower bound S,Band
+P,1,,T1p,5,"Tier T1, public tools",,Displacement,5,Real aircraft at a wrong position with nominal integrity,,5,Low
+E0,2,,T1c,4,"Tier T1, custom software",,Deception,4,Fabricated target or wrong integrity verdict,,10,Medium
+E1,3,,T2,3,Tier T2,,"Denial, regional / flagged degradation",3,Used when Affected users >= 3,,15,High
+E2,4,,T3,2,Tier T3,,"Denial, local",2,Used when Affected users <= 2,,20,Critical
+E3,5,,T3x,1,"Tier T3 with an insider, or two adversary classes",,Disclosure only,1,"Keys, configuration, ephemerides or traffic revealed",,,
+,,,,,,,Analogue-only evidence penalty (levels of R),1,,,,
+,,,,,,,Analogue penalty used by Catalogue!R (cell I11),,,,,
+Stealth-window threshold (Sec. 4.8),,,,,,,,,,,,
+"e_req, horizontal accuracy requirement (m)",350,,,,,,,,,,,
+"c, speed of light (m/ns)",0.2998,,,,,,,,,,,
+"delta_cov, covert clock step (ns)",100,,,,,,,,,,,
+h* = e_req / (c * delta_cov),11.67444963,,,,,,,,,,,
+Single-satellite bias that breaches e_req at h = 12 (ns),97.28708028,,,,,,,,,,,
+Anchors,,,,,,,,,,,,
+Damage (D),"Graph: L4 consequence class reached by the threat. 5 displacement, 4 deception, 3 regional denial or flagged degradation, 2 local denial, 1 disclosure only. Enablers have no Damage.",,,,,,,,,,,
+Reproducibility (R),"Atlas: highest evidence among bound entries (P 1, E0 2, E1 3, E2 4, E3 5), minus one when the evidence is from an analogue system only (floor 1). Non-malicious failures (#76 to #78) are path evidence and do not raise the level.",,,,,,,,,,,
+Exploitability (E),"Threat model: tier of the adversary class. 5 T1 public tools, 4 T1 custom software, 3 T2, 2 T3, 1 T3 with insider or two classes.",,,,,,,,,,,
+Affected users (A),"Graph: extent of the root event. 5 whole constellation, 4 several footprints, 3 one footprint, 2 several aircraft, 1 one aircraft.",,,,,,,,,,,
+Discoverability (Di),"Graph: first layer at which a detection predicate is true. 1 at L1, 2 at L2, 3 at L3, 4 only at L4, 5 no check detects it. 5 is the riskier end (hard to discover). Scored in a strong and a weak pass.",,,,,,,,,,,
+Total and bands,"S = D + R + E + A + Di, 5 to 25. Low 5-9, Medium 10-14, High 15-19, Critical 20-25. Chains: MIN over AND steps for R, E, A, Di; OR takes the higher total; Damage from the root.",,,,,,,,,,,
+Blue = judgement input or published constant; black = formula.,,,,,,,,,,,,

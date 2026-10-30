@@ -1,0 +1,113 @@
+Group,Statistic,Workbook,Paper,Check,Paper location
+Size,Threats in the catalogue,55,55,OK,Sec. 4.6
+Size,Threats at L1,16,16,OK,Sec. 4.6
+Size,Threats at L2,12,12,OK,Sec. 4.6
+Size,Threats at L3,12,12,OK,Sec. 4.6
+Size,Threats at L4,15,15,OK,Sec. 4.6
+STRIDE-tau,Primary category T,19,19,OK,Sec. 4.6
+STRIDE-tau,Primary category D,12,12,OK,Sec. 4.6
+STRIDE-tau,Primary category E,8,8,OK,Sec. 4.6
+STRIDE-tau,Primary category S,7,7,OK,Sec. 4.6
+STRIDE-tau,Primary category I,5,5,OK,Sec. 4.6
+STRIDE-tau,Primary category R,2,2,OK,Sec. 4.6
+STRIDE-tau,Primary category tau,2,2,OK,Sec. 4.6
+STRIDE-tau,Threats that target timing or depend on timing-derived data,16,16,OK,Sec. 4.5
+STRIDE-tau,... of which target timing,9,9,OK,Sec. 4.6
+STRIDE-tau,... of which depend on timing-derived data,7,7,OK,Sec. 4.6
+Evidence,Threats at E3,10,10,OK,Sec. 4.6
+Evidence,Threats at E2,21,21,OK,Sec. 4.6
+Evidence,Threats at E1,6,6,OK,Sec. 4.6
+Evidence,Threats at E0,2,2,OK,Sec. 4.6
+Evidence,Threats at P,16,16,OK,Sec. 4.6
+Evidence,Postulated threats at L1,0,0,OK,Sec. 4.6
+Evidence,Postulated threats at L2,1,1,OK,Sec. 4.6
+Evidence,Postulated threats at L3,7,7,OK,Sec. 4.6
+Evidence,Postulated threats at L4,8,8,OK,Sec. 4.6
+Evidence,L1 threats shown on hardware or in operation (E2 or E3),13,13,OK,Sec. 4.6
+Goals,Threats serving Displacement,34,34,OK,Sec. 6.4 / Table 7
+Goals,Threats serving Denial,22,22,OK,Sec. 6.4 / Table 7
+Goals,Threats serving Deception,21,21,OK,Sec. 6.4 / Table 7
+Goals,Threats serving Disclosure,6,6,OK,Sec. 6.4 / Table 7
+Goals,Goal assignments in total,83,83,OK,Sec. 6.4
+Goals,Threats serving more than one goal,24,24,OK,Sec. 6.4
+Goals,Threats with no goal,0,0,OK,Sec. 4.9
+Goals,Displacement threats at L1,8,8,OK,Table 7
+Goals,Displacement threats at L2,9,9,OK,Table 7
+Goals,Displacement threats at L3,8,8,OK,Table 7
+Goals,Displacement threats at L4,9,9,OK,Table 7
+Goals,Denial threats at L1,9,9,OK,Table 7
+Goals,Denial threats at L2,5,5,OK,Table 7
+Goals,Denial threats at L3,2,2,OK,Table 7
+Goals,Denial threats at L4,6,6,OK,Table 7
+Goals,Deception threats at L1,4,4,OK,Table 7
+Goals,Deception threats at L2,2,2,OK,Table 7
+Goals,Deception threats at L3,8,8,OK,Table 7
+Goals,Deception threats at L4,7,7,OK,Table 7
+Goals,Disclosure threats at L1,0,0,OK,Table 7
+Goals,Disclosure threats at L2,2,2,OK,Table 7
+Goals,Disclosure threats at L3,1,1,OK,Table 7
+Goals,Disclosure threats at L4,3,3,OK,Table 7
+Goals,Displacement: postulated threats,10,10,OK,Table 7
+Goals,Denial: postulated threats,3,3,OK,Table 7
+Goals,Deception: postulated threats,8,8,OK,Table 7
+Goals,Disclosure: postulated threats,2,2,OK,Table 7
+Goals,Displacement: threats with no L3 check on any path,2,2,OK,Table 7
+Goals,Denial: threats with no L3 check on any path,1,1,OK,Table 7
+Goals,Deception: threats with no L3 check on any path,3,3,OK,Table 7
+Goals,Disclosure: threats with no L3 check on any path,2,2,OK,Table 7
+Goals,Displacement: mean rho_root,2.4,2.4,OK,Table 7
+Goals,Denial: mean rho_root,2.5,2.5,OK,Table 7
+Goals,Deception: mean rho_root,1.8,1.8,OK,Table 7
+Goals,Disclosure: E3 share (half),0.5,0.5,OK,Sec. 6.5
+Reach,Mean rho_root over the 55 threats,2.4,2.4,OK,Sec. 6.3
+Reach,Threats with rho_det = 0,10,10,OK,Sec. 6.3
+Reach,Threats with rho_det = 1,15,15,OK,Sec. 6.3
+Reach,Threats with rho_det = 2,16,16,OK,Sec. 6.3
+Reach,Threats with rho_det = 3,4,4,OK,Sec. 6.3
+Reach,Threats with rho_det = 5,4,4,OK,Sec. 6.3
+Reach,Threats with no first check,6,6,OK,Sec. 6.3
+Reach,Threats crossing two or more boundaries before a check,24,24,OK,Sec. 6.3
+Reach,L1 threats with rho_root = 3,16,16,OK,Sec. 6.3
+Reach,L3 threats with rho_root = 1,12,12,OK,Sec. 6.3
+Reach,L2 threats with rho_root = 4,4,4,OK,Sec. 6.3
+Reach,L4 threats with rho_root = 6,4,4,OK,Sec. 6.3
+Boundaries,Threats at or crossing TB0,16,16,OK,Sec. 6.1
+Boundaries,Threats at or crossing TB1,10,10,OK,Sec. 6.1
+Boundaries,Threats at or crossing TB2,11,11,OK,Sec. 6.1
+Boundaries,Threats at or crossing TB3,14,14,OK,Sec. 6.1
+Assets,Assets with at least one threat,27,27,OK,Sec. 4.6
+Assets,Asset rows whose threat count differs from Table 6,0,0,OK,Table 6
+Routes,"Route ""Clock"": threats",5,5,OK,Table 8
+Routes,"Route ""Ephemeris"": threats",3,3,OK,Table 8
+Routes,"Route ""Observables"": threats",6,6,OK,Table 8
+Routes,"Route ""Emitter and position"": threats",3,3,OK,Table 8
+Routes,"Route ""Geometry"": threats",1,1,OK,Table 8
+Routes,"Route ""Platform and command"": threats",8,8,OK,Table 8
+Routes,"Route ""Verdict and picture"": threats",5,5,OK,Table 8
+Routes,"Route ""Supply chain and insiders"": threats",3,3,OK,Table 8
+Routes,"Route ""Clock"": E3",1,1,OK,Table 8
+Routes,"Route ""Clock"": E2",3,3,OK,Table 8
+Routes,"Route ""Clock"": P",1,1,OK,Table 8
+Routes,"Route ""Ephemeris"": P",3,3,OK,Table 8
+Routes,"Route ""Observables"": E3",1,1,OK,Table 8
+Routes,"Route ""Observables"": E2",1,1,OK,Table 8
+Routes,"Route ""Observables"": E1",3,3,OK,Table 8
+Routes,"Route ""Observables"": P",1,1,OK,Table 8
+Routes,"Route ""Emitter and position"": E3",1,1,OK,Table 8
+Routes,"Route ""Emitter and position"": E2",2,2,OK,Table 8
+Routes,"Route ""Geometry"": E1",1,1,OK,Table 8
+Routes,"Route ""Platform and command"": E3",1,1,OK,Table 8
+Routes,"Route ""Platform and command"": E2",6,6,OK,Table 8
+Routes,"Route ""Platform and command"": E0",1,1,OK,Table 8
+Routes,"Route ""Verdict and picture"": P",5,5,OK,Table 8
+Routes,"Route ""Supply chain and insiders"": E3",1,1,OK,Table 8
+Routes,"Route ""Supply chain and insiders"": E2",1,1,OK,Table 8
+Routes,"Route ""Supply chain and insiders"": E0",1,1,OK,Table 8
+SATERA,Extended threats reached by SC-1..SC-17,44,44,OK,Sec. 5
+SATERA,SC entries whose total differs from the published total,0,0,OK,Sec. 5
+Worked,Worked-table cells that differ from Tables 4 and 5,0,0,OK,"Tables 4, 5"
+CVE,CVEs in the register,57,57,OK,Abstract; Sec. 5
+CVE,CVE rows mapped to at least one register asset,57,57,OK,Workbook v1.2
+CVE,CVE rows linked to at least one catalogue threat,57,57,OK,Workbook v1.2
+CVE,Assets of the register at L3,7,7,OK,Sec. 3 (27 assets)
+CVE,Threats with at least one related CVE,12,12,OK,Workbook v1.2 (mapping in sheet CVE Register)
