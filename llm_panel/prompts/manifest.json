@@ -1,0 +1,238 @@
+{
+ "A": {
+  "expected_ids": null,
+  "kind": "elicitation"
+ },
+ "B1": {
+  "expected_ids": [
+   "T1.01",
+   "T1.02",
+   "T1.03",
+   "T1.04",
+   "T1.05",
+   "T1.06",
+   "T1.07",
+   "T1.08",
+   "T1.09",
+   "T1.10",
+   "T1.11",
+   "T1.12",
+   "T1.13",
+   "T1.14",
+   "T1.15",
+   "T1.16"
+  ],
+  "kind": "rating",
+  "file": "B1_L1.txt"
+ },
+ "B2": {
+  "expected_ids": [
+   "T2.01",
+   "T2.02",
+   "T2.03",
+   "T2.04",
+   "T2.05",
+   "T2.06",
+   "T2.07",
+   "T2.08",
+   "T2.09",
+   "T2.10",
+   "T2.11",
+   "T2.12"
+  ],
+  "kind": "rating",
+  "file": "B2_L2.txt"
+ },
+ "B3": {
+  "expected_ids": [
+   "T3.01",
+   "T3.02",
+   "T3.03",
+   "T3.04",
+   "T3.05",
+   "T3.06",
+   "T3.07",
+   "T3.08",
+   "T3.09",
+   "T3.10",
+   "T3.11",
+   "T3.12"
+  ],
+  "kind": "rating",
+  "file": "B3_L3.txt"
+ },
+ "B4": {
+  "expected_ids": [
+   "T4.01",
+   "T4.02",
+   "T4.03",
+   "T4.04",
+   "T4.05",
+   "T4.06",
+   "T4.07",
+   "T4.08",
+   "T4.09",
+   "T4.10",
+   "T4.11",
+   "T4.12",
+   "T4.13",
+   "T4.14",
+   "T4.15"
+  ],
+  "kind": "rating",
+  "file": "B4_L4.txt"
+ },
+ "B1a": {
+  "expected_ids": [
+   "T1.01",
+   "T1.02",
+   "T1.03",
+   "T1.04"
+  ],
+  "kind": "rating",
+  "file": "small/B1a_L1.txt",
+  "small": true
+ },
+ "B1b": {
+  "expected_ids": [
+   "T1.05",
+   "T1.06",
+   "T1.07",
+   "T1.08"
+  ],
+  "kind": "rating",
+  "file": "small/B1b_L1.txt",
+  "small": true
+ },
+ "B1c": {
+  "expected_ids": [
+   "T1.09",
+   "T1.10",
+   "T1.11",
+   "T1.12"
+  ],
+  "kind": "rating",
+  "file": "small/B1c_L1.txt",
+  "small": true
+ },
+ "B1d": {
+  "expected_ids": [
+   "T1.13",
+   "T1.14",
+   "T1.15",
+   "T1.16"
+  ],
+  "kind": "rating",
+  "file": "small/B1d_L1.txt",
+  "small": true
+ },
+ "B2a": {
+  "expected_ids": [
+   "T2.01",
+   "T2.02",
+   "T2.03",
+   "T2.04"
+  ],
+  "kind": "rating",
+  "file": "small/B2a_L2.txt",
+  "small": true
+ },
+ "B2b": {
+  "expected_ids": [
+   "T2.05",
+   "T2.06",
+   "T2.07",
+   "T2.08"
+  ],
+  "kind": "rating",
+  "file": "small/B2b_L2.txt",
+  "small": true
+ },
+ "B2c": {
+  "expected_ids": [
+   "T2.09",
+   "T2.10",
+   "T2.11",
+   "T2.12"
+  ],
+  "kind": "rating",
+  "file": "small/B2c_L2.txt",
+  "small": true
+ },
+ "B3a": {
+  "expected_ids": [
+   "T3.01",
+   "T3.02",
+   "T3.03",
+   "T3.04"
+  ],
+  "kind": "rating",
+  "file": "small/B3a_L3.txt",
+  "small": true
+ },
+ "B3b": {
+  "expected_ids": [
+   "T3.05",
+   "T3.06",
+   "T3.07",
+   "T3.08"
+  ],
+  "kind": "rating",
+  "file": "small/B3b_L3.txt",
+  "small": true
+ },
+ "B3c": {
+  "expected_ids": [
+   "T3.09",
+   "T3.10",
+   "T3.11",
+   "T3.12"
+  ],
+  "kind": "rating",
+  "file": "small/B3c_L3.txt",
+  "small": true
+ },
+ "B4a": {
+  "expected_ids": [
+   "T4.01",
+   "T4.02",
+   "T4.03",
+   "T4.04"
+  ],
+  "kind": "rating",
+  "file": "small/B4a_L4.txt",
+  "small": true
+ },
+ "B4b": {
+  "expected_ids": [
+   "T4.05",
+   "T4.06",
+   "T4.07",
+   "T4.08"
+  ],
+  "kind": "rating",
+  "file": "small/B4b_L4.txt",
+  "small": true
+ },
+ "B4c": {
+  "expected_ids": [
+   "T4.09",
+   "T4.10",
+   "T4.11",
+   "T4.12"
+  ],
+  "kind": "rating",
+  "file": "small/B4c_L4.txt",
+  "small": true
+ },
+ "B4d": {
+  "expected_ids": [
+   "T4.13",
+   "T4.14",
+   "T4.15"
+  ],
+  "kind": "rating",
+  "file": "small/B4d_L4.txt",
+  "small": true
+ }
+}
