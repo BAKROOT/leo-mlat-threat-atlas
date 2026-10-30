@@ -1,0 +1,28 @@
+asset,name,threats,assets_reached,of_other_assets,layers_reached,reached_only_via_inferred_S1_S2,boundaries_to_first_check,boundaries_to_ATM
+A1.1,Aircraft 1090ES transponder,6,13,26,4,0,2,3
+A1.2,GNSS positioning and timing service,2,14,26,4,0,2,3
+A1.3,Phased-array antenna and RF front end,2,12,26,4,0,2,3
+A1.4,Payload signal processor and extraction firmware,1,11,26,4,0,2,3
+A1.5,Onboard clock subsystem,2,13,26,4,0,2,3
+A1.6,Satellite bus and flight software,3,14,26,4,14,2,3
+A1.7,Ground-station antennas and modems,2,7,26,3,0,2,3
+A2.1,Observable reports,3,10,26,4,0,1,2
+A2.2,Inter-satellite link terminals and crosslinks,2,9,26,4,0,1,2
+A2.3,PTP time-transfer messages,2,14,26,4,0,3,4
+A2.4,Downlink channel and ground backhaul network,3,8,26,4,0,1,2
+A2.5,Telecommands and software-update packages,2,15,26,4,14,3,4
+A3.1,Measurement-association module,1,6,26,2,0,0,1
+A3.2,Ephemeris and clock-state database,1,6,26,2,0,0,1
+A3.3,"Localisation solver, EKF/IMM tracker and track database",5,5,26,2,0,0,1
+A3.4,Integrity-monitoring module,2,4,26,2,0,0,1
+A3.5,E-MLAT/ADS-B cross-check module,3,4,26,2,0,0,1
+A3.6,ASTERIX report encoder and gateway,2,4,26,2,0,,1
+A3.7,Central Processing Station computing platform,1,8,26,2,0,0,1
+A4.1,Synchronisation policy and time-reference service,2,17,26,4,15,5,6
+A4.2,Orbit-determination system and ephemeris products,2,7,26,2,0,1,2
+A4.3,Key-management system and credential store,3,16,26,4,14,5,6
+A4.4,Configuration and software-update management system,3,16,26,4,10,1,2
+A4.5,Surveillance data feed to ATM,3,3,26,2,0,,0
+A4.6,ATM surveillance system and controller working position,1,2,26,2,0,,0
+A4.7,Operator personnel and suppliers,2,23,26,4,7,1,2
+A4.8,Mission-operations centre and management network,4,21,26,4,8,1,2
