@@ -1,0 +1,594 @@
+{
+  "meta": {
+    "model_self_report": "Gemini 2.5 Flash",
+    "prompt_id": "B1",
+    "n_ratings": 16
+  },
+  "ratings": [
+    {
+      "id": "T1.01",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L1",
+      "asset_ids": [
+        "A1.1"
+      ],
+      "trust_boundary": [
+        "TB0"
+      ],
+      "stride_primary": "S",
+      "stride_secondary": [],
+      "goals": [
+        "Deception"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC2"
+      ],
+      "tier": "T1p",
+      "evidence": "E2",
+      "analogue_only": true,
+      "unknown_sources": [],
+      "D": 3,
+      "R": 3,
+      "E": 5,
+      "A": 1,
+      "Di_strong": 3,
+      "Di_weak": 3,
+      "confidence": 4,
+      "rationale": "Ground spoofing is well evidenced but analogue to LEO-MLAT. MLAT easily detects single-emitter spoofing of distant targets via L3 cross-check, resulting in flagged degradation rather than successful deception.",
+      "issue": "Scope: MLAT cross-check flags it, so it achieves flagged degradation (D=3) rather than full deception."
+    },
+    {
+      "id": "T1.02",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L1",
+      "asset_ids": [
+        "A1.1"
+      ],
+      "trust_boundary": [
+        "TB0"
+      ],
+      "stride_primary": "S",
+      "stride_secondary": [
+        "T",
+        "R"
+      ],
+      "goals": [
+        "Displacement"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC2"
+      ],
+      "tier": "T1p",
+      "evidence": "E2",
+      "analogue_only": true,
+      "unknown_sources": [],
+      "D": 3,
+      "R": 3,
+      "E": 5,
+      "A": 1,
+      "Di_strong": 3,
+      "Di_weak": 3,
+      "confidence": 4,
+      "rationale": "Replay attacks are trivial with SDRs (T1p), but like T1.01, a single emitter replaying a different location fails the L3 MLAT cross-check, yielding flagged degradation.",
+      "issue": ""
+    },
+    {
+      "id": "T1.03",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L1",
+      "asset_ids": [
+        "A1.1"
+      ],
+      "trust_boundary": [
+        "TB0"
+      ],
+      "stride_primary": "S",
+      "stride_secondary": [],
+      "goals": [
+        "Deception"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC1"
+      ],
+      "tier": "T1p",
+      "evidence": "E2",
+      "analogue_only": true,
+      "unknown_sources": [],
+      "D": 3,
+      "R": 3,
+      "E": 5,
+      "A": 1,
+      "Di_strong": 3,
+      "Di_weak": 3,
+      "confidence": 4,
+      "rationale": "A compromised transponder emitting false positions while maintaining true location TOAs is flagged at L3 by the cross-check.",
+      "issue": ""
+    },
+    {
+      "id": "T1.04",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L1",
+      "asset_ids": [
+        "A1.3"
+      ],
+      "trust_boundary": [
+        "TB0"
+      ],
+      "stride_primary": "D",
+      "stride_secondary": [],
+      "goals": [
+        "Denial"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC2"
+      ],
+      "tier": "T1p",
+      "evidence": "E2",
+      "analogue_only": true,
+      "unknown_sources": [],
+      "D": 3,
+      "R": 3,
+      "E": 5,
+      "A": 3,
+      "Di_strong": 1,
+      "Di_weak": 1,
+      "confidence": 4,
+      "rationale": "Jamming the 1090 MHz payload receiver denies service for the satellite's footprint. Easily executed but detectable at L1 via AGC or noise floor monitoring.",
+      "issue": ""
+    },
+    {
+      "id": "T1.05",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L1",
+      "asset_ids": [
+        "A1.1"
+      ],
+      "trust_boundary": [
+        "TB0"
+      ],
+      "stride_primary": "S",
+      "stride_secondary": [],
+      "goals": [
+        "Deception"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC3"
+      ],
+      "tier": "T2",
+      "evidence": "E1",
+      "analogue_only": true,
+      "unknown_sources": [],
+      "D": 4,
+      "R": 2,
+      "E": 3,
+      "A": 1,
+      "Di_strong": 5,
+      "Di_weak": 5,
+      "confidence": 4,
+      "rationale": "Perfectly synchronised multi-emitter spoofing creates consistent TOAs, bypassing the L3 MLAT cross-check. Very hard to execute (T2) but severely deceptive.",
+      "issue": ""
+    },
+    {
+      "id": "T1.06",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L1",
+      "asset_ids": [
+        "A1.1"
+      ],
+      "trust_boundary": [
+        "TB0"
+      ],
+      "stride_primary": "S",
+      "stride_secondary": [
+        "D"
+      ],
+      "goals": [
+        "Displacement"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC3"
+      ],
+      "tier": "T2",
+      "evidence": "E1",
+      "analogue_only": true,
+      "unknown_sources": [],
+      "D": 5,
+      "R": 2,
+      "E": 3,
+      "A": 1,
+      "Di_strong": 5,
+      "Di_weak": 5,
+      "confidence": 4,
+      "rationale": "Overshadowing a real aircraft with synchronised fake TOAs manipulates its track. Escapes L3 checks if executed perfectly.",
+      "issue": ""
+    },
+    {
+      "id": "T1.07",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L1",
+      "asset_ids": [
+        "A1.3"
+      ],
+      "trust_boundary": [
+        "TB0"
+      ],
+      "stride_primary": "D",
+      "stride_secondary": [],
+      "goals": [
+        "Denial"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC2"
+      ],
+      "tier": "T2",
+      "evidence": "E2",
+      "analogue_only": true,
+      "unknown_sources": [],
+      "D": 2,
+      "R": 3,
+      "E": 3,
+      "A": 1,
+      "Di_strong": 3,
+      "Di_weak": 3,
+      "confidence": 3,
+      "rationale": "Targeted nulling is difficult but can deny surveillance for specific aircraft, resulting in local denial. Detectability depends on MLAT dropping below required geometry.",
+      "issue": ""
+    },
+    {
+      "id": "T1.08",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L1",
+      "asset_ids": [
+        "A1.1",
+        "A1.3"
+      ],
+      "trust_boundary": [
+        "TB0"
+      ],
+      "stride_primary": "D",
+      "stride_secondary": [],
+      "goals": [
+        "Denial"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC2"
+      ],
+      "tier": "T1c",
+      "evidence": "E1",
+      "analogue_only": false,
+      "unknown_sources": [],
+      "D": 3,
+      "R": 3,
+      "E": 4,
+      "A": 3,
+      "Di_strong": 1,
+      "Di_weak": 1,
+      "confidence": 4,
+      "rationale": "High-rate squitter flooding overwhelms the payload's processing capacity. Evidenced in LEO context (ICARUS). Easily detected at L1 by buffer overflows or rate limits.",
+      "issue": ""
+    },
+    {
+      "id": "T1.09",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L1",
+      "asset_ids": [
+        "A1.4"
+      ],
+      "trust_boundary": [
+        "TB1"
+      ],
+      "stride_primary": "T",
+      "stride_secondary": [],
+      "goals": [
+        "Displacement"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC2"
+      ],
+      "tier": "T2",
+      "evidence": "E1",
+      "analogue_only": true,
+      "unknown_sources": [],
+      "D": 5,
+      "R": 2,
+      "E": 3,
+      "A": 1,
+      "Di_strong": 3,
+      "Di_weak": 5,
+      "confidence": 4,
+      "rationale": "Manipulating RF characteristics to bias observables prior to timestamping can cause displacement. Strong geometry allows L3 detection, but weak geometry provides a stealth window.",
+      "issue": ""
+    },
+    {
+      "id": "T1.10",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L1",
+      "asset_ids": [
+        "A1.2",
+        "A1.5"
+      ],
+      "trust_boundary": [
+        "TB0"
+      ],
+      "stride_primary": "D",
+      "stride_secondary": [
+        "tau"
+      ],
+      "goals": [
+        "Denial"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC4"
+      ],
+      "tier": "T2",
+      "evidence": "E3",
+      "analogue_only": false,
+      "unknown_sources": [],
+      "D": 3,
+      "R": 5,
+      "E": 3,
+      "A": 3,
+      "Di_strong": 1,
+      "Di_weak": 1,
+      "confidence": 5,
+      "rationale": "Jamming the satellite's GNSS receiver forces holdover, degrading time accuracy and denying MLAT service. Widely observed. Easily detected at L1 via receiver lock status.",
+      "issue": ""
+    },
+    {
+      "id": "T1.11",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L1",
+      "asset_ids": [
+        "A1.2",
+        "A1.5"
+      ],
+      "trust_boundary": [
+        "TB0"
+      ],
+      "stride_primary": "tau",
+      "stride_secondary": [
+        "S"
+      ],
+      "goals": [
+        "Displacement"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC4"
+      ],
+      "tier": "T3",
+      "evidence": "E2",
+      "analogue_only": true,
+      "unknown_sources": [],
+      "D": 5,
+      "R": 3,
+      "E": 2,
+      "A": 4,
+      "Di_strong": 3,
+      "Di_weak": 5,
+      "confidence": 4,
+      "rationale": "Covertly pulling the onboard clock via GNSS spoofing biases all stamped observables. Escapes L3 detection if HDOP is weak, causing significant displacement.",
+      "issue": ""
+    },
+    {
+      "id": "T1.12",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L1",
+      "asset_ids": [
+        "A1.6"
+      ],
+      "trust_boundary": [
+        "TB1"
+      ],
+      "stride_primary": "E",
+      "stride_secondary": [
+        "S"
+      ],
+      "goals": [
+        "Displacement",
+        "Denial",
+        "Disclosure"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC6"
+      ],
+      "tier": "T2",
+      "evidence": "E2",
+      "analogue_only": false,
+      "unknown_sources": [],
+      "D": 5,
+      "R": 4,
+      "E": 3,
+      "A": 3,
+      "Di_strong": 5,
+      "Di_weak": 5,
+      "confidence": 4,
+      "rationale": "Accepting unauthenticated telecommands grants the adversary complete control of the satellite, leading to catastrophic effects that are inherently hard to discover autonomously.",
+      "issue": ""
+    },
+    {
+      "id": "T1.13",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L1",
+      "asset_ids": [
+        "A1.6"
+      ],
+      "trust_boundary": [
+        "TB1"
+      ],
+      "stride_primary": "E",
+      "stride_secondary": [],
+      "goals": [
+        "Displacement",
+        "Denial",
+        "Disclosure"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC6"
+      ],
+      "tier": "T3",
+      "evidence": "E2",
+      "analogue_only": false,
+      "unknown_sources": [],
+      "D": 5,
+      "R": 4,
+      "E": 2,
+      "A": 3,
+      "Di_strong": 5,
+      "Di_weak": 5,
+      "confidence": 4,
+      "rationale": "Exploiting memory-safety vulnerabilities over the command link yields arbitrary code execution. Demonstrated in sandbox environments (Moonlighter). Highly stealthy.",
+      "issue": ""
+    },
+    {
+      "id": "T1.14",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L1",
+      "asset_ids": [
+        "A1.6"
+      ],
+      "trust_boundary": [
+        "TB1"
+      ],
+      "stride_primary": "T",
+      "stride_secondary": [
+        "E"
+      ],
+      "goals": [
+        "Displacement",
+        "Denial",
+        "Disclosure"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC7"
+      ],
+      "tier": "T3x",
+      "evidence": "E2",
+      "analogue_only": false,
+      "unknown_sources": [],
+      "D": 5,
+      "R": 4,
+      "E": 1,
+      "A": 5,
+      "Di_strong": 5,
+      "Di_weak": 5,
+      "confidence": 4,
+      "rationale": "Malicious firmware updates or secure-boot bypass provide persistent control across the constellation. Requires insider access or deep supply-chain compromise.",
+      "issue": ""
+    },
+    {
+      "id": "T1.15",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L1",
+      "asset_ids": [
+        "A1.7"
+      ],
+      "trust_boundary": [
+        "TB2"
+      ],
+      "stride_primary": "E",
+      "stride_secondary": [
+        "T"
+      ],
+      "goals": [
+        "Denial",
+        "Disclosure"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC6"
+      ],
+      "tier": "T2",
+      "evidence": "E3",
+      "analogue_only": false,
+      "unknown_sources": [],
+      "D": 3,
+      "R": 5,
+      "E": 3,
+      "A": 4,
+      "Di_strong": 4,
+      "Di_weak": 4,
+      "confidence": 5,
+      "rationale": "Compromising ground terminals via default credentials disrupts downlinks or telecommand paths, causing regional denial. Verified repeatedly in the wild by Santamarta.",
+      "issue": ""
+    },
+    {
+      "id": "T1.16",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L1",
+      "asset_ids": [
+        "A1.7"
+      ],
+      "trust_boundary": [
+        "TB2"
+      ],
+      "stride_primary": "D",
+      "stride_secondary": [],
+      "goals": [
+        "Denial"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC2"
+      ],
+      "tier": "T1c",
+      "evidence": "E1",
+      "analogue_only": false,
+      "unknown_sources": [],
+      "D": 3,
+      "R": 3,
+      "E": 4,
+      "A": 4,
+      "Di_strong": 2,
+      "Di_weak": 2,
+      "confidence": 4,
+      "rationale": "RF interference against ground-station downlink antennas severs the connection between the satellite and the CPS, denying MLAT service for the affected segment.",
+      "issue": ""
+    }
+  ],
+  "batch_comments": {
+    "missing_threats": [
+      {
+        "title": "Unauthenticated PTP time-transfer manipulation",
+        "layer": "L2",
+        "asset_ids": [
+          "A2.3"
+        ],
+        "why": "The system relies on PTP messages (A2.3) to discipline clocks, but no threat explores PTP spoofing/tampering."
+      }
+    ],
+    "rubric_ambiguities": [
+      "Whether to classify L1 RF jamming as tau (time offset) or D (denial) if it forces clock holdover but not a controlled step."
+    ],
+    "overall": "A solid L1 threat model overall. A common limitation is mapping single-emitter ADS-B spoofing directly to deception or displacement, failing to account for the intrinsic detection capability of the MLAT cross-check, which reduces the consequence to flagged degradation."
+  }
+}

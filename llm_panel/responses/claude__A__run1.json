@@ -1,0 +1,786 @@
+{
+  "meta": {
+    "model_self_report": "Claude Sonnet 5.5 (Anthropic)",
+    "prompt_id": "A",
+    "n_threats": 45
+  },
+  "threats": [
+    {
+      "title": "Time-transfer message offset or asymmetry on satellite clocks",
+      "layer": "L2",
+      "asset_ids": [
+        "A2.3",
+        "A1.5"
+      ],
+      "mechanism": "Manipulating or delaying inter-satellite time transfer shifts a satellite clock without breaking any message authentication, creating a range bias on every observable it stamps.",
+      "stride_primary": "tau",
+      "goals": [
+        "Displacement"
+      ],
+      "tier": "T3",
+      "evidence_support": "E1",
+      "severity": 5,
+      "commonly_overlooked": true
+    },
+    {
+      "title": "GNSS-based manipulation of onboard clock discipline",
+      "layer": "L1",
+      "asset_ids": [
+        "A1.2",
+        "A1.5"
+      ],
+      "mechanism": "Corrupting the GNSS timing input that disciplines the onboard oscillator introduces a small covert clock step that stays below onboard consistency checks.",
+      "stride_primary": "tau",
+      "goals": [
+        "Displacement"
+      ],
+      "tier": "T3",
+      "evidence_support": "E1",
+      "severity": 5,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Weakening of synchronisation policy and conformance thresholds",
+      "layer": "L4",
+      "asset_ids": [
+        "A4.1",
+        "A1.5"
+      ],
+      "mechanism": "An insider or intruder loosens the time scale, PTP policy or GNSS-PTP conformance limits so that a clock offset is accepted as conformant.",
+      "stride_primary": "tau",
+      "goals": [
+        "Displacement",
+        "Deception"
+      ],
+      "tier": "T3x",
+      "evidence_support": "P",
+      "severity": 5,
+      "commonly_overlooked": true
+    },
+    {
+      "title": "Malicious telecommand or software-update injection",
+      "layer": "L2",
+      "asset_ids": [
+        "A2.5",
+        "A1.6"
+      ],
+      "mechanism": "Forged, replayed or compromised command and update packages alter payload or bus behaviour, including clock, extraction or filter settings, giving control of the command path.",
+      "stride_primary": "E",
+      "goals": [
+        "Displacement",
+        "Denial",
+        "Deception"
+      ],
+      "tier": "T3",
+      "evidence_support": "E1",
+      "severity": 5,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Tampering with integrity thresholds and filter parameters",
+      "layer": "L4",
+      "asset_ids": [
+        "A4.4",
+        "A3.4"
+      ],
+      "mechanism": "Changing stored thresholds or filter settings widens the undetected region of the integrity monitor, so a bias raises no flag and the integrity annotation stays nominal.",
+      "stride_primary": "T",
+      "goals": [
+        "Displacement",
+        "Deception"
+      ],
+      "tier": "T2",
+      "evidence_support": "P",
+      "severity": 5,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Exploiting weak-geometry stealth window",
+      "layer": "L3",
+      "asset_ids": [
+        "A3.4",
+        "A3.5"
+      ],
+      "mechanism": "An adversary times or selects a bias for passes with poor geometry, where the stated analysis admits an undetectable region, to cause displacement with a nominal annotation.",
+      "stride_primary": "tau",
+      "goals": [
+        "Displacement"
+      ],
+      "tier": "T3",
+      "evidence_support": "E0",
+      "severity": 4,
+      "commonly_overlooked": true
+    },
+    {
+      "title": "Coordinated multi-satellite or common-mode bias beyond single-fault model",
+      "layer": "L3",
+      "asset_ids": [
+        "A3.4",
+        "A1.5"
+      ],
+      "mechanism": "Several consistent biases, or a common-mode clock fault, can pass residual tests designed around a single-satellite fault, contradicting the single-bias detection assumption.",
+      "stride_primary": "tau",
+      "goals": [
+        "Displacement",
+        "Deception"
+      ],
+      "tier": "T3",
+      "evidence_support": "E1",
+      "severity": 4,
+      "commonly_overlooked": true
+    },
+    {
+      "title": "Coordinated displacement with consistent falsified self-report",
+      "layer": "L3",
+      "asset_ids": [
+        "A3.5",
+        "A1.1"
+      ],
+      "mechanism": "A deceived or colluding aircraft broadcasts content that agrees with the biased independent position, so the cross-check finds no discrepancy and the annotation stays nominal.",
+      "stride_primary": "S",
+      "goals": [
+        "Deception",
+        "Displacement"
+      ],
+      "tier": "T3x",
+      "evidence_support": "E0",
+      "severity": 4,
+      "commonly_overlooked": true
+    },
+    {
+      "title": "Payload extraction firmware implant",
+      "layer": "L1",
+      "asset_ids": [
+        "A1.4"
+      ],
+      "mechanism": "A supply-chain or insider modification of the extraction firmware biases timestamps or measurements, or hides faults, from inside the payload processor.",
+      "stride_primary": "E",
+      "goals": [
+        "Displacement",
+        "Deception"
+      ],
+      "tier": "T3x",
+      "evidence_support": "E0",
+      "severity": 4,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Compromise or exfiltration of keys and credentials",
+      "layer": "L4",
+      "asset_ids": [
+        "A4.3"
+      ],
+      "mechanism": "Theft or misuse of telecommand, ISL or ground-link keys enables later forgery and removes authentication as a defence. Disclosure is a precondition of other threats.",
+      "stride_primary": "I",
+      "goals": [
+        "Disclosure"
+      ],
+      "tier": "T2",
+      "evidence_support": "E3",
+      "severity": 4,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "In-transit modification of unauthenticated observable reports",
+      "layer": "L2",
+      "asset_ids": [
+        "A2.1",
+        "A2.4"
+      ],
+      "mechanism": "Because reports carry no message authentication, a link or backhaul adversary can alter measurements or metadata between the payload and the processing station.",
+      "stride_primary": "T",
+      "goals": [
+        "Displacement",
+        "Deception"
+      ],
+      "tier": "T2",
+      "evidence_support": "E0",
+      "severity": 4,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Poisoning of orbit-determination products",
+      "layer": "L4",
+      "asset_ids": [
+        "A4.2"
+      ],
+      "mechanism": "Corrupted ephemeris products feed a position or clock-state error into the localisation solver. The error is not visible to onboard checks.",
+      "stride_primary": "T",
+      "goals": [
+        "Displacement"
+      ],
+      "tier": "T3",
+      "evidence_support": "E0",
+      "severity": 4,
+      "commonly_overlooked": true
+    },
+    {
+      "title": "Tampering with the ephemeris and clock-state database",
+      "layer": "L3",
+      "asset_ids": [
+        "A3.2"
+      ],
+      "mechanism": "Direct modification of stored satellite state shifts the solved position consistently across solutions and may stay inside residual tolerances.",
+      "stride_primary": "T",
+      "goals": [
+        "Displacement"
+      ],
+      "tier": "T2",
+      "evidence_support": "P",
+      "severity": 4,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Association confusion between receptions of different transmissions",
+      "layer": "L3",
+      "asset_ids": [
+        "A3.1"
+      ],
+      "mechanism": "Decoys, near-simultaneous emissions or replays cause receptions to be grouped wrongly across satellites, producing wrong or ghost positions that appear internally consistent.",
+      "stride_primary": "T",
+      "goals": [
+        "Displacement",
+        "Deception"
+      ],
+      "tier": "T2",
+      "evidence_support": "E1",
+      "severity": 4,
+      "commonly_overlooked": true
+    },
+    {
+      "title": "Delayed replay of recorded emissions",
+      "layer": "L1",
+      "asset_ids": [
+        "A1.1",
+        "A2.1"
+      ],
+      "mechanism": "Re-radiated recorded signals produce receptions with the wrong time of arrival and valid content, displacing a genuine target or duplicating it.",
+      "stride_primary": "S",
+      "goals": [
+        "Displacement",
+        "Deception"
+      ],
+      "tier": "T2",
+      "evidence_support": "E2",
+      "severity": 4,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Synchronised multi-emitter generation of ghost targets",
+      "layer": "L1",
+      "asset_ids": [
+        "A1.1",
+        "A1.3"
+      ],
+      "mechanism": "Several time-synchronised emitters create signals whose arrival pattern is consistent with a fabricated aircraft at a chosen location, defeating single-emitter plausibility checks.",
+      "stride_primary": "S",
+      "goals": [
+        "Deception"
+      ],
+      "tier": "T2",
+      "evidence_support": "E1",
+      "severity": 4,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Driving tracker divergence with crafted measurement sequences",
+      "layer": "L3",
+      "asset_ids": [
+        "A3.3"
+      ],
+      "mechanism": "Sequences of plausible measurements exploit the EKF/IMM motion-model switching and gating to pull the track away from the true position without triggering residual alarms.",
+      "stride_primary": "T",
+      "goals": [
+        "Displacement"
+      ],
+      "tier": "T2",
+      "evidence_support": "E1",
+      "severity": 4,
+      "commonly_overlooked": true
+    },
+    {
+      "title": "Manipulation of the ASTERIX integrity indicator",
+      "layer": "L3",
+      "asset_ids": [
+        "A3.6"
+      ],
+      "mechanism": "Altering or forcing the encoded integrity annotation, or stripping flags, makes degraded or suspect reports appear nominal to ATM.",
+      "stride_primary": "T",
+      "goals": [
+        "Deception",
+        "Displacement"
+      ],
+      "tier": "T2",
+      "evidence_support": "P",
+      "severity": 4,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Compromise of the processing station hosting platform",
+      "layer": "L3",
+      "asset_ids": [
+        "A3.7"
+      ],
+      "mechanism": "Compromise of servers or virtualisation gives control over all hosted L3 modules, bypassing their internal checks and trust boundaries.",
+      "stride_primary": "E",
+      "goals": [
+        "Displacement",
+        "Denial",
+        "Deception"
+      ],
+      "tier": "T2",
+      "evidence_support": "E3",
+      "severity": 4,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Hijack of ground-station uplink path",
+      "layer": "L1",
+      "asset_ids": [
+        "A1.7",
+        "A2.5"
+      ],
+      "mechanism": "Control of ground antennas and modems, or a spoofed uplink, allows commands to reach satellites outside the normal operations chain.",
+      "stride_primary": "S",
+      "goals": [
+        "Denial",
+        "Displacement"
+      ],
+      "tier": "T3",
+      "evidence_support": "E1",
+      "severity": 4,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "On-orbit bus and flight software compromise",
+      "layer": "L1",
+      "asset_ids": [
+        "A1.6"
+      ],
+      "mechanism": "Exploiting flight software or the telecommand receiver gives control of the bus and the payload it hosts and commands.",
+      "stride_primary": "E",
+      "goals": [
+        "Denial",
+        "Displacement"
+      ],
+      "tier": "T3",
+      "evidence_support": "E1",
+      "severity": 4,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Interception or modification of the ATM data feed",
+      "layer": "L4",
+      "asset_ids": [
+        "A4.5"
+      ],
+      "mechanism": "Altering or injecting reports on the delivery path to ATM bypasses upstream integrity logic, at the outer trust boundary with the consumer.",
+      "stride_primary": "T",
+      "goals": [
+        "Deception",
+        "Displacement"
+      ],
+      "tier": "T2",
+      "evidence_support": "E1",
+      "severity": 4,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Insider misuse of authorised access to configuration",
+      "layer": "L4",
+      "asset_ids": [
+        "A4.7",
+        "A4.4"
+      ],
+      "mechanism": "A privileged person or supplier changes thresholds, ephemeris or firmware baselines and may remove traces, using legitimate credentials.",
+      "stride_primary": "E",
+      "goals": [
+        "Displacement",
+        "Deception"
+      ],
+      "tier": "T3x",
+      "evidence_support": "E3",
+      "severity": 4,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Supplier software supply-chain compromise",
+      "layer": "L4",
+      "asset_ids": [
+        "A4.7",
+        "A3.7"
+      ],
+      "mechanism": "A trojanised update or component from a supplier reaches the processing platform or tools through the normal update route.",
+      "stride_primary": "T",
+      "goals": [
+        "Displacement",
+        "Deception"
+      ],
+      "tier": "T3",
+      "evidence_support": "E3",
+      "severity": 4,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Intrusion into operations centre via remote access",
+      "layer": "L4",
+      "asset_ids": [
+        "A4.8"
+      ],
+      "mechanism": "Compromise of workstations, remote access or the management network gives a foothold over the synchronisation, orbit, key and configuration systems hosted there.",
+      "stride_primary": "E",
+      "goals": [
+        "Displacement",
+        "Deception",
+        "Disclosure"
+      ],
+      "tier": "T2",
+      "evidence_support": "E3",
+      "severity": 4,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "GNSS denial forcing clock holdover and PTP reliance",
+      "layer": "L1",
+      "asset_ids": [
+        "A1.2",
+        "A1.5"
+      ],
+      "mechanism": "Jamming the GNSS input removes one of two clock references, shifting trust to time transfer and exposing the clocks to drift in holdover.",
+      "stride_primary": "D",
+      "goals": [
+        "Denial",
+        "Displacement"
+      ],
+      "tier": "T1c",
+      "evidence_support": "E3",
+      "severity": 4,
+      "commonly_overlooked": true
+    },
+    {
+      "title": "Falsified clock-quality metadata in reports",
+      "layer": "L2",
+      "asset_ids": [
+        "A2.1",
+        "A1.5"
+      ],
+      "mechanism": "Misreported clock-quality fields hide an offset from processing-side checks that rely on the metadata. This acts as an enabler.",
+      "stride_primary": "T",
+      "goals": [],
+      "tier": "T2",
+      "evidence_support": "P",
+      "severity": 4,
+      "commonly_overlooked": true
+    },
+    {
+      "title": "Channel saturation exhausting extraction capacity",
+      "layer": "L1",
+      "asset_ids": [
+        "A1.3",
+        "A1.4"
+      ],
+      "mechanism": "A high rate of valid-looking or overlapping 1090 MHz signals overloads decoding and reporting, reducing coverage below the requirement.",
+      "stride_primary": "D",
+      "goals": [
+        "Denial"
+      ],
+      "tier": "T1c",
+      "evidence_support": "E2",
+      "severity": 4,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Tampering or replay on inter-satellite links",
+      "layer": "L2",
+      "asset_ids": [
+        "A2.2"
+      ],
+      "mechanism": "A link adversary delays, drops, replays or alters relayed reports on crosslinks, degrading coverage or corrupting the measurement set.",
+      "stride_primary": "T",
+      "goals": [
+        "Denial",
+        "Displacement"
+      ],
+      "tier": "T3",
+      "evidence_support": "E0",
+      "severity": 3,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Regional jamming of the 1090 MHz band",
+      "layer": "L1",
+      "asset_ids": [
+        "A1.3"
+      ],
+      "mechanism": "Local interference blocks reception of aircraft emissions in a region, so targets are lost or coverage falls below the requirement.",
+      "stride_primary": "D",
+      "goals": [
+        "Denial"
+      ],
+      "tier": "T1p",
+      "evidence_support": "E3",
+      "severity": 3,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Jamming of downlinks and ground antennas",
+      "layer": "L1",
+      "asset_ids": [
+        "A1.7",
+        "A2.4"
+      ],
+      "mechanism": "Interference at ground stations or on the downlink delays or blocks report delivery, degrading observability for affected satellites.",
+      "stride_primary": "D",
+      "goals": [
+        "Denial"
+      ],
+      "tier": "T1c",
+      "evidence_support": "E3",
+      "severity": 3,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Angle-of-arrival distortion by directional emitters",
+      "layer": "L1",
+      "asset_ids": [
+        "A1.3"
+      ],
+      "mechanism": "Emitters positioned or steered relative to the array bias angle-of-arrival estimates, adding inconsistency or a consistent position error through the beamforming stage.",
+      "stride_primary": "S",
+      "goals": [
+        "Displacement",
+        "Deception"
+      ],
+      "tier": "T2",
+      "evidence_support": "E1",
+      "severity": 3,
+      "commonly_overlooked": true
+    },
+    {
+      "title": "Aircraft broadcasting a falsified self-reported position",
+      "layer": "L1",
+      "asset_ids": [
+        "A1.1"
+      ],
+      "mechanism": "A deceptive aircraft transmits wrong content. The independent position should expose the discrepancy, so impact depends on the integrity indicator.",
+      "stride_primary": "S",
+      "goals": [
+        "Deception"
+      ],
+      "tier": "T1p",
+      "evidence_support": "E3",
+      "severity": 3,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Deceived aircraft through GNSS spoofing causing false discrepancies",
+      "layer": "L1",
+      "asset_ids": [
+        "A1.2",
+        "A1.1"
+      ],
+      "mechanism": "A genuine aircraft with spoofed GNSS reports a wrong position, raising false discrepancy flags that may discredit a real target or mask a deceptive one.",
+      "stride_primary": "S",
+      "goals": [
+        "Deception"
+      ],
+      "tier": "T2",
+      "evidence_support": "E3",
+      "severity": 3,
+      "commonly_overlooked": true
+    },
+    {
+      "title": "Track database tampering",
+      "layer": "L3",
+      "asset_ids": [
+        "A3.3",
+        "A3.7"
+      ],
+      "mechanism": "Altering stored tracks or tracker state after solving changes what is reported without touching any measurement.",
+      "stride_primary": "T",
+      "goals": [
+        "Deception",
+        "Displacement"
+      ],
+      "tier": "T2",
+      "evidence_support": "P",
+      "severity": 3,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Induced false verdicts in the cross-check",
+      "layer": "L3",
+      "asset_ids": [
+        "A3.5"
+      ],
+      "mechanism": "Manipulated inputs make the cross-check mark genuine aircraft as inconsistent or accept inconsistent ones, so the integrity indicator becomes unreliable.",
+      "stride_primary": "T",
+      "goals": [
+        "Deception"
+      ],
+      "tier": "T2",
+      "evidence_support": "E0",
+      "severity": 3,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Natural clock faults masking or mimicking a malicious offset",
+      "layer": "L1",
+      "asset_ids": [
+        "A1.5"
+      ],
+      "mechanism": "Radiation, thermal or ageing effects produce genuine drifts that raise the detection thresholds or create plausible cover for a malicious offset.",
+      "stride_primary": "tau",
+      "goals": [
+        "Displacement"
+      ],
+      "tier": "T3",
+      "evidence_support": "E0",
+      "severity": 3,
+      "commonly_overlooked": true
+    },
+    {
+      "title": "Denial of service on the ATM feed",
+      "layer": "L4",
+      "asset_ids": [
+        "A4.5",
+        "A4.6"
+      ],
+      "mechanism": "Flooding or disrupting the delivery path removes or delays surveillance reports at the controller position.",
+      "stride_primary": "D",
+      "goals": [
+        "Denial"
+      ],
+      "tier": "T1c",
+      "evidence_support": "E3",
+      "severity": 3,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Induced nuisance alerts eroding controller trust",
+      "layer": "L4",
+      "asset_ids": [
+        "A4.6"
+      ],
+      "mechanism": "Ghost targets or false integrity flags create spurious conflict alerts and workload, degrading trust in the picture or prompting the controller to switch it off.",
+      "stride_primary": "D",
+      "goals": [
+        "Deception"
+      ],
+      "tier": "T2",
+      "evidence_support": "E1",
+      "severity": 3,
+      "commonly_overlooked": true
+    },
+    {
+      "title": "Social engineering of operator staff",
+      "layer": "L4",
+      "asset_ids": [
+        "A4.7"
+      ],
+      "mechanism": "Deceiving personnel yields credentials or approvals for configuration or access changes, giving a low-cost entry to L3 and L4.",
+      "stride_primary": "S",
+      "goals": [
+        "Disclosure",
+        "Displacement"
+      ],
+      "tier": "T1c",
+      "evidence_support": "E3",
+      "severity": 3,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Audit-log tampering and attribution loss",
+      "layer": "L4",
+      "asset_ids": [
+        "A4.8",
+        "A4.3"
+      ],
+      "mechanism": "Removing or altering logs and key-use records prevents attribution of configuration or key misuse and delays detection of other threats. This acts as an enabler.",
+      "stride_primary": "R",
+      "goals": [],
+      "tier": "T2",
+      "evidence_support": "E3",
+      "severity": 3,
+      "commonly_overlooked": true
+    },
+    {
+      "title": "Compromise of ground-station modem firmware",
+      "layer": "L1",
+      "asset_ids": [
+        "A1.7"
+      ],
+      "mechanism": "Modified modem or antenna-controller firmware can drop, alter or leak traffic at the satellite-ground boundary.",
+      "stride_primary": "T",
+      "goals": [
+        "Denial",
+        "Displacement"
+      ],
+      "tier": "T3",
+      "evidence_support": "P",
+      "severity": 3,
+      "commonly_overlooked": true
+    },
+    {
+      "title": "Disclosure of precise ephemerides and ephemeris data",
+      "layer": "L4",
+      "asset_ids": [
+        "A4.2",
+        "A3.2"
+      ],
+      "mechanism": "Leakage of precise satellite states lets an adversary calculate observable signal geometry for later emitter-side deception. This is a precondition for other threats.",
+      "stride_primary": "I",
+      "goals": [
+        "Disclosure"
+      ],
+      "tier": "T1p",
+      "evidence_support": "E0",
+      "severity": 2,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Eavesdropping on downlink revealing system health",
+      "layer": "L2",
+      "asset_ids": [
+        "A2.4",
+        "A2.1"
+      ],
+      "mechanism": "Observing unencrypted report traffic exposes clock-quality metadata and coverage, which helps an adversary choose timing and region of attack.",
+      "stride_primary": "I",
+      "goals": [
+        "Disclosure"
+      ],
+      "tier": "T1c",
+      "evidence_support": "E1",
+      "severity": 2,
+      "commonly_overlooked": true
+    },
+    {
+      "title": "Replay of stale reports over the backhaul",
+      "layer": "L2",
+      "asset_ids": [
+        "A2.4"
+      ],
+      "mechanism": "Re-injecting earlier valid reports into the ground network can corrupt association or the track, if freshness is not enforced.",
+      "stride_primary": "T",
+      "goals": [
+        "Deception"
+      ],
+      "tier": "T2",
+      "evidence_support": "E0",
+      "severity": 2,
+      "commonly_overlooked": false
+    }
+  ],
+  "architecture_weaknesses": [
+    "Unauthenticated ADS-B and observables (W4): authentication cannot remove time-offset threats, since the authentication-invariance test shows the temporal class survives sound cryptography.",
+    "W2 assumes a single-satellite bias. Coordinated multi-satellite or common-mode biases and combinations with ephemeris error are not covered by the stated detection guarantee.",
+    "W3 concedes an undetectable window in weak geometry, but the design offers no mitigation, such as geometry-dependent degradation of the integrity indicator or suppression of output.",
+    "W1 rests on a literature step size, possibly from analogue evidence. Ramps, smaller steps or other sizes may escape checks, and the fixed h* depends on one assumed step.",
+    "The cross-check relies on the unauthenticated ADS-B self-report and a single integrity indicator, so both its input and its output are single points of failure.",
+    "Governance (L4) can set thresholds, ephemeris, keys and configuration through channel C across a single TB3 boundary, concentrating risk in insiders, the key store and the operations network.",
+    "Onboard time depends on only two inputs, GNSS and PTP, with no independent third reference or ground truth to detect a common failure or coordinated manipulation of both.",
+    "The fixed e_req = 350 m and h* treat the ephemeris error budget and natural clock faults as separate from the adversary, so misattribution and cover for attacks are not modelled."
+  ],
+  "overall": "The timing dependency is the central risk: authentication does not remove it, and the stated detection assumptions W1 to W3 are optimistic. Governance and insider paths can silently weaken checks, and the cross-check shares failure modes with the data it verifies. Priorities are independent time references, multi-fault integrity tests and hardened L4 controls."
+}

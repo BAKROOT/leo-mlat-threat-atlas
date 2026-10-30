@@ -1,0 +1,524 @@
+{
+  "meta": {
+    "model_self_report": "OpenAI ChatGPT (GPT-4.1)",
+    "prompt_id": "B3",
+    "n_ratings": 12
+  },
+  "ratings": [
+    {
+      "id": "T3.01",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L3",
+      "asset_ids": [
+        "A3.1",
+        "A3.3"
+      ],
+      "trust_boundary": [
+        "TB2"
+      ],
+      "stride_primary": "T",
+      "stride_secondary": [
+        "D"
+      ],
+      "goals": [
+        "Displacement",
+        "Denial",
+        "Deception"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC6",
+        "AC7"
+      ],
+      "tier": "T2",
+      "evidence": "P",
+      "analogue_only": false,
+      "unknown_sources": [],
+      "D": 4,
+      "R": 1,
+      "E": 3,
+      "A": 4,
+      "Di_strong": 3,
+      "Di_weak": 3,
+      "confidence": 3,
+      "rationale": "Association tampering is valid central L3 software threat; no published mechanism. It can create, merge or lose tracks, giving deception, denial or displacement. Ground/insider access T2; P evidence lowers reproducibility.",
+      "issue": "No published mechanism; three outcomes make damage ambiguous."
+    },
+    {
+      "id": "T3.02",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L3",
+      "asset_ids": [
+        "A3.4",
+        "A3.5"
+      ],
+      "trust_boundary": [
+        "TB2",
+        "TB3"
+      ],
+      "stride_primary": "T",
+      "stride_secondary": [],
+      "goals": [
+        "Displacement",
+        "Deception"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC6",
+        "AC7"
+      ],
+      "tier": "T2",
+      "evidence": "P",
+      "analogue_only": false,
+      "unknown_sources": [],
+      "D": 5,
+      "R": 1,
+      "E": 3,
+      "A": 4,
+      "Di_strong": 5,
+      "Di_weak": 5,
+      "confidence": 3,
+      "rationale": "Altering integrity logic can mask bias or false-flag tracks; central check compromise makes detection unlikely. No cited mechanism, so P. Ground/insider T2; damage scored as possible displacement.",
+      "issue": "Includes monitor and cross-check; could be split; no cited mechanism."
+    },
+    {
+      "id": "T3.03",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L3",
+      "asset_ids": [
+        "A3.2",
+        "A3.3"
+      ],
+      "trust_boundary": [
+        "TB3"
+      ],
+      "stride_primary": "T",
+      "stride_secondary": [
+        "tau"
+      ],
+      "goals": [
+        "Displacement",
+        "Deception"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC6",
+        "AC7"
+      ],
+      "tier": "T2",
+      "evidence": "P",
+      "analogue_only": false,
+      "unknown_sources": [],
+      "D": 5,
+      "R": 1,
+      "E": 3,
+      "A": 4,
+      "Di_strong": 3,
+      "Di_weak": 5,
+      "confidence": 3,
+      "rationale": "Corrupt ephemeris/clock-state store is valid tampering that injects timing-like bias into solver; if unflagged it displaces targets. P evidence; insider/ground T2. Strong-pass checks may catch, weak-pass stealth.",
+      "issue": "Assets include solver although attack is on database; overlaps timing-bias threats."
+    },
+    {
+      "id": "T3.04",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L3",
+      "asset_ids": [
+        "A3.3"
+      ],
+      "trust_boundary": [
+        "TB2",
+        "TB3"
+      ],
+      "stride_primary": "T",
+      "stride_secondary": [],
+      "goals": [
+        "Displacement"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC6",
+        "AC7"
+      ],
+      "tier": "T2",
+      "evidence": "P",
+      "analogue_only": false,
+      "unknown_sources": [],
+      "D": 5,
+      "R": 1,
+      "E": 3,
+      "A": 4,
+      "Di_strong": 3,
+      "Di_weak": 5,
+      "confidence": 3,
+      "rationale": "Post-association observable tampering is distinct data-integrity threat inside solver; can bias positions. No published mechanism. Process access implies T2. Detection possible at L3 in strong pass but weak-pass stealth.",
+      "issue": "Overlaps T3.03 as solver-input tampering; process access boundary unclear."
+    },
+    {
+      "id": "T3.05",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L3",
+      "asset_ids": [
+        "A3.3"
+      ],
+      "trust_boundary": [
+        "TB2"
+      ],
+      "stride_primary": "D",
+      "stride_secondary": [],
+      "goals": [
+        "Denial"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC2"
+      ],
+      "tier": "T1c",
+      "evidence": "E1",
+      "analogue_only": false,
+      "unknown_sources": [
+        65
+      ],
+      "D": 3,
+      "R": 3,
+      "E": 4,
+      "A": 4,
+      "Di_strong": 3,
+      "Di_weak": 3,
+      "confidence": 3,
+      "rationale": "Resource exhaustion of solver/tracker has denial consequence; plausible via message flooding. Cited talk is not peer-reviewed/unknown, so conservative E1. T1c RF emitter; central effect regional.",
+      "issue": "Source #65 not peer-reviewed and unassessed; DoS may be enabler."
+    },
+    {
+      "id": "T3.06",
+      "validity": "valid",
+      "related_id": "T3.02",
+      "layer": "L3",
+      "asset_ids": [
+        "A3.4",
+        "A3.5",
+        "A4.4"
+      ],
+      "trust_boundary": [
+        "TB3"
+      ],
+      "stride_primary": "T",
+      "stride_secondary": [],
+      "goals": [],
+      "is_enabler": true,
+      "adversary_class": [
+        "AC6",
+        "AC7"
+      ],
+      "tier": "T2",
+      "evidence": "P",
+      "analogue_only": false,
+      "unknown_sources": [],
+      "D": null,
+      "R": 1,
+      "E": 3,
+      "A": 4,
+      "Di_strong": 4,
+      "Di_weak": 4,
+      "confidence": 3,
+      "rationale": "Raising integrity thresholds does not itself alter a report; it widens stealth window, so enabler. No mechanism cited. Overlaps logic tampering; configuration access T2.",
+      "issue": "Likely enabler; authors may overstate direct damage; overlaps T3.02."
+    },
+    {
+      "id": "T3.07",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L3",
+      "asset_ids": [
+        "A3.5",
+        "A3.3"
+      ],
+      "trust_boundary": [
+        "TB0"
+      ],
+      "stride_primary": "S",
+      "stride_secondary": [
+        "T"
+      ],
+      "goals": [
+        "Displacement",
+        "Deception"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC3"
+      ],
+      "tier": "T2",
+      "evidence": "E2",
+      "analogue_only": true,
+      "unknown_sources": [
+        20
+      ],
+      "D": 5,
+      "R": 3,
+      "E": 3,
+      "A": 3,
+      "Di_strong": 5,
+      "Di_weak": 5,
+      "confidence": 3,
+      "rationale": "Synchronised emitters corrupt both independent positions, bypassing cross-check and yielding verified false track. Peer-reviewed but analogue terrestrial evidence; T2. No L3 check catches consistent spoof.",
+      "issue": "Layer/asset scoping weak: physical emitters are L1/TB0; evidence analogue."
+    },
+    {
+      "id": "T3.08",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L3",
+      "asset_ids": [
+        "A3.5"
+      ],
+      "trust_boundary": [
+        "TB0"
+      ],
+      "stride_primary": "S",
+      "stride_secondary": [
+        "T"
+      ],
+      "goals": [
+        "Deception"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC2"
+      ],
+      "tier": "T1c",
+      "evidence": "E2",
+      "analogue_only": true,
+      "unknown_sources": [],
+      "D": 4,
+      "R": 3,
+      "E": 4,
+      "A": 1,
+      "Di_strong": 3,
+      "Di_weak": 3,
+      "confidence": 3,
+      "rationale": "Perturbing one position of an honest aircraft creates false discrepancy and discredits it; deception not displacement. Evidence analogue; local RF emitter T1c. Cross-check detects discrepancy at L3 but misattributes.",
+      "issue": "Perturbing one position is closer to spoofing than L3 tampering; evidence analogue."
+    },
+    {
+      "id": "T3.09",
+      "validity": "valid",
+      "related_id": "T3.12",
+      "layer": "L3",
+      "asset_ids": [
+        "A3.6"
+      ],
+      "trust_boundary": [
+        "TB3"
+      ],
+      "stride_primary": "T",
+      "stride_secondary": [
+        "S"
+      ],
+      "goals": [
+        "Displacement",
+        "Deception"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC6",
+        "AC7"
+      ],
+      "tier": "T2",
+      "evidence": "P",
+      "analogue_only": false,
+      "unknown_sources": [],
+      "D": 5,
+      "R": 1,
+      "E": 3,
+      "A": 5,
+      "Di_strong": 5,
+      "Di_weak": 5,
+      "confidence": 3,
+      "rationale": "Encoder/gateway tampering sits downstream of detection and can alter position or integrity annotation. No cited mechanism; ground/insider T2. Platform compromise may subsume it.",
+      "issue": "No cited mechanism; overlaps platform compromise T3.12."
+    },
+    {
+      "id": "T3.10",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L3",
+      "asset_ids": [
+        "A3.3",
+        "A3.6",
+        "A3.7"
+      ],
+      "trust_boundary": [
+        "TB3"
+      ],
+      "stride_primary": "I",
+      "stride_secondary": [],
+      "goals": [
+        "Disclosure"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC6",
+        "AC7"
+      ],
+      "tier": "T2",
+      "evidence": "P",
+      "analogue_only": false,
+      "unknown_sources": [],
+      "D": 1,
+      "R": 1,
+      "E": 3,
+      "A": 5,
+      "Di_strong": 4,
+      "Di_weak": 4,
+      "confidence": 3,
+      "rationale": "Disclosure of tracks is a valid information threat with disclosure-only damage; not enabler. Asset scoping is poor: track stores/logs extend beyond A3.6. No published mechanism.",
+      "issue": "Asset mis-scoped: track database/logs are A3.3/A3.7/A4.5, not only A3.6."
+    },
+    {
+      "id": "T3.11",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L3",
+      "asset_ids": [
+        "A3.3",
+        "A3.7",
+        "A4.8"
+      ],
+      "trust_boundary": [
+        "TB3"
+      ],
+      "stride_primary": "R",
+      "stride_secondary": [
+        "T"
+      ],
+      "goals": [],
+      "is_enabler": true,
+      "adversary_class": [
+        "AC6",
+        "AC7"
+      ],
+      "tier": "T2",
+      "evidence": "E1",
+      "analogue_only": false,
+      "unknown_sources": [
+        65
+      ],
+      "D": null,
+      "R": 3,
+      "E": 3,
+      "A": 4,
+      "Di_strong": 4,
+      "Di_weak": 4,
+      "confidence": 3,
+      "rationale": "Log suppression only impedes attribution; no direct target-report consequence, so enabler. Asset likely platform/log store rather than A3.3. Cited talk unknown; conservative E1.",
+      "issue": "Enabler only; log store likely A3.7/A4.8 rather than A3.3."
+    },
+    {
+      "id": "T3.12",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L3",
+      "asset_ids": [
+        "A3.7"
+      ],
+      "trust_boundary": [
+        "TB2",
+        "TB3"
+      ],
+      "stride_primary": "E",
+      "stride_secondary": [
+        "T"
+      ],
+      "goals": [
+        "Displacement",
+        "Denial",
+        "Deception",
+        "Disclosure"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC6",
+        "AC7"
+      ],
+      "tier": "T2",
+      "evidence": "E1",
+      "analogue_only": false,
+      "unknown_sources": [
+        65
+      ],
+      "D": 5,
+      "R": 3,
+      "E": 3,
+      "A": 5,
+      "Di_strong": 5,
+      "Di_weak": 5,
+      "confidence": 3,
+      "rationale": "CPS platform compromise gives control of all L3 modules; broad but valid. Cited talk unknown, conservative E1. T2 ground/insider; no L3 check survives, whole-constellation impact.",
+      "issue": "Broad threat subsumes T3.01-T3.09; source unassessed."
+    }
+  ],
+  "batch_comments": {
+    "missing_threats": [
+      {
+        "title": "Ephemeris poisoning via orbit-determination feed",
+        "layer": "L4",
+        "asset_ids": [
+          "A4.2",
+          "A3.2"
+        ],
+        "why": "T3.03 covers direct store write but not compromised L4 ephemeris product supply."
+      },
+      {
+        "title": "PTP and synchronisation policy manipulation",
+        "layer": "L4",
+        "asset_ids": [
+          "A4.1",
+          "A2.3",
+          "A1.5"
+        ],
+        "why": "Governance can bias clock/time transfer, bypassing L3 module tampering."
+      },
+      {
+        "title": "Telecommand or ground-station compromise",
+        "layer": "L2",
+        "asset_ids": [
+          "A1.7",
+          "A2.5"
+        ],
+        "why": "Commands and updates to payload/platform are a path to L1/L2 control absent here."
+      },
+      {
+        "title": "ATM feed injection or replay",
+        "layer": "L4",
+        "asset_ids": [
+          "A4.5",
+          "A4.6"
+        ],
+        "why": "Output tampering beyond ASTERIX encoder, at delivery/ATM interface, not covered."
+      },
+      {
+        "title": "ADS-B spoofing of honest aircraft",
+        "layer": "L1",
+        "asset_ids": [
+          "A1.1",
+          "A3.5"
+        ],
+        "why": "T3.08 assumes perturbation but no dedicated air-interface spoofing record."
+      }
+    ],
+    "rubric_ambiguities": [
+      "Di_strong/Di_weak are defined via clock-bias STRONG/WEAK passes but applied to software/data threats where W2/W3 do not apply.",
+      "Enabler versus direct threat for threshold relaxation: no target-report consequence alone, but intent is to enable displacement.",
+      "Trust-boundary field unclear when asset register says none but attack requires platform/process access.",
+      "Evidence level for non-peer-reviewed attack-evidence talks; unknown sources force conservative P/E1.",
+      "Damage score when a threat lists multiple goals; rubric says consequence class but not max versus primary."
+    ],
+    "overall": "Batch is mostly plausible L3 software/data-integrity threats, but evidence is weak and several records are broad or overlapping. T3.06 and T3.11 are enablers; T3.12 subsumes module-level tampering. Asset scoping and layer/trust-boundary assignments need tightening."
+  }
+}

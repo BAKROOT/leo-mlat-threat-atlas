@@ -1,0 +1,639 @@
+{
+  "meta": {
+    "model_self_report": "OpenAI GPT-4.1",
+    "prompt_id": "B1",
+    "n_ratings": 16
+  },
+  "ratings": [
+    {
+      "id": "T1.01",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L1",
+      "asset_ids": [
+        "A1.1",
+        "A1.4"
+      ],
+      "trust_boundary": [
+        "TB0"
+      ],
+      "stride_primary": "S",
+      "stride_secondary": [],
+      "goals": [
+        "Deception"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC2"
+      ],
+      "tier": "T1p",
+      "evidence": "E2",
+      "analogue_only": false,
+      "unknown_sources": [],
+      "D": 4,
+      "R": 4,
+      "E": 5,
+      "A": 3,
+      "Di_strong": 3,
+      "Di_weak": 3,
+      "confidence": 4,
+      "rationale": "Unauthenticated ADS-B content permits fabricated tracks; LEO reception alone does not authenticate. Cross-check/MLAT may expose inconsistency at L3. Evidence supports ADS-B spoofing generally.",
+      "issue": "Acts on A1.1 but attacker emitter is not a registered asset; cross-check limits deception."
+    },
+    {
+      "id": "T1.02",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L1",
+      "asset_ids": [
+        "A1.1",
+        "A1.4"
+      ],
+      "trust_boundary": [
+        "TB0"
+      ],
+      "stride_primary": "S",
+      "stride_secondary": [],
+      "goals": [
+        "Deception"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC2"
+      ],
+      "tier": "T1p",
+      "evidence": "E2",
+      "analogue_only": true,
+      "unknown_sources": [],
+      "D": 4,
+      "R": 3,
+      "E": 5,
+      "A": 3,
+      "Di_strong": 3,
+      "Di_weak": 3,
+      "confidence": 3,
+      "rationale": "Replay spoofs stale/displaced ADS-B content; MLAT localization and cross-check can detect position/time inconsistency. Evidence is terrestrial ADS-B, so analogue downgrade.",
+      "issue": "Replay may be exposed by MLAT position/time consistency; evidence is terrestrial, not LEO MLAT."
+    },
+    {
+      "id": "T1.03",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L1",
+      "asset_ids": [
+        "A1.1"
+      ],
+      "trust_boundary": [
+        "TB0"
+      ],
+      "stride_primary": "S",
+      "stride_secondary": [],
+      "goals": [
+        "Deception"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC1"
+      ],
+      "tier": "T1p",
+      "evidence": "E3",
+      "analogue_only": true,
+      "unknown_sources": [
+        72,
+        56
+      ],
+      "D": 4,
+      "R": 4,
+      "E": 5,
+      "A": 1,
+      "Di_strong": 3,
+      "Di_weak": 3,
+      "confidence": 4,
+      "rationale": "Aircraft-origin false position is spoofing of the self-report; E-MLAT/ADS-B cross-check is the designed detector. Documented incidents support evidence but are not LEO MLAT.",
+      "issue": "Only cross-check can detect; successful masking is integrity deception, not displacement."
+    },
+    {
+      "id": "T1.04",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L1",
+      "asset_ids": [
+        "A1.3"
+      ],
+      "trust_boundary": [
+        "TB0"
+      ],
+      "stride_primary": "D",
+      "stride_secondary": [],
+      "goals": [
+        "Denial"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC2"
+      ],
+      "tier": "T1p",
+      "evidence": "E2",
+      "analogue_only": true,
+      "unknown_sources": [],
+      "D": 3,
+      "R": 3,
+      "E": 5,
+      "A": 3,
+      "Di_strong": 1,
+      "Di_weak": 1,
+      "confidence": 4,
+      "rationale": "In-band jamming raises noise floor and denies reception over a footprint. Detection is expected at RF/front-end level. Evidence is terrestrial ADS-B, so analogue downgrade.",
+      "issue": "Jamming is denial, not spoofing; footprint-wide scope is assumed."
+    },
+    {
+      "id": "T1.05",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L1",
+      "asset_ids": [
+        "A1.1",
+        "A1.4"
+      ],
+      "trust_boundary": [
+        "TB0"
+      ],
+      "stride_primary": "S",
+      "stride_secondary": [],
+      "goals": [
+        "Deception"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC3"
+      ],
+      "tier": "T2",
+      "evidence": "E2",
+      "analogue_only": true,
+      "unknown_sources": [
+        20
+      ],
+      "D": 4,
+      "R": 3,
+      "E": 3,
+      "A": 3,
+      "Di_strong": 4,
+      "Di_weak": 5,
+      "confidence": 3,
+      "rationale": "Synchronised emitters can synthesize consistent TDOA for a ghost target; AOA may separate them depending on geometry. Evidence is terrestrial multilateration, so analogue downgrade.",
+      "issue": "Overlaps ghost-target concept; detectability depends on AOA geometry and pass."
+    },
+    {
+      "id": "T1.06",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L1",
+      "asset_ids": [
+        "A1.1",
+        "A1.4"
+      ],
+      "trust_boundary": [
+        "TB0"
+      ],
+      "stride_primary": "S",
+      "stride_secondary": [],
+      "goals": [
+        "Displacement"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC3"
+      ],
+      "tier": "T2",
+      "evidence": "E2",
+      "analogue_only": true,
+      "unknown_sources": [
+        20
+      ],
+      "D": 5,
+      "R": 3,
+      "E": 3,
+      "A": 1,
+      "Di_strong": 4,
+      "Di_weak": 5,
+      "confidence": 3,
+      "rationale": "Synchronised emitters overshadowing a real aircraft can displace a genuine track; goal is displacement. Evidence is terrestrial multilateration; LEO feasibility remains uncertain.",
+      "issue": "Distinct from T1.05 by displacement goal; multi-emitter feasibility in LEO unproven."
+    },
+    {
+      "id": "T1.07",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L1",
+      "asset_ids": [
+        "A1.3"
+      ],
+      "trust_boundary": [
+        "TB0"
+      ],
+      "stride_primary": "D",
+      "stride_secondary": [],
+      "goals": [
+        "Denial"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC2"
+      ],
+      "tier": "T1p",
+      "evidence": "E2",
+      "analogue_only": true,
+      "unknown_sources": [],
+      "D": 2,
+      "R": 3,
+      "E": 5,
+      "A": 1,
+      "Di_strong": 1,
+      "Di_weak": 1,
+      "confidence": 3,
+      "rationale": "Targeted suppression denies chosen aircraft while leaving others; impact is local denial. Detection at RF/reception level. Evidence is analogue to terrestrial/aviation systems.",
+      "issue": "Selective nulling against LEO payload not evidenced; denial scope narrow."
+    },
+    {
+      "id": "T1.08",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L1",
+      "asset_ids": [
+        "A1.4"
+      ],
+      "trust_boundary": [
+        "TB0",
+        "TB1"
+      ],
+      "stride_primary": "D",
+      "stride_secondary": [],
+      "goals": [
+        "Denial"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC2"
+      ],
+      "tier": "T1p",
+      "evidence": "E1",
+      "analogue_only": true,
+      "unknown_sources": [],
+      "D": 3,
+      "R": 2,
+      "E": 5,
+      "A": 3,
+      "Di_strong": 1,
+      "Di_weak": 1,
+      "confidence": 3,
+      "rationale": "High-rate 1090 MHz traffic can saturate payload decode chain, causing footprint denial. Evidence is LEO-network DoS, not 1090 MHz payload flooding; analogue downgrade.",
+      "issue": "Evidence is LEO-network DoS, not 1090 MHz payload flooding."
+    },
+    {
+      "id": "T1.09",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L1",
+      "asset_ids": [
+        "A1.4"
+      ],
+      "trust_boundary": [
+        "TB0",
+        "TB1"
+      ],
+      "stride_primary": "T",
+      "stride_secondary": [],
+      "goals": [
+        "Displacement"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC2"
+      ],
+      "tier": "T1c",
+      "evidence": "E1",
+      "analogue_only": true,
+      "unknown_sources": [],
+      "D": 5,
+      "R": 2,
+      "E": 4,
+      "A": 1,
+      "Di_strong": 3,
+      "Di_weak": 5,
+      "confidence": 3,
+      "rationale": "Biasing TOA/FOA/AOA modifies genuine observables before stamping, causing position error with nominal integrity. Strong pass may detect large single-satellite bias; weak pass has stealth window.",
+      "issue": "TOA/FOA/AOA bias overlaps timing and RF spoofing; evidence not from LEO MLAT."
+    },
+    {
+      "id": "T1.10",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L1",
+      "asset_ids": [
+        "A1.2",
+        "A1.5"
+      ],
+      "trust_boundary": [
+        "TB0",
+        "TB1"
+      ],
+      "stride_primary": "D",
+      "stride_secondary": [
+        "tau"
+      ],
+      "goals": [
+        "Denial"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC2"
+      ],
+      "tier": "T1p",
+      "evidence": "E3",
+      "analogue_only": true,
+      "unknown_sources": [
+        22
+      ],
+      "D": 3,
+      "R": 4,
+      "E": 5,
+      "A": 2,
+      "Di_strong": 1,
+      "Di_weak": 1,
+      "confidence": 3,
+      "rationale": "GNSS jamming denies the disciplining input, forcing holdover and degrading timing quality; later drift can bias observables. Detection is at GNSS receiver/L1. Evidence is aviation analogue.",
+      "issue": "Immediate effect is input loss; drift consequence depends on holdover, so partly enabler."
+    },
+    {
+      "id": "T1.11",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L1",
+      "asset_ids": [
+        "A1.2",
+        "A1.5"
+      ],
+      "trust_boundary": [
+        "TB0",
+        "TB1"
+      ],
+      "stride_primary": "tau",
+      "stride_secondary": [
+        "S"
+      ],
+      "goals": [
+        "Displacement"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC4"
+      ],
+      "tier": "T2",
+      "evidence": "E2",
+      "analogue_only": true,
+      "unknown_sources": [
+        57
+      ],
+      "D": 5,
+      "R": 3,
+      "E": 3,
+      "A": 3,
+      "Di_strong": 3,
+      "Di_weak": 5,
+      "confidence": 4,
+      "rationale": "Counterfeit GNSS pulls the GNSS-disciplined clock, biasing every stamped observable while reports remain authentic. Strong pass detects large single-satellite bias; weak pass has stealth window.",
+      "issue": "Assumes covert 100 ns step escapes L1 checks; satellite GNSS spoofing not directly evidenced."
+    },
+    {
+      "id": "T1.12",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L1",
+      "asset_ids": [
+        "A1.6"
+      ],
+      "trust_boundary": [
+        "TB1"
+      ],
+      "stride_primary": "E",
+      "stride_secondary": [],
+      "goals": [],
+      "is_enabler": true,
+      "adversary_class": [
+        "AC5"
+      ],
+      "tier": "T2",
+      "evidence": "E2",
+      "analogue_only": false,
+      "unknown_sources": [
+        67
+      ],
+      "D": null,
+      "R": 4,
+      "E": 3,
+      "A": 3,
+      "Di_strong": 2,
+      "Di_weak": 2,
+      "confidence": 3,
+      "rationale": "Weak command authentication enables unauthorised bus/payload control but has no direct target-report consequence. It is an enabler for timing or observable manipulation.",
+      "issue": "Enabler only; hosted-asset edges inferred and not fully supported."
+    },
+    {
+      "id": "T1.13",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L1",
+      "asset_ids": [
+        "A1.6"
+      ],
+      "trust_boundary": [
+        "TB1"
+      ],
+      "stride_primary": "E",
+      "stride_secondary": [],
+      "goals": [],
+      "is_enabler": true,
+      "adversary_class": [
+        "AC5"
+      ],
+      "tier": "T2",
+      "evidence": "E2",
+      "analogue_only": false,
+      "unknown_sources": [
+        65
+      ],
+      "D": null,
+      "R": 4,
+      "E": 3,
+      "A": 3,
+      "Di_strong": 2,
+      "Di_weak": 2,
+      "confidence": 3,
+      "rationale": "Memory-safety exploitation can yield platform control, but by itself does not alter a target report. It is an enabler for later payload/clock compromise.",
+      "issue": "Enabler; no direct target-report consequence until chained."
+    },
+    {
+      "id": "T1.14",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L1",
+      "asset_ids": [
+        "A1.6"
+      ],
+      "trust_boundary": [
+        "TB1"
+      ],
+      "stride_primary": "E",
+      "stride_secondary": [
+        "T"
+      ],
+      "goals": [],
+      "is_enabler": true,
+      "adversary_class": [
+        "AC5"
+      ],
+      "tier": "T2",
+      "evidence": "E2",
+      "analogue_only": true,
+      "unknown_sources": [
+        64
+      ],
+      "D": null,
+      "R": 3,
+      "E": 3,
+      "A": 3,
+      "Di_strong": 2,
+      "Di_weak": 2,
+      "confidence": 3,
+      "rationale": "Firmware alteration or secure-boot bypass gives persistent platform control but no direct target-report effect. It enables later manipulation. Starlink terminal evidence is analogue.",
+      "issue": "Enabler; Starlink terminal evidence is analogue; update path not LEO-MLAT specific."
+    },
+    {
+      "id": "T1.15",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L1",
+      "asset_ids": [
+        "A1.7"
+      ],
+      "trust_boundary": [
+        "TB2"
+      ],
+      "stride_primary": "E",
+      "stride_secondary": [
+        "D"
+      ],
+      "goals": [
+        "Denial"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC6"
+      ],
+      "tier": "T2",
+      "evidence": "E2",
+      "analogue_only": true,
+      "unknown_sources": [],
+      "D": 3,
+      "R": 3,
+      "E": 3,
+      "A": 3,
+      "Di_strong": 2,
+      "Di_weak": 2,
+      "confidence": 3,
+      "rationale": "Remote terminal compromise can disrupt ground-station reception or command path, causing denial. Evidence is SATCOM-terminal analogue. Detection likely at L2 management/log level.",
+      "issue": "SATCOM terminal evidence is analogue; ground-station scope may overlap L2."
+    },
+    {
+      "id": "T1.16",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L1",
+      "asset_ids": [
+        "A1.7"
+      ],
+      "trust_boundary": [
+        "TB2"
+      ],
+      "stride_primary": "D",
+      "stride_secondary": [],
+      "goals": [
+        "Denial"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC2"
+      ],
+      "tier": "T1p",
+      "evidence": "E1",
+      "analogue_only": true,
+      "unknown_sources": [
+        21
+      ],
+      "D": 3,
+      "R": 2,
+      "E": 5,
+      "A": 3,
+      "Di_strong": 1,
+      "Di_weak": 1,
+      "confidence": 3,
+      "rationale": "RF interference or resource exhaustion at a ground station blocks downlink/telecommand, causing regional denial. Evidence is LEO-network DoS analogue; detection at ground-station level.",
+      "issue": "RF and resource-exhaustion mechanisms are conflated; evidence is LEO-network DoS."
+    }
+  ],
+  "batch_comments": {
+    "missing_threats": [
+      {
+        "title": "PTP time-transfer spoofing",
+        "layer": "L2",
+        "asset_ids": [
+          "A2.3"
+        ],
+        "why": "Direct timing-bias path not covered; T1.10/T1.11 are GNSS/onboard only."
+      },
+      {
+        "title": "Inter-satellite link report tampering",
+        "layer": "L2",
+        "asset_ids": [
+          "A2.1",
+          "A2.2"
+        ],
+        "why": "No L2 threat for crosslink modification or replay toward the CPS."
+      },
+      {
+        "title": "Ephemeris database poisoning",
+        "layer": "L3",
+        "asset_ids": [
+          "A3.2"
+        ],
+        "why": "L3 ephemeris corruption absent; directly biases the solver."
+      },
+      {
+        "title": "ASTERIX integrity annotation tampering",
+        "layer": "L3",
+        "asset_ids": [
+          "A3.6",
+          "A4.5"
+        ],
+        "why": "No threat to encoded integrity verdict or feed to ATM."
+      },
+      {
+        "title": "Insider threshold manipulation",
+        "layer": "L4",
+        "asset_ids": [
+          "A4.1",
+          "A4.4"
+        ],
+        "why": "Governance back-channel not covered; can widen the stealth window."
+      }
+    ],
+    "rubric_ambiguities": [
+      "Di_strong/Di_weak are undefined for non-timing threats; I used judgement or same value.",
+      "Damage for enablers with denial effects is unclear; I followed D null for enablers.",
+      "Analogue_only interpretation for terrestrial ADS-B/GNSS evidence against LEO MLAT is ambiguous.",
+      "A extent for satellite footprint versus aircraft count is uncertain.",
+      "Distinguishing T1.05 ghost and T1.06 takeover depends on intent."
+    ],
+    "overall": "The batch covers L1 well but is thin on L2-L4. Many enablers and analogue evidence reduce confidence. T1.08 and T1.16 conflate mechanisms; T1.05/T1.06 overlap. Timing threats depend heavily on assumptions W1-W3."
+  }
+}

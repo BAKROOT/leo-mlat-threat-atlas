@@ -1,0 +1,873 @@
+{
+  "meta": {
+    "model_self_report": "OpenAI GPT-6",
+    "prompt_id": "A",
+    "n_threats": 38
+  },
+  "threats": [
+    {
+      "title": "Undetected onboard clock bias",
+      "layer": "L1",
+      "asset_ids": [
+        "A1.5",
+        "A1.2",
+        "A2.1"
+      ],
+      "mechanism": "GNSS or clock-disciplining faults introduce measurement timestamp errors that propagate into localisation, potentially exceeding horizontal accuracy requirements without triggering integrity alarms.",
+      "stride_primary": "tau",
+      "goals": [
+        "Displacement",
+        "Deception"
+      ],
+      "tier": "T2",
+      "evidence_support": "E1",
+      "severity": 5,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Forged or misleading aircraft reports",
+      "layer": "L1",
+      "asset_ids": [
+        "A1.1",
+        "A2.1"
+      ],
+      "mechanism": "Unauthenticated ADS-B self-reports permit false aircraft identities, positions, or trajectories to enter the observation chain and potentially influence association and integrity decisions.",
+      "stride_primary": "S",
+      "goals": [
+        "Displacement",
+        "Denial",
+        "Deception"
+      ],
+      "tier": "T1p",
+      "evidence_support": "E3",
+      "severity": 5,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Compromised integrity-monitoring logic",
+      "layer": "L3",
+      "asset_ids": [
+        "A3.4",
+        "A3.5",
+        "A3.6"
+      ],
+      "mechanism": "Compromise or manipulation of integrity checks or cross-check logic suppresses discrepancy warnings or generates misleading integrity annotations that propagate to ATM.",
+      "stride_primary": "T",
+      "goals": [
+        "Displacement",
+        "Deception"
+      ],
+      "tier": "T3",
+      "evidence_support": "P",
+      "severity": 5,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Compromised central processing platform",
+      "layer": "L3",
+      "asset_ids": [
+        "A3.7",
+        "A3.1",
+        "A3.2",
+        "A3.3",
+        "A3.4",
+        "A3.5",
+        "A3.6"
+      ],
+      "mechanism": "Host or virtualisation compromise enables manipulation of measurements, reference data, processing logic, integrity verdicts, or report delivery.",
+      "stride_primary": "E",
+      "goals": [
+        "Displacement",
+        "Denial",
+        "Deception",
+        "Disclosure"
+      ],
+      "tier": "T2",
+      "evidence_support": "E3",
+      "severity": 5,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Malicious or compromised software update",
+      "layer": "L4",
+      "asset_ids": [
+        "A4.4",
+        "A2.5",
+        "A1.4",
+        "A1.6",
+        "A3.4",
+        "A3.5"
+      ],
+      "mechanism": "An unauthorised or compromised update introduces malicious firmware, altered thresholds, or weakened validation across payload and ground processing components.",
+      "stride_primary": "T",
+      "goals": [
+        "Displacement",
+        "Denial",
+        "Deception",
+        "Disclosure"
+      ],
+      "tier": "T3x",
+      "evidence_support": "E3",
+      "severity": 5,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Ephemeris corruption causing systematic localisation error",
+      "layer": "L4",
+      "asset_ids": [
+        "A4.2",
+        "A3.2",
+        "A3.3"
+      ],
+      "mechanism": "Incorrect or maliciously modified orbit products distort satellite geometry and measurement predictions, biasing solutions and potentially undermining residual-based integrity checks.",
+      "stride_primary": "T",
+      "goals": [
+        "Displacement",
+        "Denial",
+        "Deception"
+      ],
+      "tier": "T2",
+      "evidence_support": "E1",
+      "severity": 5,
+      "commonly_overlooked": true
+    },
+    {
+      "title": "Integrity-threshold manipulation",
+      "layer": "L4",
+      "asset_ids": [
+        "A4.4",
+        "A4.1",
+        "A3.4",
+        "A3.5"
+      ],
+      "mechanism": "Unauthorised changes to detection thresholds, time-conformance policy, or acceptance criteria cause hazardous solutions to pass or legitimate reports to be rejected.",
+      "stride_primary": "T",
+      "goals": [
+        "Displacement",
+        "Denial",
+        "Deception"
+      ],
+      "tier": "T2",
+      "evidence_support": "P",
+      "severity": 5,
+      "commonly_overlooked": true
+    },
+    {
+      "title": "Telemetry manipulation through link compromise",
+      "layer": "L2",
+      "asset_ids": [
+        "A2.2",
+        "A2.4",
+        "A2.1"
+      ],
+      "mechanism": "Compromised communications alter, inject, reorder, or suppress relayed observations, degrading association, localisation, or the freshness and consistency of measurement sets.",
+      "stride_primary": "T",
+      "goals": [
+        "Displacement",
+        "Denial",
+        "Deception"
+      ],
+      "tier": "T2",
+      "evidence_support": "E1",
+      "severity": 5,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Malicious telecommand execution",
+      "layer": "L2",
+      "asset_ids": [
+        "A2.5",
+        "A1.6",
+        "A1.4",
+        "A1.5"
+      ],
+      "mechanism": "Unauthorised or misused telecommands change payload operation, onboard software, timing configuration, or satellite availability.",
+      "stride_primary": "E",
+      "goals": [
+        "Displacement",
+        "Denial",
+        "Deception"
+      ],
+      "tier": "T3",
+      "evidence_support": "E3",
+      "severity": 5,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Key compromise across mission communications",
+      "layer": "L4",
+      "asset_ids": [
+        "A4.3",
+        "A2.5",
+        "A2.2",
+        "A2.4"
+      ],
+      "mechanism": "Compromised cryptographic keys undermine the authenticity or confidentiality of protected commands and links, enabling further manipulation or disclosure.",
+      "stride_primary": "E",
+      "goals": [
+        "Displacement",
+        "Denial",
+        "Deception",
+        "Disclosure"
+      ],
+      "tier": "T2",
+      "evidence_support": "E3",
+      "severity": 5,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "False aircraft observations from coordinated emitters",
+      "layer": "L1",
+      "asset_ids": [
+        "A1.1",
+        "A1.3",
+        "A1.4",
+        "A2.1"
+      ],
+      "mechanism": "Coordinated unauthenticated emissions produce mutually plausible observations that may be associated as a genuine aircraft or distort an existing track.",
+      "stride_primary": "S",
+      "goals": [
+        "Displacement",
+        "Denial",
+        "Deception"
+      ],
+      "tier": "T2",
+      "evidence_support": "E1",
+      "severity": 5,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "GNSS-dependent timing degradation",
+      "layer": "L1",
+      "asset_ids": [
+        "A1.2",
+        "A1.5",
+        "A1.4"
+      ],
+      "mechanism": "GNSS interference or misleading timing information degrades onboard clock discipline, while insufficient independent timing validation allows biased timestamps to enter observations.",
+      "stride_primary": "tau",
+      "goals": [
+        "Displacement",
+        "Denial",
+        "Deception"
+      ],
+      "tier": "T2",
+      "evidence_support": "E3",
+      "severity": 5,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "PTP time-transfer manipulation",
+      "layer": "L2",
+      "asset_ids": [
+        "A2.3",
+        "A1.5",
+        "A1.4"
+      ],
+      "mechanism": "Compromised or faulty time-transfer sources introduce offsets, asymmetry, or drift into satellite clock discipline, even where individual messages are cryptographically authenticated.",
+      "stride_primary": "tau",
+      "goals": [
+        "Displacement",
+        "Denial",
+        "Deception"
+      ],
+      "tier": "T2",
+      "evidence_support": "E1",
+      "severity": 5,
+      "commonly_overlooked": true
+    },
+    {
+      "title": "Payload measurement extraction compromise",
+      "layer": "L1",
+      "asset_ids": [
+        "A1.4",
+        "A1.3",
+        "A2.1"
+      ],
+      "mechanism": "Faulty or compromised extraction firmware biases decoded fields or TOA, FOA, and AOA measurements, contaminating downstream localisation and integrity assessment.",
+      "stride_primary": "T",
+      "goals": [
+        "Displacement",
+        "Denial",
+        "Deception"
+      ],
+      "tier": "T2",
+      "evidence_support": "E1",
+      "severity": 5,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "RF front-end interference or saturation",
+      "layer": "L1",
+      "asset_ids": [
+        "A1.3",
+        "A1.4",
+        "A2.1"
+      ],
+      "mechanism": "Interference, saturation, or degraded antenna performance reduces reception quality, distorts arrival measurements, or removes observations needed for adequate geometric observability.",
+      "stride_primary": "D",
+      "goals": [
+        "Denial",
+        "Displacement"
+      ],
+      "tier": "T1p",
+      "evidence_support": "E2",
+      "severity": 4,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Satellite platform compromise",
+      "layer": "L1",
+      "asset_ids": [
+        "A1.6",
+        "A1.4",
+        "A1.5",
+        "A2.2"
+      ],
+      "mechanism": "Compromise of flight software or the onboard computer enables payload disruption, measurement alteration, clock manipulation, or interruption of report relay.",
+      "stride_primary": "E",
+      "goals": [
+        "Displacement",
+        "Denial",
+        "Deception",
+        "Disclosure"
+      ],
+      "tier": "T3",
+      "evidence_support": "E1",
+      "severity": 5,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Ground-station command-path compromise",
+      "layer": "L1",
+      "asset_ids": [
+        "A1.7",
+        "A2.5",
+        "A1.6"
+      ],
+      "mechanism": "Compromise of ground-station modems, command infrastructure, or associated interfaces enables unauthorised commands or disrupts command and telemetry availability.",
+      "stride_primary": "E",
+      "goals": [
+        "Denial",
+        "Deception"
+      ],
+      "tier": "T2",
+      "evidence_support": "E1",
+      "severity": 5,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Observable replay or freshness failure",
+      "layer": "L2",
+      "asset_ids": [
+        "A2.1",
+        "A2.2",
+        "A2.4",
+        "A3.1"
+      ],
+      "mechanism": "Replayed, delayed, duplicated, or stale reports are accepted without adequate freshness and sequence validation, corrupting association or presenting outdated aircraft states.",
+      "stride_primary": "T",
+      "goals": [
+        "Displacement",
+        "Denial",
+        "Deception"
+      ],
+      "tier": "T2",
+      "evidence_support": "E1",
+      "severity": 4,
+      "commonly_overlooked": true
+    },
+    {
+      "title": "Measurement association poisoning",
+      "layer": "L3",
+      "asset_ids": [
+        "A3.1",
+        "A2.1",
+        "A3.3"
+      ],
+      "mechanism": "Ambiguous identities, coincident receptions, corrupted metadata, or inconsistent association logic combine observations from different transmissions or split observations of one aircraft.",
+      "stride_primary": "T",
+      "goals": [
+        "Displacement",
+        "Denial",
+        "Deception"
+      ],
+      "tier": "T2",
+      "evidence_support": "E1",
+      "severity": 5,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Solver or tracker state manipulation",
+      "layer": "L3",
+      "asset_ids": [
+        "A3.3",
+        "A3.1",
+        "A3.2"
+      ],
+      "mechanism": "Manipulated solver inputs, compromised tracking state, or faulty estimation logic create incorrect positions, persistent track drift, track swaps, or lost targets.",
+      "stride_primary": "T",
+      "goals": [
+        "Displacement",
+        "Denial",
+        "Deception"
+      ],
+      "tier": "T2",
+      "evidence_support": "E1",
+      "severity": 5,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Integrity-monitor false acceptance",
+      "layer": "L3",
+      "asset_ids": [
+        "A3.4",
+        "A3.3",
+        "A3.5"
+      ],
+      "mechanism": "Correlated errors, inadequate fault hypotheses, model mismatch, or incomplete residual testing permit an unsafe solution to pass as acceptable.",
+      "stride_primary": "T",
+      "goals": [
+        "Displacement",
+        "Deception"
+      ],
+      "tier": "T2",
+      "evidence_support": "E1",
+      "severity": 5,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Integrity-monitor false rejection",
+      "layer": "L3",
+      "asset_ids": [
+        "A3.4",
+        "A3.5",
+        "A3.6"
+      ],
+      "mechanism": "Overly conservative thresholds, faulty consistency assumptions, or manipulated inputs cause valid aircraft solutions to be rejected or labelled untrustworthy.",
+      "stride_primary": "T",
+      "goals": [
+        "Denial",
+        "Deception"
+      ],
+      "tier": "T2",
+      "evidence_support": "E1",
+      "severity": 4,
+      "commonly_overlooked": true
+    },
+    {
+      "title": "Ephemeris or clock-state database tampering",
+      "layer": "L3",
+      "asset_ids": [
+        "A3.2",
+        "A3.3",
+        "A3.4"
+      ],
+      "mechanism": "Unauthorised database modification, stale records, or inconsistent versioning corrupts geometry and clock corrections used by localisation and integrity calculations.",
+      "stride_primary": "T",
+      "goals": [
+        "Displacement",
+        "Denial",
+        "Deception"
+      ],
+      "tier": "T2",
+      "evidence_support": "E1",
+      "severity": 5,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "ASTERIX report alteration or misencoding",
+      "layer": "L3",
+      "asset_ids": [
+        "A3.6",
+        "A4.5",
+        "A4.6"
+      ],
+      "mechanism": "Incorrect or manipulated encoding, field mapping, integrity annotation, or message handling changes the meaning of surveillance reports delivered to ATM.",
+      "stride_primary": "T",
+      "goals": [
+        "Displacement",
+        "Denial",
+        "Deception"
+      ],
+      "tier": "T2",
+      "evidence_support": "E1",
+      "severity": 5,
+      "commonly_overlooked": true
+    },
+    {
+      "title": "Central processing resource exhaustion",
+      "layer": "L3",
+      "asset_ids": [
+        "A3.7",
+        "A3.1",
+        "A3.3",
+        "A3.4",
+        "A3.6"
+      ],
+      "mechanism": "Excessive, malformed, or unusually dense inputs exhaust processing, storage, or network resources and delay or interrupt surveillance outputs.",
+      "stride_primary": "D",
+      "goals": [
+        "Denial"
+      ],
+      "tier": "T2",
+      "evidence_support": "E2",
+      "severity": 4,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Synchronisation policy compromise",
+      "layer": "L4",
+      "asset_ids": [
+        "A4.1",
+        "A1.5",
+        "A2.3"
+      ],
+      "mechanism": "Unauthorised or erroneous time-reference policy changes weaken clock acceptance, consistency checking, or recovery criteria and permit timing faults to propagate.",
+      "stride_primary": "T",
+      "goals": [
+        "Displacement",
+        "Denial",
+        "Deception"
+      ],
+      "tier": "T2",
+      "evidence_support": "P",
+      "severity": 5,
+      "commonly_overlooked": true
+    },
+    {
+      "title": "Orbit-determination service compromise",
+      "layer": "L4",
+      "asset_ids": [
+        "A4.2",
+        "A3.2",
+        "A4.8"
+      ],
+      "mechanism": "Compromised orbit-determination infrastructure publishes incorrect or unauthorised ephemeris products that propagate into localisation reference data.",
+      "stride_primary": "E",
+      "goals": [
+        "Displacement",
+        "Denial",
+        "Deception",
+        "Disclosure"
+      ],
+      "tier": "T2",
+      "evidence_support": "E1",
+      "severity": 5,
+      "commonly_overlooked": true
+    },
+    {
+      "title": "Credential theft and privilege escalation",
+      "layer": "L4",
+      "asset_ids": [
+        "A4.3",
+        "A4.8",
+        "A4.4",
+        "A3.7"
+      ],
+      "mechanism": "Stolen credentials, excessive privileges, or compromised remote access allow unauthorised control of management services, cryptographic material, or central processing systems.",
+      "stride_primary": "E",
+      "goals": [
+        "Displacement",
+        "Denial",
+        "Deception",
+        "Disclosure"
+      ],
+      "tier": "T2",
+      "evidence_support": "E3",
+      "severity": 5,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Sensitive mission data disclosure",
+      "layer": "L4",
+      "asset_ids": [
+        "A4.3",
+        "A4.2",
+        "A4.4",
+        "A4.8",
+        "A2.1"
+      ],
+      "mechanism": "Unauthorised access exposes keys, precise ephemerides, configurations, audit records, or non-public traffic that may enable subsequent attacks or compromise operational confidentiality.",
+      "stride_primary": "I",
+      "goals": [
+        "Disclosure"
+      ],
+      "tier": "T2",
+      "evidence_support": "E2",
+      "severity": 4,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Insider misuse or supplier compromise",
+      "layer": "L4",
+      "asset_ids": [
+        "A4.7",
+        "A4.8",
+        "A4.4",
+        "A4.3"
+      ],
+      "mechanism": "An authorised person or compromised supplier misuses legitimate access to change configurations, expose secrets, disable safeguards, or conceal unauthorised activity.",
+      "stride_primary": "E",
+      "goals": [
+        "Displacement",
+        "Denial",
+        "Deception",
+        "Disclosure"
+      ],
+      "tier": "T3x",
+      "evidence_support": "E3",
+      "severity": 5,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Management network and audit-log compromise",
+      "layer": "L4",
+      "asset_ids": [
+        "A4.8",
+        "A4.1",
+        "A4.2",
+        "A4.3",
+        "A4.4"
+      ],
+      "mechanism": "Compromise of management workstations, remote access, or audit storage enables configuration changes, secret theft, persistence, or concealment of unauthorised operations.",
+      "stride_primary": "E",
+      "goals": [
+        "Denial",
+        "Deception",
+        "Disclosure"
+      ],
+      "tier": "T2",
+      "evidence_support": "E3",
+      "severity": 5,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Surveillance feed interruption or degradation",
+      "layer": "L4",
+      "asset_ids": [
+        "A4.5",
+        "A4.6",
+        "A3.6"
+      ],
+      "mechanism": "Feed outages, stale delivery, capacity limitations, or interface failures prevent timely reception of surveillance reports or integrity annotations by ATM.",
+      "stride_primary": "D",
+      "goals": [
+        "Denial"
+      ],
+      "tier": "T2",
+      "evidence_support": "E2",
+      "severity": 5,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "ATM misinterpretation of integrity annotations",
+      "layer": "L4",
+      "asset_ids": [
+        "A4.5",
+        "A4.6",
+        "A3.6"
+      ],
+      "mechanism": "Ambiguous integrity semantics, inconsistent display behaviour, or operational misunderstanding causes controllers or downstream systems to treat unsafe or unavailable reports as trustworthy.",
+      "stride_primary": "T",
+      "goals": [
+        "Displacement",
+        "Denial",
+        "Deception"
+      ],
+      "tier": "T2",
+      "evidence_support": "P",
+      "severity": 5,
+      "commonly_overlooked": true
+    },
+    {
+      "title": "Inter-satellite link availability loss",
+      "layer": "L2",
+      "asset_ids": [
+        "A2.2",
+        "A2.1",
+        "A2.4"
+      ],
+      "mechanism": "Crosslink outages, interference, routing faults, or terminal compromise prevent timely delivery of observations and reduce the number or distribution of usable measurements.",
+      "stride_primary": "D",
+      "goals": [
+        "Denial",
+        "Displacement"
+      ],
+      "tier": "T2",
+      "evidence_support": "E2",
+      "severity": 4,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Downlink and backhaul availability loss",
+      "layer": "L2",
+      "asset_ids": [
+        "A2.4",
+        "A1.7",
+        "A3.7"
+      ],
+      "mechanism": "Communication outages, interference, congestion, or infrastructure failure interrupt report delivery from satellites to the processing station.",
+      "stride_primary": "D",
+      "goals": [
+        "Denial"
+      ],
+      "tier": "T1c",
+      "evidence_support": "E2",
+      "severity": 4,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Satellite geometry degradation",
+      "layer": "L1",
+      "asset_ids": [
+        "A1.3",
+        "A1.4",
+        "A2.1",
+        "A4.2"
+      ],
+      "mechanism": "Poor constellation geometry, antenna limitations, or loss of contributing satellites increases localisation uncertainty and reduces fault-detection capability even without malicious interference.",
+      "stride_primary": "D",
+      "goals": [
+        "Denial",
+        "Displacement"
+      ],
+      "tier": "T2",
+      "evidence_support": "E1",
+      "severity": 4,
+      "commonly_overlooked": true
+    },
+    {
+      "title": "Inadequate cryptographic attribution",
+      "layer": "L2",
+      "asset_ids": [
+        "A2.1",
+        "A2.2",
+        "A2.4",
+        "A2.5"
+      ],
+      "mechanism": "Insufficient authenticated provenance, replay protection, or end-to-end integrity prevents reliable attribution of observation and command changes across trust boundaries.",
+      "stride_primary": "R",
+      "goals": [
+        "Deception",
+        "Denial"
+      ],
+      "tier": "T2",
+      "evidence_support": "P",
+      "severity": 4,
+      "commonly_overlooked": true
+    },
+    {
+      "title": "Insufficient fault independence across checks",
+      "layer": "L3",
+      "asset_ids": [
+        "A3.4",
+        "A3.5",
+        "A3.2",
+        "A3.3"
+      ],
+      "mechanism": "The solver, integrity monitor, and ADS-B cross-check share assumptions or corrupted reference inputs, allowing correlated faults to evade nominally independent checks.",
+      "stride_primary": "T",
+      "goals": [
+        "Displacement",
+        "Deception"
+      ],
+      "tier": "T2",
+      "evidence_support": "P",
+      "severity": 5,
+      "commonly_overlooked": true
+    },
+    {
+      "title": "Inadequate configuration provenance and rollback",
+      "layer": "L4",
+      "asset_ids": [
+        "A4.4",
+        "A4.8",
+        "A2.5",
+        "A1.4"
+      ],
+      "mechanism": "Missing configuration provenance, version consistency, or safe rollback permits unreviewed changes or failed updates to persist across payload and ground components.",
+      "stride_primary": "T",
+      "goals": [
+        "Denial",
+        "Deception",
+        "Displacement"
+      ],
+      "tier": "T2",
+      "evidence_support": "P",
+      "severity": 4,
+      "commonly_overlooked": true
+    },
+    {
+      "title": "RF measurement bias from environmental effects",
+      "layer": "L1",
+      "asset_ids": [
+        "A1.3",
+        "A1.4",
+        "A2.1"
+      ],
+      "mechanism": "Multipath, interference, receiver calibration drift, or angle-estimation errors bias observables and can create systematic localisation errors or false integrity alarms.",
+      "stride_primary": "T",
+      "goals": [
+        "Displacement",
+        "Denial",
+        "Deception"
+      ],
+      "tier": "T2",
+      "evidence_support": "E2",
+      "severity": 4,
+      "commonly_overlooked": true
+    },
+    {
+      "title": "Repudiation through insufficient audit evidence",
+      "layer": "L4",
+      "asset_ids": [
+        "A4.7",
+        "A4.8",
+        "A4.3",
+        "A4.4"
+      ],
+      "mechanism": "Incomplete, mutable, or poorly correlated audit records prevent reliable attribution of privileged configuration changes, command issuance, and key-management actions.",
+      "stride_primary": "R",
+      "goals": [
+        "Disclosure"
+      ],
+      "tier": "T2",
+      "evidence_support": "P",
+      "severity": 3,
+      "commonly_overlooked": true
+    },
+    {
+      "title": "Incorrect aircraft identity or track association",
+      "layer": "L3",
+      "asset_ids": [
+        "A3.1",
+        "A3.3",
+        "A3.5",
+        "A4.6"
+      ],
+      "mechanism": "Identity collisions, stale track state, or inconsistent ADS-B and independent localisation associations cause aircraft tracks to be merged, split, or assigned incorrect identities.",
+      "stride_primary": "S",
+      "goals": [
+        "Displacement",
+        "Denial",
+        "Deception"
+      ],
+      "tier": "T2",
+      "evidence_support": "E1",
+      "severity": 5,
+      "commonly_overlooked": true
+    }
+  ],
+  "architecture_weaknesses": [
+    "The unauthenticated ADS-B self-report is not an independent truth source; agreement with MLAT can be misleading when observations are manipulated or correlated.",
+    "The stated conversion from clock offset to range and horizontal error is simplified; actual error depends on measurement geometry, estimator behaviour, clock correlations, and observation selection.",
+    "W2 assumes universal detection of every requirement-breaching single-satellite bias in STRONG passes without specifying validated fault models, measurement availability, or monitor coverage.",
+    "W3 assumes a non-empty stealth window in WEAK passes without defining the detection function, uncertainty bounds, fault distributions, or empirical validation conditions.",
+    "W1 cites a literature-reported covert bias but does not establish transferability to the specific onboard clock architecture, disciplining logic, or operational environment.",
+    "The architecture does not explicitly define end-to-end report provenance, freshness guarantees, replay protection, or how authentication failures affect safety-related outputs.",
+    "The integrity monitor and cross-check may share solver inputs, ephemerides, clock states, and configuration, undermining their independence against common-mode faults.",
+    "Trust boundaries are incomplete or inconsistent: several critical assets have no boundary assigned, and the register does not fully specify redundancy, recovery behaviour, fail-safe states, or operational acceptance criteria."
+  ],
+  "overall": "The dominant hazards are deceptive unauthenticated observations, timing and ephemeris errors, compromised integrity logic, and failures across command, update, and processing trust boundaries. The STRONG/WEAK distinction is a useful hypothesis, not an established guarantee: its validity requires explicit fault models, uncertainty analysis, and independent validation. Evidence ratings are conservative judgments, not a verified literature survey; E3 denotes analogous documented classes where system-specific evidence may be absent."
+}
