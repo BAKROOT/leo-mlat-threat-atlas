@@ -1,0 +1,558 @@
+```json
+{
+  "meta": {
+    "model_self_report": "gemini-2.5-pro",
+    "prompt_id": "B4",
+    "n_ratings": 15
+  },
+  "ratings": [
+    {
+      "id": "T4.01",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L4",
+      "asset_ids": [
+        "A4.1"
+      ],
+      "trust_boundary": [
+        "TB3"
+      ],
+      "stride_primary": "tau",
+      "stride_secondary": [
+        "T"
+      ],
+      "goals": [
+        "Displacement",
+        "Deception"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC6",
+        "AC7"
+      ],
+      "tier": "T2",
+      "evidence": "P",
+      "analogue_only": true,
+      "unknown_sources": [],
+      "D": 5,
+      "R": 1,
+      "E": 3,
+      "A": 5,
+      "Di_strong": 4,
+      "Di_weak": 4,
+      "confidence": 4,
+      "rationale": "Tampering with time policies creates a temporal offset (tau). Cited sources are non-malicious failures in analogue systems (GNSS), so malicious reproducibility defaults to P.",
+      "issue": ""
+    },
+    {
+      "id": "T4.02",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L4",
+      "asset_ids": [
+        "A4.2"
+      ],
+      "trust_boundary": [
+        "TB3"
+      ],
+      "stride_primary": "T",
+      "stride_secondary": [],
+      "goals": [
+        "Displacement"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC6",
+        "AC7"
+      ],
+      "tier": "T2",
+      "evidence": "P",
+      "analogue_only": true,
+      "unknown_sources": [],
+      "D": 5,
+      "R": 1,
+      "E": 3,
+      "A": 5,
+      "Di_strong": 4,
+      "Di_weak": 4,
+      "confidence": 4,
+      "rationale": "Falsifying orbit data directly shifts computed positions. Only non-malicious path evidence cited, keeping reproducibility at baseline postulate.",
+      "issue": ""
+    },
+    {
+      "id": "T4.03",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L4",
+      "asset_ids": [
+        "A4.2"
+      ],
+      "trust_boundary": [
+        "TB3"
+      ],
+      "stride_primary": "D",
+      "stride_secondary": [],
+      "goals": [
+        "Denial",
+        "Displacement"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC6",
+        "AC7"
+      ],
+      "tier": "T2",
+      "evidence": "P",
+      "analogue_only": true,
+      "unknown_sources": [],
+      "D": 3,
+      "R": 1,
+      "E": 3,
+      "A": 5,
+      "Di_strong": 3,
+      "Di_weak": 3,
+      "confidence": 4,
+      "rationale": "Withholding ephemeris degrades localization to regional denial or unflagged drift. Detectable at L3 via ephemeris timestamps.",
+      "issue": ""
+    },
+    {
+      "id": "T4.04",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L4",
+      "asset_ids": [
+        "A4.3"
+      ],
+      "trust_boundary": [
+        "TB3"
+      ],
+      "stride_primary": "I",
+      "stride_secondary": [],
+      "goals": [],
+      "is_enabler": true,
+      "adversary_class": [
+        "AC6",
+        "AC7"
+      ],
+      "tier": "T2",
+      "evidence": "E2",
+      "analogue_only": true,
+      "unknown_sources": [],
+      "D": null,
+      "R": 3,
+      "E": 3,
+      "A": 5,
+      "Di_strong": 5,
+      "Di_weak": 5,
+      "confidence": 5,
+      "rationale": "Pure information disclosure that enables spoofing/tampering later. Hard to discover passively. Evidence is from analogue systems (ACARS/SATCOM).",
+      "issue": ""
+    },
+    {
+      "id": "T4.05",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L4",
+      "asset_ids": [
+        "A4.3"
+      ],
+      "trust_boundary": [
+        "TB3"
+      ],
+      "stride_primary": "T",
+      "stride_secondary": [
+        "E"
+      ],
+      "goals": [],
+      "is_enabler": true,
+      "adversary_class": [
+        "AC6",
+        "AC7"
+      ],
+      "tier": "T2",
+      "evidence": "E2",
+      "analogue_only": true,
+      "unknown_sources": [],
+      "D": null,
+      "R": 3,
+      "E": 3,
+      "A": 5,
+      "Di_strong": 4,
+      "Di_weak": 4,
+      "confidence": 4,
+      "rationale": "Abusing key management enables further impersonation. Analogue evidence from space systems literature supports feasibility.",
+      "issue": ""
+    },
+    {
+      "id": "T4.06",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L4",
+      "asset_ids": [
+        "A4.4",
+        "A4.8"
+      ],
+      "trust_boundary": [
+        "TB3"
+      ],
+      "stride_primary": "T",
+      "stride_secondary": [],
+      "goals": [
+        "Deception",
+        "Displacement",
+        "Denial"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC6",
+        "AC7"
+      ],
+      "tier": "T2",
+      "evidence": "E3",
+      "analogue_only": true,
+      "unknown_sources": [],
+      "D": 5,
+      "R": 4,
+      "E": 3,
+      "A": 5,
+      "Di_strong": 4,
+      "Di_weak": 4,
+      "confidence": 5,
+      "rationale": "Direct tampering with configuration can silently bypass L3 checks. Viasat incident provides strong E3 analogue evidence.",
+      "issue": ""
+    },
+    {
+      "id": "T4.07",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L4",
+      "asset_ids": [
+        "A4.4",
+        "A4.8"
+      ],
+      "trust_boundary": [
+        "TB3"
+      ],
+      "stride_primary": "D",
+      "stride_secondary": [],
+      "goals": [
+        "Denial"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC6",
+        "AC7"
+      ],
+      "tier": "T2",
+      "evidence": "E3",
+      "analogue_only": true,
+      "unknown_sources": [],
+      "D": 3,
+      "R": 4,
+      "E": 3,
+      "A": 5,
+      "Di_strong": 2,
+      "Di_weak": 2,
+      "confidence": 5,
+      "rationale": "Destructive commands brick assets causing widespread denial. Observable at L2 when terminals drop offline. Supported by KA-SAT analogue incident.",
+      "issue": ""
+    },
+    {
+      "id": "T4.08",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L4",
+      "asset_ids": [
+        "A4.5"
+      ],
+      "trust_boundary": [
+        "TB0",
+        "TB3"
+      ],
+      "stride_primary": "T",
+      "stride_secondary": [],
+      "goals": [
+        "Deception",
+        "Displacement"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC6",
+        "AC7"
+      ],
+      "tier": "T2",
+      "evidence": "P",
+      "analogue_only": true,
+      "unknown_sources": [],
+      "D": 5,
+      "R": 1,
+      "E": 3,
+      "A": 4,
+      "Di_strong": 4,
+      "Di_weak": 4,
+      "confidence": 4,
+      "rationale": "Post-processing tampering of verdicts downstream of all integrity checks. Only path evidence cited for terrestrial ATC failures.",
+      "issue": ""
+    },
+    {
+      "id": "T4.09",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L4",
+      "asset_ids": [
+        "A4.5"
+      ],
+      "trust_boundary": [
+        "TB0",
+        "TB3"
+      ],
+      "stride_primary": "D",
+      "stride_secondary": [],
+      "goals": [
+        "Denial"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC6",
+        "AC7"
+      ],
+      "tier": "T2",
+      "evidence": "P",
+      "analogue_only": true,
+      "unknown_sources": [],
+      "D": 3,
+      "R": 1,
+      "E": 3,
+      "A": 5,
+      "Di_strong": 4,
+      "Di_weak": 4,
+      "confidence": 5,
+      "rationale": "Interrupting the final data feed blinding the controller. Supported only by non-malicious failure path evidence.",
+      "issue": ""
+    },
+    {
+      "id": "T4.10",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L4",
+      "asset_ids": [
+        "A4.6"
+      ],
+      "trust_boundary": [
+        "TB0"
+      ],
+      "stride_primary": "S",
+      "stride_secondary": [
+        "T"
+      ],
+      "goals": [
+        "Deception"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC6",
+        "AC7"
+      ],
+      "tier": "T2",
+      "evidence": "P",
+      "analogue_only": false,
+      "unknown_sources": [],
+      "D": 5,
+      "R": 1,
+      "E": 3,
+      "A": 3,
+      "Di_strong": 4,
+      "Di_weak": 4,
+      "confidence": 4,
+      "rationale": "Spoofing the UI directly bypasses the entire system's security logic. Completely theoretical per the provided sources.",
+      "issue": ""
+    },
+    {
+      "id": "T4.11",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L4",
+      "asset_ids": [
+        "A4.5"
+      ],
+      "trust_boundary": [
+        "TB3"
+      ],
+      "stride_primary": "I",
+      "stride_secondary": [],
+      "goals": [],
+      "is_enabler": true,
+      "adversary_class": [
+        "AC6",
+        "AC7"
+      ],
+      "tier": "T2",
+      "evidence": "P",
+      "analogue_only": false,
+      "unknown_sources": [],
+      "D": null,
+      "R": 1,
+      "E": 3,
+      "A": 5,
+      "Di_strong": 5,
+      "Di_weak": 5,
+      "confidence": 5,
+      "rationale": "Information disclosure facilitating physical/RF tier attacks. Highly difficult to detect if passively extracted.",
+      "issue": ""
+    },
+    {
+      "id": "T4.12",
+      "validity": "not_a_threat",
+      "related_id": "T4.06",
+      "layer": "L4",
+      "asset_ids": [
+        "A4.7",
+        "A4.8"
+      ],
+      "trust_boundary": [
+        "TB0"
+      ],
+      "stride_primary": "E",
+      "stride_secondary": [],
+      "goals": [],
+      "is_enabler": true,
+      "adversary_class": [
+        "AC7"
+      ],
+      "tier": "T2",
+      "evidence": "E1",
+      "analogue_only": true,
+      "unknown_sources": [],
+      "D": null,
+      "R": 3,
+      "E": 3,
+      "A": 5,
+      "Di_strong": 4,
+      "Di_weak": 4,
+      "confidence": 5,
+      "rationale": "Insider threat is an adversary class (AC7) and access vector, not a standalone technical threat mechanism.",
+      "issue": "Describes an adversary vector/class rather than a distinct system vulnerability."
+    },
+    {
+      "id": "T4.13",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L4",
+      "asset_ids": [
+        "A4.4",
+        "A4.7"
+      ],
+      "trust_boundary": [
+        "TB0"
+      ],
+      "stride_primary": "T",
+      "stride_secondary": [],
+      "goals": [
+        "Displacement",
+        "Denial",
+        "Deception"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC7"
+      ],
+      "tier": "T3",
+      "evidence": "E1",
+      "analogue_only": true,
+      "unknown_sources": [],
+      "D": 5,
+      "R": 3,
+      "E": 2,
+      "A": 5,
+      "Di_strong": 4,
+      "Di_weak": 4,
+      "confidence": 4,
+      "rationale": "Compromised components bypass perimeter controls. Analogue evidence suggests feasibility (E1 equivalent for specific components). Requires T3 persistence.",
+      "issue": ""
+    },
+    {
+      "id": "T4.14",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L4",
+      "asset_ids": [
+        "A4.1",
+        "A4.3"
+      ],
+      "trust_boundary": [
+        "TB3"
+      ],
+      "stride_primary": "R",
+      "stride_secondary": [],
+      "goals": [],
+      "is_enabler": true,
+      "adversary_class": [
+        "AC6",
+        "AC7"
+      ],
+      "tier": "T2",
+      "evidence": "P",
+      "analogue_only": false,
+      "unknown_sources": [],
+      "D": null,
+      "R": 1,
+      "E": 3,
+      "A": 5,
+      "Di_strong": 4,
+      "Di_weak": 4,
+      "confidence": 5,
+      "rationale": "Lack of auditability (Repudiation) enables malicious configuration changes to persist undetected or unattributed.",
+      "issue": ""
+    },
+    {
+      "id": "T4.15",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L4",
+      "asset_ids": [
+        "A4.8"
+      ],
+      "trust_boundary": [
+        "TB3"
+      ],
+      "stride_primary": "E",
+      "stride_secondary": [],
+      "goals": [],
+      "is_enabler": true,
+      "adversary_class": [
+        "AC6"
+      ],
+      "tier": "T2",
+      "evidence": "E3",
+      "analogue_only": true,
+      "unknown_sources": [],
+      "D": null,
+      "R": 4,
+      "E": 3,
+      "A": 5,
+      "Di_strong": 4,
+      "Di_weak": 4,
+      "confidence": 5,
+      "rationale": "Elevation of privilege giving control of L4 assets. The Viasat KA-SAT incident is direct analogue evidence (E3-1).",
+      "issue": ""
+    }
+  ],
+  "batch_comments": {
+    "missing_threats": [
+      {
+        "title": "Denial of Key Management",
+        "layer": "L4",
+        "asset_ids": [
+          "A4.3"
+        ],
+        "why": "Threats mention key abuse and disclosure, but not simple destruction or withholding of keys to cause denial."
+      }
+    ],
+    "rubric_ambiguities": [
+      "Path evidence from non-malicious failures limits R to 1 (P), which may under-represent the real-world operational fragility."
+    ],
+    "overall": "The L4 threats strongly focus on governance and configuration tampering. A few records represent attacker vectors or classes (T4.12) rather than actionable system flaws."
+  }
+}
+
+```

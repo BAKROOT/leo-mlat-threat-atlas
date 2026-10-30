@@ -1,0 +1,469 @@
+```json
+{
+  "meta": {
+    "model_self_report": "gemini-2.5-pro",
+    "prompt_id": "B3",
+    "n_ratings": 12
+  },
+  "ratings": [
+    {
+      "id": "T3.01",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L3",
+      "asset_ids": [
+        "A3.1"
+      ],
+      "trust_boundary": [
+        "TB2"
+      ],
+      "stride_primary": "T",
+      "stride_secondary": [
+        "D"
+      ],
+      "goals": [
+        "Deception",
+        "Denial"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC6",
+        "AC7"
+      ],
+      "tier": "T2",
+      "evidence": "P",
+      "analogue_only": false,
+      "unknown_sources": [],
+      "D": 3,
+      "R": 1,
+      "E": 3,
+      "A": 5,
+      "Di_strong": 4,
+      "Di_weak": 5,
+      "confidence": 4,
+      "rationale": "Tampering with the association logic corrupts track formation, leading to regional denial or deception at the ATM level. High impact on constellation processing.",
+      "issue": ""
+    },
+    {
+      "id": "T3.02",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L3",
+      "asset_ids": [
+        "A3.4"
+      ],
+      "trust_boundary": [],
+      "stride_primary": "T",
+      "stride_secondary": [],
+      "goals": [],
+      "is_enabler": true,
+      "adversary_class": [
+        "AC6",
+        "AC7"
+      ],
+      "tier": "T2",
+      "evidence": "P",
+      "analogue_only": false,
+      "unknown_sources": [],
+      "D": null,
+      "R": 1,
+      "E": 3,
+      "A": 5,
+      "Di_strong": 5,
+      "Di_weak": 5,
+      "confidence": 4,
+      "rationale": "Directly altering integrity checks enables other attacks (like time bias or spoofing) to pass undetected. It is a classic enabler without independent damage.",
+      "issue": ""
+    },
+    {
+      "id": "T3.03",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L3",
+      "asset_ids": [
+        "A3.2"
+      ],
+      "trust_boundary": [
+        "TB3"
+      ],
+      "stride_primary": "tau",
+      "stride_secondary": [
+        "T"
+      ],
+      "goals": [
+        "Displacement",
+        "Deception"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC6",
+        "AC7"
+      ],
+      "tier": "T2",
+      "evidence": "P",
+      "analogue_only": false,
+      "unknown_sources": [],
+      "D": 5,
+      "R": 1,
+      "E": 3,
+      "A": 5,
+      "Di_strong": 3,
+      "Di_weak": 5,
+      "confidence": 4,
+      "rationale": "Corrupting ephemeris/clock states introduces temporal/spatial bias into the solver, achieving displacement. Equivalent to a timing attack via data tampering.",
+      "issue": "A3.3 should not be listed as the asset for the database; it uses A3.2."
+    },
+    {
+      "id": "T3.04",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L3",
+      "asset_ids": [
+        "A3.3"
+      ],
+      "trust_boundary": [],
+      "stride_primary": "T",
+      "stride_secondary": [],
+      "goals": [
+        "Displacement"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC6",
+        "AC7"
+      ],
+      "tier": "T2",
+      "evidence": "P",
+      "analogue_only": false,
+      "unknown_sources": [],
+      "D": 5,
+      "R": 1,
+      "E": 3,
+      "A": 4,
+      "Di_strong": 3,
+      "Di_weak": 5,
+      "confidence": 4,
+      "rationale": "In-memory tampering of observables before the solver computes position achieves displacement. Integrity checks may catch clumsy modifications (STRONG pass).",
+      "issue": ""
+    },
+    {
+      "id": "T3.05",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L3",
+      "asset_ids": [
+        "A3.3"
+      ],
+      "trust_boundary": [
+        "TB2"
+      ],
+      "stride_primary": "D",
+      "stride_secondary": [],
+      "goals": [
+        "Denial"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC3",
+        "AC6"
+      ],
+      "tier": "T2",
+      "evidence": "E0",
+      "analogue_only": true,
+      "unknown_sources": [
+        65
+      ],
+      "D": 3,
+      "R": 1,
+      "E": 3,
+      "A": 5,
+      "Di_strong": 3,
+      "Di_weak": 3,
+      "confidence": 3,
+      "rationale": "Resource exhaustion crashes the solver or delays output, causing denial of service. The cited source appears to be a general talk, hence E0 and analogue only.",
+      "issue": ""
+    },
+    {
+      "id": "T3.06",
+      "validity": "valid",
+      "related_id": "T3.02",
+      "layer": "L4",
+      "asset_ids": [
+        "A4.4"
+      ],
+      "trust_boundary": [
+        "TB3"
+      ],
+      "stride_primary": "T",
+      "stride_secondary": [],
+      "goals": [],
+      "is_enabler": true,
+      "adversary_class": [
+        "AC6",
+        "AC7"
+      ],
+      "tier": "T2",
+      "evidence": "P",
+      "analogue_only": false,
+      "unknown_sources": [],
+      "D": null,
+      "R": 1,
+      "E": 3,
+      "A": 5,
+      "Di_strong": 4,
+      "Di_weak": 4,
+      "confidence": 4,
+      "rationale": "Changing configuration thresholds is an enabler. It originates in L4 (configuration management) rather than L3 directly, though its effect is felt in A3.4.",
+      "issue": "Wrong layer and assets. The configuration of thresholds is governed by A4.4 at L4, not directly inside L3."
+    },
+    {
+      "id": "T3.07",
+      "validity": "out_of_scope",
+      "related_id": null,
+      "layer": "L1",
+      "asset_ids": [
+        "A1.1",
+        "A1.3"
+      ],
+      "trust_boundary": [
+        "TB0"
+      ],
+      "stride_primary": "S",
+      "stride_secondary": [],
+      "goals": [
+        "Deception",
+        "Displacement"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC3"
+      ],
+      "tier": "T2",
+      "evidence": "E1",
+      "analogue_only": true,
+      "unknown_sources": [
+        5,
+        20,
+        6
+      ],
+      "D": 5,
+      "R": 2,
+      "E": 3,
+      "A": 2,
+      "Di_strong": 5,
+      "Di_weak": 5,
+      "confidence": 4,
+      "rationale": "This describes RF spoofing via synchronized emitters, which is an L1 attack. It affects L3 cross-checks, but the injection point is the air interface.",
+      "issue": "Wrong layer and assets. This is an RF-level spoofing attack (L1), not a central processing (L3) compromise."
+    },
+    {
+      "id": "T3.08",
+      "validity": "out_of_scope",
+      "related_id": null,
+      "layer": "L1",
+      "asset_ids": [
+        "A1.1"
+      ],
+      "trust_boundary": [
+        "TB0"
+      ],
+      "stride_primary": "S",
+      "stride_secondary": [
+        "D"
+      ],
+      "goals": [
+        "Deception",
+        "Denial"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC2",
+        "AC3"
+      ],
+      "tier": "T1c",
+      "evidence": "E1",
+      "analogue_only": true,
+      "unknown_sources": [
+        5,
+        6
+      ],
+      "D": 4,
+      "R": 2,
+      "E": 4,
+      "A": 1,
+      "Di_strong": 3,
+      "Di_weak": 3,
+      "confidence": 4,
+      "rationale": "Similar to T3.07, inducing a discrepancy via RF perturbation is an L1 attack vector, not a compromise of L3 logic.",
+      "issue": "Wrong layer. Perturbing positions externally is an L1 RF threat, misclassified as an L3 module vulnerability."
+    },
+    {
+      "id": "T3.09",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L3",
+      "asset_ids": [
+        "A3.6"
+      ],
+      "trust_boundary": [
+        "TB3"
+      ],
+      "stride_primary": "T",
+      "stride_secondary": [],
+      "goals": [
+        "Displacement",
+        "Deception"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC6",
+        "AC7"
+      ],
+      "tier": "T2",
+      "evidence": "P",
+      "analogue_only": false,
+      "unknown_sources": [],
+      "D": 5,
+      "R": 1,
+      "E": 3,
+      "A": 5,
+      "Di_strong": 4,
+      "Di_weak": 4,
+      "confidence": 4,
+      "rationale": "Tampering at the ASTERIX encoder is extremely dangerous because it bypasses all prior L3 integrity checks. It only gets discovered if ATM notices discrepancies.",
+      "issue": ""
+    },
+    {
+      "id": "T3.10",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L3",
+      "asset_ids": [
+        "A3.6"
+      ],
+      "trust_boundary": [
+        "TB3"
+      ],
+      "stride_primary": "I",
+      "stride_secondary": [],
+      "goals": [
+        "Disclosure"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC6",
+        "AC7"
+      ],
+      "tier": "T2",
+      "evidence": "P",
+      "analogue_only": false,
+      "unknown_sources": [],
+      "D": 1,
+      "R": 1,
+      "E": 3,
+      "A": 5,
+      "Di_strong": 4,
+      "Di_weak": 4,
+      "confidence": 5,
+      "rationale": "Pure information disclosure of flight tracks via database/encoder access. Minimal direct damage to ATM safety, scored as 1.",
+      "issue": ""
+    },
+    {
+      "id": "T3.11",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L3",
+      "asset_ids": [
+        "A3.7"
+      ],
+      "trust_boundary": [],
+      "stride_primary": "R",
+      "stride_secondary": [
+        "T"
+      ],
+      "goals": [],
+      "is_enabler": true,
+      "adversary_class": [
+        "AC6",
+        "AC7"
+      ],
+      "tier": "T2",
+      "evidence": "E0",
+      "analogue_only": true,
+      "unknown_sources": [
+        65
+      ],
+      "D": null,
+      "R": 1,
+      "E": 3,
+      "A": 5,
+      "Di_strong": 5,
+      "Di_weak": 5,
+      "confidence": 4,
+      "rationale": "Altering audit trails covers the tracks of an intruder. It's a textbook enabler (Repudiation).",
+      "issue": "Asset A3.3 is processing; log tampering more directly involves the platform A3.7 or L4 log servers."
+    },
+    {
+      "id": "T3.12",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L3",
+      "asset_ids": [
+        "A3.7"
+      ],
+      "trust_boundary": [
+        "TB2",
+        "TB3"
+      ],
+      "stride_primary": "E",
+      "stride_secondary": [
+        "T",
+        "D"
+      ],
+      "goals": [
+        "Displacement",
+        "Deception",
+        "Denial",
+        "Disclosure"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC6",
+        "AC7"
+      ],
+      "tier": "T2",
+      "evidence": "E0",
+      "analogue_only": true,
+      "unknown_sources": [
+        65
+      ],
+      "D": 5,
+      "R": 1,
+      "E": 3,
+      "A": 5,
+      "Di_strong": 5,
+      "Di_weak": 5,
+      "confidence": 4,
+      "rationale": "Full platform compromise gives complete control over L3 processing, allowing the adversary to arbitrarily manipulate data, evade checks, or take the system down.",
+      "issue": ""
+    }
+  ],
+  "batch_comments": {
+    "missing_threats": [
+      {
+        "title": "Insider credential theft",
+        "layer": "L3",
+        "asset_ids": [
+          "A3.7"
+        ],
+        "why": "Missing explicit threat of credential compromise at L3 boundaries."
+      }
+    ],
+    "rubric_ambiguities": [
+      "Distinction between AC6 (ground intruder) and AC7 (insider) for logical access to L3 databases can overlap."
+    ],
+    "overall": "The batch mixes legitimate L3 software/platform vulnerabilities with L1 RF spoofing attacks (T3.07, T3.08) that only manifest their effects in L3 cross-checks. This is a common threat modeling error."
+  }
+}
+
+```

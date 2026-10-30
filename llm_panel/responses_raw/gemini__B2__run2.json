@@ -1,0 +1,458 @@
+```json
+{
+  "meta": {
+    "model_self_report": "GPT-4 (simulated reviewer)",
+    "prompt_id": "B2",
+    "n_ratings": 12
+  },
+  "ratings": [
+    {
+      "id": "T2.01",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L2",
+      "asset_ids": [
+        "A2.1"
+      ],
+      "trust_boundary": [
+        "TB1",
+        "TB2"
+      ],
+      "stride_primary": "T",
+      "stride_secondary": [
+        "S"
+      ],
+      "goals": [
+        "Displacement",
+        "Deception"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC5"
+      ],
+      "tier": "T2",
+      "evidence": "E1",
+      "analogue_only": true,
+      "unknown_sources": [],
+      "D": 4,
+      "R": 2,
+      "E": 3,
+      "A": 3,
+      "Di_strong": 3,
+      "Di_weak": 5,
+      "confidence": 4,
+      "rationale": "Tampering with observables on links directly alters solver inputs. Without L2 message authentication, this relies entirely on L3 geometry checks, allowing displacement during weak passes.",
+      "issue": "Sources 17, 18, 39 concern terrestrial power grids, not MLAT, making evidence purely analogue."
+    },
+    {
+      "id": "T2.02",
+      "validity": "valid",
+      "related_id": "T2.09",
+      "layer": "L2",
+      "asset_ids": [
+        "A2.1",
+        "A2.4"
+      ],
+      "trust_boundary": [
+        "TB2"
+      ],
+      "stride_primary": "S",
+      "stride_secondary": [
+        "T"
+      ],
+      "goals": [
+        "Displacement",
+        "Deception"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC5"
+      ],
+      "tier": "T2",
+      "evidence": "E2",
+      "analogue_only": true,
+      "unknown_sources": [],
+      "D": 4,
+      "R": 3,
+      "E": 3,
+      "A": 3,
+      "Di_strong": 3,
+      "Di_weak": 5,
+      "confidence": 4,
+      "rationale": "Spoofing node identities allows bulk injection of false observables. L3 cross-checks may catch physics violations, but well-crafted data can deceive the solver into generating false targets.",
+      "issue": "Conceptually overlaps with T2.09 (downlink injection). Either combine them or distinctly separate node cryptographic impersonation from RF overshadowing."
+    },
+    {
+      "id": "T2.03",
+      "validity": "not_a_threat",
+      "related_id": null,
+      "layer": "L2",
+      "asset_ids": [
+        "A2.1"
+      ],
+      "trust_boundary": [
+        "TB2"
+      ],
+      "stride_primary": "D",
+      "stride_secondary": [],
+      "goals": [
+        "Denial"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC5"
+      ],
+      "tier": "T2",
+      "evidence": "E0",
+      "analogue_only": true,
+      "unknown_sources": [],
+      "D": 2,
+      "R": 1,
+      "E": 3,
+      "A": 3,
+      "Di_strong": 3,
+      "Di_weak": 3,
+      "confidence": 5,
+      "rationale": "The mechanism is fundamentally flawed. Observables are timestamped at L1. Network delay at L2 increases latency or causes timeouts, but cannot alter the TDOA measurement bias.",
+      "issue": "Delaying a network packet containing a timestamped observable does not change the TOA value. It only causes latency, not TDOA distortion."
+    },
+    {
+      "id": "T2.04",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L2",
+      "asset_ids": [
+        "A2.2"
+      ],
+      "trust_boundary": [
+        "TB1",
+        "TB2"
+      ],
+      "stride_primary": "D",
+      "stride_secondary": [],
+      "goals": [],
+      "is_enabler": true,
+      "adversary_class": [
+        "AC5"
+      ],
+      "tier": "T2",
+      "evidence": "E1",
+      "analogue_only": false,
+      "unknown_sources": [],
+      "D": null,
+      "R": 3,
+      "E": 3,
+      "A": 3,
+      "Di_strong": 3,
+      "Di_weak": 3,
+      "confidence": 4,
+      "rationale": "Dropping specific links degrades geometry (HDOP), intentionally pushing the system from a strong to a weak pass. This is a classic enabler for stealth displacement attacks.",
+      "issue": ""
+    },
+    {
+      "id": "T2.05",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L2",
+      "asset_ids": [
+        "A2.2"
+      ],
+      "trust_boundary": [
+        "TB1"
+      ],
+      "stride_primary": "D",
+      "stride_secondary": [],
+      "goals": [
+        "Denial"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC3",
+        "AC5"
+      ],
+      "tier": "T3",
+      "evidence": "P",
+      "analogue_only": false,
+      "unknown_sources": [],
+      "D": 3,
+      "R": 1,
+      "E": 2,
+      "A": 4,
+      "Di_strong": 2,
+      "Di_weak": 2,
+      "confidence": 4,
+      "rationale": "Directly attacking inter-satellite links requires significant capability (T3). While purely postulated here, severing crosslinks could isolate multiple satellites, causing regional surveillance denial.",
+      "issue": ""
+    },
+    {
+      "id": "T2.06",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L2",
+      "asset_ids": [
+        "A2.3"
+      ],
+      "trust_boundary": [
+        "TB1"
+      ],
+      "stride_primary": "tau",
+      "stride_secondary": [],
+      "goals": [
+        "Displacement"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC5"
+      ],
+      "tier": "T2",
+      "evidence": "E2",
+      "analogue_only": true,
+      "unknown_sources": [],
+      "D": 5,
+      "R": 3,
+      "E": 3,
+      "A": 3,
+      "Di_strong": 3,
+      "Di_weak": 5,
+      "confidence": 5,
+      "rationale": "Asymmetric delay bypasses cryptography by exploiting the timing protocol's fundamental reliance on symmetric paths. Since clock offset translates directly to range bias, this creates stealthy displacement.",
+      "issue": ""
+    },
+    {
+      "id": "T2.07",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L2",
+      "asset_ids": [
+        "A2.3"
+      ],
+      "trust_boundary": [
+        "TB1"
+      ],
+      "stride_primary": "S",
+      "stride_secondary": [
+        "tau"
+      ],
+      "goals": [
+        "Displacement"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC5"
+      ],
+      "tier": "T2",
+      "evidence": "E2",
+      "analogue_only": true,
+      "unknown_sources": [],
+      "D": 5,
+      "R": 3,
+      "E": 3,
+      "A": 3,
+      "Di_strong": 3,
+      "Di_weak": 5,
+      "confidence": 5,
+      "rationale": "Spoofing unauthenticated PTP messages enables direct manipulation of the satellite clock offsets. Like asymmetric delay, this introduces range bias and enables severe displacement.",
+      "issue": ""
+    },
+    {
+      "id": "T2.08",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L2",
+      "asset_ids": [
+        "A2.4"
+      ],
+      "trust_boundary": [
+        "TB2"
+      ],
+      "stride_primary": "I",
+      "stride_secondary": [],
+      "goals": [
+        "Disclosure"
+      ],
+      "is_enabler": true,
+      "adversary_class": [
+        "AC5"
+      ],
+      "tier": "T1p",
+      "evidence": "E3",
+      "analogue_only": true,
+      "unknown_sources": [],
+      "D": null,
+      "R": 4,
+      "E": 5,
+      "A": 3,
+      "Di_strong": 5,
+      "Di_weak": 5,
+      "confidence": 4,
+      "rationale": "Passive eavesdropping on downlinks is well-documented and achievable with consumer SDRs. It is entirely undetectable and provides operational intelligence necessary for active injection attacks.",
+      "issue": ""
+    },
+    {
+      "id": "T2.09",
+      "validity": "valid",
+      "related_id": "T2.02",
+      "layer": "L2",
+      "asset_ids": [
+        "A2.4"
+      ],
+      "trust_boundary": [
+        "TB2"
+      ],
+      "stride_primary": "S",
+      "stride_secondary": [],
+      "goals": [
+        "Deception",
+        "Displacement"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC5"
+      ],
+      "tier": "T2",
+      "evidence": "E2",
+      "analogue_only": true,
+      "unknown_sources": [],
+      "D": 4,
+      "R": 3,
+      "E": 3,
+      "A": 3,
+      "Di_strong": 3,
+      "Di_weak": 5,
+      "confidence": 4,
+      "rationale": "Overshadowing the physical downlink allows an attacker to inject ghost targets directly into the ground station's data feed, bypassing L1 checks entirely.",
+      "issue": "Significant overlap with T2.02. Needs to clarify if this is RF overshadowing on the physical link versus IP-level impersonation of the relay node."
+    },
+    {
+      "id": "T2.10",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L2",
+      "asset_ids": [
+        "A2.5"
+      ],
+      "trust_boundary": [
+        "TB1",
+        "TB2"
+      ],
+      "stride_primary": "I",
+      "stride_secondary": [],
+      "goals": [
+        "Disclosure"
+      ],
+      "is_enabler": true,
+      "adversary_class": [
+        "AC5"
+      ],
+      "tier": "T1c",
+      "evidence": "E3",
+      "analogue_only": true,
+      "unknown_sources": [],
+      "D": null,
+      "R": 4,
+      "E": 4,
+      "A": 3,
+      "Di_strong": 5,
+      "Di_weak": 5,
+      "confidence": 4,
+      "rationale": "Passive monitoring of unencrypted or weakly encrypted telecommand links exposes command formats and potentially credentials, paving the way for malicious command injection.",
+      "issue": ""
+    },
+    {
+      "id": "T2.11",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L2",
+      "asset_ids": [
+        "A2.5"
+      ],
+      "trust_boundary": [
+        "TB1",
+        "TB3"
+      ],
+      "stride_primary": "E",
+      "stride_secondary": [
+        "S"
+      ],
+      "goals": [
+        "Denial",
+        "Deception"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC5"
+      ],
+      "tier": "T2",
+      "evidence": "E2",
+      "analogue_only": true,
+      "unknown_sources": [],
+      "D": 5,
+      "R": 3,
+      "E": 3,
+      "A": 3,
+      "Di_strong": 3,
+      "Di_weak": 3,
+      "confidence": 4,
+      "rationale": "Forging telecommands grants the attacker control over satellite behavior. This can lead to system-wide denial of service or subtle malicious modifications to L1 processing payloads.",
+      "issue": ""
+    },
+    {
+      "id": "T2.12",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L2",
+      "asset_ids": [
+        "A2.4"
+      ],
+      "trust_boundary": [
+        "TB2"
+      ],
+      "stride_primary": "E",
+      "stride_secondary": [
+        "D",
+        "T"
+      ],
+      "goals": [
+        "Denial",
+        "Deception",
+        "Disclosure"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC6"
+      ],
+      "tier": "T2",
+      "evidence": "E3",
+      "analogue_only": false,
+      "unknown_sources": [],
+      "D": 5,
+      "R": 5,
+      "E": 3,
+      "A": 4,
+      "Di_strong": 2,
+      "Di_weak": 2,
+      "confidence": 5,
+      "rationale": "Compromising terrestrial ground station networks is historically the most viable attack vector against satellite systems. It provides a foothold for data manipulation, dropping, or full denial.",
+      "issue": ""
+    }
+  ],
+  "batch_comments": {
+    "missing_threats": [
+      {
+        "title": "Replay of old observables",
+        "layer": "L2",
+        "asset_ids": [
+          "A2.1"
+        ],
+        "why": "Without replay protection on L2 links, old observables could be reinjected to generate false tracks."
+      }
+    ],
+    "rubric_ambiguities": [
+      "How to score Discoverability (Di) for enablers like passive eavesdropping, which are intrinsically undetectable by system checks.",
+      "Whether overshadowing a downlink conceptually constitutes spoofing a node (T2.02) or injecting data (T2.09)."
+    ],
+    "overall": "The L2 threat model correctly identifies link-level and timing attacks. However, T2.03 demonstrates a fundamental misunderstanding of timestamped observables. The duplication between T2.02 and T2.09 should be resolved. Passive and enabler threats are accurately scoped and well-covered."
+  }
+}
+
+```
