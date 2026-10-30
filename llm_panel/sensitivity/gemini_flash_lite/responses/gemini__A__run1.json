@@ -1,0 +1,469 @@
+{
+  "meta": {
+    "model_self_report": "Independent Threat Model Reviewer v1.0",
+    "prompt_id": "A",
+    "n_threats": 27
+  },
+  "threats": [
+    {
+      "title": "Onboard Clock Subsystem Bias Injection",
+      "layer": "L1",
+      "asset_ids": [
+        "A1.5"
+      ],
+      "mechanism": "Injecting subtle clock bias via disciplined oscillator interference to generate range bias eps across observables.",
+      "stride_primary": "tau",
+      "goals": [
+        "Displacement",
+        "Deception"
+      ],
+      "tier": "T3",
+      "evidence_support": "E1",
+      "severity": 5,
+      "commonly_overlooked": true
+    },
+    {
+      "title": "Integrity Monitoring Evasion",
+      "layer": "L3",
+      "asset_ids": [
+        "A3.4"
+      ],
+      "mechanism": "Crafting stealthy bias steps that remain inside the detection threshold gap during weak HDOP passes.",
+      "stride_primary": "T",
+      "goals": [
+        "Deception"
+      ],
+      "tier": "T2",
+      "evidence_support": "E1",
+      "severity": 5,
+      "commonly_overlooked": true
+    },
+    {
+      "title": "Cross-Check Module Spoofing Evasion",
+      "layer": "L3",
+      "asset_ids": [
+        "A3.5"
+      ],
+      "mechanism": "Simultaneously spoofing independent LEO-MLAT position and broadcast ADS-B to evade the cross-check integrity indicator.",
+      "stride_primary": "S",
+      "goals": [
+        "Deception"
+      ],
+      "tier": "T2",
+      "evidence_support": "E1",
+      "severity": 5,
+      "commonly_overlooked": true
+    },
+    {
+      "title": "Ephemeris and Clock Database Corruption",
+      "layer": "L3",
+      "asset_ids": [
+        "A3.2"
+      ],
+      "mechanism": "Tampering with stored satellite positions, velocities, or clock states introduces systematic localisation errors.",
+      "stride_primary": "T",
+      "goals": [
+        "Displacement",
+        "Deception"
+      ],
+      "tier": "T3",
+      "evidence_support": "E1",
+      "severity": 5,
+      "commonly_overlooked": true
+    },
+    {
+      "title": "PTP Time-Transfer Message Injection",
+      "layer": "L2",
+      "asset_ids": [
+        "A2.3"
+      ],
+      "mechanism": "Injecting forged PTP time-transfer messages between satellites to subtly shift the internal time reference.",
+      "stride_primary": "tau",
+      "goals": [
+        "Displacement",
+        "Deception"
+      ],
+      "tier": "T3",
+      "evidence_support": "E1",
+      "severity": 5,
+      "commonly_overlooked": true
+    },
+    {
+      "title": "GNSS Service Spoofing and Timing Disruption",
+      "layer": "L1",
+      "asset_ids": [
+        "A1.2"
+      ],
+      "mechanism": "An RF emitter transmits spoofed GNSS signals to corrupt the onboard position and time reference.",
+      "stride_primary": "tau",
+      "goals": [
+        "Deception",
+        "Denial"
+      ],
+      "tier": "T2",
+      "evidence_support": "E2",
+      "severity": 5,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Satellite Bus Flight Software Compromise",
+      "layer": "L1",
+      "asset_ids": [
+        "A1.6"
+      ],
+      "mechanism": "Malicious command execution alters flight software behaviour, compromising platform and payload stability.",
+      "stride_primary": "E",
+      "goals": [
+        "Denial",
+        "Deception"
+      ],
+      "tier": "T3",
+      "evidence_support": "E1",
+      "severity": 5,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Malicious Telecommand and Firmware Injection",
+      "layer": "L2",
+      "asset_ids": [
+        "A2.5"
+      ],
+      "mechanism": "Injecting malicious update packages or unauthorized telecommands via compromised uplink channels.",
+      "stride_primary": "T",
+      "goals": [
+        "Deception",
+        "Denial"
+      ],
+      "tier": "T3",
+      "evidence_support": "E1",
+      "severity": 5,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Central Processing Platform Privilege Escalation",
+      "layer": "L3",
+      "asset_ids": [
+        "A3.7"
+      ],
+      "mechanism": "Exploiting virtualization or OS vulnerabilities on Central Processing Station servers to gain administrative control.",
+      "stride_primary": "E",
+      "goals": [
+        "Displacement",
+        "Denial",
+        "Deception",
+        "Disclosure"
+      ],
+      "tier": "T3",
+      "evidence_support": "E2",
+      "severity": 5,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Orbit Determination Ephemeris Poisoning",
+      "layer": "L4",
+      "asset_ids": [
+        "A4.2"
+      ],
+      "mechanism": "Injecting false satellite orbit parameters into the ephemeris product generation pipeline.",
+      "stride_primary": "T",
+      "goals": [
+        "Displacement",
+        "Deception"
+      ],
+      "tier": "T3",
+      "evidence_support": "E1",
+      "severity": 5,
+      "commonly_overlooked": true
+    },
+    {
+      "title": "Key-Management Credential Disclosure",
+      "layer": "L4",
+      "asset_ids": [
+        "A4.3"
+      ],
+      "mechanism": "Unauthorized access to the key-management system compromises cryptographic credentials for links and telecommands.",
+      "stride_primary": "I",
+      "goals": [
+        "Disclosure"
+      ],
+      "tier": "T3",
+      "evidence_support": "E2",
+      "severity": 5,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Configuration and Software Update Tampering",
+      "layer": "L4",
+      "asset_ids": [
+        "A4.4"
+      ],
+      "mechanism": "Altering filter parameters, integrity thresholds, or firmware baselines stored in the configuration management system.",
+      "stride_primary": "T",
+      "goals": [
+        "Deception",
+        "Denial"
+      ],
+      "tier": "T3",
+      "evidence_support": "E1",
+      "severity": 5,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "ATM Controller Working Position Deception",
+      "layer": "L4",
+      "asset_ids": [
+        "A4.6"
+      ],
+      "mechanism": "Delivering deceptive aircraft tracks with nominal integrity annotations directly to controller working positions.",
+      "stride_primary": "S",
+      "goals": [
+        "Deception"
+      ],
+      "tier": "T2",
+      "evidence_support": "E2",
+      "severity": 5,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Insider Threat and Credential Abuse",
+      "layer": "L4",
+      "asset_ids": [
+        "A4.7"
+      ],
+      "mechanism": "Compromised operator personnel or malicious suppliers abuse authorized access to alter critical L3/L4 configurations.",
+      "stride_primary": "E",
+      "goals": [
+        "Displacement",
+        "Denial",
+        "Deception",
+        "Disclosure"
+      ],
+      "tier": "T3",
+      "evidence_support": "E3",
+      "severity": 5,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Operations Centre Network Intrusion",
+      "layer": "L4",
+      "asset_ids": [
+        "A4.8"
+      ],
+      "mechanism": "Compromising workstations and management networks in the mission-operations centre to gain access to governance assets.",
+      "stride_primary": "E",
+      "goals": [
+        "Displacement",
+        "Deception",
+        "Disclosure"
+      ],
+      "tier": "T3",
+      "evidence_support": "E2",
+      "severity": 5,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "ADS-B Transponder Position Fabrication",
+      "layer": "L1",
+      "asset_ids": [
+        "A1.1"
+      ],
+      "mechanism": "An attacker transmits unauthenticated 1090ES messages to fabricate non-existent aircraft tracks or alter reported position.",
+      "stride_primary": "S",
+      "goals": [
+        "Deception"
+      ],
+      "tier": "T1p",
+      "evidence_support": "E2",
+      "severity": 4,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Payload Processor Firmware Tampering",
+      "layer": "L1",
+      "asset_ids": [
+        "A1.4"
+      ],
+      "mechanism": "Exploitation of satellite payload interfaces modifies extraction firmware, skewing TOA or AOA measurements.",
+      "stride_primary": "T",
+      "goals": [
+        "Deception"
+      ],
+      "tier": "T3",
+      "evidence_support": "E0",
+      "severity": 4,
+      "commonly_overlooked": true
+    },
+    {
+      "title": "Ground Station Antenna Jamming",
+      "layer": "L1",
+      "asset_ids": [
+        "A1.7"
+      ],
+      "mechanism": "RF jamming or interference directed at ground-station antennas disrupts downlink reception and telecommand links.",
+      "stride_primary": "D",
+      "goals": [
+        "Denial"
+      ],
+      "tier": "T2",
+      "evidence_support": "E3",
+      "severity": 4,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Observable Report Tampering in Transit",
+      "layer": "L2",
+      "asset_ids": [
+        "A2.1"
+      ],
+      "mechanism": "Unauthenticated observable reports are intercepted and modified during inter-satellite relay or downlink transmission.",
+      "stride_primary": "T",
+      "goals": [
+        "Deception"
+      ],
+      "tier": "T2",
+      "evidence_support": "E1",
+      "severity": 4,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Inter-Satellite Link Traffic Disruption",
+      "layer": "L2",
+      "asset_ids": [
+        "A2.2"
+      ],
+      "mechanism": "Denial of service or RF interference targets crosslinks, cutting off satellite report relay paths.",
+      "stride_primary": "D",
+      "goals": [
+        "Denial"
+      ],
+      "tier": "T3",
+      "evidence_support": "E0",
+      "severity": 4,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Measurement Association Confusion",
+      "layer": "L3",
+      "asset_ids": [
+        "A3.1"
+      ],
+      "mechanism": "Crafted timing and position spoofing causes the association module to misgroup receptions across satellites.",
+      "stride_primary": "T",
+      "goals": [
+        "Deception",
+        "Denial"
+      ],
+      "tier": "T2",
+      "evidence_support": "E1",
+      "severity": 4,
+      "commonly_overlooked": true
+    },
+    {
+      "title": "Localisation Solver Track Manipulation",
+      "layer": "L3",
+      "asset_ids": [
+        "A3.3"
+      ],
+      "mechanism": "Manipulating inputs or solver states in the EKF/IMM tracker to displace computed aircraft positions.",
+      "stride_primary": "T",
+      "goals": [
+        "Displacement"
+      ],
+      "tier": "T2",
+      "evidence_support": "E1",
+      "severity": 4,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "ASTERIX Report Encoder Corruption",
+      "layer": "L3",
+      "asset_ids": [
+        "A3.6"
+      ],
+      "mechanism": "Tampering with encoding logic to alter CAT020/021 integrity annotations or suppress target reports sent to ATM.",
+      "stride_primary": "T",
+      "goals": [
+        "Deception",
+        "Denial"
+      ],
+      "tier": "T2",
+      "evidence_support": "E1",
+      "severity": 4,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Time-Reference Policy Modification",
+      "layer": "L4",
+      "asset_ids": [
+        "A4.1"
+      ],
+      "mechanism": "Modifying the synchronization policy or PTP conformance thresholds to weaken onboard clock discipline.",
+      "stride_primary": "T",
+      "goals": [
+        "Displacement",
+        "Denial"
+      ],
+      "tier": "T3",
+      "evidence_support": "E0",
+      "severity": 4,
+      "commonly_overlooked": true
+    },
+    {
+      "title": "Phased-Array Antenna Angle Manipulation",
+      "layer": "L1",
+      "asset_ids": [
+        "A1.3"
+      ],
+      "mechanism": "An RF-local emitter introduces multi-path or signal interference to degrade angle of arrival measurements.",
+      "stride_primary": "T",
+      "goals": [
+        "Denial"
+      ],
+      "tier": "T1c",
+      "evidence_support": "E1",
+      "severity": 3,
+      "commonly_overlooked": true
+    },
+    {
+      "title": "Downlink and Backhaul Data Interception",
+      "layer": "L2",
+      "asset_ids": [
+        "A2.4"
+      ],
+      "mechanism": "Eavesdropping on unencrypted or weakly protected downlinks and ground backhaul networks to disclose surveillance data.",
+      "stride_primary": "I",
+      "goals": [
+        "Disclosure"
+      ],
+      "tier": "T2",
+      "evidence_support": "E2",
+      "severity": 3,
+      "commonly_overlooked": false
+    },
+    {
+      "title": "Surveillance Data Feed Interception",
+      "layer": "L4",
+      "asset_ids": [
+        "A4.5"
+      ],
+      "mechanism": "Eavesdropping or tampering with the surveillance data feed transmitted from the processing station to ATM.",
+      "stride_primary": "I",
+      "goals": [
+        "Disclosure"
+      ],
+      "tier": "T2",
+      "evidence_support": "E2",
+      "severity": 3,
+      "commonly_overlooked": false
+    }
+  ],
+  "architecture_weaknesses": [
+    "Assumption W4 notes observable reports carry no message authentication, leaving L2 highly vulnerable to unauthenticated tampering and replay attacks.",
+    "The reliance on unauthenticated ADS-B self-reports creates a fundamental vulnerability exploitable during cross-checks.",
+    "Weak HDOP passes create a persistent stealth window where bias steps breach requirements without triggering L3 integrity monitors.",
+    "Inter-satellite links lack robust cryptographic protection specified in the architecture, enabling relay disruption and traffic redirection.",
+    "PTP time-transfer messages lack authentication, permitting subtle clock bias injection that bypasses onboard L1 checks.",
+    "Centralized processing platform hosting represents a single point of failure and high-value target for lateral movement from L4 networks."
+  ],
+  "overall": "The SATERA LEO-MLAT-B threat model highlights critical risks stemming from unauthenticated ADS-B emissions, clock bias injection vectors, and weak geometric passes. Mitigating these threats requires end-to-end cryptographic authentication across all communication layers, enhanced integrity monitoring during high-HDOP states, and rigorous key management to prevent sophisticated state-level disruption."
+}
