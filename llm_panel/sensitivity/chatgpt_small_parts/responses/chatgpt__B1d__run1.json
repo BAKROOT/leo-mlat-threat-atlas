@@ -1,0 +1,230 @@
+{
+  "meta": {
+    "model_self_report": "GPT-6",
+    "prompt_id": "B1d",
+    "n_ratings": 4
+  },
+  "ratings": [
+    {
+      "id": "T1.13",
+      "validity": "valid",
+      "related_id": "T1.14",
+      "layer": "L1",
+      "asset_ids": [
+        "A1.6",
+        "A1.4",
+        "A1.5"
+      ],
+      "trust_boundary": [
+        "TB1"
+      ],
+      "stride_primary": "E",
+      "stride_secondary": [
+        "T",
+        "D"
+      ],
+      "goals": [
+        "Denial",
+        "Deception",
+        "Displacement"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC6",
+        "AC5"
+      ],
+      "tier": "T2",
+      "evidence": "E2",
+      "analogue_only": false,
+      "unknown_sources": [
+        65
+      ],
+      "D": 5,
+      "R": 3,
+      "E": 3,
+      "A": 4,
+      "Di_strong": 3,
+      "Di_weak": 5,
+      "confidence": 3,
+      "rationale": "Exploiting a software defect to gain platform control is elevation of privilege; subsequent modification or disruption is secondary. Spacecraft security research supports feasibility, but the cited evidence does not establish this exact surveillance-system consequence. Broad control could affect several footprints. Detection depends on downstream integrity checks.",
+      "issue": "Overlaps T1.14 in platform control and persistence. The attack path is underspecified, and cited research does not establish remote reachability through the command path or the stated LEO-MLAT impact."
+    },
+    {
+      "id": "T1.14",
+      "validity": "valid",
+      "related_id": "T1.13",
+      "layer": "L1",
+      "asset_ids": [
+        "A1.6",
+        "A1.4",
+        "A1.5"
+      ],
+      "trust_boundary": [
+        "TB1"
+      ],
+      "stride_primary": "T",
+      "stride_secondary": [
+        "E"
+      ],
+      "goals": [
+        "Displacement",
+        "Denial",
+        "Deception"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC6",
+        "AC7"
+      ],
+      "tier": "T2",
+      "evidence": "E2",
+      "analogue_only": true,
+      "unknown_sources": [
+        64
+      ],
+      "D": 5,
+      "R": 3,
+      "E": 3,
+      "A": 4,
+      "Di_strong": 3,
+      "Di_weak": 5,
+      "confidence": 3,
+      "rationale": "Firmware alteration or boot-chain bypass primarily tampers with trusted software and may enable persistent privilege. Satellite software research is relevant, while terminal fault-injection evidence is analogical. Consequences depend on which firmware is affected and whether integrity checks reveal changed behaviour.",
+      "issue": "Substantially overlaps T1.13. Fault injection and unauthenticated updates are distinct mechanisms with different prerequisites and should not be conflated without separate evidence."
+    },
+    {
+      "id": "T1.15",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L2",
+      "asset_ids": [
+        "A1.7",
+        "A2.4",
+        "A2.5",
+        "A4.8"
+      ],
+      "trust_boundary": [
+        "TB2",
+        "TB3"
+      ],
+      "stride_primary": "E",
+      "stride_secondary": [
+        "D",
+        "T"
+      ],
+      "goals": [
+        "Denial",
+        "Deception"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC6",
+        "AC5"
+      ],
+      "tier": "T2",
+      "evidence": "E2",
+      "analogue_only": true,
+      "unknown_sources": [],
+      "D": 3,
+      "R": 3,
+      "E": 3,
+      "A": 3,
+      "Di_strong": 2,
+      "Di_weak": 2,
+      "confidence": 4,
+      "rationale": "Compromising a ground terminal is elevation of privilege, with disruption and report tampering as possible consequences. SATCOM terminal research supports analogous exposure, not this architecture's exact impact. Affected extent depends on gateway redundancy and coverage. Link failure may be observable at L2.",
+      "issue": "Misplaced in L1: the stated entry point is ground-terminal management, generally L2 or L4. Default credentials and exposed interfaces require architecture-specific verification."
+    },
+    {
+      "id": "T1.16",
+      "validity": "valid",
+      "related_id": "T1.15",
+      "layer": "L2",
+      "asset_ids": [
+        "A1.7",
+        "A2.4",
+        "A2.5"
+      ],
+      "trust_boundary": [
+        "TB0",
+        "TB1",
+        "TB2"
+      ],
+      "stride_primary": "D",
+      "stride_secondary": [],
+      "goals": [
+        "Denial"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC2",
+        "AC5"
+      ],
+      "tier": "T1c",
+      "evidence": "E1",
+      "analogue_only": true,
+      "unknown_sources": [
+        21,
+        13
+      ],
+      "D": 3,
+      "R": 2,
+      "E": 4,
+      "A": 3,
+      "Di_strong": 2,
+      "Di_weak": 2,
+      "confidence": 2,
+      "rationale": "Interference or resource exhaustion that prevents reception is denial of service. The cited LEO-network work is relevant but its precise support for ground-station reception denial is uncertain. Affected coverage depends on station redundancy; link loss should generally be observable at L2.",
+      "issue": "The record conflates RF interference with computational overload, which have different entry points and evidence. Simulator capabilities alone do not establish a demonstrated operational attack."
+    }
+  ],
+  "batch_comments": {
+    "missing_threats": [
+      {
+        "title": "Payload measurement corruption",
+        "layer": "L1",
+        "asset_ids": [
+          "A1.3",
+          "A1.4"
+        ],
+        "why": "Corrupted TOA, FOA or AOA extraction could bias localisation without compromising the bus or disrupting reception."
+      },
+      {
+        "title": "Onboard clock manipulation",
+        "layer": "L1",
+        "asset_ids": [
+          "A1.5",
+          "A1.2"
+        ],
+        "why": "The explicit GNSS/PTP timing dependency creates a distinct temporal-integrity threat not covered by generic platform compromise."
+      },
+      {
+        "title": "Ground-station command-path abuse",
+        "layer": "L2",
+        "asset_ids": [
+          "A1.7",
+          "A2.5"
+        ],
+        "why": "Unauthorised or misused telecommands can alter payload operation independently of ground reception denial."
+      },
+      {
+        "title": "Ground-station physical compromise",
+        "layer": "L4",
+        "asset_ids": [
+          "A1.7",
+          "A4.7",
+          "A4.8"
+        ],
+        "why": "Physical access, malicious maintenance and supplier actions may bypass remote-terminal security assumptions."
+      }
+    ],
+    "rubric_ambiguities": [
+      "Evidence levels combine mechanism feasibility and consequence support; analogue research may demonstrate compromise without demonstrating the surveillance impact.",
+      "The rubric does not specify whether affected users means aircraft, ATM users, or geographic service footprints when ground infrastructure is compromised.",
+      "Discoverability specifies the first true detection predicate, but does not define predicates for software compromise or ground-station outage.",
+      "A threat's primary STRIDE category is ambiguous when exploitation grants control but the stated consequence is denial or report manipulation.",
+      "The rubric does not clarify whether separate mechanisms sharing the same compromised asset should be duplicates or distinct threats."
+    ],
+    "overall": "The records describe plausible defensive concerns, but their boundaries and evidence are uneven. T1.13 and T1.14 overlap substantially; T1.15 is misplaced in L1, and T1.16 conflates distinct denial mechanisms. Analogue evidence should not be mistaken for demonstrated LEO-MLAT impact. Prioritisation needs architecture-specific reachability, redundancy and detection assumptions."
+  }
+}

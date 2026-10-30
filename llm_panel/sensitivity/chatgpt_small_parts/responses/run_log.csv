@@ -1,0 +1,6 @@
+file,model_version,thinking_mode,date,notes
+chatgpt__B1a__run1.json,GPT-6 (as stated by user),not recorded,not recorded,small part B1a; with or without attack-vector line not recorded
+chatgpt__B1a__run2.json,GPT-6 (as stated by user),not recorded,not recorded,small part B1a; the other variant; which is which not recorded
+chatgpt__B1a__run3.json,GPT-6,Think (composer mode),2026-10-29,"prompts/small/B1a_L1.txt (with attack-vector line); temporary chat, unpersonalized, no attachments; prompt hash-checked; reply hash-verified"
+chatgpt__B1a__run4.json,GPT-6,Think (composer mode),2026-10-29,"prompts/small_nv/B1a_L1.txt (without attack-vector line); temporary chat, unpersonalized, no attachments; prompt hash-checked; reply hash-verified"
+chatgpt__B1b-B4d__run1.json,GPT-6 (as stated by user),not recorded,not recorded,small parts with attack-vector line (14 parts in total with B1a)

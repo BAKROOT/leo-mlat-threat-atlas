@@ -1,0 +1,211 @@
+{
+  "meta": {
+    "model_self_report": "GPT-6",
+    "prompt_id": "B2b",
+    "n_ratings": 4
+  },
+  "ratings": [
+    {
+      "id": "T2.05",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L2",
+      "asset_ids": [
+        "A2.2"
+      ],
+      "trust_boundary": [
+        "TB1",
+        "TB2"
+      ],
+      "stride_primary": "D",
+      "stride_secondary": [
+        "T"
+      ],
+      "goals": [
+        "Denial"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC5"
+      ],
+      "tier": "T3",
+      "evidence": "P",
+      "analogue_only": false,
+      "unknown_sources": [],
+      "D": 3,
+      "R": 1,
+      "E": 2,
+      "A": 4,
+      "Di_strong": 3,
+      "Di_weak": 3,
+      "confidence": 3,
+      "rationale": "Crosslink disruption directly degrades report delivery, making denial primary and tampering secondary if existing relay traffic is altered. No mechanism or source is cited, so evidence is postulated. Sustained constellation-level disruption plausibly requires state-level capability; detection depends on L3 report completeness and coverage checks.",
+      "issue": "The mechanism is explicitly unsupported by published evidence. Affected-user extent and detectability depend on constellation topology, redundancy, and operational monitoring, none of which are specified."
+    },
+    {
+      "id": "T2.06",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L2",
+      "asset_ids": [
+        "A2.3",
+        "A1.5",
+        "A1.4"
+      ],
+      "trust_boundary": [
+        "TB1"
+      ],
+      "stride_primary": "tau",
+      "stride_secondary": [
+        "T"
+      ],
+      "goals": [
+        "Displacement",
+        "Deception"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC5",
+        "AC4"
+      ],
+      "tier": "T2",
+      "evidence": "E2",
+      "analogue_only": true,
+      "unknown_sources": [],
+      "D": 5,
+      "R": 3,
+      "E": 3,
+      "A": 4,
+      "Di_strong": 3,
+      "Di_weak": 5,
+      "confidence": 3,
+      "rationale": "Authenticated messages can still yield incorrect time through asymmetric delay, satisfying the temporal-integrity invariance test. Timing bias propagates into measurements and can cause displacement when checks miss it. Cited NTP/PTP research supports the mechanism, but not necessarily this satellite implementation; analogue-only evidence reduces reproducibility.",
+      "issue": "The cited evidence concerns network time protocols, not necessarily inter-satellite PTP or onboard clock disciplining. The STRONG and WEAK detection outcomes follow the stipulated assumptions, not demonstrated performance."
+    },
+    {
+      "id": "T2.07",
+      "validity": "valid",
+      "related_id": "T2.06",
+      "layer": "L2",
+      "asset_ids": [
+        "A2.3",
+        "A1.5",
+        "A1.4"
+      ],
+      "trust_boundary": [
+        "TB1"
+      ],
+      "stride_primary": "T",
+      "stride_secondary": [
+        "tau",
+        "S"
+      ],
+      "goals": [
+        "Displacement",
+        "Deception"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC5"
+      ],
+      "tier": "T2",
+      "evidence": "E2",
+      "analogue_only": true,
+      "unknown_sources": [],
+      "D": 5,
+      "R": 3,
+      "E": 3,
+      "A": 4,
+      "Di_strong": 3,
+      "Di_weak": 5,
+      "confidence": 3,
+      "rationale": "Fabricated or replayed time-transfer messages tamper with the time reference through unauthenticated message handling. Unlike T2.06, sound authentication can prevent this stated mechanism, so tau is secondary rather than primary. Timing consequences and detectability follow the supplied assumptions; cited protocol research is analogue evidence.",
+      "issue": "Overlaps with T2.06 in downstream timing effects but represents a distinct authentication-dependent mechanism. Replay resistance, message freshness, and the actual PTP security configuration are unspecified."
+    },
+    {
+      "id": "T2.08",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L2",
+      "asset_ids": [
+        "A2.4",
+        "A4.5"
+      ],
+      "trust_boundary": [
+        "TB2",
+        "TB0"
+      ],
+      "stride_primary": "I",
+      "stride_secondary": [],
+      "goals": [
+        "Disclosure"
+      ],
+      "is_enabler": true,
+      "adversary_class": [
+        "AC5"
+      ],
+      "tier": "T1p",
+      "evidence": "E2",
+      "analogue_only": true,
+      "unknown_sources": [
+        63,
+        66
+      ],
+      "D": null,
+      "R": 3,
+      "E": 5,
+      "A": 4,
+      "Di_strong": 5,
+      "Di_weak": 5,
+      "confidence": 3,
+      "rationale": "Passive interception is information disclosure and only enables later injection; it does not itself alter target reports. Consumer-grade reception suggests low entry cost, while exposure may span several footprints. Maritime satellite and other satellite-network studies are analogues, not direct demonstrations against this system.",
+      "issue": "The downlink and backhaul have different reception and access conditions. Confidentiality, encryption, traffic visibility, and the distinction between observable metadata and readable report contents are unspecified."
+    }
+  ],
+  "batch_comments": {
+    "missing_threats": [
+      {
+        "title": "Unauthenticated observable-report modification",
+        "layer": "L2",
+        "asset_ids": [
+          "A2.1",
+          "A2.4"
+        ],
+        "why": "W4 explicitly states that observable reports lack authentication, leaving report tampering or replay insufficiently represented by these four records."
+      },
+      {
+        "title": "Inter-satellite report injection",
+        "layer": "L2",
+        "asset_ids": [
+          "A2.2",
+          "A2.1"
+        ],
+        "why": "Fabricated or replayed relay reports could compromise measurement association independently of PTP manipulation or passive interception."
+      },
+      {
+        "title": "Telecommand and update-path compromise",
+        "layer": "L2",
+        "asset_ids": [
+          "A2.5"
+        ],
+        "why": "Command or update compromise could affect payload operation and configuration, but no such threat appears in this batch."
+      },
+      {
+        "title": "Downlink report suppression",
+        "layer": "L2",
+        "asset_ids": [
+          "A2.4"
+        ],
+        "why": "Active downlink or backhaul interruption causes denial, distinct from the passive disclosure described in T2.08."
+      }
+    ],
+    "rubric_ambiguities": [
+      "The rubric maps evidence levels to reproducibility, but does not specify how to grade multiple citations with different evidence strengths when none directly addresses the target architecture.",
+      "Affected-user extent depends on constellation topology and service geometry, which are not supplied for ISL disruption or passive interception.",
+      "Discoverability specifies the first layer with a true detection predicate, but does not define predicates for link loss, passive interception, or report completeness.",
+      "The tier mapping does not precisely distinguish an organised link adversary from a state-level actor when sustained access to satellite links is required.",
+      "The definition of enabler says Damage is null, but does not clarify whether its downstream consequences should influence other PA-DREAD dimensions."
+    ],
+    "overall": "T2.05 is a plausible but explicitly postulated denial threat. T2.06 and T2.07 are distinct timing mechanisms with overlapping consequences and analogue protocol evidence. T2.08 is a disclosure enabler, not direct report manipulation. Ratings remain provisional because the records omit architecture-specific evidence, security configuration, redundancy, and detection details."
+  }
+}

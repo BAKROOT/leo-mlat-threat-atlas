@@ -1,0 +1,220 @@
+{
+  "meta": {
+    "model_self_report": "GPT-6",
+    "prompt_id": "B1a",
+    "n_ratings": 4
+  },
+  "ratings": [
+    {
+      "id": "T1.01",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L1",
+      "asset_ids": [
+        "A1.1"
+      ],
+      "trust_boundary": [
+        "TB0"
+      ],
+      "stride_primary": "S",
+      "stride_secondary": [
+        "T"
+      ],
+      "goals": [
+        "Deception"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC2"
+      ],
+      "tier": "T1p",
+      "evidence": "E2",
+      "analogue_only": true,
+      "unknown_sources": [
+        26
+      ],
+      "D": 4,
+      "R": 3,
+      "E": 5,
+      "A": 3,
+      "Di_strong": 3,
+      "Di_weak": 5,
+      "confidence": 4,
+      "rationale": "Fabricated transmissions are spoofing, distinct from modifying an existing report. ADS-B attack research supports feasibility, but terrestrial demonstrations are analogue evidence. Detection depends on downstream consistency checks; W2 and W3 prescribe different outcomes. Footprint-wide reception is plausible, though actual affected extent depends on geometry and filtering.",
+      "issue": "A1.1 is the emission source, but A1.4 and A2.1 also mediate reception and extracted observations. Source 26's specific support is uncertain."
+    },
+    {
+      "id": "T1.02",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L1",
+      "asset_ids": [
+        "A1.1",
+        "A1.4",
+        "A2.1"
+      ],
+      "trust_boundary": [
+        "TB0",
+        "TB1"
+      ],
+      "stride_primary": "S",
+      "stride_secondary": [
+        "T"
+      ],
+      "goals": [
+        "Displacement",
+        "Deception"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC2"
+      ],
+      "tier": "T1c",
+      "evidence": "E1",
+      "analogue_only": true,
+      "unknown_sources": [
+        7,
+        59
+      ],
+      "D": 5,
+      "R": 2,
+      "E": 4,
+      "A": 2,
+      "Di_strong": 3,
+      "Di_weak": 5,
+      "confidence": 3,
+      "rationale": "Replay presents authentic content as a current observation, primarily spoofing, with temporal tampering as a secondary interpretation. Stale reports can displace tracks or create deceptive targets. Detection depends on freshness and consistency checks, whose effectiveness is not specified. Evidence strength and transfer to LEO require caution.",
+      "issue": "Replay overlaps forged injection but is mechanistically distinct. The record does not establish whether reception-time measurements or freshness checks reliably distinguish replayed messages."
+    },
+    {
+      "id": "T1.03",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L1",
+      "asset_ids": [
+        "A1.1",
+        "A3.5",
+        "A3.4"
+      ],
+      "trust_boundary": [
+        "TB0",
+        "TB3"
+      ],
+      "stride_primary": "S",
+      "stride_secondary": [
+        "T"
+      ],
+      "goals": [
+        "Displacement",
+        "Deception"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC1"
+      ],
+      "tier": "T1c",
+      "evidence": "E1",
+      "analogue_only": true,
+      "unknown_sources": [
+        72,
+        56,
+        6
+      ],
+      "D": 5,
+      "R": 2,
+      "E": 4,
+      "A": 1,
+      "Di_strong": 3,
+      "Di_weak": 5,
+      "confidence": 2,
+      "rationale": "A wrong self-reported position is spoofing content, not necessarily falsification of the physical emission. Independent multilateration can expose the discrepancy, but the outcome depends on cross-check logic and the stated operating regime. Cited source details and evidence quality cannot be independently verified here.",
+      "issue": "The mechanism conflates a false broadcast position with defeating the cross-check, which is a separate downstream threat. A1.1 alone omits A3.5 and the integrity monitor."
+    },
+    {
+      "id": "T1.04",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L1",
+      "asset_ids": [
+        "A1.3",
+        "A1.4"
+      ],
+      "trust_boundary": [
+        "TB1"
+      ],
+      "stride_primary": "D",
+      "stride_secondary": [],
+      "goals": [
+        "Denial"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC2"
+      ],
+      "tier": "T1p",
+      "evidence": "E2",
+      "analogue_only": true,
+      "unknown_sources": [
+        3,
+        23
+      ],
+      "D": 3,
+      "R": 3,
+      "E": 5,
+      "A": 3,
+      "Di_strong": 1,
+      "Di_weak": 1,
+      "confidence": 3,
+      "rationale": "In-band interference degrades reception and observability, making denial the primary category. Related terrestrial ADS-B attack literature may support feasibility, but satellite payload susceptibility and footprint-wide impact are not established. A rising noise floor may be detectable at L1, although detection is not guaranteed by the record.",
+      "issue": "The stated noise-floor mechanism is plausible but does not establish affected footprint or duration. The named RF front end is appropriate, but the extraction processor is also affected."
+    }
+  ],
+  "batch_comments": {
+    "missing_threats": [
+      {
+        "title": "GNSS or PTP timing compromise",
+        "layer": "L1",
+        "asset_ids": [
+          "A1.2",
+          "A1.5",
+          "A2.3"
+        ],
+        "why": "Clock bias can propagate into range and position errors independently of forged or replayed ADS-B content."
+      },
+      {
+        "title": "Payload measurement manipulation",
+        "layer": "L1",
+        "asset_ids": [
+          "A1.3",
+          "A1.4"
+        ],
+        "why": "Compromised extraction firmware or measurement processing could corrupt TOA, FOA or AOA without changing the received broadcast."
+      },
+      {
+        "title": "RF reception degradation without jamming",
+        "layer": "L1",
+        "asset_ids": [
+          "A1.3",
+          "A1.4"
+        ],
+        "why": "Front-end faults or interference-induced measurement degradation can reduce geometric observability even when some messages remain decodable."
+      },
+      {
+        "title": "Aircraft transponder or GNSS deception",
+        "layer": "L1",
+        "asset_ids": [
+          "A1.1",
+          "A1.2"
+        ],
+        "why": "Compromise or deception of onboard position inputs can produce plausible but incorrect self-reports distinct from external forged emissions."
+      }
+    ],
+    "rubric_ambiguities": [
+      "Evidence levels are assigned per threat, but sources may support only terrestrial systems or a related mechanism; the analogue-only penalty is clear, while evidence selection remains interpretive.",
+      "Discoverability specifies the first layer where a predicate is true, but no explicit predicates are provided for jamming, replay freshness or false-position detection.",
+      "A threat may cause displacement and deception simultaneously, yet the damage rubric assigns different values without specifying which dominates.",
+      "Affected-user extent is defined by aircraft or footprint, but the system description does not specify the effective reception footprint or track filtering behavior."
+    ],
+    "overall": "All four records describe plausible, distinct L1 threat mechanisms, although replay and forged injection overlap at the outcome level. False self-reported position is particularly dependent on the independent cross-check and should be separated from attacks against that check. Jamming is a denial threat, but its impact and detectability need explicit assumptions. Evidence transfer from terrestrial ADS-B studies to LEO multilateration remains a major uncertainty."
+  }
+}

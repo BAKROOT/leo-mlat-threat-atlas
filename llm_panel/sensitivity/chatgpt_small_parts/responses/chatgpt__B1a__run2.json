@@ -1,0 +1,208 @@
+{
+  "meta": {
+    "model_self_report": "GPT-6",
+    "prompt_id": "B1a",
+    "n_ratings": 4
+  },
+  "ratings": [
+    {
+      "id": "T1.01",
+      "validity": "valid",
+      "related_id": "T1.03",
+      "layer": "L1",
+      "asset_ids": [
+        "A1.1"
+      ],
+      "trust_boundary": [
+        "TB0"
+      ],
+      "stride_primary": "S",
+      "stride_secondary": [],
+      "goals": [
+        "Deception"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC2"
+      ],
+      "tier": "T1p",
+      "evidence": "E2",
+      "analogue_only": true,
+      "unknown_sources": [
+        59,
+        26
+      ],
+      "D": 4,
+      "R": 3,
+      "E": 5,
+      "A": 3,
+      "Di_strong": 3,
+      "Di_weak": 5,
+      "confidence": 4,
+      "rationale": "Fabricated emissions are spoofing and can create false targets. Established terrestrial ADS-B demonstrations support E2 at most, discounted for analogue evidence. Commercial RF equipment supports T1p. Cross-checking can expose inconsistencies, but W3 permits undetected deceptive reports; footprint-wide reception bounds affected users.",
+      "issue": "The cited satellite-applicability paper may not establish operational LEO exploitation. Distinguish fabricated targets from false positions broadcast by genuine aircraft."
+    },
+    {
+      "id": "T1.02",
+      "validity": "valid",
+      "related_id": "T1.01",
+      "layer": "L1",
+      "asset_ids": [
+        "A1.1",
+        "A2.1",
+        "A3.1",
+        "A3.3"
+      ],
+      "trust_boundary": [
+        "TB0",
+        "TB1",
+        "TB2"
+      ],
+      "stride_primary": "S",
+      "stride_secondary": [
+        "T"
+      ],
+      "goals": [
+        "Displacement",
+        "Deception"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC2"
+      ],
+      "tier": "T1p",
+      "evidence": "E2",
+      "analogue_only": true,
+      "unknown_sources": [
+        59,
+        7
+      ],
+      "D": 5,
+      "R": 3,
+      "E": 5,
+      "A": 2,
+      "Di_strong": 3,
+      "Di_weak": 5,
+      "confidence": 3,
+      "rationale": "Rebroadcasting genuine messages creates stale observations attributable to an aircraft, making spoofing primary and replay-induced data tampering secondary. Terrestrial ADS-B research supports the general mechanism, not equivalent satellite outcomes. Consequences depend on track association and timing; a single aircraft is the conservative affected-user estimate.",
+      "issue": "Replay overlaps fabricated-emission spoofing but is distinct by using genuine recorded content. The record does not establish that every replay produces displacement or evades freshness and consistency checks."
+    },
+    {
+      "id": "T1.03",
+      "validity": "valid",
+      "related_id": "T1.01",
+      "layer": "L1",
+      "asset_ids": [
+        "A1.1",
+        "A1.2",
+        "A3.5"
+      ],
+      "trust_boundary": [
+        "TB0",
+        "TB2"
+      ],
+      "stride_primary": "T",
+      "stride_secondary": [
+        "S"
+      ],
+      "goals": [
+        "Deception",
+        "Displacement"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC1"
+      ],
+      "tier": "T1c",
+      "evidence": "E1",
+      "analogue_only": true,
+      "unknown_sources": [
+        72,
+        56,
+        6
+      ],
+      "D": 5,
+      "R": 2,
+      "E": 4,
+      "A": 2,
+      "Di_strong": 3,
+      "Di_weak": 5,
+      "confidence": 2,
+      "rationale": "A genuine aircraft broadcasting an incorrect self-reported position is primarily tampering with reported data, secondarily spoofing its asserted location. The independent localisation should reveal disagreement, but W3 allows a missed verdict. Cited evidence could not be verified, so support is conservatively E0.",
+      "issue": "The record conflates deliberate avionics modification with GNSS-induced deception. Its claim that a chain masks the discrepancy lacks a specified mechanism and is not established by the supplied evidence."
+    },
+    {
+      "id": "T1.04",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L1",
+      "asset_ids": [
+        "A1.3",
+        "A1.4",
+        "A2.1"
+      ],
+      "trust_boundary": [
+        "TB0",
+        "TB1"
+      ],
+      "stride_primary": "D",
+      "stride_secondary": [],
+      "goals": [
+        "Denial"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC2"
+      ],
+      "tier": "T1p",
+      "evidence": "E2",
+      "analogue_only": true,
+      "unknown_sources": [],
+      "D": 3,
+      "R": 3,
+      "E": 5,
+      "A": 3,
+      "Di_strong": 1,
+      "Di_weak": 1,
+      "confidence": 4,
+      "rationale": "Interference that prevents valid reception is denial of service, not falsification. ADS-B interference research supports the general mechanism, but terrestrial evidence is only analogous to orbital reception. RF monitoring or loss-of-measurement checks can identify degradation at L1; the footprint defines the likely scope.",
+      "issue": "The record does not distinguish detectable loss of reception from interference that resembles ordinary coverage degradation. Its stated footprint impact does not establish constellation-wide denial."
+    }
+  ],
+  "batch_comments": {
+    "missing_threats": [
+      {
+        "title": "GNSS or PTP clock manipulation",
+        "layer": "L1",
+        "asset_ids": [
+          "A1.2",
+          "A1.5"
+        ],
+        "why": "Clock bias directly contaminates TOA observables and can propagate into position errors; timing manipulation merits a distinct tau threat."
+      },
+      {
+        "title": "Payload measurement tampering",
+        "layer": "L1",
+        "asset_ids": [
+          "A1.4"
+        ],
+        "why": "Compromised extraction firmware or measurement processing could alter TOA, FOA or AOA independently of the aircraft's broadcast content."
+      },
+      {
+        "title": "RF reception obstruction",
+        "layer": "L1",
+        "asset_ids": [
+          "A1.3"
+        ],
+        "why": "Antenna faults, front-end saturation or unintentional interference can degrade observability without constituting deliberate in-band jamming."
+      }
+    ],
+    "rubric_ambiguities": [
+      "The evidence rubric does not define how peer-reviewed terrestrial attack demonstrations map to E1 versus E2 when satellite-specific hardware is absent.",
+      "Affected users may mean aircraft, ATM consumers or geographic coverage; the rubric mixes aircraft counts with footprint-based scope.",
+      "Discoverability lacks an explicit predicate for replay freshness, so its detection layer depends on unspecified association and tracker checks.",
+      "W2 and W3 govern single-satellite clock bias, not necessarily fabricated targets, replay or incorrect aircraft self-reports; applying them to these threats is an extrapolation."
+    ],
+    "overall": "The four records describe distinct mechanisms, although the first three overlap in their potential to create deceptive tracks. Satellite-specific evidence and downstream detection assumptions are insufficiently established. The most important gaps are timing integrity, payload measurement integrity, and explicit separation of fabricated targets, replay, and false self-reported positions."
+  }
+}

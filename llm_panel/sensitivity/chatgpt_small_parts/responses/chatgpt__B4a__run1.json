@@ -1,0 +1,239 @@
+{
+  "meta": {
+    "model_self_report": "GPT-6",
+    "prompt_id": "B4a",
+    "n_ratings": 4
+  },
+  "ratings": [
+    {
+      "id": "T4.01",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L4",
+      "asset_ids": [
+        "A4.1",
+        "A4.4",
+        "A1.5",
+        "A2.3"
+      ],
+      "trust_boundary": [
+        "TB3",
+        "TB1"
+      ],
+      "stride_primary": "T",
+      "stride_secondary": [
+        "tau",
+        "E"
+      ],
+      "goals": [
+        "Displacement",
+        "Denial",
+        "Deception"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC7"
+      ],
+      "tier": "T2",
+      "evidence": "E0",
+      "analogue_only": true,
+      "unknown_sources": [
+        76,
+        77
+      ],
+      "D": 5,
+      "R": 1,
+      "E": 3,
+      "A": 4,
+      "Di_strong": 3,
+      "Di_weak": 5,
+      "confidence": 3,
+      "rationale": "Policy tampering can alter clock discipline or weaken conformance checks, enabling timing errors and potentially unflagged displacement. The cited service incidents are non-malicious and only analogue path evidence; authentication-invariance does not make ordinary policy tampering intrinsically temporal.",
+      "issue": "The mechanism conflates policy modification with direct time-reference corruption. Distinguish changed thresholds from altered clock discipline and identify the applicable checks."
+    },
+    {
+      "id": "T4.02",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L4",
+      "asset_ids": [
+        "A4.2",
+        "A3.2",
+        "A3.3",
+        "A3.4",
+        "A3.5"
+      ],
+      "trust_boundary": [
+        "TB3"
+      ],
+      "stride_primary": "T",
+      "stride_secondary": [],
+      "goals": [
+        "Displacement",
+        "Denial",
+        "Deception"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC7"
+      ],
+      "tier": "T2",
+      "evidence": "E0",
+      "analogue_only": true,
+      "unknown_sources": [
+        76
+      ],
+      "D": 5,
+      "R": 1,
+      "E": 3,
+      "A": 4,
+      "Di_strong": 3,
+      "Di_weak": 5,
+      "confidence": 3,
+      "rationale": "Falsified orbit products tamper with solver inputs and can bias multiple tracks. Effects depend on ephemeris error, geometry, and monitor sensitivity; W2 and W3 specify clock-bias behavior, not necessarily equivalent ephemeris-error detection. The cited timing incident does not demonstrate malicious ephemeris falsification.",
+      "issue": "The clock-bias analogy is incomplete: ephemeris errors have different geometry-dependent signatures. Detection scores require an explicit ephemeris-error model."
+    },
+    {
+      "id": "T4.03",
+      "validity": "valid",
+      "related_id": "T4.02",
+      "layer": "L4",
+      "asset_ids": [
+        "A4.2",
+        "A3.2",
+        "A3.3",
+        "A3.4",
+        "A3.5"
+      ],
+      "trust_boundary": [
+        "TB3"
+      ],
+      "stride_primary": "D",
+      "stride_secondary": [
+        "T"
+      ],
+      "goals": [
+        "Denial",
+        "Displacement",
+        "Deception"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC5",
+        "AC7"
+      ],
+      "tier": "T2",
+      "evidence": "E0",
+      "analogue_only": true,
+      "unknown_sources": [
+        77
+      ],
+      "D": 5,
+      "R": 1,
+      "E": 3,
+      "A": 4,
+      "Di_strong": 3,
+      "Di_weak": 5,
+      "confidence": 3,
+      "rationale": "Withholding updates is primarily denial of timely ephemeris availability; stale data may also bias positions if checks fail to reject it. The cited outage supports an availability pathway, not malicious withholding or an unflagged displacement outcome. Detection depends on freshness checks and orbit-error tolerance.",
+      "issue": "Overlaps T4.02 at the solver-input and consequence level but differs in availability mechanism. Separate stale-data rejection, flagged denial, and unflagged displacement outcomes."
+    },
+    {
+      "id": "T4.04",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L4",
+      "asset_ids": [
+        "A4.3",
+        "A4.8",
+        "A2.5",
+        "A2.2",
+        "A2.4"
+      ],
+      "trust_boundary": [
+        "TB3",
+        "TB1",
+        "TB2"
+      ],
+      "stride_primary": "I",
+      "stride_secondary": [
+        "E"
+      ],
+      "goals": [
+        "Disclosure"
+      ],
+      "is_enabler": true,
+      "adversary_class": [
+        "AC6",
+        "AC7"
+      ],
+      "tier": "T2",
+      "evidence": "E1",
+      "analogue_only": true,
+      "unknown_sources": [
+        1,
+        61
+      ],
+      "D": null,
+      "R": 2,
+      "E": 3,
+      "A": 4,
+      "Di_strong": 4,
+      "Di_weak": 4,
+      "confidence": 3,
+      "rationale": "Key disclosure is an enabling confidentiality breach, not itself a target-report consequence. ACARS and SATCOM compromise evidence is analogue and does not establish compromise of this system's key-management infrastructure. Affected extent depends on key scope; compromised credentials may enable subsequent command or link attacks.",
+      "issue": "The record bundles keys for distinct trust domains with potentially different exposure and blast radii. Assess key compromise separately by purpose, distribution path, and revocation capability."
+    }
+  ],
+  "batch_comments": {
+    "missing_threats": [
+      {
+        "title": "Malicious orbit-determination software or configuration change",
+        "layer": "L4",
+        "asset_ids": [
+          "A4.2",
+          "A4.4",
+          "A4.8"
+        ],
+        "why": "Compromise of orbit-generation logic or its build and configuration chain can corrupt ephemerides without directly modifying delivered products."
+      },
+      {
+        "title": "Ephemeris freshness validation failure",
+        "layer": "L3",
+        "asset_ids": [
+          "A3.2",
+          "A3.4",
+          "A3.5"
+        ],
+        "why": "Missing or ineffective age and plausibility checks can allow stale orbit data to propagate into accepted tracks."
+      },
+      {
+        "title": "Key revocation and recovery failure",
+        "layer": "L4",
+        "asset_ids": [
+          "A4.3",
+          "A4.4",
+          "A4.8"
+        ],
+        "why": "Inability to revoke compromised credentials or restore trust can prolong compromise beyond initial key disclosure."
+      },
+      {
+        "title": "Insider suppression of security audit records",
+        "layer": "L4",
+        "asset_ids": [
+          "A4.7",
+          "A4.8"
+        ],
+        "why": "An authorised operator may conceal policy, ephemeris, or key-management changes and impede attribution."
+      }
+    ],
+    "rubric_ambiguities": [
+      "W2 and W3 define clock-bias detection but do not establish equivalent detection behavior for ephemeris corruption or stale orbit data.",
+      "The rubric maps the strongest cited evidence to a single level, but analogue non-malicious outages establish only portions of these malicious mechanisms.",
+      "Affected-user scoring is unclear when one governance event affects several footprints but its eventual report-level impact depends on geometry.",
+      "Enabler damage is null, but the rubric does not specify whether the remaining dimensions should include the downstream threat's reach and detectability.",
+      "A threat that permits both flagged denial and unflagged displacement has no explicit rule for selecting one Damage score."
+    ],
+    "overall": "All four records describe plausible security concerns, but evidence strength is overstated if service failures are treated as demonstrations of malicious mechanisms. T4.02 and T4.03 overlap in affected assets but represent distinct integrity and availability pathways. Key disclosure is an enabler whose risk depends on key scope and downstream controls. Detection scores for ephemeris threats remain conditional because the supplied assumptions concern clock bias."
+  }
+}

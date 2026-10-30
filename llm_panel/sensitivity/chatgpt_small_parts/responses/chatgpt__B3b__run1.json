@@ -1,0 +1,233 @@
+{
+  "meta": {
+    "model_self_report": "GPT-6",
+    "prompt_id": "B3b",
+    "n_ratings": 4
+  },
+  "ratings": [
+    {
+      "id": "T3.05",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L3",
+      "asset_ids": [
+        "A3.3",
+        "A3.7"
+      ],
+      "trust_boundary": [
+        "TB2",
+        "TB3"
+      ],
+      "stride_primary": "D",
+      "stride_secondary": [
+        "T"
+      ],
+      "goals": [
+        "Denial"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC6"
+      ],
+      "tier": "T2",
+      "evidence": "E1",
+      "analogue_only": true,
+      "unknown_sources": [
+        65
+      ],
+      "D": 3,
+      "R": 2,
+      "E": 3,
+      "A": 3,
+      "Di_strong": 3,
+      "Di_weak": 3,
+      "confidence": 3,
+      "rationale": "Resource exhaustion prevents timely position production, primarily denying surveillance service. Source 65 is not independently assessed and its title alone does not establish applicable evidence; conservative E0 with analogue-only adjustment gives R=1. Scores assume organised capability and footprint-level impact; detection timing is unspecified.",
+      "issue": "A3.7 is a plausible affected host, but the record names only A3.3. No workload limits, recovery behaviour, demonstrated exploit, or detection predicate establishes the asserted impact and discoverability."
+    },
+    {
+      "id": "T3.06",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L4",
+      "asset_ids": [
+        "A3.4",
+        "A3.5",
+        "A4.4",
+        "A4.8"
+      ],
+      "trust_boundary": [
+        "TB3"
+      ],
+      "stride_primary": "T",
+      "stride_secondary": [
+        "E"
+      ],
+      "goals": [
+        "Displacement",
+        "Deception"
+      ],
+      "is_enabler": true,
+      "adversary_class": [
+        "AC6",
+        "AC7"
+      ],
+      "tier": "T3x",
+      "evidence": "P",
+      "analogue_only": false,
+      "unknown_sources": [],
+      "D": null,
+      "R": 1,
+      "E": 1,
+      "A": 4,
+      "Di_strong": 5,
+      "Di_weak": 5,
+      "confidence": 4,
+      "rationale": "Changing thresholds is configuration tampering, potentially enabled by privileged access. It weakens subsequent integrity checks but does not itself corrupt a position or produce an ATM consequence. No source or implementation evidence is supplied; T3x reflects the assumed governance compromise, not a demonstrated requirement.",
+      "issue": "The entry layer should be L4 because configuration governance is the control point. The threat conflates threshold modification with its downstream effects and does not establish that both checks share writable configuration."
+    },
+    {
+      "id": "T3.07",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L1",
+      "asset_ids": [
+        "A1.1",
+        "A2.1",
+        "A3.1",
+        "A3.3",
+        "A3.5"
+      ],
+      "trust_boundary": [
+        "TB0",
+        "TB1",
+        "TB2",
+        "TB3"
+      ],
+      "stride_primary": "S",
+      "stride_secondary": [
+        "T"
+      ],
+      "goals": [
+        "Displacement",
+        "Deception"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC3"
+      ],
+      "tier": "T2",
+      "evidence": "E2",
+      "analogue_only": true,
+      "unknown_sources": [],
+      "D": 5,
+      "R": 3,
+      "E": 3,
+      "A": 2,
+      "Di_strong": 3,
+      "Di_weak": 5,
+      "confidence": 3,
+      "rationale": "Consistent fabrication can defeat the intended independence of broadcast and multilateration positions, producing a falsely trusted track. Sources 5, 20, and 6 are not fully assessed here; their descriptions do not establish LEO-specific hardware evidence. Synchronised emitters imply T2 capability. W2 and W3 yield different detection outcomes.",
+      "issue": "The mechanism combines fabricated emissions with corrupted localisation and is not solely an L3 threat. Evidence for terrestrial multilateration does not establish feasibility or identical detectability in this satellite architecture."
+    },
+    {
+      "id": "T3.08",
+      "validity": "valid",
+      "related_id": "T3.07",
+      "layer": "L1",
+      "asset_ids": [
+        "A1.1",
+        "A2.1",
+        "A3.3",
+        "A3.5"
+      ],
+      "trust_boundary": [
+        "TB0",
+        "TB1",
+        "TB2",
+        "TB3"
+      ],
+      "stride_primary": "S",
+      "stride_secondary": [
+        "T"
+      ],
+      "goals": [
+        "Deception",
+        "Denial"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC3"
+      ],
+      "tier": "T2",
+      "evidence": "E2",
+      "analogue_only": true,
+      "unknown_sources": [],
+      "D": 4,
+      "R": 3,
+      "E": 3,
+      "A": 2,
+      "Di_strong": 3,
+      "Di_weak": 5,
+      "confidence": 3,
+      "rationale": "Creating a false discrepancy can cause a genuine target to be flagged, discredited, or rejected. This is distinct in consequence from T3.07's false verification, although both exploit cross-check dependence. Analogue evidence supports the general concept, not LEO-specific performance; the actual ATM response determines severity.",
+      "issue": "The record does not specify whether a suspect annotation causes track rejection, merely warns the controller, or affects downstream automation. Its mechanism overlaps T3.07 through the same cross-check and requires clearer outcome-based separation."
+    }
+  ],
+  "batch_comments": {
+    "missing_threats": [
+      {
+        "title": "Unauthorised ephemeris modification",
+        "layer": "L4",
+        "asset_ids": [
+          "A4.2",
+          "A3.2"
+        ],
+        "why": "Corrupt orbit products can bias the solver's geometry and position estimates independently of threshold changes."
+      },
+      {
+        "title": "Measurement-association poisoning",
+        "layer": "L3",
+        "asset_ids": [
+          "A3.1",
+          "A2.1"
+        ],
+        "why": "Incorrect cross-satellite association can corrupt tracks or deny valid solutions without exhausting resources."
+      },
+      {
+        "title": "Integrity annotation or report tampering",
+        "layer": "L3",
+        "asset_ids": [
+          "A3.6",
+          "A4.5"
+        ],
+        "why": "Corrupting encoded reports or integrity fields can alter the ATM picture after localisation checks have completed."
+      },
+      {
+        "title": "Unauthorised processing-platform control",
+        "layer": "L3",
+        "asset_ids": [
+          "A3.7"
+        ],
+        "why": "Host compromise can undermine multiple processing and integrity functions beyond the individual solver-exhaustion scenario."
+      },
+      {
+        "title": "False integrity alarm through benign model mismatch",
+        "layer": "L3",
+        "asset_ids": [
+          "A3.4",
+          "A3.5"
+        ],
+        "why": "Legitimate geometry or measurement errors may cause persistent false alarms and undermine trust in genuine tracks."
+      }
+    ],
+    "rubric_ambiguities": [
+      "The evidence rubric does not specify how to score a cited paper whose attack evidence is not independently known or applicable to this architecture.",
+      "Analogue-only evidence is defined, but whether a conference paper demonstrates the same mechanism on real hardware or only a proof of concept is unclear.",
+      "The discoverability rubric gives layer-based values, but it does not define detection predicates for resource exhaustion or altered integrity thresholds.",
+      "The affected-user scale does not define a footprint's extent or how many aircraft count as several users.",
+      "Enabler status and downstream damage are not explicitly reconciled when threshold modification is itself a security-policy violation."
+    ],
+    "overall": "The four records cover meaningful denial, integrity-control weakening, false verification, and false discrepancy outcomes. T3.07 and T3.08 are related but distinct by consequence. The strongest weakness is architectural overstatement: terrestrial multilateration evidence does not automatically establish LEO feasibility or detectability. Threshold changes belong primarily to governance, while attack entry points and downstream consequences should be separated."
+  }
+}

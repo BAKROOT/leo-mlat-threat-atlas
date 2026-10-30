@@ -1,0 +1,236 @@
+{
+  "meta": {
+    "model_self_report": "GPT-6",
+    "prompt_id": "B1c",
+    "n_ratings": 4
+  },
+  "ratings": [
+    {
+      "id": "T1.09",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L1",
+      "asset_ids": [
+        "A1.3",
+        "A1.4"
+      ],
+      "trust_boundary": [
+        "TB1"
+      ],
+      "stride_primary": "T",
+      "stride_secondary": [
+        "S"
+      ],
+      "goals": [
+        "Displacement",
+        "Deception",
+        "Denial"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC2",
+        "AC3"
+      ],
+      "tier": "T2",
+      "evidence": "E1",
+      "analogue_only": true,
+      "unknown_sources": [
+        6,
+        8,
+        9
+      ],
+      "D": 5,
+      "R": 2,
+      "E": 3,
+      "A": 2,
+      "Di_strong": 3,
+      "Di_weak": 5,
+      "confidence": 3,
+      "rationale": "Biasing measurements of genuine emissions is tampering, with spoofing secondary where crafted signals create misleading observations. Doppler-based verification literature supports related terrestrial surveillance concerns, but direct LEO payload evidence is uncertain. Strong-pass checks constrain consequential stealth; weak-pass conditions permit undetected displacement. Extent depends on affected aircraft.",
+      "issue": "The mechanism combines multipath, measurement bias and array spoofing, which differ in feasibility and detection. Cited sources are not independently verified here; analogue evidence is not LEO-specific."
+    },
+    {
+      "id": "T1.10",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L1",
+      "asset_ids": [
+        "A1.2",
+        "A1.5"
+      ],
+      "trust_boundary": [
+        "TB0",
+        "TB1"
+      ],
+      "stride_primary": "D",
+      "stride_secondary": [
+        "tau"
+      ],
+      "goals": [
+        "Denial"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC4"
+      ],
+      "tier": "T3",
+      "evidence": "E2",
+      "analogue_only": true,
+      "unknown_sources": [
+        22,
+        25,
+        54,
+        69,
+        70,
+        75
+      ],
+      "D": 3,
+      "R": 3,
+      "E": 2,
+      "A": 4,
+      "Di_strong": 2,
+      "Di_weak": 2,
+      "confidence": 3,
+      "rationale": "GNSS jamming removes a timing input rather than directly shifting time, so denial is primary and temporal integrity secondary if holdover subsequently degrades. Aviation interference evidence is analogue to satellite onboard receivers. Clock-quality monitoring should expose degradation at L1 or through reported metadata; constellation-wide impact is not established.",
+      "issue": "The stated ground-to-satellite jammer geometry and effective impact on a LEO receiver are unsupported here. Loss of GNSS alone does not establish consequential clock drift or surveillance denial."
+    },
+    {
+      "id": "T1.11",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L1",
+      "asset_ids": [
+        "A1.2",
+        "A1.5",
+        "A1.4"
+      ],
+      "trust_boundary": [
+        "TB0",
+        "TB1"
+      ],
+      "stride_primary": "tau",
+      "stride_secondary": [
+        "T"
+      ],
+      "goals": [
+        "Displacement",
+        "Deception"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC4"
+      ],
+      "tier": "T3",
+      "evidence": "E1",
+      "analogue_only": true,
+      "unknown_sources": [
+        4,
+        19,
+        47,
+        53,
+        57,
+        76
+      ],
+      "D": 5,
+      "R": 2,
+      "E": 2,
+      "A": 4,
+      "Di_strong": 3,
+      "Di_weak": 5,
+      "confidence": 3,
+      "rationale": "A GNSS-induced clock offset remains a temporal-integrity threat even with authenticated messages, because authentication does not validate time. The clock stamps otherwise authentic measurements incorrectly. GNSS spoofing and timing literature supports the general mechanism, but the precise satellite implementation and covert-step assumptions are not demonstrated by the cited record as assessed here.",
+      "issue": "The 100 ns covert step is assumed rather than independently established for this clock architecture. Strong-pass detection is stipulated by W2; weak-pass stealth follows W3, not demonstrated evidence."
+    },
+    {
+      "id": "T1.12",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L1",
+      "asset_ids": [
+        "A1.6",
+        "A2.5",
+        "A1.4",
+        "A1.5"
+      ],
+      "trust_boundary": [
+        "TB1"
+      ],
+      "stride_primary": "E",
+      "stride_secondary": [
+        "T"
+      ],
+      "goals": [
+        "Displacement",
+        "Denial",
+        "Deception"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC5",
+        "AC6"
+      ],
+      "tier": "T2",
+      "evidence": "E1",
+      "analogue_only": true,
+      "unknown_sources": [
+        15,
+        60,
+        67
+      ],
+      "D": 5,
+      "R": 2,
+      "E": 3,
+      "A": 4,
+      "Di_strong": 5,
+      "Di_weak": 5,
+      "confidence": 3,
+      "rationale": "Unauthorised command acceptance can grant control of the satellite bus and indirectly affect payload measurements, clocks or service availability. Elevation of privilege is primary, with tampering secondary. Spacecraft security demonstrations support the broad concern, but the stated authentication weakness and hosted-asset effects are inferred, not established for this system.",
+      "issue": "The record assumes ineffective authentication and replay protection without system-specific evidence. The A1.6-to-payload and clock effects are explicitly inferred; detection depends on controls not specified in the prompt."
+    }
+  ],
+  "batch_comments": {
+    "missing_threats": [
+      {
+        "title": "RF reception denial",
+        "layer": "L1",
+        "asset_ids": [
+          "A1.3",
+          "A1.4"
+        ],
+        "why": "Broad interference or receiver saturation could reduce measurement availability without producing biased observables."
+      },
+      {
+        "title": "Payload extraction firmware compromise",
+        "layer": "L1",
+        "asset_ids": [
+          "A1.4",
+          "A1.6"
+        ],
+        "why": "Malicious or defective extraction logic could corrupt measurements or timestamps before reports enter L2."
+      },
+      {
+        "title": "Onboard clock holdover failure",
+        "layer": "L1",
+        "asset_ids": [
+          "A1.5"
+        ],
+        "why": "Oscillator faults or disciplining-filter failures could degrade timing without deliberate GNSS interference or spoofing."
+      },
+      {
+        "title": "Antenna calibration or beamforming corruption",
+        "layer": "L1",
+        "asset_ids": [
+          "A1.3"
+        ],
+        "why": "Calibration drift or configuration corruption could systematically bias angle measurements."
+      }
+    ],
+    "rubric_ambiguities": [
+      "The exploitability rubric maps adversary tiers to scores but does not define how to score a threat feasible for multiple classes with different capabilities.",
+      "Evidence levels do not clearly specify whether a demonstrated general mechanism with an inferred system-specific path qualifies as E1 or P.",
+      "Discoverability asks for the first detection predicate, but the record does not specify which checks monitor each threat or whether detection is guaranteed.",
+      "The affected-users scale does not specify how to score timing or command compromise affecting a constellation but producing consequences only during particular geometry or operating conditions."
+    ],
+    "overall": "The four records describe distinct mechanisms, but their consequence and feasibility claims are unevenly supported. GNSS timing spoofing is a direct temporal-integrity concern; jamming primarily removes an input and does not itself prove clock bias. Measurement tampering and command compromise require clearer system-specific evidence. Scores reflect the supplied assumptions, with uncertainty retained for analogue and unverified citations."
+  }
+}

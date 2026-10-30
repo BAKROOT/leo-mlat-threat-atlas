@@ -1,0 +1,219 @@
+{
+  "meta": {
+    "model_self_report": "GPT-6",
+    "prompt_id": "B1b",
+    "n_ratings": 4
+  },
+  "ratings": [
+    {
+      "id": "T1.05",
+      "validity": "valid",
+      "related_id": "T1.06",
+      "layer": "L1",
+      "asset_ids": [
+        "A1.1",
+        "A1.3",
+        "A1.4",
+        "A2.1"
+      ],
+      "trust_boundary": [
+        "TB0",
+        "TB1"
+      ],
+      "stride_primary": "S",
+      "stride_secondary": [
+        "T"
+      ],
+      "goals": [
+        "Deception",
+        "Displacement"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC3"
+      ],
+      "tier": "T2",
+      "evidence": "E2",
+      "analogue_only": true,
+      "unknown_sources": [],
+      "D": 5,
+      "R": 3,
+      "E": 3,
+      "A": 3,
+      "Di_strong": 3,
+      "Di_weak": 5,
+      "confidence": 3,
+      "rationale": "Coordinated emissions can create a false multilateration location, potentially producing an apparently valid ghost track. STRONG checks constrain single-satellite timing bias, not necessarily multi-emitter deception; WEAK detection is uncertain. Cited evidence concerns terrestrial multilateration, so analogue adjustment applies.",
+      "issue": "Overlaps T1.06 in its multi-emitter mechanism but differs in creating a ghost rather than displacing a genuine track. A1.1 alone omits receiving and extraction assets."
+    },
+    {
+      "id": "T1.06",
+      "validity": "valid",
+      "related_id": "T1.05",
+      "layer": "L1",
+      "asset_ids": [
+        "A1.1",
+        "A1.3",
+        "A1.4",
+        "A2.1",
+        "A3.1",
+        "A3.3"
+      ],
+      "trust_boundary": [
+        "TB0",
+        "TB1",
+        "TB2"
+      ],
+      "stride_primary": "S",
+      "stride_secondary": [
+        "T"
+      ],
+      "goals": [
+        "Displacement",
+        "Deception"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC3"
+      ],
+      "tier": "T2",
+      "evidence": "E2",
+      "analogue_only": true,
+      "unknown_sources": [],
+      "D": 5,
+      "R": 3,
+      "E": 3,
+      "A": 2,
+      "Di_strong": 3,
+      "Di_weak": 5,
+      "confidence": 3,
+      "rationale": "The objective is displacement of a genuine aircraft track, making spoofing primary and observable tampering secondary. Coordinated transmitters require T2 capability. Terrestrial multilateration research supports the general mechanism, but real-track takeover in this satellite architecture is not established by the supplied citations.",
+      "issue": "Distinct consequence from T1.05, but overshadowing success and track association are architecture-dependent. Do not treat terrestrial demonstrations as direct validation of LEO takeover."
+    },
+    {
+      "id": "T1.07",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L1",
+      "asset_ids": [
+        "A1.3",
+        "A1.4",
+        "A2.1"
+      ],
+      "trust_boundary": [
+        "TB0",
+        "TB1"
+      ],
+      "stride_primary": "D",
+      "stride_secondary": [
+        "T"
+      ],
+      "goals": [
+        "Denial"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC2"
+      ],
+      "tier": "T1c",
+      "evidence": "E2",
+      "analogue_only": true,
+      "unknown_sources": [],
+      "D": 3,
+      "R": 3,
+      "E": 4,
+      "A": 2,
+      "Di_strong": 2,
+      "Di_weak": 2,
+      "confidence": 3,
+      "rationale": "Selective loss of receptions is denial, with tampering secondary where existing observations are selectively corrupted. Directional interference is technically demanding but does not inherently require coordinated emitters. The cited terrestrial communication and landing-system experiments are analogues, not direct evidence for satellite beam-level suppression.",
+      "issue": "The mechanism conflates RF interference with antenna nulling. Selectivity and affected-user extent depend on payload beamforming, geometry and receiver design, which are unspecified."
+    },
+    {
+      "id": "T1.08",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L1",
+      "asset_ids": [
+        "A1.1",
+        "A1.3",
+        "A1.4",
+        "A2.1"
+      ],
+      "trust_boundary": [
+        "TB0",
+        "TB1"
+      ],
+      "stride_primary": "D",
+      "stride_secondary": [
+        "T"
+      ],
+      "goals": [
+        "Denial"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC2"
+      ],
+      "tier": "T1p",
+      "evidence": "E1",
+      "analogue_only": true,
+      "unknown_sources": [],
+      "D": 3,
+      "R": 2,
+      "E": 5,
+      "A": 3,
+      "Di_strong": 2,
+      "Di_weak": 2,
+      "confidence": 2,
+      "rationale": "Receive-chain saturation primarily degrades availability. Publicly accessible emission equipment makes the broad threat plausible, but cited LEO-network security work does not establish saturation of this specific 1090ES payload. Visible reception loss may be detected at L2 or L3, although source-level attribution remains difficult.",
+      "issue": "The cited sources do not clearly establish this specific RF flooding mechanism. Distinguish receiver overload from protocol-level message-processing exhaustion and specify whether the effect spans one footprint or several."
+    }
+  ],
+  "batch_comments": {
+    "missing_threats": [
+      {
+        "title": "Payload measurement manipulation",
+        "layer": "L1",
+        "asset_ids": [
+          "A1.3",
+          "A1.4"
+        ],
+        "why": "Compromised or faulty angle, frequency or arrival-time extraction could corrupt observations without creating additional RF emissions."
+      },
+      {
+        "title": "Payload firmware compromise",
+        "layer": "L1",
+        "asset_ids": [
+          "A1.4",
+          "A1.6"
+        ],
+        "why": "Malicious firmware or compromised flight software could alter extracted measurements or selectively suppress reports."
+      },
+      {
+        "title": "Onboard timing manipulation",
+        "layer": "L1",
+        "asset_ids": [
+          "A1.5"
+        ],
+        "why": "Clock offset or drift can bias many observations and warrants a distinct temporal-integrity threat."
+      },
+      {
+        "title": "Antenna degradation or failure",
+        "layer": "L1",
+        "asset_ids": [
+          "A1.3"
+        ],
+        "why": "Unintentional or malicious antenna degradation can reduce coverage and angle accuracy without message flooding."
+      }
+    ],
+    "rubric_ambiguities": [
+      "The evidence rubric does not explicitly distinguish demonstrated terrestrial attacks from unverified transfer to a LEO payload; analogue adjustment partly addresses this.",
+      "STRONG and WEAK discoverability rules concern single-satellite timing bias, not necessarily multi-emitter spoofing or RF denial.",
+      "Affected-user extent is ambiguous when one footprint contains many aircraft but only selected emissions are suppressed.",
+      "The exploitability mapping assigns T1p to individual SDR users, but directional interference may require capabilities beyond ordinary commercial equipment.",
+      "The cited records are bibliographic descriptions only; publication titles alone cannot establish the exact demonstrated mechanism or evidence level."
+    ],
+    "overall": "The four records describe distinct outcomes, but T1.05 and T1.06 share a mechanism and require explicit ghost-versus-takeover separation. Terrestrial multilateration evidence should not be treated as direct LEO validation. T1.07 and T1.08 need clearer receiver-specific assumptions, and the timing and payload-integrity attack surface is underrepresented."
+  }
+}

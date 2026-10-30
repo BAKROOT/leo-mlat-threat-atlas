@@ -1,0 +1,228 @@
+{
+  "meta": {
+    "model_self_report": "GPT-6",
+    "prompt_id": "B3c",
+    "n_ratings": 4
+  },
+  "ratings": [
+    {
+      "id": "T3.09",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L3",
+      "asset_ids": [
+        "A3.6",
+        "A4.5"
+      ],
+      "trust_boundary": [
+        "TB3",
+        "TB0"
+      ],
+      "stride_primary": "T",
+      "stride_secondary": [
+        "S"
+      ],
+      "goals": [
+        "Displacement",
+        "Deception",
+        "Denial"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC6"
+      ],
+      "tier": "T3",
+      "evidence": "P",
+      "analogue_only": false,
+      "unknown_sources": [],
+      "D": 5,
+      "R": 1,
+      "E": 2,
+      "A": 4,
+      "Di_strong": 5,
+      "Di_weak": 5,
+      "confidence": 4,
+      "rationale": "Post-detection output modification can falsify positions or integrity annotations and bypass upstream checks. No evidence is cited. Platform exploitation is plausible but its required sophistication is unspecified; T3 is a conservative estimate. Several footprints may be affected, although actual reach depends on gateway architecture.",
+      "issue": "Downstream delivery and ATM trust boundaries are underspecified. A3.6 compromise does not necessarily control every report or bypass independent downstream validation."
+    },
+    {
+      "id": "T3.10",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L3",
+      "asset_ids": [
+        "A3.6",
+        "A3.3"
+      ],
+      "trust_boundary": [
+        "TB2",
+        "TB3"
+      ],
+      "stride_primary": "I",
+      "stride_secondary": [],
+      "goals": [
+        "Disclosure"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC6"
+      ],
+      "tier": "T3",
+      "evidence": "P",
+      "analogue_only": false,
+      "unknown_sources": [],
+      "D": 1,
+      "R": 1,
+      "E": 2,
+      "A": 3,
+      "Di_strong": 4,
+      "Di_weak": 4,
+      "confidence": 3,
+      "rationale": "Unauthorised reading of track stores exposes sensitive movement information without directly changing surveillance outputs. No sources support the specific mechanism. Discoverability depends on access auditing, which the record does not describe; L4-only detection is a provisional assumption.",
+      "issue": "A3.6 is an encoder, not the track database itself. Identify the actual stores and logs; distinguish confidentiality loss from unauthorised modification."
+    },
+    {
+      "id": "T3.11",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L3",
+      "asset_ids": [
+        "A3.3",
+        "A3.7"
+      ],
+      "trust_boundary": [
+        "TB2",
+        "TB3"
+      ],
+      "stride_primary": "R",
+      "stride_secondary": [
+        "T"
+      ],
+      "goals": [],
+      "is_enabler": true,
+      "adversary_class": [
+        "AC6",
+        "AC7"
+      ],
+      "tier": "T3",
+      "evidence": "E0",
+      "analogue_only": true,
+      "unknown_sources": [
+        65
+      ],
+      "D": null,
+      "R": 1,
+      "E": 2,
+      "A": 3,
+      "Di_strong": 4,
+      "Di_weak": 4,
+      "confidence": 3,
+      "rationale": "Suppressing or altering audit evidence primarily undermines attribution, making repudiation the primary STRIDE category. It facilitates concealment rather than directly causing a target-report consequence. The cited conference talk is not independently assessed and does not establish this specific mechanism.",
+      "issue": "Log manipulation and track-record tampering are distinct actions. Specify the audit assets and retention controls; source 65 is unverified and cannot establish LEO-MLAT-specific evidence."
+    },
+    {
+      "id": "T3.12",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L3",
+      "asset_ids": [
+        "A3.7",
+        "A3.1",
+        "A3.2",
+        "A3.3",
+        "A3.4",
+        "A3.5",
+        "A3.6"
+      ],
+      "trust_boundary": [
+        "TB2",
+        "TB3"
+      ],
+      "stride_primary": "E",
+      "stride_secondary": [
+        "T",
+        "D"
+      ],
+      "goals": [
+        "Displacement",
+        "Denial",
+        "Deception",
+        "Disclosure"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC6"
+      ],
+      "tier": "T3",
+      "evidence": "E0",
+      "analogue_only": true,
+      "unknown_sources": [
+        65
+      ],
+      "D": 5,
+      "R": 1,
+      "E": 2,
+      "A": 5,
+      "Di_strong": 5,
+      "Di_weak": 5,
+      "confidence": 4,
+      "rationale": "Host compromise can confer broad control over association, localisation, integrity checks and output, potentially enabling displacement, deception, denial and disclosure. The cited general spacecraft-vulnerability talk does not establish this CPS attack path. Constellation-wide reach is an upper bound, not guaranteed.",
+      "issue": "The record conflates host compromise with guaranteed control of every module. Segmentation, virtualisation boundaries, privilege requirements and recovery arrangements are unspecified."
+    }
+  ],
+  "batch_comments": {
+    "missing_threats": [
+      {
+        "title": "Unauthorised ephemeris modification",
+        "layer": "L3",
+        "asset_ids": [
+          "A3.2"
+        ],
+        "why": "Corrupted satellite states can bias localisation independently of encoder compromise and should be distinguished from timing manipulation."
+      },
+      {
+        "title": "Integrity-monitor compromise",
+        "layer": "L3",
+        "asset_ids": [
+          "A3.4",
+          "A3.5"
+        ],
+        "why": "Manipulated verdicts can conceal erroneous positions or falsely discredit genuine reports."
+      },
+      {
+        "title": "Measurement-association manipulation",
+        "layer": "L3",
+        "asset_ids": [
+          "A3.1"
+        ],
+        "why": "Incorrect grouping can produce invalid tracks or suppress valid targets without compromising the entire processing host."
+      },
+      {
+        "title": "Unauthorised configuration changes",
+        "layer": "L3",
+        "asset_ids": [
+          "A3.4",
+          "A3.5",
+          "A4.4"
+        ],
+        "why": "Altered thresholds or filter settings can undermine integrity decisions through a governance-to-processing path."
+      },
+      {
+        "title": "Track-state corruption",
+        "layer": "L3",
+        "asset_ids": [
+          "A3.3"
+        ],
+        "why": "Direct track-state tampering can cause persistent false positions or target loss without general platform compromise."
+      }
+    ],
+    "rubric_ambiguities": [
+      "The evidence rubric does not explicitly distinguish a general vulnerability survey from a demonstrated mechanism for the specific target system.",
+      "Discoverability specifies detection predicates but not audit logging, access monitoring or post-incident forensic discovery.",
+      "The Affected-users scale does not define how to score compromise of shared infrastructure when actual geographic reach is unknown.",
+      "Enabler status makes Damage null, but the rubric does not specify whether the total risk band should omit that dimension.",
+      "The boundary mapping assigns TB3 to governance and processing, while ATM delivery also crosses TB0; multi-boundary records lack a selection rule."
+    ],
+    "overall": "All four records describe plausible but materially different security concerns. Encoder tampering and platform compromise can directly affect surveillance integrity; track disclosure is confidentiality-only; audit manipulation is primarily an attribution enabler. Evidence is weak or unverified, so ratings should not imply demonstrated exploitation. Asset scope, downstream validation and detection assumptions require clarification."
+  }
+}

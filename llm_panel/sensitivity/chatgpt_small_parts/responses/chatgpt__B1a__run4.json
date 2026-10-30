@@ -1,0 +1,149 @@
+{
+  "meta": {
+    "model_self_report": "GPT-6",
+    "prompt_id": "B1a",
+    "n_ratings": 4
+  },
+  "ratings": [
+    {
+      "id": "T1.01",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L1",
+      "asset_ids": ["A1.1"],
+      "trust_boundary": ["TB0"],
+      "stride_primary": "S",
+      "stride_secondary": [],
+      "goals": ["Deception"],
+      "is_enabler": false,
+      "adversary_class": ["AC2"],
+      "tier": "T1p",
+      "evidence": "E2",
+      "analogue_only": true,
+      "unknown_sources": [26],
+      "D": 4,
+      "R": 3,
+      "E": 5,
+      "A": 2,
+      "Di_strong": 3,
+      "Di_weak": 5,
+      "confidence": 4,
+      "rationale": "Unauthenticated fabricated emissions can create false targets. STRONG checks may detect inconsistent solutions, whereas WEAK conditions permit undetected deception. ADS-B attacks are experimentally established, but satellite-specific evidence is less certain; one fabricated aircraft is the conservative affected-user estimate.",
+      "issue": "Cross-check effectiveness depends on whether fabricated messages can be associated with sufficiently consistent independent measurements."
+    },
+    {
+      "id": "T1.02",
+      "validity": "valid",
+      "related_id": "T1.01",
+      "layer": "L1",
+      "asset_ids": ["A1.1", "A2.1"],
+      "trust_boundary": ["TB0", "TB1"],
+      "stride_primary": "S",
+      "stride_secondary": ["T"],
+      "goals": ["Displacement", "Deception"],
+      "is_enabler": false,
+      "adversary_class": ["AC2"],
+      "tier": "T1c",
+      "evidence": "E2",
+      "analogue_only": true,
+      "unknown_sources": [59, 7],
+      "D": 5,
+      "R": 3,
+      "E": 4,
+      "A": 2,
+      "Di_strong": 3,
+      "Di_weak": 5,
+      "confidence": 3,
+      "rationale": "Replay reintroduces genuine but stale emissions, potentially producing displaced tracks or deceptive targets. It is distinct from fabrication because the underlying message is genuine. Experimental terrestrial ADS-B evidence supports feasibility, not equivalent LEO detection performance.",
+      "issue": "The record conflates replay with displacement: replay location, freshness and association determine whether a wrong track actually results."
+    },
+    {
+      "id": "T1.03",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L1",
+      "asset_ids": ["A1.1", "A1.2", "A3.5"],
+      "trust_boundary": ["TB0", "TB3"],
+      "stride_primary": "T",
+      "stride_secondary": ["S"],
+      "goals": ["Displacement", "Deception"],
+      "is_enabler": false,
+      "adversary_class": ["AC1"],
+      "tier": "T1p",
+      "evidence": "E1",
+      "analogue_only": true,
+      "unknown_sources": [72, 56],
+      "D": 5,
+      "R": 2,
+      "E": 5,
+      "A": 1,
+      "Di_strong": 3,
+      "Di_weak": 5,
+      "confidence": 3,
+      "rationale": "The aircraft broadcasts a false self-reported position while independent arrival measurements remain consistent with its real location. This is principally tampering with reported content, not temporal integrity. The cross-check is the relevant defence; weak-pass conditions permit an undetected discrepancy.",
+      "issue": "The stated masking chain is underspecified. A false broadcast position alone does not defeat independent localisation or establish a nominal integrity verdict."
+    },
+    {
+      "id": "T1.04",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L1",
+      "asset_ids": ["A1.3", "A1.4"],
+      "trust_boundary": ["TB0", "TB1"],
+      "stride_primary": "D",
+      "stride_secondary": [],
+      "goals": ["Denial"],
+      "is_enabler": false,
+      "adversary_class": ["AC2"],
+      "tier": "T1p",
+      "evidence": "E2",
+      "analogue_only": true,
+      "unknown_sources": [],
+      "D": 3,
+      "R": 3,
+      "E": 5,
+      "A": 3,
+      "Di_strong": 1,
+      "Di_weak": 1,
+      "confidence": 4,
+      "rationale": "In-band interference degrades reception and can remove surveillance coverage. RF interference against ADS-B is experimentally supported, although LEO-specific effects remain analogue evidence. The RF front end and processor are affected; interference is detectable at L1 through degraded reception and noise conditions.",
+      "issue": "The footprint-wide affected-user estimate is conditional on interference extent; the record does not distinguish localised from constellation-wide denial."
+    }
+  ],
+  "batch_comments": {
+    "missing_threats": [
+      {
+        "title": "RF front-end deception and AOA manipulation",
+        "layer": "L1",
+        "asset_ids": ["A1.3"],
+        "why": "Angle-of-arrival measurement integrity can fail independently of message authenticity or decoding availability."
+      },
+      {
+        "title": "Payload extraction and measurement tampering",
+        "layer": "L1",
+        "asset_ids": ["A1.4"],
+        "why": "Compromised extraction firmware or measurement processing can corrupt TOA, FOA and AOA before reports enter L2."
+      },
+      {
+        "title": "Onboard oscillator drift or manipulation",
+        "layer": "L1",
+        "asset_ids": ["A1.5"],
+        "why": "Clock drift and timing manipulation can systematically bias multiple observables independently of aircraft behaviour."
+      },
+      {
+        "title": "GNSS timing and positioning compromise",
+        "layer": "L1",
+        "asset_ids": ["A1.2", "A1.5"],
+        "why": "GNSS compromise can corrupt both onboard timing and reported aircraft positions, creating distinct downstream consequences."
+      }
+    ],
+    "rubric_ambiguities": [
+      "Replay may constitute spoofing, tampering or both; the distinction depends on whether the threat concerns source attribution or modification of an existing observation.",
+      "The evidence rubric does not clearly distinguish experimentally demonstrated terrestrial ADS-B attacks from evidence demonstrated on satellite hardware.",
+      "Di_strong and Di_weak lack a precise rule for detection when the integrity monitor detects an anomaly but does not reliably identify its cause.",
+      "Affected-user scoring does not specify whether several aircraft sharing one footprint constitute regional denial or several-aircraft impact.",
+      "The damage rubric assigns displacement and deception different values, although a fabricated target may simultaneously cause both."
+    ],
+    "overall": "All four records describe distinct, plausible threats. Fabrication, replay and false self-reported position should remain separate because their measurement consistency and detection properties differ. Jamming is a conventional availability threat. The principal weakness is extrapolating terrestrial ADS-B evidence to LEO multilateration without clearly separating demonstrated mechanisms from architecture-specific consequences."
+  }
+}

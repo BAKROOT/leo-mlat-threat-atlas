@@ -1,0 +1,199 @@
+{
+  "meta": {
+    "model_self_report": "GPT-6",
+    "prompt_id": "B4d",
+    "n_ratings": 3
+  },
+  "ratings": [
+    {
+      "id": "T4.13",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L4",
+      "asset_ids": [
+        "A4.4",
+        "A4.7",
+        "A2.5"
+      ],
+      "trust_boundary": [
+        "TB3",
+        "TB1"
+      ],
+      "stride_primary": "T",
+      "stride_secondary": [
+        "E"
+      ],
+      "goals": [
+        "Displacement",
+        "Denial",
+        "Deception"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC7"
+      ],
+      "tier": "T3x",
+      "evidence": "E0",
+      "analogue_only": true,
+      "unknown_sources": [
+        30,
+        35
+      ],
+      "D": 5,
+      "R": 1,
+      "E": 1,
+      "A": 4,
+      "Di_strong": 3,
+      "Di_weak": 5,
+      "confidence": 3,
+      "rationale": "Pre-delivery compromise can tamper with trusted software or firmware and establish privileged control, potentially affecting multiple footprints. The cited works are not confidently assessed, so support is conservatively treated as theoretical and analogue-only. Detection depends on whether integrity controls expose the alteration; weak-pass stealth is not guaranteed for every compromise.",
+      "issue": "Supplier compromise is a valid threat but spans hardware, firmware and software with different consequences. A4.7 identifies personnel and suppliers, not the supplied product itself; A4.4 and downstream assets need clearer mapping."
+    },
+    {
+      "id": "T4.14",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L4",
+      "asset_ids": [
+        "A4.1",
+        "A4.3",
+        "A4.8"
+      ],
+      "trust_boundary": [
+        "TB3"
+      ],
+      "stride_primary": "R",
+      "stride_secondary": [
+        "T"
+      ],
+      "goals": [
+        "Deception",
+        "Disclosure"
+      ],
+      "is_enabler": true,
+      "adversary_class": [
+        "AC7"
+      ],
+      "tier": "T2",
+      "evidence": "P",
+      "analogue_only": false,
+      "unknown_sources": [],
+      "D": null,
+      "R": 1,
+      "E": 3,
+      "A": 3,
+      "Di_strong": 4,
+      "Di_weak": 4,
+      "confidence": 4,
+      "rationale": "Unattributed policy or key changes primarily undermine accountability, making repudiation the best STRIDE fit; unauthorized modifications are secondary tampering. Missing audit attribution alone does not establish a deceptive outcome, and this record is an enabler. No cited mechanism supports stronger evidence.",
+      "issue": "Absence of per-actor audit is an accountability weakness, not proof that changes can be made or that deception persists. Specify the authorization weakness and distinguish this enabler from unauthorized configuration changes."
+    },
+    {
+      "id": "T4.15",
+      "validity": "valid",
+      "related_id": null,
+      "layer": "L4",
+      "asset_ids": [
+        "A4.8",
+        "A4.1",
+        "A4.2",
+        "A4.3",
+        "A4.4"
+      ],
+      "trust_boundary": [
+        "TB3"
+      ],
+      "stride_primary": "E",
+      "stride_secondary": [
+        "T",
+        "D"
+      ],
+      "goals": [
+        "Displacement",
+        "Denial",
+        "Deception",
+        "Disclosure"
+      ],
+      "is_enabler": false,
+      "adversary_class": [
+        "AC6"
+      ],
+      "tier": "T2",
+      "evidence": "E3",
+      "analogue_only": true,
+      "unknown_sources": [
+        65,
+        68,
+        74
+      ],
+      "D": 5,
+      "R": 3,
+      "E": 3,
+      "A": 4,
+      "Di_strong": 3,
+      "Di_weak": 5,
+      "confidence": 3,
+      "rationale": "Management-network intrusion can elevate privileges over governance assets, enabling configuration tampering, key exposure and downstream surveillance disruption. The cited incidents support related SATCOM intrusion mechanisms, not this exact system or consequence, so evidence is conservatively analogue-only. Detection depends on effective host and operational monitoring.",
+      "issue": "The remote-access misconfiguration is underspecified, and entry into A4.8 does not automatically confer control over every hosted governance asset. Separate initial access, privilege escalation and resulting surveillance effects."
+    }
+  ],
+  "batch_comments": {
+    "missing_threats": [
+      {
+        "title": "Malicious or compromised privileged operator",
+        "layer": "L4",
+        "asset_ids": [
+          "A4.7",
+          "A4.4",
+          "A4.3"
+        ],
+        "why": "An authorized insider can abuse legitimate privileges without compromising a supplier or exploiting remote access."
+      },
+      {
+        "title": "Governance configuration error",
+        "layer": "L4",
+        "asset_ids": [
+          "A4.1",
+          "A4.4"
+        ],
+        "why": "Accidental policy or integrity-threshold changes can degrade detection without malicious intrusion or unattributable activity."
+      },
+      {
+        "title": "Compromised update-signing trust",
+        "layer": "L4",
+        "asset_ids": [
+          "A4.4",
+          "A2.5",
+          "A1.4"
+        ],
+        "why": "Compromise of update-signing authority can undermine firmware authenticity across the governance-to-payload boundary."
+      },
+      {
+        "title": "Ephemeris governance compromise",
+        "layer": "L4",
+        "asset_ids": [
+          "A4.2",
+          "A3.2"
+        ],
+        "why": "Manipulated orbit products can bias localisation independently of clock attacks and require explicit integrity controls."
+      },
+      {
+        "title": "Audit-log destruction or alteration",
+        "layer": "L4",
+        "asset_ids": [
+          "A4.8",
+          "A4.7"
+        ],
+        "why": "Tampering with operational logs can obstruct incident reconstruction even when policy and key changes remain authorized."
+      }
+    ],
+    "rubric_ambiguities": [
+      "The rubric does not specify whether an enabler's Reproducibility and Affected users scores describe the enabler itself or its downstream threat.",
+      "Discoverability defines the first true detection predicate but does not specify how to score governance changes whose detection depends on audit quality.",
+      "The supplied threat records do not identify which cited source supports each specific mechanism, complicating evidence-level assignment.",
+      "The tier rubric does not explicitly map authorized supplier compromise to T3x when an insider is involved but no second adversary class is established.",
+      "The weak-pass assumptions concern single-satellite clock bias; they do not establish discoverability for software compromise or management-network intrusion."
+    ],
+    "overall": "All three records describe plausible, distinct governance-layer security concerns, but their mechanisms and consequences require sharper boundaries. T4.14 is principally an accountability enabler, not a demonstrated deception event. T4.13 and T4.15 can have severe downstream effects, yet the cited analogue evidence does not establish system-specific outcomes. Avoid transferring timing-specific detection assumptions indiscriminately to L4 threats."
+  }
+}
