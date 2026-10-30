@@ -1,0 +1,149 @@
+=== PROMPT B1d: INDEPENDENT BLIND RATING, LAYER L1, PART 4 OF 4 (4 threats: T1.13, T1.14, T1.15, T1.16) ===
+You are an independent senior security reviewer with expertise spanning satellite systems, air-traffic surveillance (ADS-B, multilateration), GNSS and precise timing, and structured threat modelling (STRIDE, PASTA, DREAD). You are one member of a panel of independent reviewers; you will not see the others' answers.
+
+PURPOSE AND SCOPE
+This is a defensive security review for academic research. The material is a threat model of a civil air-traffic surveillance system, written for peer review in a security journal. The goal is to find errors, gaps and misjudged risks in the threat model so that the system's designers can prioritise defences. You are asked to classify and rate threats at the level of abstraction used in standards and academic papers (STRIDE categories, DREAD-style ratings, public technique names). You are NOT asked for, and must not give, attack procedures, parameters, signal specifications, code, tooling or step-by-step methods; no operational detail is needed for this task. Everything you need is in this prompt.
+
+TASK
+Below are 4 threat records of a threat model, each with the mechanism, the attack vector, the assets the authors bound it to, and the published sources they cite. The authors' own categories, goals, tier, evidence level and scores are deliberately withheld. For EACH record, give your own independent classification and your own PA-DREAD scores using only the definitions and rubric below. Also judge whether the record is a valid, distinct threat. Return one rating object per record, in the same order, every id exactly once (4 objects).
+
+RULES
+1. Work closed-book. Do not browse the web, run code, open files or call any tool. Use only this prompt and your own knowledge.
+2. Be independent and critical. The authors' text may contain mistakes, duplicates, mis-scoped or invalid threats. Do not assume anything is correct because it is written here. Disagreeing with the wording is expected when you have a reason.
+3. Do not invent sources or facts. If you do not know a published source or are unsure of a fact, say so, lower your confidence, and do not pretend to have read it (in rating prompts, list the cited sources you could not assess in "unknown_sources").
+4. Stay at the level of a defensive review: classification, rating and reasoning about risk. Do not add attack parameters, procedures, code or tooling.
+5. Return exactly ONE JSON object inside ONE code block (```json ... ```). Nothing before it and nothing after it. Valid JSON only: double quotes, no comments, no trailing commas, no line breaks inside strings.
+6. Keep every free-text field within its word limit. If you run out of space, shorten the text, never the list of threats.
+
+SYSTEM UNDER REVIEW (LEO-MLAT-B, SATERA project)
+A GNSS-independent air-traffic surveillance system. Aircraft 1090 MHz ADS-B (1090ES) emissions are received by a constellation of low-Earth-orbit satellites that measure time of arrival (TOA), frequency of arrival (FOA) and angle of arrival (AOA). Reports are relayed over inter-satellite links and downlinks to a ground Central Processing Station, where a TDOA/FDOA localisation solver and tracker compute each aircraft position, an integrity monitor tests each solution, and an E-MLAT/ADS-B cross-check compares the independent position with the broadcast one and sets an integrity indicator. Results are delivered to air-traffic management (ATM) as ASTERIX CAT020/021 reports. The ADS-B content is an unauthenticated self-report.
+
+LAYERS
+L1 signal, payload and timing (aircraft emission, RF front end, payload processor, onboard clocks, GNSS). L2 links and reports (observable reports, inter-satellite links, downlink, backhaul, PTP time transfer, telecommands). L3 central processing (association, ephemeris database, solver and tracker, integrity monitor, cross-check, ASTERIX encoder, hosting platform). L4 operations, governance and ATM consumption (synchronisation policy, orbit determination, key management, configuration and update management, data feed to ATM, the ATM system and controller, personnel and suppliers, operations centre).
+
+ASSET REGISTER (27 assets): ID | asset | layer | function | trust boundary
+A1.1 | Aircraft 1090ES transponder | L1 | Emits the signal whose arrival is measured; ADS-B content is an unauthenticated self-report | TB: TB0
+A1.2 | GNSS positioning and timing service | L1 | Source of the reported position and one of two inputs that discipline the onboard clocks | TB: TB0
+A1.3 | Phased-array antenna and RF front end | L1 | Receives 1090 MHz and forms beams; gives the angle of arrival | TB: none
+A1.4 | Payload signal processor and extraction firmware | L1 | Decodes each emission, measures TOA, FOA and AOA, stamps them with the onboard clock | TB: TB1
+A1.5 | Onboard clock subsystem | L1 | Oscillator, GNSS receiver and disciplining filter; origin of the timing dependency | TB: TB0, TB1
+A1.6 | Satellite bus and flight software | L1 | Computer, flight software and telecommand receiver; hosts and commands the payload | TB: TB1
+A1.7 | Ground-station antennas and modems | L1 | Receive downlinks and transmit telecommands | TB: TB2
+A2.1 | Observable reports | L2 | TOA, FOA, AOA, decoded message and clock-quality metadata of one reception | TB: TB1, TB2
+A2.2 | Inter-satellite link terminals and crosslinks | L2 | Relay reports toward a satellite in view of a ground station | TB: none
+A2.3 | PTP time-transfer messages | L2 | Carry time between satellites; second input to A1.5 | TB: TB1
+A2.4 | Downlink channel and ground backhaul network | L2 | Carry reports from orbit to the Central Processing Station | TB: TB2
+A2.5 | Telecommands and software-update packages | L2 | Carry commands, configuration and firmware to the satellites | TB: TB1-TB3
+A3.1 | Measurement-association module | L3 | Groups the receptions of one transmission across satellites | TB: TB2
+A3.2 | Ephemeris and clock-state database | L3 | Holds satellite positions, velocities and clock states for the solver | TB: TB3
+A3.3 | Localisation solver, EKF/IMM tracker and track database | L3 | Computes each position and maintains the track | TB: none
+A3.4 | Integrity-monitoring module | L3 | Residual and consistency tests on each solution | TB: none
+A3.5 | E-MLAT/ADS-B cross-check module | L3 | Compares the independent position with the broadcast one and sets the integrity indicator | TB: none
+A3.6 | ASTERIX report encoder and gateway | L3 | Encodes CAT020/021 reports with their integrity annotation for ATM | TB: TB3
+A3.7 | Central Processing Station computing platform | L3 | Servers, operating system and virtualisation hosting A3.1-A3.6 | TB: TB2, TB3
+A4.1 | Synchronisation policy and time-reference service | L4 | Fixes the time scale, PTP policy and GNSS-PTP conformance thresholds used by A1.5 | TB: TB3
+A4.2 | Orbit-determination system and ephemeris products | L4 | Produces the satellite ephemerides for A3.2 | TB: TB3
+A4.3 | Key-management system and credential store | L4 | Holds and distributes keys for telecommand, ISLs and ground links | TB: TB3
+A4.4 | Configuration and software-update management system | L4 | Holds filter parameters, integrity thresholds and firmware baselines; issues updates via A2.5 | TB: TB3
+A4.5 | Surveillance data feed to ATM | L4 | Delivers target reports and integrity annotations to ATM | TB: TB0, TB3
+A4.6 | ATM surveillance system and controller working position | L4 | Consumes the picture; the place where the consequence of an attack is realised | TB: TB0
+A4.7 | Operator personnel and suppliers | L4 | Hold authorised access to L3 and L4 assets | TB: TB0
+A4.8 | Mission-operations centre and management network | L4 | Workstations, remote access, management network and audit logs hosting A4.1-A4.4 | TB: TB3
+
+TRUST BOUNDARIES
+TB0 system perimeter: air interface (emissions, GNSS), delivery to ATM, organisational interface to personnel and suppliers. TB1 payload and platform (L1) / links (L2). TB2 links (L2) / Central Processing Station (L3). TB3 processing (L3) / governance (L4).
+
+TIMING DEPENDENCY AND EFFECT-TRANSFER CHANNELS
+Onboard clocks (A1.5) are disciplined by GNSS (A1.2) and by PTP time-transfer messages (A2.3). A clock offset delta becomes a range bias eps = c*delta on every observable it stamps (channel Phi, L1 to L2, TB1). Bias becomes position error e_h ~ h*eps, with h the HDOP (channel M, L2 to L3, TB2); ephemeris error enters here. Within L3, the monitor and cross-check flag a solution iff eps >= eps_det(h, gamma) (channel V). Error and verdict become a consequence at ATM (channel P, L3 to L4, TB3): displacement happens iff e_h > e_req and no flag is raised. Governance acts back on lower layers by setting a threshold, ephemeris, key or configuration (channel C, L4 to L1-3). Horizontal accuracy requirement e_req = 350 m; c = 0.2998 m/ns; covert clock step delta_cov = 100 ns; so h* = e_req / (c * delta_cov) = 11.67.
+
+ASSUMPTIONS OF THE ANALYSIS
+W1 A covert bias step of the size reported in the literature escapes the L1 clock checks. W2 In a STRONG pass (valid solution and HDOP <= h*) the L3 checks detect any single-satellite bias large enough to breach the requirement (no stealth window). W3 In a WEAK pass (valid solution and HDOP > h*) the stealth window is non-empty and no check detects a bias inside it. W4 Observable reports carry no message authentication.
+
+DEFINITIONS
+STRIDE-tau categories (choose one PRIMARY, optionally up to two secondary):
+S Spoofing: fabricating an emission or observation attributable to a source. T Tampering: biasing, modifying or replay-corrupting an existing observable, data store or configuration. R Repudiation: acting without reliable attribution. I Information disclosure: keys, configuration, precise ephemerides or non-public traffic revealed. D Denial of service: suppressing or degrading the measurements or the geometric observability. E Elevation of privilege: gaining control of a platform, host or command path. tau Temporal integrity: the primary effect is an offset, drift or delay in the time reference of an asset on the timing dependency. Authentication-invariance test: assume every message is authenticated with sound cryptography; if the threat still achieves a time offset, it is tau.
+Goals (a threat may serve several): Displacement: a real aircraft is shown at a wrong position with a nominal integrity annotation. Denial: a target, or coverage of a region, is lost or falls below the requirement. Deception: a fabricated target, or a wrong integrity verdict (a missed discrepancy masking a deceptive aircraft, or a false one discrediting a genuine aircraft). Disclosure: keys, configuration, precise ephemerides or non-public traffic revealed; matters as the precondition of a later step.
+Adversary classes: AC1 deceptive or deceived aircraft (tier T1); AC2 RF-local emitter (T1); AC3 synchronised multi-emitter (T2); AC4 timing adversary (T2-T3); AC5 link adversary (T2-T3); AC6 ground-segment intruder (T2); AC7 insider or supplier with authorised access (T2).
+Tiers: T1p individual with commercial SDRs and public tools; T1c individual with custom software (cost of the order of 10^3 EUR); T2 organised group (several time-synchronised transmitters, published ephemerides, remote IT access); T3 state-level actor (tracks satellites, can place an insider, sustains operations); T3x tier T3 with an insider or two adversary classes.
+Evidence levels (for the strongest published support of the threat): E3 observed in operation or documented incident; E2 demonstrated on real hardware; E1 simulated or proof of concept; E0 theoretical or survey; P postulated, no published mechanism (retained, not discarded). Analogue only = the evidence comes from another system (terrestrial multilateration, a ground GNSS receiver, another satellite network) and not from LEO ADS-B multilateration.
+Enabler: a threat that has no consequence on a target report by itself and only makes another threat easier or harder to detect.
+
+PA-DREAD RUBRIC (score each dimension as an integer 1-5; you do not compute the total)
+D Damage: the consequence class reached at L4. 5 displacement, 4 deception, 3 regional denial or flagged degradation (affected users >= 3), 2 local denial (affected users <= 2), 1 disclosure only. An enabler has no Damage: use null.
+R Reproducibility: highest evidence level of the published support. P 1, E0 2, E1 3, E2 4, E3 5; subtract 1 if the evidence is from an analogue system only (minimum 1). Non-malicious failures cited as path evidence do not raise the level.
+E Exploitability: tier of the adversary class needed. 5 T1p, 4 T1c, 3 T2, 2 T3, 1 T3x.
+A Affected users: extent of the root event. 5 whole constellation, 4 several footprints, 3 one footprint, 2 several aircraft, 1 one aircraft.
+Di Discoverability: first layer at which a detection predicate is true. 1 at L1, 2 at L2, 3 at L3, 4 only at L4, 5 no check detects it (5 is the riskier end: hard to discover). Give it twice: Di_strong under the STRONG pass (W2) and Di_weak under the WEAK pass (W3).
+Bands of the total S = D+R+E+A+Di (computed by the authors, not by you): Low 5-9, Medium 10-14, High 15-19, Critical 20-25.
+
+OUTPUT FORMAT (one JSON object; keys exactly as below. In the template, "a | b | c" means choose exactly one value; text after // is explanation only and must NOT appear in your output)
+{
+  "meta": {"model_self_report": "<your model name and version as you know it>", "prompt_id": "B1d", "n_ratings": <integer>},
+  "ratings": [
+    {
+      "id": "<threat id exactly as in the card>",
+      "validity": "valid | duplicate | not_a_threat | out_of_scope",
+      "related_id": "<id of the duplicate or overlapping threat, or null>",
+      "layer": "L1 | L2 | L3 | L4",                       // layer where the threat is realised (entry layer)
+      "asset_ids": ["A1.1"],                              // asset IDs from the register that you judge the threat acts on
+      "trust_boundary": ["TB0"],                          // boundary or boundaries it sits at or crosses; [] if none
+      "stride_primary": "S | T | R | I | D | E | tau",
+      "stride_secondary": [],                             // 0-2 values from the same list
+      "goals": ["Displacement"],                          // subset of Displacement, Denial, Deception, Disclosure; [] for an enabler
+      "is_enabler": false,
+      "adversary_class": ["AC2"],                         // 1-2 values from AC1..AC7
+      "tier": "T1p | T1c | T2 | T3 | T3x",
+      "evidence": "P | E0 | E1 | E2 | E3",
+      "analogue_only": false,
+      "unknown_sources": [],                              // cited atlas source numbers you could not assess, e.g. [59]
+      "D": 4,                                             // 1-5, or null for an enabler
+      "R": 3, "E": 4, "A": 2,                             // 1-5
+      "Di_strong": 3, "Di_weak": 5,                       // 1-5
+      "confidence": 3,                                    // 1 = guess, 5 = certain, for the whole record
+      "rationale": "<max 45 words: why these categories and scores>",
+      "issue": "<max 30 words: any defect in the threat (wording, scope, duplicate, wrong layer or asset), or empty string>"
+    }
+  ],
+  "batch_comments": {
+    "missing_threats": [{"title": "<short>", "layer": "L1", "asset_ids": ["A1.3"], "why": "<max 25 words>"}],   // at most 5; threats you expect for these assets that are not in the batch
+    "rubric_ambiguities": ["<max 25 words each>"],        // at most 5; places where the definitions above did not let you decide
+    "overall": "<max 60 words: your overall view of this batch>"
+  }
+}
+Format example only (a dummy threat, do not reuse its values): {"id": "T0.00", "validity": "valid", "related_id": null, "layer": "L1", "asset_ids": ["A1.1"], "trust_boundary": ["TB0"], "stride_primary": "S", "stride_secondary": [], "goals": ["Deception"], "is_enabler": false, "adversary_class": ["AC2"], "tier": "T1p", "evidence": "E1", "analogue_only": false, "unknown_sources": [], "D": 4, "R": 3, "E": 5, "A": 2, "Di_strong": 3, "Di_weak": 3, "confidence": 3, "rationale": "...", "issue": ""}
+
+THREAT RECORDS (4)
+
+[T1.13] Layer L1 | Flight-software memory-safety defect exploitation
+Mechanism: A defect in flight or bus software is exploited to gain control of the bus, the payload processor or the clock.
+Attack vector: Exploitable software defect reachable from the command path
+Asset(s) named by the authors: A1.6
+Atlas sources cited by the authors for this threat:
+  - #65 Olchawa, Starcik, Fradique & Boulaich (2025), "Burning, Trashing, Spacecraft Crashing: A Collection of Vulnerabilities that will End your Space Mission" [Conference talk / event (non-peer-reviewed); attack evidence]
+  - #15 Willbold et al. (2023), "Space Odyssey: An Experimental Software Security Analysis of Satellites" [Peer-reviewed conference; attack evidence]
+
+[T1.14] Layer L1 | Firmware compromise or secure-boot bypass
+Mechanism: Payload or bus firmware is altered, or its boot chain bypassed, giving persistent control or latent behaviour.
+Attack vector: Fault injection or an unauthenticated update path
+Asset(s) named by the authors: A1.6
+Atlas sources cited by the authors for this threat:
+  - #64 Wouters (2022), "Glitched on Earth by Humans: A Black-Box Security Evaluation of the SpaceX Starlink User Terminal" [Conference talk / event (non-peer-reviewed); attack evidence]
+  - #15 Willbold et al. (2023), "Space Odyssey: An Experimental Software Security Analysis of Satellites" [Peer-reviewed conference; attack evidence]
+
+[T1.15] Layer L1 | Ground-station terminal compromise
+Mechanism: Remote compromise of ground-station modems or terminals (default credentials, exposed management) is used to disrupt reception or the command link.
+Attack vector: Internet-exposed management interfaces and hard-coded credentials
+Asset(s) named by the authors: A1.7
+Atlas sources cited by the authors for this threat:
+  - #62 Santamarta (2018), "Last Call for SATCOM Security" [Conference talk / event (non-peer-reviewed); attack evidence]
+  - #61 Santamarta (2014), "SATCOM Terminals: Hacking by Air, Sea, and Land" [Conference talk / event (non-peer-reviewed); attack evidence]
+
+[T1.16] Layer L1 | Ground-station reception denial
+Mechanism: RF interference or overload of the ground-station antennas and modems blocks the downlink or the telecommand path.
+Attack vector: RF interference or resource exhaustion at the ground station
+Asset(s) named by the authors: A1.7
+Atlas sources cited by the authors for this threat:
+  - #21 Manzanares-López et al. (2026), "Enhancing the Hypatia Simulator for LEO Satellite Networks with Integrated DoS and DDoS Attack Capabilities" [Peer-reviewed journal; attack evidence]
+  - #13 Giuliari et al. (2021), "ICARUS: Attacking Low Earth Orbit Satellite Networks" [Peer-reviewed conference; attack evidence]
+
+Now produce the JSON object with 4 ratings.
