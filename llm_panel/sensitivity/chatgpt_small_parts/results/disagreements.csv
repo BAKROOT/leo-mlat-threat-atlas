@@ -1,0 +1,123 @@
+id,title,field,tag,catalogue,panel,spread
+T1.01,Forged ADS-B injection,A,split,2,2.0,2.0
+T1.01,Forged ADS-B injection,Di_weak,split,3,3.5,1.25
+T1.02,Replay of recorded ADS-B,A,split,2,1.5,1.25
+T1.02,Replay of recorded ADS-B,Di_weak,split,3,3.5,1.25
+T1.02,Replay of recorded ADS-B,goals,split,Deception,Deception,
+T1.03,False position from the true location,tier,split,T1c,T1c,0.5
+T1.03,False position from the true location,evidence,split,E3,E3,0.5
+T1.03,False position from the true location,R,split,5,3.5,1.5
+T1.03,False position from the true location,Di_weak,split,3,4.0,2.0
+T1.03,False position from the true location,goals,panel_vs_catalogue,Displacement;Deception,Deception,
+T1.05,Synchronised multi-emitter ghost target,A,split,2,2.0,2.0
+T1.05,Synchronised multi-emitter ghost target,Di_strong,split,3,3.5,1.25
+T1.06,Multi-emitter takeover of a real track,Di_strong,split,3,3.5,1.25
+T1.07,Selective suppression of emissions,tier,split,T1c,T2,0.5
+T1.07,Selective suppression of emissions,E,split,4,3.5,1.25
+T1.07,Selective suppression of emissions,Di_strong,split,2,2.5,1.5
+T1.07,Selective suppression of emissions,Di_weak,split,2,2.5,1.5
+T1.08,Message flooding of the payload,tier,split,T1c,T1p,0.5
+T1.08,Message flooding of the payload,Di_strong,split,1,1.5,1.25
+T1.08,Message flooding of the payload,Di_weak,split,1,1.5,1.25
+T1.09,Biased observables at reception,A,panel_vs_catalogue,3,1.5,1.0
+T1.10,GNSS jamming of the onboard timing receiver,tier,split,T2,T2,0.5
+T1.10,GNSS jamming of the onboard timing receiver,D,panel_vs_catalogue,5.0,3.0,0.0
+T1.10,GNSS jamming of the onboard timing receiver,goals,panel_vs_catalogue,Displacement;Denial,Denial,
+T1.12,Weakly authenticated telecommand acceptance,R,split,4,3.5,1.25
+T1.12,Weakly authenticated telecommand acceptance,Di_strong,split,4,4.0,2.25
+T1.13,Flight-software memory-safety defect exploitation,tier,split,T2,T2,0.5
+T1.14,Firmware compromise or secure-boot bypass,stride_primary,panel_vs_catalogue,E,T,0.75
+T1.14,Firmware compromise or secure-boot bypass,tier,split,T3,T2,0.5
+T1.14,Firmware compromise or secure-boot bypass,E,split,2,2.5,1.25
+T1.15,Ground-station terminal compromise,stride_primary,panel_vs_catalogue,D,E,1.0
+T1.15,Ground-station terminal compromise,evidence,panel_vs_catalogue,E3,E2,0.75
+T1.15,Ground-station terminal compromise,Di_strong,panel_vs_catalogue,4,2.0,0.5
+T1.15,Ground-station terminal compromise,Di_weak,panel_vs_catalogue,4,2.0,0.5
+T1.15,Ground-station terminal compromise,goals,split,Denial,Denial,
+T1.16,Ground-station reception denial,tier,panel_vs_catalogue,T2,T1c,0.75
+T2.01,Modified TOA/FOA/AOA values in reports,goals,split,Displacement,Displacement,
+T2.02,Spoofed or impersonated node reports,goals,split,Displacement;Deception,Deception,
+T2.03,Delayed or modified reports,evidence,split,E1,E0,0.5
+T2.03,Delayed or modified reports,D,split,5.0,4.0,2.25
+T2.03,Delayed or modified reports,R,split,2,1.5,1.25
+T2.03,Delayed or modified reports,Di_weak,split,5,4.5,1.25
+T2.03,Delayed or modified reports,goals,split,Displacement;Denial,Denial,
+T2.04,Geometry-targeted dropping of reports,tier,panel_vs_catalogue,T3,T2,1.0
+T2.04,Geometry-targeted dropping of reports,Di_weak,split,4,4.0,2.0
+T2.04,Geometry-targeted dropping of reports,goals,panel_vs_catalogue,Displacement;Denial,,
+T2.06,Asymmetric delay of PTP exchanges,tier,panel_vs_catalogue,T3,T2,0.75
+T2.07,Forged PTP messages,tier,panel_vs_catalogue,T3,T2,1.0
+T2.08,Backhaul and downlink interception,tier,panel_vs_catalogue,T2,T1p,0.75
+T2.08,Backhaul and downlink interception,evidence,panel_vs_catalogue,E3,E2,0.75
+T2.08,Backhaul and downlink interception,is_enabler,split,False,True,0.5
+T2.08,Backhaul and downlink interception,E,panel_vs_catalogue,3,5.0,0.25
+T2.09,Injection into the downlink or backhaul,stride_primary,panel_vs_catalogue,T,S,1.0
+T2.09,Injection into the downlink or backhaul,evidence,panel_vs_catalogue,E3,E2,1.0
+T2.09,Injection into the downlink or backhaul,goals,split,Displacement;Deception,Deception,
+T2.10,Telecommand-channel interception,tier,split,T2,T2,0.5
+T2.10,Telecommand-channel interception,evidence,split,E3,E1,0.25
+T2.10,Telecommand-channel interception,is_enabler,split,False,True,0.5
+T2.10,Telecommand-channel interception,R,split,4,2.5,1.5
+T2.11,Forged telecommands,tier,panel_vs_catalogue,T2,T3,0.75
+T2.11,Forged telecommands,Di_weak,split,4,4.5,1.25
+T2.11,Forged telecommands,goals,panel_vs_catalogue,Displacement;Denial,Displacement;Denial;Deception,
+T2.12,Network-device and platform compromise,evidence,panel_vs_catalogue,E2,E3,0.75
+T2.12,Network-device and platform compromise,is_enabler,split,False,False,0.5
+T2.12,Network-device and platform compromise,Di_strong,split,4,2.5,1.25
+T2.12,Network-device and platform compromise,Di_weak,split,4,4.0,2.25
+T2.12,Network-device and platform compromise,goals,panel_vs_catalogue,Displacement;Denial,,
+T3.01,Association tampering,A,split,5,4.5,1.25
+T3.01,Association tampering,Di_weak,split,4,3.5,1.25
+T3.01,Association tampering,goals,panel_vs_catalogue,Displacement;Deception,Denial;Deception,
+T3.02,Tampering with integrity-test logic,A,split,5,4.5,1.25
+T3.02,Tampering with integrity-test logic,goals,split,Displacement;Deception,Deception,
+T3.03,Corrupted working store (ephemeris and clock state),goals,panel_vs_catalogue,Displacement,Displacement;Deception,
+T3.04,Post-association observable tampering,goals,split,Displacement,Displacement,
+T3.05,Solver and tracker exhaustion,evidence,split,E2,E1,0.5
+T3.05,Solver and tracker exhaustion,R,split,3,1.5,1.25
+T3.05,Solver and tracker exhaustion,A,split,5,4.5,1.25
+T3.06,Relaxation of integrity thresholds,layer,panel_vs_catalogue,L3,L4,0.75
+T3.06,Relaxation of integrity thresholds,goals,panel_vs_catalogue,Displacement;Deception,,
+T3.07,Consistent corruption of both positions,layer,panel_vs_catalogue,L3,L1,0.75
+T3.07,Consistent corruption of both positions,stride_primary,panel_vs_catalogue,T,S,1.0
+T3.07,Consistent corruption of both positions,Di_strong,split,4,4.5,1.25
+T3.08,Induced false discrepancy,layer,panel_vs_catalogue,L3,L1,0.75
+T3.08,Induced false discrepancy,stride_primary,panel_vs_catalogue,T,S,0.75
+T3.08,Induced false discrepancy,tier,panel_vs_catalogue,T2,T1c,0.75
+T3.08,Induced false discrepancy,evidence,split,E2,E2,0.5
+T3.08,Induced false discrepancy,goals,split,Deception,Deception,
+T3.11,Unattributable records,evidence,panel_vs_catalogue,E2,E0,0.75
+T3.11,Unattributable records,R,panel_vs_catalogue,3,1.0,0.5
+T3.11,Unattributable records,A,split,5,4.5,1.25
+T3.11,Unattributable records,goals,panel_vs_catalogue,Deception,,
+T3.12,CPS platform compromise,evidence,split,E2,E0,0.5
+T3.12,CPS platform compromise,R,split,4,2.0,2.25
+T3.12,CPS platform compromise,goals,panel_vs_catalogue,Displacement;Denial;Deception,Displacement;Denial;Deception;Disclosure,
+T4.01,Synchronisation-policy tampering,stride_primary,panel_vs_catalogue,T,tau,0.75
+T4.01,Synchronisation-policy tampering,goals,panel_vs_catalogue,Displacement,Displacement;Deception,
+T4.03,Stale ephemeris,goals,panel_vs_catalogue,Displacement;Denial;Deception,Displacement;Denial,
+T4.04,Disclosure of link and command keys,evidence,panel_vs_catalogue,E3,E2,0.75
+T4.04,Disclosure of link and command keys,is_enabler,panel_vs_catalogue,False,True,1.0
+T4.04,Disclosure of link and command keys,goals,panel_vs_catalogue,Disclosure,,
+T4.05,Key-management abuse,stride_primary,split,E,E,0.5
+T4.05,Key-management abuse,tier,split,T2,T2,0.5
+T4.05,Key-management abuse,is_enabler,split,False,False,0.5
+T4.05,Key-management abuse,E,split,3,2.5,1.25
+T4.05,Key-management abuse,goals,panel_vs_catalogue,Displacement;Denial,,
+T4.06,Malicious configuration or update,goals,panel_vs_catalogue,Displacement;Deception,Displacement;Denial;Deception,
+T4.09,Interruption of delivery to ATM,A,split,5,4.5,1.25
+T4.09,Interruption of delivery to ATM,Di_strong,split,4,3.5,1.25
+T4.09,Interruption of delivery to ATM,Di_weak,split,4,3.5,1.25
+T4.10,Output and interface deception,A,panel_vs_catalogue,5,2.0,0.25
+T4.10,Output and interface deception,goals,split,Deception,Deception,
+T4.11,Disclosure of ephemerides and coverage,goals,panel_vs_catalogue,Disclosure,,
+T4.12,Insider misuse of authorised access,evidence,split,E2,E1,0.5
+T4.12,Insider misuse of authorised access,validity,split,valid,duplicate,0.5
+T4.12,Insider misuse of authorised access,goals,panel_vs_catalogue,Displacement;Denial;Disclosure,Displacement;Deception;Disclosure,
+T4.13,Supply-chain compromise,tier,split,T3,T3,0.5
+T4.13,Supply-chain compromise,R,split,1,1.5,1.25
+T4.13,Supply-chain compromise,goals,panel_vs_catalogue,Displacement;Deception,Displacement;Denial;Deception,
+T4.14,Unattributable changes,is_enabler,panel_vs_catalogue,False,True,1.0
+T4.14,Unattributable changes,goals,panel_vs_catalogue,Deception,,
+T4.15,Management-network intrusion,is_enabler,panel_vs_catalogue,False,True,0.75
+T4.15,Management-network intrusion,goals,panel_vs_catalogue,Displacement;Denial;Deception,,
