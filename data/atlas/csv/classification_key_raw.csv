@@ -1,0 +1,90 @@
+,How each column was classified,
+,Demonstrated in Real-World / Active Exploit,"Attack executed against an operational, deployed system or live traffic outside a lab."
+,Simulated / Proof-of-Concept,"Attack executed in simulation or emulation, on real hardware in a controlled setting, or injected into recorded real data. Feasibility shown, but not against a live operational system."
+,Theoretical / Unexploited,"Vulnerability identified or reasoned about analytically (surveys, threat models, risk analyses, proofs), or a defence paper in which no attack was actually run. Surveys may cite others' PoCs; the status reflects this paper's own evidence."
+,Threat Category,"The adversary: capability, position and motive (e.g. low-cost SDR attacker within RF range)."
+,Vulnerability Category,"Root cause: inherent protocol flaw, architectural weakness, software bug, or design gap."
+,Attack Category,"The concrete attack type: spoofing, jamming, injection, DoS, MITM, eavesdropping, delay."
+,Evidence Basis,"What the status rests on, e.g. 'Real hardware, controlled setting' or 'Survey; cites others' PoCs'."
+,Venue Ranking / Quartile,"Checked 4 Oct 2026. Conferences: ICORE2026, the current CORE edition (replaces CORE2023), from the official ICORE2026 export. Journals: SCImago Journal Rank (SJR) 2025 quartile in the journal's best subject category, read from scimagojr.com. Clarivate JCR quartiles were not used because JCR is subscription-only. Workshops and venues absent from ICORE2026 are marked 'Not ICORE-ranked'. Each row links to its source in the Ranking Source column."
+,Domain,Filter aid mapping each paper to the area of your threat model it informs.
+,Scope (rows 6-48),"Rows 6-48: peer-reviewed papers from mybibliography.bib that address vulnerabilities, threats or attacks (the original review set). Rows 49 onward: newer peer-reviewed and non-peer-reviewed sources added to form the Threat Atlas. Bibliography entries not used are on Excluded Entries."
+,Evidence level (E0–E3),
+,E3  Operational / in the wild,"Attack executed against, or observed on, an operational system or live third-party traffic. Maps to Demonstrated in Real-World."
+,E2  Real hardware or field,"Attack executed with real RF hardware against real receivers, commercial systems or a live non-safety network under the experimenters' control. Maps to Simulated / Proof-of-Concept."
+,E1  Simulation or recorded data,"Attack run in simulation or emulation, or injected into recorded real data. Maps to Simulated / Proof-of-Concept."
+,E0  Analytical only,"Argued, surveyed, proven or modelled; no attack executed by the authors. Maps to Theoretical / Unexploited."
+,Paper Alignment,"Sheet mirroring Tables 1–3 and Fig. 3 of the TDSC draft row by row, with layer codings and evidence levels; its count blocks are the numbers quoted in §2.6.2, the Fig. 3 bars and Table 7."
+,Placement in TDSC Draft,"Where each reviewed paper appears in the draft (table and reference number, or section)."
+,"Threat Atlas extension (columns Q onward, added 13 Oct 2026)",
+,Source Type,Peer-reviewed journal / conference / workshop; Preprint / unconfirmed venue; Conference talk / event (non-peer-reviewed); Government / regulator advisory; Documented incident report; Industry / NGO report.
+,Peer-reviewed (derived),Formula: Yes when Source Type starts with 'Peer-reviewed'.
+,Citation (derived),"Formula built from Authors & Year, Title and Venue (columns C, B, D)."
+,Verified Link / Link Check,"Every link was checked on 13 Oct 2026. 'Page fetched' = page opened and title matched. 'DOI metadata' = DOI resolved in OpenAlex with matching title. 'Search index' = the site blocks automated fetching, so the exact URL was confirmed from a search result carrying the matching title."
+,Vulnerability Class,Normalised root cause (controlled list below); the original free-text Vulnerability Category (col H) is kept.
+,Attack Category (normalised),Normalised attack type used by the Gap Matrix; the original free-text Attack Category (col I) is kept. Surveys and SoKs are coded 'Multiple'.
+,Attack (one line),"One high-level sentence. No parameters, procedures or tooling: this is a defensive research dataset."
+,Asset,"The PRISM-LEO asset the attack acts on first, prefixed with its layer (the prefix equals the Entry Layer). Asset names follow the layer diagram (transponder, satellite receivers, onboard clock; ISLs, downlinks; sync, ephemeris, keys, config, ATM picture), extended with a few assets the sources target (SATCOM terminals, aeronautical data links, ground C2). Surveys and SoKs are 'Multiple assets'. Filter on Asset to see each asset's evidence, CVEs and mitigations. Added 16 Oct 2026."
+,Entry Layer / Impact Layer,"PRISM-LEO layer where the attacker's input first acts, and the furthest layer the source shows it reaching. For rows on Paper Alignment: entry = lowest layer coded A or P, impact = highest. Other rows coded on 13 Oct 2026."
+,L1 Physical & Infrastructure,"Transponder, satellite receivers, onboard clock."
+,L2 Data & Communication,"ISLs, downlinks, TOA/FOA/AOA observables in transit."
+,L3 Service & Processing,"Association, EKF/IMM, integrity, cross-check."
+,L4 Governance & Integration,"Sync, ephemeris, keys, configuration, ATM picture."
+,TB1 / TB2 / TB3 (derived),"Formula: TBk is ticked when the path between entry and impact layer crosses the boundary between Lk and Lk+1 (TB1 = L1|L2, TB2 = L2|L3, TB3 = L3|L4). A within-layer threat crosses none."
+,Direction (derived),"Upward = observables flowing up (L1 to L4). Downward = configuration, ephemeris, keys or sync policy flowing down."
+,Timing Dependency,"Direct = the attack targets or rides on time/synchronisation (GNSS time, NTP/PTP, TOA). Indirect = relies on, or degrades, timing-derived data. None."
+,Related CVEs / CVEs in Register,"IDs verified PUBLISHED in the official CVE record (CVE Services API, 13 Oct 2026). The count is a live formula over the CVE Register."
+,Mitigation IDs,IDs from the Mitigations sheet (M01-M25).
+,Atlas Set,'Original review set' = rows 6-48 (the 43 papers the Summary and Paper Alignment sheets describe). 'Added 13 Oct 2026' = rows 49 onward.
+,Controlled vocabularies (drop-down sources),
+,Source Type,Peer-reviewed journal
+,,Peer-reviewed conference
+,,Peer-reviewed workshop
+,,Preprint / unconfirmed venue
+,,Conference talk / event (non-peer-reviewed)
+,,Government / regulator advisory
+,,Documented incident report
+,,Industry / NGO report
+,Vulnerability Class,Protocol design gap
+,,Architectural weakness
+,,Implementation flaw
+,,Configuration / access-control weakness
+,,Cryptographic weakness
+,,Physical-layer susceptibility
+,,Estimation / verification design limit
+,,Process / operational failure
+,,Multiple (survey / SoK)
+,Attack Category,Spoofing / injection
+,,Jamming / denial of service
+,,Eavesdropping / traffic analysis
+,,Impersonation / MITM
+,,Software exploitation / takeover
+,,Estimation / data manipulation
+,,Timing & synchronisation attack
+,,"Configuration, key & access abuse"
+,,Non-malicious failure
+,,Multiple (survey / SoK)
+,Layer,L1
+,,L2
+,,L3
+,,L4
+,Timing Dependency,Direct
+,,Indirect
+,,None
+,Asset,L1 · Transponder signals & satellite receivers (ADS-B / Mode S)
+,,"L1 · Aircraft avionics & navaid receivers (ILS, TCAS, GPWS)"
+,,L1 · GNSS receiver / onboard clock
+,,L1 · Satellite & ground-station RF receivers
+,,L1 · Satellite platform & flight software
+,,L1 · SATCOM user terminal
+,,L2 · ISLs & downlinks (observables in transit)
+,,L2 · Space link TC/TM (commanding & file transfer)
+,,"L2 · Aeronautical data links (ACARS, CPDLC, ADS-C, LDACS)"
+,,L2 · SATCOM broadband links
+,,L2 · Time-sync network traffic (NTP / PTP)
+,,L2 · Measurements feeding the estimator
+,,"L4 · Ground segment C2, mission control & keys"
+,,"L4 · Time & navigation ground segment (sync, ephemeris)"
+,,"L4 · ATM integration (flight data, ATM picture)"
+,,L4 · SATCOM provider ground network
+,,Multiple assets (survey / SoK)

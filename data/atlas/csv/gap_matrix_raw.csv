@@ -1,0 +1,25 @@
+,Gap Matrix: PRISM-LEO layer x attack category,,,,,,,,,,,
+,"Live counts of Threat Atlas entries. Red cells (0) are gaps: no source of any kind covers that layer and attack category. Matrix C keeps only practical evidence (E2 real hardware/field, E3 operational), so a non-red cell in A or B can still be red in C.",,,,,,,,,,,
+,A. By entry layer (where the attacker's input first acts),,,,,,,,,,,
+,Layer \ attack category,Spoofing / injection,Jamming / denial of service,Eavesdropping / traffic analysis,Impersonation / MITM,Software exploitation / takeover,Estimation / data manipulation,Timing & synchronisation attack,"Configuration, key & access abuse",Non-malicious failure,Multiple (survey / SoK),Total
+,L1 Physical & Infrastructure,31,4,0,0,3,0,2,1,0,8,49
+,L2 Data & Communication,2,3,6,3,2,3,3,0,0,1,23
+,L3 Service & Processing,0,0,0,0,0,0,0,0,0,0,0
+,L4 Governance & Integration,0,0,0,0,1,0,0,2,3,0,6
+,Total,33,7,6,3,6,3,5,3,3,9,78
+,B. By impact layer (furthest layer the source shows the attack reaching),,,,,,,,,,,
+,Layer \ attack category,Spoofing / injection,Jamming / denial of service,Eavesdropping / traffic analysis,Impersonation / MITM,Software exploitation / takeover,Estimation / data manipulation,Timing & synchronisation attack,"Configuration, key & access abuse",Non-malicious failure,Multiple (survey / SoK),Total
+,L1 Physical & Infrastructure,11,0,0,0,5,0,1,1,2,0,20
+,L2 Data & Communication,5,3,5,1,1,0,0,2,0,6,23
+,L3 Service & Processing,14,1,0,0,0,3,1,0,0,0,19
+,L4 Governance & Integration,3,3,1,2,0,0,3,0,1,3,16
+,Total,33,7,6,3,6,3,5,3,3,9,78
+,"C. By impact layer, practical evidence only (E2 + E3)",,,,,,,,,,,
+,Layer \ attack category,Spoofing / injection,Jamming / denial of service,Eavesdropping / traffic analysis,Impersonation / MITM,Software exploitation / takeover,Estimation / data manipulation,Timing & synchronisation attack,"Configuration, key & access abuse",Non-malicious failure,Multiple (survey / SoK),Total
+,L1 Physical & Infrastructure,4,0,0,0,3,0,1,1,2,0,11
+,L2 Data & Communication,1,0,4,0,1,0,0,0,0,0,6
+,L3 Service & Processing,6,0,0,0,0,0,0,0,0,0,6
+,L4 Governance & Integration,3,3,1,0,0,0,1,0,1,0,9
+,Total,14,3,5,0,4,0,2,1,3,0,32
+,Legend:,0 = gap,1 source,2-4,5 or more,,,,,,,
+,"Note (29 Oct 2026): the L3 rows above are empty by design, since no published source enters at L3 or targets a CVE-listed L3 component. The seven L3 assets (A3.1 to A3.7) are listed in the Asset Register sheet and in Overview section 7b, with the sources whose bound attacks reach them.",,,,,,,,,,,

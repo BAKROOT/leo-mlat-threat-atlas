@@ -1,0 +1,83 @@
+ID,Asset,Layer,Function,Kind,STRIDE element,Trust boundary,Flags,Catalogue threats (n),Catalogue threat IDs,Atlas sources mapped (n),CVEs mapped (n),Evidence status,Assets reached (n),Layers reached,Boundaries to first check A3.4/A3.5,Boundaries to ATM A4.6,Cross-layer propagation (layers and assets the effect can reach)
+A1.1,Aircraft 1090ES transponder,L1,Emits the signal whose arrival is measured; ADS-B content is an unauthenticated self-report,hardware,external entity,TB0,external,6,"T1.01, T1.02, T1.03, T1.05, T1.06, T1.08",16,0,"Published source, no CVE",13,L1 > L2 > L3 > L4,2,3,"L1 > L2 > L3 > L4  (4 of 4 layers)
+L1: [A1.1], A1.3, A1.4, A1.7 | L2: A2.1, A2.2, A2.4 | L3: A3.1, A3.3, A3.4, A3.5, A3.6 | L4: A4.5, A4.6
+Boundaries to first check A3.4/A3.5: 2 | to ATM A4.6: 3"
+A1.2,GNSS positioning and timing service,L1,Source of the reported position and one of two inputs that discipline the onboard clocks,service,external entity,TB0,external; timing,2,"T1.10, T1.11",17,0,"Published source, no CVE",14,L1 > L2 > L3 > L4,2,3,"L1 > L2 > L3 > L4  (4 of 4 layers)
+L1: [A1.2], A1.4, A1.5, A1.7 | L2: A2.1, A2.2, A2.4 | L3: A3.1, A3.2, A3.3, A3.4, A3.5, A3.6 | L4: A4.5, A4.6
+Boundaries to first check A3.4/A3.5: 2 | to ATM A4.6: 3"
+A1.3,Phased-array antenna and RF front end,L1,Receives 1090 MHz and forms beams; gives the angle of arrival,hardware,process,---,,2,"T1.04, T1.07",7,0,"Published source, no CVE",12,L1 > L2 > L3 > L4,2,3,"L1 > L2 > L3 > L4  (4 of 4 layers)
+L1: [A1.3], A1.4, A1.7 | L2: A2.1, A2.2, A2.4 | L3: A3.1, A3.3, A3.4, A3.5, A3.6 | L4: A4.5, A4.6
+Boundaries to first check A3.4/A3.5: 2 | to ATM A4.6: 3"
+A1.4,Payload signal processor and extraction firmware,L1,"Decodes each emission, measures TOA, FOA and AOA, stamps them with the onboard clock","hardware, software",process,TB1,,1,T1.09,3,0,"Published source, no CVE",11,L1 > L2 > L3 > L4,2,3,"L1 > L2 > L3 > L4  (4 of 4 layers)
+L1: [A1.4], A1.7 | L2: A2.1, A2.2, A2.4 | L3: A3.1, A3.3, A3.4, A3.5, A3.6 | L4: A4.5, A4.6
+Boundaries to first check A3.4/A3.5: 2 | to ATM A4.6: 3"
+A1.5,Onboard clock subsystem,L1,"Oscillator, GNSS receiver and disciplining filter; origin of the timing dependency","hardware, software","process, data store","TB0, TB1",timing,2,"T1.10, T1.11",17,1,Published source and CVE,13,L1 > L2 > L3 > L4,2,3,"L1 > L2 > L3 > L4  (4 of 4 layers)
+L1: [A1.5], A1.4, A1.7 | L2: A2.1, A2.2, A2.4 | L3: A3.1, A3.2, A3.3, A3.4, A3.5, A3.6 | L4: A4.5, A4.6
+Boundaries to first check A3.4/A3.5: 2 | to ATM A4.6: 3"
+A1.6,Satellite bus and flight software,L1,"Computer, flight software and telecommand receiver; hosts and commands the payload","hardware, software",process,TB1,,3,"T1.12, T1.13, T1.14",5,5,Published source and CVE,14,L1 > L2 > L3 > L4,2,3,"L1 > L2 > L3 > L4  (4 of 4 layers)
+L1: [A1.6], A1.4†, A1.5†, A1.7† | L2: A2.1†, A2.2†, A2.4† | L3: A3.1†, A3.2†, A3.3†, A3.4†, A3.5†, A3.6† | L4: A4.5†, A4.6†
+Boundaries to first check A3.4/A3.5: 2 | to ATM A4.6: 3"
+A1.7,Ground-station antennas and modems,L1,Receive downlinks and transmit telecommands,hardware,process,TB2,,2,"T1.15, T1.16",4,3,Published source and CVE,7,L1 > L3 > L4,2,3,"L1 > L3 > L4  (3 of 4 layers)
+L1: [A1.7] | L3: A3.1, A3.3, A3.4, A3.5, A3.6 | L4: A4.5, A4.6
+Boundaries to first check A3.4/A3.5: 2 | to ATM A4.6: 3"
+A2.1,Observable reports,L2,"TOA, FOA, AOA, decoded message and clock-quality metadata of one reception",data,data flow,"TB1, TB2",,3,"T2.01, T2.02, T2.03",7,0,"Published source, no CVE",10,L1 > L2 > L3 > L4,1,2,"L1 > L2 > L3 > L4  (4 of 4 layers)
+L1: A1.7 | L2: [A2.1], A2.2, A2.4 | L3: A3.1, A3.3, A3.4, A3.5, A3.6 | L4: A4.5, A4.6
+Boundaries to first check A3.4/A3.5: 1 | to ATM A4.6: 2"
+A2.2,Inter-satellite link terminals and crosslinks,L2,Relay reports toward a satellite in view of a ground station,link,data flow,---,,2,"T2.04, T2.05",3,0,"Published source, no CVE",9,L1 > L2 > L3 > L4,1,2,"L1 > L2 > L3 > L4  (4 of 4 layers)
+L1: A1.7 | L2: [A2.2], A2.4 | L3: A3.1, A3.3, A3.4, A3.5, A3.6 | L4: A4.5, A4.6
+Boundaries to first check A3.4/A3.5: 1 | to ATM A4.6: 2"
+A2.3,PTP time-transfer messages,L2,Carry time between satellites; second input to A1.5,data,data flow,TB1,timing,2,"T2.06, T2.07",3,7,Published source and CVE,14,L1 > L2 > L3 > L4,3,4,"L1 > L2 > L3 > L4  (4 of 4 layers)
+L1: A1.4, A1.5, A1.7 | L2: [A2.3], A2.1, A2.2, A2.4 | L3: A3.1, A3.2, A3.3, A3.4, A3.5, A3.6 | L4: A4.5, A4.6
+Boundaries to first check A3.4/A3.5: 3 | to ATM A4.6: 4"
+A2.4,Downlink channel and ground backhaul network,L2,Carry reports from orbit to the Central Processing Station,link,data flow,TB2,,3,"T2.08, T2.09, T2.12",8,10,Published source and CVE,8,L1 > L2 > L3 > L4,1,2,"L1 > L2 > L3 > L4  (4 of 4 layers)
+L1: A1.7 | L2: [A2.4] | L3: A3.1, A3.3, A3.4, A3.5, A3.6 | L4: A4.5, A4.6
+Boundaries to first check A3.4/A3.5: 1 | to ATM A4.6: 2"
+A2.5,Telecommands and software-update packages,L2,"Carry commands, configuration and firmware to the satellites",data,data flow,TB1-TB3,,2,"T2.10, T2.11",5,10,Published source and CVE,15,L1 > L2 > L3 > L4,3,4,"L1 > L2 > L3 > L4  (4 of 4 layers)
+L1: A1.4†, A1.5†, A1.6, A1.7† | L2: [A2.5], A2.1†, A2.2†, A2.4† | L3: A3.1†, A3.2†, A3.3†, A3.4†, A3.5†, A3.6† | L4: A4.5†, A4.6†
+Boundaries to first check A3.4/A3.5: 3 | to ATM A4.6: 4"
+A3.1,Measurement-association module,L3,Groups the receptions of one transmission across satellites,software,process,TB2,,1,T3.01,0,0,Postulated: no published source or CVE,6,L3 > L4,0,1,"L3 > L4  (2 of 4 layers)
+L3: [A3.1], A3.3, A3.4, A3.5, A3.6 | L4: A4.5, A4.6
+Boundaries to first check A3.4/A3.5: 0 (an origin is a check) | to ATM A4.6: 1"
+A3.2,Ephemeris and clock-state database,L3,"Holds satellite positions, velocities and clock states for the solver",data,data store,TB3,timing,1,T3.03,0,0,Postulated: no published source or CVE,6,L3 > L4,0,1,"L3 > L4  (2 of 4 layers)
+L3: [A3.2], A3.3, A3.4, A3.5, A3.6 | L4: A4.5, A4.6
+Boundaries to first check A3.4/A3.5: 0 (an origin is a check) | to ATM A4.6: 1"
+A3.3,"Localisation solver, EKF/IMM tracker and track database",L3,Computes each position and maintains the track,"software, data","process, data store",---,,5,"T3.03, T3.04, T3.05, T3.07, T3.11",4,0,"Published source, no CVE",5,L3 > L4,0,1,"L3 > L4  (2 of 4 layers)
+L3: [A3.3], A3.4, A3.5, A3.6 | L4: A4.5, A4.6
+Boundaries to first check A3.4/A3.5: 0 (an origin is a check) | to ATM A4.6: 1"
+A3.4,Integrity-monitoring module,L3,Residual and consistency tests on each solution,software,process,---,,2,"T3.02, T3.06",0,0,Postulated: no published source or CVE,3,L3 > L4,0,1,"L3 > L4  (2 of 4 layers)
+L3: [A3.4], A3.6 | L4: A4.5, A4.6
+Boundaries to first check A3.4/A3.5: 0 (an origin is a check) | to ATM A4.6: 1"
+A3.5,E-MLAT/ADS-B cross-check module,L3,Compares the independent position with the broadcast one and sets the integrity indicator,software,process,---,,3,"T3.06, T3.07, T3.08",3,0,"Published source, no CVE",3,L3 > L4,0,1,"L3 > L4  (2 of 4 layers)
+L3: [A3.5], A3.6 | L4: A4.5, A4.6
+Boundaries to first check A3.4/A3.5: 0 (an origin is a check) | to ATM A4.6: 1"
+A3.6,ASTERIX report encoder and gateway,L3,Encodes CAT020/021 reports with their integrity annotation for ATM,software,process,TB3,,2,"T3.09, T3.10",0,0,Postulated: no published source or CVE,2,L3 > L4,none (bypasses the checks),1,"L3 > L4  (2 of 4 layers)
+L3: [A3.6] | L4: A4.5, A4.6
+Boundaries to first check A3.4/A3.5: none (bypasses A3.4/A3.5) | to ATM A4.6: 1"
+A3.7,Central Processing Station computing platform,L3,"Servers, operating system and virtualisation hosting A3.1-A3.6","hardware, software",host,"TB2, TB3",hosting,1,T3.12,1,0,"Published source, no CVE",8,L3 > L4,0,1,"L3 > L4  (2 of 4 layers)
+L3: [A3.7], A3.1, A3.2, A3.3, A3.4, A3.5, A3.6 | L4: A4.5, A4.6
+Boundaries to first check A3.4/A3.5: 0 (an origin is a check) | to ATM A4.6: 1"
+A4.1,Synchronisation policy and time-reference service,L4,"Fixes the time scale, PTP policy and GNSS-PTP conformance thresholds used by A1.5","service, data","process, data store",TB3,timing,2,"T4.01, T4.14",2,8,Published source and CVE,17,L1 > L2 > L3 > L4,5,6,"L1 > L2 > L3 > L4  (4 of 4 layers)
+L1: A1.4†, A1.5†, A1.6, A1.7† | L2: A2.1†, A2.2†, A2.3†, A2.4†, A2.5 | L3: A3.1†, A3.2†, A3.3†, A3.4†, A3.5†, A3.6† | L4: [A4.1], A4.5†, A4.6†
+Boundaries to first check A3.4/A3.5: 5 | to ATM A4.6: 6"
+A4.2,Orbit-determination system and ephemeris products,L4,Produces the satellite ephemerides for A3.2,"software, data","process, data store",TB3,,2,"T4.02, T4.03",2,0,"Published source, no CVE",7,L3 > L4,1,2,"L3 > L4  (2 of 4 layers)
+L3: A3.2, A3.3, A3.4, A3.5, A3.6 | L4: [A4.2], A4.5, A4.6
+Boundaries to first check A3.4/A3.5: 1 | to ATM A4.6: 2"
+A4.3,Key-management system and credential store,L4,"Holds and distributes keys for telecommand, ISLs and ground links","software, data",data store,TB3,,3,"T4.04, T4.05, T4.14",4,4,Published source and CVE,16,L1 > L2 > L3 > L4,5,6,"L1 > L2 > L3 > L4  (4 of 4 layers)
+L1: A1.4†, A1.5†, A1.6, A1.7† | L2: A2.1†, A2.2†, A2.4†, A2.5 | L3: A3.1†, A3.2†, A3.3†, A3.4†, A3.5†, A3.6† | L4: [A4.3], A4.5†, A4.6†
+Boundaries to first check A3.4/A3.5: 5 | to ATM A4.6: 6"
+A4.4,Configuration and software-update management system,L4,"Holds filter parameters, integrity thresholds and firmware baselines; issues updates via A2.5","software, data","process, data store",TB3,,3,"T4.06, T4.07, T4.13",4,0,"Published source, no CVE",16,L1 > L2 > L3 > L4,1,2,"L1 > L2 > L3 > L4  (4 of 4 layers)
+L1: A1.4†, A1.5†, A1.6, A1.7† | L2: A2.1†, A2.2†, A2.4†, A2.5 | L3: A3.1†, A3.2†, A3.3†, A3.4, A3.5†, A3.6 | L4: [A4.4], A4.5, A4.6
+Boundaries to first check A3.4/A3.5: 1 | to ATM A4.6: 2"
+A4.5,Surveillance data feed to ATM,L4,Delivers target reports and integrity annotations to ATM,"service, data",data flow,"TB0, TB3",,3,"T4.08, T4.09, T4.11",1,0,"Published source, no CVE",1,L4,none (bypasses the checks),0,"L4  (1 of 4 layers)
+L4: [A4.5], A4.6
+Boundaries to first check A3.4/A3.5: none (bypasses A3.4/A3.5) | to ATM A4.6: 0"
+A4.6,ATM surveillance system and controller working position,L4,Consumes the picture; the place where the consequence of an attack is realised,"hardware, software",external entity,TB0,external,1,T4.10,0,0,Postulated: no published source or CVE,0,L4,none (bypasses the checks),0,"L4  (1 of 4 layers)
+L4: [A4.6]
+Boundaries to first check A3.4/A3.5: none (bypasses A3.4/A3.5) | to ATM A4.6: 0"
+A4.7,Operator personnel and suppliers,L4,Hold authorised access to L3 and L4 assets,people,external entity,TB0,external,2,"T4.12, T4.13",3,0,"Published source, no CVE",23,L1 > L2 > L3 > L4,1,2,"L1 > L2 > L3 > L4  (4 of 4 layers)
+L1: A1.4†, A1.5†, A1.6, A1.7† | L2: A2.1†, A2.2†, A2.3†, A2.4†, A2.5 | L3: A3.1, A3.2, A3.3, A3.4, A3.5, A3.6, A3.7 | L4: [A4.7], A4.1, A4.2, A4.3, A4.4, A4.5, A4.6, A4.8
+Boundaries to first check A3.4/A3.5: 1 | to ATM A4.6: 2"
+A4.8,Mission-operations centre and management network,L4,"Workstations, remote access, management network and audit logs hosting A4.1-A4.4","hardware, software",host,TB3,hosting,4,"T4.06, T4.07, T4.12, T4.15",5,26,Published source and CVE,21,L1 > L2 > L3 > L4,1,2,"L1 > L2 > L3 > L4  (4 of 4 layers)
+L1: A1.4†, A1.5†, A1.6, A1.7† | L2: A2.1†, A2.2†, A2.3†, A2.4†, A2.5 | L3: A3.1†, A3.2, A3.3, A3.4, A3.5, A3.6 | L4: [A4.8], A4.1, A4.2, A4.3, A4.4, A4.5, A4.6
+Boundaries to first check A3.4/A3.5: 1 | to ATM A4.6: 2"
+Total / coverage,,,,,,,,65,,22,9,5 postulated only,,,,,

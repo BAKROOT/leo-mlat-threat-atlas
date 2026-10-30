@@ -1,0 +1,59 @@
+,Bibliography entries not in the review table,,,,,,
+,"Red rows are the strongest real-world exploitation evidence in your bibliography, but they are not peer-reviewed. Entries that were waiting for an abstract are now classified: five moved to the review set (Threat Atlas rows 6-48), Burks2026Testbed is listed here as a dissertation. Since 13 Oct 2026, column G shows entries now carried on the Threat Atlas as non-peer-reviewed rows, and column H links standards to the Mitigations sheet.",,,,,,
+,BibTeX Key,Title,Year,Reason excluded,Relevance note,In Threat Atlas (live lookup),Atlas / Mitigations note (13 Oct 2026)
+,Aireon2025Trends,Observations of Trends in GPS Anomalies Affecting Aviation,2025,Exploitation evidence — not peer-reviewed,Operational observations of GPS anomalies affecting aviation (industry white paper),,Not added: no stable public link verified 13 Oct 2026.
+,Aireon2026Spoofing,GNSS Spoofing Detection in Aviation Using ADS-B Data,2026,Exploitation evidence — not peer-reviewed,GNSS spoofing detection from operational space-based ADS-B data (industry white paper),Row #72,
+,Costin2012ADSB,Ghost in the Air(Traffic): On Insecurity of ADS-B Protocol and Practical Attacks on ADS-B Devices,2012,Exploitation evidence — not peer-reviewed,Practical attacks on ADS-B devices (conference talk),Row #59,
+,Marin2026LoweringOrbit,Lowering the Orbit: Exploiting Satellite Protocols and Communications via Software-Defined Radio and Ground Stations,2026,Exploitation evidence — not peer-reviewed,Satellite protocol exploitation via SDR (conference talk),,Not added: no public record found 13 Oct 2026.
+,Santamarta2018SATCOM,Last Call for SATCOM Security,2018,Exploitation evidence — not peer-reviewed,Reported exposure of in-service aircraft SATCOM terminals (conference talk),Row #62,
+,Wouters2022Starlink,Glitched on Earth by Humans: A Black-Box Security Evaluation of the SpaceX Starlink User Terminal,2022,Exploitation evidence — not peer-reviewed,Fault-injection attack on a real Starlink user terminal (conference talk),Row #64,
+,Aerospace2023Moonlighter,Moonlighter: A Hacking Sandbox in Space,2023,Not peer-reviewed,,Row #67,
+,Annessi2018SecureTime,Encryption is Futile: Delay Attacks on High-Precision Clock Synchronization,2018,Not peer-reviewed,,,
+,BallardSong2025Orbital,"Satellite Cybersecurity Across Orbital Altitudes: Analyzing Ground-Based Threats to LEO, MEO, and GEO",2025,Not peer-reviewed,,Row #58,
+,Huang2025CPSModelling,Security Modelling for Cyber-Physical Systems: A Systematic Literature Review,2025,Not peer-reviewed,,,
+,Jamil2021TMPractice,Threat Modeling of Cyber-Physical Systems in Practice,2021,Not peer-reviewed,,,
+,Nandiya2026BRIDGICS,BRIDG-ICS: AI-Grounded Knowledge Graphs for Intelligent Threat Analytics in Industry 5.0 Cyber–Physical Systems,2026,Not peer-reviewed,,,
+,PWNSAT2026FlatSat,FlatSat v1.0: An Open-Source Vulnerable-by-Design Aerospace Cybersecurity Platform,2026,Not peer-reviewed,,,Not added: no matching public record confirmed 13 Oct 2026.
+,SATERA2025D61,SATERA Deliverable D6.1 –- Security Analysis and Threat Register for Space-Based Enhanced Multilateration,2025,Not peer-reviewed,,,
+,Burks2026Testbed,"A Reproducible Satellite Constellation Testbed for Cyber Attack Experimentation, Dataset Generation, and Machine Learning Based Detection",2026,Not peer-reviewed (doctoral dissertation),"Coded E1 on the Paper Alignment sheet (Table 3, [79]).",,Not added: no public record found 13 Oct 2026.
+,alavedra2026satellite,"Satellite Infrastructures, Earth-Space Sustainability, and the Evolution of Global Space Partnerships",2026,Not attack-focused (architecture / localisation),,,
+,Bezousek2008MLAT,Bistatic and Multistatic Radar Systems,2008,Not attack-focused (architecture / localisation),,,
+,Celikbilek2022LEO,Survey on Optimization Methods for LEO-Satellite-Based Networks with Applications in Future Autonomous Transportation,2022,Not attack-focused (architecture / localisation),,,
+,Chen2026MultiLayerLEO,Optimized Design of Multi-Layer LEO Satellite Constellations for Integrated Communication and Signal-of-Opportunity Doppler Positioning,2026,Not attack-focused (architecture / localisation),,,
+,Garcia2015SpaceADSB,Aireon Space Based ADS-B Performance Model,2015,Not attack-focused (architecture / localisation),,,
+,Leonardi2026SpaceMLAT,Space-based Multilateration for a GNSS-Independent Aircraft Localisation,2026,Not attack-focused (architecture / localisation),,,
+,Leonardi2026SyncIntegrity,Robust GNSS–ISL Synchronization in LEO Constellations for Space-Based Aircraft Multilateration: Assessment Using Real Data,2026,Not attack-focused (architecture / localisation),,,
+,Mantilla2015MLAT,Localization Algorithms for Multilateration (MLAT) Systems in Airport Surface Surveillance,2015,Not attack-focused (architecture / localisation),,,
+,Sonnleitner2025WAMTDOA,Wide-Area Multilateration Airspace Surveillance with Unsynchronized Low-Cost ADS-B Receivers Using TDOA Observations,2025,Not attack-focused (architecture / localisation),,,
+,Stock2025LEOPNT,Survey on Opportunistic PNT with Signals from LEO Communication Satellites,2025,Not attack-focused (architecture / localisation),,,
+,Werner2014SpaceADSB,ADS-B over Satellite: Global Air Traffic Surveillance from Space,2014,Not attack-focused (architecture / localisation),,,
+,Hernan2006STRIDE,Threat Modeling –- Uncover Security Design Flaws Using the STRIDE Approach,2006,Methodology / book,,,
+,Howard2003SecureCode,Writing Secure Code,2003,Methodology / book,,,
+,Kordy2014DAG,DAG-Based Attack and Defense Modeling: Don't Miss the Forest for the Attack Trees,2014,Methodology / book,,,
+,Leveson2011SaferWorld,Engineering a Safer World: Systems Thinking Applied to Safety,2011,Methodology / book,,,
+,Microsoft2006STRIDE,The STRIDE Threat Model,2006,Methodology / book,,,
+,OWASP2013RiskRating,OWASP Risk Rating Methodology,2013,Methodology / book,,,
+,Sheyner2002AttackGraphs,Automated Generation and Analysis of Attack Graphs,2002,Methodology / book,,,
+,Shostack2014ThreatModeling,Threat Modeling: Designing for Security,2014,Methodology / book,,,
+,UcedaVelez2015PASTA,Risk Centric Threat Modeling: Process for Attack Simulation and Threat Analysis,2015,Methodology / book,,,
+,Young2013STPASec,Systems-Theoretic Process Analysis for Security (STPA-Sec),2013,Methodology / book,,,
+,Aerospace2022SPARTA,Space Attack Research and Tactic Analysis (SPARTA) Matrix,2022,Standard / regulation / catalogue,,,Mitigations M25.
+,CCSDS2020Security,Spacecraft Onboard Interface Services –- Security (CCSDS 355.0-B-1),2020,Standard / regulation / catalogue,,,Mitigations M04. Current issue on ccsds.org is 355.0-B-2.
+,EASA2023DSGE,"Detailed Specifications for ATM/ANS Ground Equipment (DS GE.SoC), Issue 1, Annex II to ED Decision 2023/015/R",2023,Standard / regulation / catalogue,,,
+,EASA2025EAR,Easy Access Rules for Information Security (Part-IS),2025,Standard / regulation / catalogue,,,Companion to M08.
+,ECSS2018Safety,ECSS-Q-ST-40C: Space Product Assurance –- Safety,2018,Standard / regulation / catalogue,,,
+,ENISA2025ETL,ENISA Threat Landscape 2025,2025,Standard / regulation / catalogue,,,
+,EU2022IS,Commission Delegated Regulation (EU) 2022/1645 Laying Down Rules for the Application of Regulation (EU) 2018/1139 as Regards Requirements for the Management of Information Security Risks with a Potential Impact on Aviation Safety,2022,Standard / regulation / catalogue,,,Mitigations M08.
+,EU2023IS,Commission Implementing Regulation (EU) 2023/203 of 27 October 2022 laying down rules for the application of Regulation (EU) 2018/1139 as regards requirements for the management of information security risks with a potential impact on aviation safety,2023,Standard / regulation / catalogue,,,Mitigations M08.
+,EUROCAE2010ED142,ED-142: Technical Specification for Wide Area Multilateration (WAM) Systems,2010,Standard / regulation / catalogue,,,
+,EUROCAE2018ED203A,ED-203A/DO-356A: Airworthiness Security Methods and Considerations,2018,Standard / regulation / catalogue,,,Companion to M06.
+,EUROCAE_ED205A,ED-205A: Process Standard for Security Certification and Declaration of ATM ANS Ground Systems,2024,Standard / regulation / catalogue,,,Mitigations M07.
+,EUROCONTROLASTERIX,"EUROCONTROL Specification for Surveillance Data Exchange (ASTERIX), Part~14 Category~020 and Part~12 Category~021",2021,Standard / regulation / catalogue,,,
+,GSC2025OSNMA,Galileo Open Service Navigation Message Authentication (OSNMA): Initial Service Declaration,2025,Standard / regulation / catalogue,,,Mitigations M01 (Initial Service declared 24 Jul 2025).
+,IEC62443,IEC 62443: Security for Industrial Automation and Control Systems,2018,Standard / regulation / catalogue,,,
+,MITRE2023ATTACKSpace,MITRE ATT&CK for Space (Beta),2023,Standard / regulation / catalogue,,,Companion to M25.
+,Mizrahi2014RFC7384,Security Requirements of Time Protocols in Packet Switched Networks,2014,Standard / regulation / catalogue,,,Requirements behind M02 / M03.
+,NASA2022CyberHandbook,NASA Spacecraft Cybersecurity Handbook (NASA-HDBK-1006),2022,Standard / regulation / catalogue,,,
+,NISTIR8401,Satellite Ground Segment: Applying the Cybersecurity Framework to Satellite Command and Control,2022,Standard / regulation / catalogue,,,Mitigations M10.
+,RTCA2014DO326A,DO-326A/ED-202A: Airworthiness Security Process Specification,2014,Standard / regulation / catalogue,,,Mitigations M06. EUROCAE ED-202B published Oct 2024.
+,SESAR2017SecRAM,SESAR Security Risk Assessment Methodology (SecRAM),2017,Standard / regulation / catalogue,,,

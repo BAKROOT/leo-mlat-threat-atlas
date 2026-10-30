@@ -1,0 +1,42 @@
+#,Paper Table,Fig. 3 Group,Ref.,Study (Fig. 3 label),BibTeX Key(s),Peer-reviewed,L1,L2,L3,L4,Evidence Level,Evidence Basis,Exploitation Status (derived)
+1,Table 1,(a) RF / PHY,[5],Costin '12,Costin2012ADSB,No,A,,,,E2,Attacks implemented on USRP and COTS receivers in a controlled setting,Simulated / Proof-of-Concept
+2,Table 1,(a) RF / PHY,[4],Schäfer '13,Schafer2013ExperimentalADSB,Yes,A,A,,,E2,"Real SDR hardware against real receivers, controlled setting",Simulated / Proof-of-Concept
+3,Table 1,(a) RF / PHY,[1],Strohmeier '15,Strohmeier2015ADSBSecurity,Yes,A,A,,,E0,Survey; cites others' PoCs,Theoretical / Unexploited
+4,Table 1,(a) RF / PHY,[31],Manesh '17,Manesh2017ADSBRisk,Yes,A,A,,,E0,Qualitative risk analysis,Theoretical / Unexploited
+5,Table 1,(a) RF / PHY,[33],Sciancalepore '21,Sciancalepore2021SOS,Yes,P,A,,,E0,Defence prototyped; no attack executed,Theoretical / Unexploited
+6,Table 1,(a) RF / PHY,[34],Leonardi '17,Leonardi2017RFFingerprint,Yes,A,,,,E0,Defence validated on real signals; no attack executed,Theoretical / Unexploited
+7,Table 1,(a) RF / PHY,[35],Strohmeier '15b,Strohmeier2015PHYIDS,Yes,A,A,P,,E1,Emulated attacks on recorded real data,Simulated / Proof-of-Concept
+8,Table 1,(a) RF / PHY,[36],Schäfer '15,Schafer2015SecureTrack,Yes,A,,P,,E1,Attacks modelled on recorded OpenSky data,Simulated / Proof-of-Concept
+9,Table 1,(a) RF / PHY,"[37],[38]",Ghose / Schäfer '16,Ghose2015Doppler; Schafer2016Doppler,Yes,A,,P,,E1,Simulation,Simulated / Proof-of-Concept
+10,Table 1,(a) RF / PHY,[9],Moser '16,Moser2016MultiDevice,Yes,A,A,P,,E2,Multi-SDR attack launched against the live OpenSky Network (non-ATC),Simulated / Proof-of-Concept
+11,Table 1,(a) RF / PHY,[?] Senn,Senn '25,Senn2025UniversalMLAT,Yes,A,A,P,,E2,Two commercial MLAT systems deployed by the authors at five university sites; live traffic,Simulated / Proof-of-Concept
+12,Table 1,(a) RF / PHY,[39],Jansen '18,Jansen2018CrowdGPSSec,Yes,A,,P,,E1,Spoofing simulated on recorded ADS-B data,Simulated / Proof-of-Concept
+13,Table 1,(a) RF / PHY,"[29],[30]",Humphreys / Psiaki,Humphreys2008GPSSpoofer; Psiaki2016GNSSSpoofing,Yes,A,,,,E2,Portable spoofer built and tested against a receiver [29]; survey [30],Simulated / Proof-of-Concept
+14,Table 1,(a) RF / PHY,[40],Tibaldo '25,Tibaldo2025GNSSWASP,Yes,A,,,,E1,Proof-of-concept evaluation (check whether hardware was used),Simulated / Proof-of-Concept
+15,Table 1,(a) RF / PHY,[41],Khoei '24,Khoei2024RNNADSB,Yes,A,,P,,E1,Synthetic attack data,Simulated / Proof-of-Concept
+16,Table 1,(a) RF / PHY,[42],Yosef '26,Yosef2026CNNGRU,Yes,A,,P,,E1,Detector trained on recorded telemetry (check data source),Simulated / Proof-of-Concept
+17,Table 1,(a) RF / PHY,[32],Choudhary '22,Choudhary2022ILSVOR,Yes,A,,,,E0,Survey of prior work; no own experiment,Theoretical / Unexploited
+18,Table 1,(a) RF / PHY,[43],Strohmeier '19,Strohmeier2019SADSB,Yes,A,A,,,E0,Analysis of 30 days of real flight data; no attack executed,Theoretical / Unexploited
+19,Table 1,(a) RF / PHY,[44],Aireon '26,Aireon2026Spoofing,No,A,,P,,E3,GNSS spoofing observed in the wild in operational space-based ADS-B data,Demonstrated in Real-World / Active Exploit
+20,Table 2,(b) Data links,[45],Sampigethaya '11,Sampigethaya2011EEnabled,Yes,,A,,P,E0,Position / roadmap,Theoretical / Unexploited
+21,Table 2,(b) Data links,[46],Smith '18,Smith2018ACARSPrivacy,Yes,,A,,,E3,Passive interception of live operational ACARS traffic,Demonstrated in Real-World / Active Exploit
+22,Table 2,(b) Data links,[47],Gurtov '18,Gurtov2018CPDLC,Yes,,A,,P,E0,Threat analysis and proposed mechanisms,Theoretical / Unexploited
+23,Table 2,(b) Data links,[49],Santamarta '18,Santamarta2018SATCOM,No,A,A,,,E3,Findings validated against in-service terminals,Demonstrated in Real-World / Active Exploit
+24,Table 2,(b) Data links,[50],Pavur '20,Pavur2020VSAT,Yes,,A,,,E3,Passive interception of live traffic; TCP hijack executed on the authors' own connection over a live network,Demonstrated in Real-World / Active Exploit
+25,Table 2,(b) Data links,[51],Mäurer '22a,Maurer2022LDACS,Yes,,A,,,E0,Defence design; overhead simulated,Theoretical / Unexploited
+26,Table 2,(b) Data links,[48],Mäurer '22b,Maurer2022GapAnalysis,Yes,,A,,,E0,Gap analysis,Theoretical / Unexploited
+27,Table 3,(c) LEO / space,[52],Willbold '23,Willbold2023SpaceOdyssey,Yes,A,,,,E1,Real flight firmware exploited in emulation,Simulated / Proof-of-Concept
+28,Table 3,(c) LEO / space,[53],Wouters '22,Wouters2022Starlink,No,A,,,,E2,Fault injection on a real Starlink user terminal,Simulated / Proof-of-Concept
+29,Table 3,(c) LEO / space,[54],Giuliari '21,Giuliari2021ICARUS,Yes,,A,,,E1,Constellation simulation,Simulated / Proof-of-Concept
+30,Table 3,(c) LEO / space,[55],Smailes '23,Smailes2023Fingerprinting,Yes,A,,P,,E1,Emulated SDR attacks on recorded Iridium signals,Simulated / Proof-of-Concept
+31,Table 3,(c) LEO / space,[20],Manulis '21,Manulis2021NewSpace,Yes,A,A,,,E0,Threat analysis,Theoretical / Unexploited
+32,Table 3,(c) LEO / space,[56],Falco '19,Falco2019SpacePrinciples,Yes,P,P,P,P,E0,Design principles,Theoretical / Unexploited
+33,Table 3,(c) LEO / space,[11],Yue '22,Yue2022LEOSecurity,Yes,A,A,,,E0,Survey,Theoretical / Unexploited
+34,Table 3,(c) LEO / space,[57],Sharmin '25,Sharmin2025SIN,Yes,A,A,,,E0,Structured review,Theoretical / Unexploited
+35,Table 3,(c) LEO / space,[58],Remy '25,Remy2025SoKSpace,Yes,A,A,,,E0,Systematisation of knowledge,Theoretical / Unexploited
+36,Table 3,(c) LEO / space,[59],Wang '26,Wang2026SatReview,Yes,A,A,,P,E0,Literature review; ATT&CK-style matrix,Theoretical / Unexploited
+37,Table 3,(c) LEO / space,[60],Ballard '25,BallardSong2025Orbital,No,A,A,,,E0,Secondary analysis of 60 reported incidents,Theoretical / Unexploited
+38,Table 3,(c) LEO / space,[24],Belali '26,Belali2026Resilient,Yes,,A,,,E0,Architecture design with STRIDE analysis,Theoretical / Unexploited
+39,Table 3,(c) LEO / space,[79],Burks '26,Burks2026Testbed,No,A,A,,,E1,F' flight-software testbed,Simulated / Proof-of-Concept
+40,Table 3,(c) LEO / space,"[80],[81]",PWNSAT '26,PWNSAT2026FlatSat; Marin2026LoweringOrbit,No,A,A,,,E2,Hardware-in-the-loop flatsat; SDR attack scripts,Simulated / Proof-of-Concept
+41,Table 3,(c) LEO / space,"[76],[77]",Kon '22 / Hypatia,Kon2022Stargaze; ManzanaresLopez2026Hypatia,Yes,,A,,,E1,Network emulation / simulation,Simulated / Proof-of-Concept

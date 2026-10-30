@@ -1,0 +1,104 @@
+,PRISM-LEO Threat & Exploit Atlas: Overview,,,,,,
+,"Every number on this page is a live formula over Threat Atlas (rows 6-300), CVE Register and Mitigations. Edit a row there and this page updates. Checks at the bottom must read OK.",,,,,,
+,Atlas entries,Peer-reviewed,Non-peer-reviewed,CVEs in register,Mitigations,Real-world (E3),
+,78,55,23,57,25,19,
+,1. Evidence status by peer review,,,,,,
+,Exploitation status,Peer-reviewed,Non-peer-reviewed,Total,Share,Original set,Added
+,Demonstrated in Real-World / Active Exploit,5,14,19,0.2435897436,2,17
+,Simulated / Proof-of-Concept,28,7,35,0.4487179487,20,15
+,Theoretical / Unexploited,22,2,24,0.3076923077,21,3
+,Total,55,23,78,1,43,35
+,2. Entries by source type,,,,,,
+,Source type,Entries,Real-world (E3),PoC (E1-E2),Theoretical (E0),Share,
+,Peer-reviewed journal,24,1,4,19,0.3076923077,
+,Peer-reviewed conference,26,3,21,2,0.3333333333,
+,Peer-reviewed workshop,5,1,3,1,0.0641025641,
+,Preprint / unconfirmed venue,3,1,1,1,0.03846153846,
+,Conference talk / event (non-peer-reviewed),9,3,6,0,0.1153846154,
+,Government / regulator advisory,3,2,0,1,0.03846153846,
+,Documented incident report,5,5,0,0,0.0641025641,
+,Industry / NGO report,3,3,0,0,0.03846153846,
+,Total,78,19,35,24,1,
+,"3. Entries, evidence, CVEs and mitigations by PRISM-LEO layer",,,,,,
+,Layer,Entry layer,Impact layer,"Impact, E2-E3","Impact, E3 only",CVEs (component),Mitigations (primary)
+,L1 Physical & Infrastructure,49,20,11,3,9,7
+,L2 Data & Communication,23,23,6,5,10,3
+,L3 Service & Processing,0,19,6,3,0,4
+,L4 Governance & Integration,6,16,9,8,38,11
+,Total,78,78,32,19,57,25
+,4. Trust-boundary crossings,,,,,,
+,Trust boundary,Atlas entries crossing,of which E2-E3,of which E3,CVEs exposed at TB,Mitigations covering,
+,TB1  L1 | L2,41,18,13,19,14,
+,TB2  L2 | L3,39,18,13,0,8,
+,TB3  L3 | L4,20,12,10,38,13,
+,Entries crossing no boundary (within layer),25,,,,,
+,5. Timing dependency and propagation direction,,,,,,
+,Timing dependency,Entries,E2-E3,,Direction,Entries,
+,Direct,26,17,,Upward (observables),46,
+,Indirect,3,1,,Downward (config / keys / sync),7,
+,None,49,14,,Within layer,25,
+,Total,78,32,,Total,78,
+,6. CVE Register by severity and layer,,,,,,
+,Severity (from CVE record CVSS),L1,L2,L3,L4,Total,
+,Critical,3,2,0,7,12,
+,High,3,7,0,8,18,
+,Medium,0,1,0,4,5,
+,Low,0,0,0,3,3,
+,Not scored,3,0,0,16,19,
+,Total,9,10,0,38,57,
+,7. Assets: Atlas evidence and CVEs per asset,,,,,,
+,Asset (layer prefix),Atlas entries,E2-E3 entries,CVEs,Critical,High,Medium / Low / not scored
+,L1 · Transponder signals & satellite receivers (ADS-B / Mode S),14,4,0,0,0,0
+,"L1 · Aircraft avionics & navaid receivers (ILS, TCAS, GPWS)",4,1,0,0,0,0
+,L1 · GNSS receiver / onboard clock,18,12,1,1,0,0
+,L1 · Satellite & ground-station RF receivers,1,0,0,0,0,0
+,L1 · Satellite platform & flight software,1,0,5,2,3,0
+,L1 · SATCOM user terminal,3,2,3,0,0,3
+,L2 · ISLs & downlinks (observables in transit),6,2,0,0,0,0
+,L2 · Space link TC/TM (commanding & file transfer),2,1,10,2,7,1
+,"L2 · Aeronautical data links (ACARS, CPDLC, ADS-C, LDACS)",7,2,0,0,0,0
+,L2 · SATCOM broadband links,2,2,0,0,0,0
+,L2 · Time-sync network traffic (NTP / PTP),3,1,0,0,0,0
+,L2 · Measurements feeding the estimator,3,0,0,0,0,0
+,"L4 · Ground segment C2, mission control & keys",1,1,30,6,8,16
+,"L4 · Time & navigation ground segment (sync, ephemeris)",2,2,8,1,0,7
+,"L4 · ATM integration (flight data, ATM picture)",1,1,0,0,0,0
+,L4 · SATCOM provider ground network,2,1,0,0,0,0
+,Multiple assets (survey / SoK),8,0,0,0,0,0
+,Total,78,32,57,12,18,27
+,Filter the CVE Register (column C) or Threat Atlas (column Y) on an asset to list its CVE IDs and sources.,,,,,,
+,"7b. L3 assets (SATERA register, added 29 Oct 2026)",,,,,,
+,Asset (L3 layer prefix),Atlas entries,E2-E3 entries,CVEs,Critical,High,Medium / Low / not scored
+,L3 · A3.1 Measurement-association module,0,0,0,0,0,0
+,L3 · A3.2 Ephemeris and clock-state database,0,0,0,0,0,0
+,"L3 · A3.3 Localisation solver, EKF/IMM tracker and track database",4,3,0,0,0,0
+,L3 · A3.4 Integrity-monitoring module,0,0,0,0,0,0
+,L3 · A3.5 E-MLAT/ADS-B cross-check module,3,2,0,0,0,0
+,L3 · A3.6 ASTERIX report encoder and gateway,0,0,0,0,0,0
+,L3 · A3.7 Central Processing Station computing platform,1,1,0,0,0,0
+,"Cross-reference, not added to the total above. The Atlas has no L3 asset group because no source enters at L3; a source is counted here when a threat bound to it acts on the asset (sheet Asset Register). A3.1, A3.2, A3.4 and A3.6 have no source and no CVE: their threats are postulated in the catalogue (dated reading, 29 Oct 2026).",,,,,,
+,8. Mitigation coverage,,,,,,
+,Measure,Count,,,,,
+,Mitigations defined,25,,,,,
+,Mitigations mapped to at least one Atlas entry,25,,,,,
+,Atlas entries with no mitigation ID,0,,,,,
+,"Standards, regulation, guidance or advisories",14,,,,,
+,Research techniques (incl. research / standardisation),8,,,,,
+,Checks,,,,,,
+,Status table total = Atlas entries,OK,,,,,
+,Source-type table total = Atlas entries,OK,,,,,
+,Entry-layer and impact-layer totals = Atlas entries,OK,,,,,
+,Timing and direction totals = Atlas entries,OK,,,,,
+,Peer-reviewed + non-peer-reviewed = Atlas entries,OK,,,,,
+,CVE severity total = CVEs in register,OK,,,,,
+,Every CVE row resolves to an Atlas source or is marked 'No Atlas source',OK,,,,,
+,CVE IDs listed in Atlas = CVEs linked in register,OK,,,,,
+,Asset table: Atlas entries and CVEs add up,OK,,,,,
+,Gap Matrix totals = Atlas entries,OK,,,,,
+,"Asset Register lists 27 assets, 7 of them at L3",OK,,,,,
+,Reading the Atlas (13 Oct 2026),,,,,,
+,The original review set's observation (Summary sheet) still holds for those 43 papers. The added sources qualify it in three ways:,,,,,,
+,"1) In-the-wild GNSS interference against aircraft is now documented in peer-reviewed venues (Felux et al. 2024, NAVIGATION; Felux et al. 2025, CyCon), not only in industry and regulator material.",,,,,,
+,"2) L4 (governance & integration) is no longer empty: Viasat KA-SAT (2022) is a real-world L4-to-L1 compromise, and the Black Hat 2025 disclosures add 45 verified CVEs in ground C2, flight software and the SDLS library. No source enters at L3: processing is reached only by propagation from L1/L2 (e.g. MLAT verification bypass, spoofed downlinks).",,,,,,
+,"3) Top-down timing failures are real (GPS UTC error 2016, Galileo outage 2019): the cross-cutting timing dependency can fail from L4 without any attacker.",,,,,,
+,Counts above are live; these notes are a dated reading and are not recomputed.,,,,,,
