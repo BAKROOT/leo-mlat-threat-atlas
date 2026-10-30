@@ -1,0 +1,231 @@
+LLM COMMANDS LOG: SATERA / PRISM-LEO expert-panel study
+======================================================================
+Companion to: Cross-Layer Threat Modelling of GNSS-Independent Space-Based Multilateration
+for Air Traffic Surveillance (IEEE TDSC submission). Authors: B. A. Kamal, N. Ivaki, H. Madeira.
+
+WHAT THIS FOLDER HOLDS (llm_panel/)
+  prompts/                 the exact text pasted into each LLM chat (the 'commands'), with SHA256SUMS.txt
+  responses_raw/           each reply exactly as copied from the chat app (code fences, stray text)
+  responses/               the same replies as strict JSON (only fences, curly quotes, comments, trailing commas removed; no value changed)
+                           = the MAIN panel: Claude, ChatGPT (full prompts, 29 Oct 2026), DeepSeek, Gemini 3.1 Pro (run2); one run per prompt
+  run_log.csv              model version, mode, date and notes for every run of the main panel
+  retest/                  ChatGPT B3 run2 (test-retest of run1); NOT in the main panel
+  sensitivity/chatgpt_small_parts/   ChatGPT's first session (14 small parts, run on 25 Oct or earlier) plus two B1a small-part runs of 29 Oct: prompts, replies,
+                           and the analysis with these replies in the ChatGPT seat (the numbers before 29 Oct 2026; superseded). NOT in the main panel
+  sensitivity/gemini_flash_lite/     first Gemini run (Gemini Flash-Lite, signed out): thin output; replies and the analysis with them in the Gemini seat; superseded
+  results/                 outputs of tools/validate_merge.py and tools/agreement.py on responses/ (the current numbers), plus retest_chatgpt_B3_run1_vs_run2.csv
+  completeness/            mapping of the 143 threats listed in Prompt A to the catalogue
+  figures/                 scripts and output of the four panel figures
+  tools/                   scripts that build the prompts, validate and merge the replies, compute agreement and test-retest
+  ../docs/PANEL_PROTOCOL.md   the protocol
+
+PROTOCOL IN ONE PARAGRAPH
+Four LLMs (Claude, ChatGPT, DeepSeek, Gemini) act as independent, blind reviewers of the 55-threat catalogue (v1).
+Prompt A gives only the architecture and vocabulary and asks for the threats the model expects (completeness test).
+Prompts B1-B4 add the threat cards of one layer (L1 16, L2 12, L3 12, L4 15 threats) and ask for STRIDE-tau category,
+goals, adversary tier, evidence level and PA-DREAD scores per threat, as one JSON object. One fresh chat per prompt,
+memory/history off, no web search, no tools, no attachments, whole prompt pasted as a single message, reply saved unedited.
+The catalogue's own classifications and scores were never shown to the models in Round 1.
+
+OPENING OF EVERY PROMPT (identical wording in all prompts; the rest of each file is system description,
+27-asset register, trust boundaries, rubric, JSON schema and, for B, the threat cards):
+----------------------------------------------------------------------
+You are an independent senior security reviewer with expertise spanning satellite systems, air-traffic surveillance (ADS-B, multilateration), GNSS and precise timing, and structured threat modelling (STRIDE, PASTA, DREAD). You are one member of a panel of independent reviewers; you will not see the others' answers.
+
+PURPOSE AND SCOPE
+This is a defensive security review for academic research. The material is a threat model of a civil air-traffic surveillance system, written for peer review in a security journal. The goal is to find errors, gaps and misjudged risks in the threat model so that the system's designers can prioritise defences. You are asked to classify and rate threats at the level of abstraction used in standards and academic papers (STRIDE categories, DREAD-style ratings, public technique names). You are NOT asked for, and must not give, attack procedures, parameters, signal specifications, code, tooling or step-by-step methods; no operational detail is needed for this task. Everything you need is in this prompt.
+----------------------------------------------------------------------
+
+COMMAND-BY-COMMAND LOG (Round 1, 25 Oct 2026 unless stated)
+======================================================================
+
+## CLAUDE
+- prompt pasted : prompts/A_elicitation.txt  (13256 bytes, sha256 766f0d481e77)
+  reply saved   : responses/claude__A__run1.json
+  model/mode    : Sonnet 5.5 | thinking: High | date: 2026-10-25
+  note          : claude.ai incognito chat; full prompt; one chat per prompt
+- prompt pasted : prompts/B1_L1.txt  (29914 bytes, sha256 16b6972934c0)
+  reply saved   : responses/claude__B1__run1.json
+  model/mode    : Sonnet 5.5 | thinking: High | date: 2026-10-25
+  note          : claude.ai incognito chat; full prompt; one chat per prompt
+- prompt pasted : prompts/B2_L2.txt  (25165 bytes, sha256 15f41d3650ae)
+  reply saved   : responses/claude__B2__run1.json
+  model/mode    : Sonnet 5.5 | thinking: High | date: 2026-10-25
+  note          : claude.ai incognito chat; full prompt; one chat per prompt
+- prompt pasted : prompts/B3_L3.txt  (21889 bytes, sha256 d8be84afdcce)
+  reply saved   : responses/claude__B3__run1.json
+  model/mode    : Sonnet 5.5 | thinking: High | date: 2026-10-25
+  note          : claude.ai incognito chat; full prompt; one chat per prompt
+- prompt pasted : prompts/B4_L4.txt  (24599 bytes, sha256 eb16b7af3e15)
+  reply saved   : responses/claude__B4__run1.json
+  model/mode    : Sonnet 5.5 | thinking: High | date: 2026-10-25
+  note          : claude.ai incognito chat; full prompt; one chat per prompt
+
+## CHATGPT
+(Round 1 was run twice for ChatGPT. The first session sent the 14 small parts because the full B1 prompt was blocked. A second session on
+29 Oct 2026 sent the SAME full prompts as the other models. The second session is the ChatGPT seat of the main panel.)
+
+### Main panel: full prompts, 29 Oct 2026
+Settings for all runs below: ChatGPT web app, GPT-6, Think (composer mode), TEMPORARY chat (history off), personalization off
+(the page shows 'Unpersonalized: memory, plugins and custom instructions ignored'), no tools selected, no attachments (checked in the
+composer before sending), one new temporary chat per prompt. Each prompt was inserted as plain text and its SHA-256 was computed from the
+composer text and compared with the prompt file before sending. Each reply was copied from the page and its SHA-256 compared with the saved file.
+- prompt pasted : prompts/B1_L1.txt  (29914 bytes, sha256 16b6972934c0)
+  reply saved   : responses/chatgpt__B1__run1.json   (16 ratings; not blocked this time)
+- prompt pasted : prompts/B2_L2.txt  (25165 bytes, sha256 15f41d3650ae)
+  reply saved   : responses/chatgpt__B2__run1.json   (12 ratings)
+- prompt pasted : prompts/B3_L3.txt  (21889 bytes, sha256 d8be84afdcce)
+  reply saved   : responses/chatgpt__B3__run1.json   (12 ratings)
+- prompt pasted : prompts/B4_L4.txt  (24599 bytes, sha256 eb16b7af3e15)
+  reply saved   : responses/chatgpt__B4__run1.json   (15 ratings; T4.12 rated not_a_threat)
+- prompt A (elicitation) was NOT repeated: responses/chatgpt__A__run1.json is from the first session (date and mode not recorded).
+Test-retest (not in the main panel):
+- prompt pasted : prompts/B3_L3.txt  (sha256 d8be84afdcce), identical, new temporary chat
+  reply saved   : retest/responses/chatgpt__B3__run2.json   (statistics: results/retest_chatgpt_B3_run1_vs_run2.csv)
+Note: for the B3 and B4 runs the browser link dropped after sending; the replies were read afterwards from the same chat (unchanged).
+
+### First session, small parts (kept as a sensitivity check; NOT in the main panel)
+Files: sensitivity/chatgpt_small_parts/responses/ (strict JSON) and sensitivity/chatgpt_small_parts/responses_raw/ (as copied). Results with these files in the
+ChatGPT seat: sensitivity/chatgpt_small_parts/results/.
+- prompt pasted : sensitivity/chatgpt_small_parts/prompts/B1a ... B4d (14 parts, 3-4 threats each, with attack-vector line, sha256 of B1a f9d0410c3d14)
+  replies saved : chatgpt__B1a__run1, chatgpt__B1a__run2 (one with and one without the attack-vector line, order not recorded),
+                  chatgpt__B1b ... chatgpt__B4d (run1)
+  model/mode    : GPT-6 (as stated by the operator) | thinking: not recorded | date: not recorded
+- 29 Oct 2026, same settings as the main panel: chatgpt__B1a__run3 (sensitivity/chatgpt_small_parts/prompts/B1a_L1.txt, with attack vector, sha256 f9d0410c3d14) and
+  chatgpt__B1a__run4 (sensitivity/chatgpt_small_parts/prompts_no_attack_vector/B1a_L1.txt, without attack vector, sha256 b7323d6ea85b), both hash-verified.
+
+## DEEPSEEK
+- prompt pasted : prompts/A_elicitation.txt  (13256 bytes, sha256 766f0d481e77)
+  reply saved   : responses/deepseek__A__run1.json
+  model/mode    : DeepSeek (web) | thinking: DeepThink on | date: 2026-10-25
+  note          : confirmed by the operator as DeepSeek; B1-B4 self-reported as OpenAI/GPT-4.1 (unreliable)
+- prompt pasted : prompts/B1_L1.txt  (29914 bytes, sha256 16b6972934c0)
+  reply saved   : responses/deepseek__B1__run1.json
+  model/mode    : DeepSeek (web) | thinking: DeepThink on | date: 2026-10-25
+  note          : confirmed by the operator as DeepSeek; B1-B4 self-reported as OpenAI/GPT-4.1 (unreliable)
+- prompt pasted : prompts/B2_L2.txt  (25165 bytes, sha256 15f41d3650ae)
+  reply saved   : responses/deepseek__B2__run1.json
+  model/mode    : DeepSeek (web) | thinking: DeepThink on | date: 2026-10-25
+  note          : confirmed by the operator as DeepSeek; B1-B4 self-reported as OpenAI/GPT-4.1 (unreliable)
+- prompt pasted : prompts/B3_L3.txt  (21889 bytes, sha256 d8be84afdcce)
+  reply saved   : responses/deepseek__B3__run1.json
+  model/mode    : DeepSeek (web) | thinking: DeepThink on | date: 2026-10-25
+  note          : confirmed by the operator as DeepSeek; B1-B4 self-reported as OpenAI/GPT-4.1 (unreliable)
+- prompt pasted : prompts/B4_L4.txt  (24599 bytes, sha256 eb16b7af3e15)
+  reply saved   : responses/deepseek__B4__run1.json
+  model/mode    : DeepSeek (web) | thinking: DeepThink on | date: 2026-10-25
+  note          : confirmed by the operator as DeepSeek; B1-B4 self-reported as OpenAI/GPT-4.1 (unreliable)
+
+## GEMINI (main panel: Gemini 3.1 Pro, run2)
+- prompt pasted : prompts/A_elicitation.txt  (13256 bytes, sha256 766f0d481e77)
+  reply saved   : responses/gemini__A__run2.json
+  model/mode    : Gemini 3.1 Pro (Edu account) | thinking: default | date: 2026-10-25
+  note          : main Gemini run; new chat per prompt; self-report string unreliable (says 2.5 Flash / GPT-4 / 2.5 Pro)
+- prompt pasted : prompts/B1_L1.txt  (29914 bytes, sha256 16b6972934c0)
+  reply saved   : responses/gemini__B1__run2.json
+  model/mode    : Gemini 3.1 Pro (Edu account) | thinking: default | date: 2026-10-25
+  note          : main Gemini run; new chat per prompt; self-report string unreliable (says 2.5 Flash / GPT-4 / 2.5 Pro)
+- prompt pasted : prompts/B2_L2.txt  (25165 bytes, sha256 15f41d3650ae)
+  reply saved   : responses/gemini__B2__run2.json
+  model/mode    : Gemini 3.1 Pro (Edu account) | thinking: default | date: 2026-10-25
+  note          : main Gemini run; new chat per prompt; self-report string unreliable (says 2.5 Flash / GPT-4 / 2.5 Pro)
+- prompt pasted : prompts/B3_L3.txt  (21889 bytes, sha256 d8be84afdcce)
+  reply saved   : responses/gemini__B3__run2.json
+  model/mode    : Gemini 3.1 Pro (Edu account) | thinking: default | date: 2026-10-25
+  note          : main Gemini run; new chat per prompt; self-report string unreliable (says 2.5 Flash / GPT-4 / 2.5 Pro)
+- prompt pasted : prompts/B4_L4.txt  (24599 bytes, sha256 eb16b7af3e15)
+  reply saved   : responses/gemini__B4__run2.json
+  model/mode    : Gemini 3.1 Pro (Edu account) | thinking: default | date: 2026-10-25
+  note          : main Gemini run; new chat per prompt; self-report string unreliable (says 2.5 Flash / GPT-4 / 2.5 Pro)
+
+## GEMINI Flash-Lite (sensitivity check only, not in the main panel)
+- prompt pasted : prompts/A_elicitation.txt  (13256 bytes, sha256 766f0d481e77)
+  reply saved   : sensitivity/gemini_flash_lite/responses/gemini__A__run1.json
+  model/mode    : Gemini Flash-Lite (signed out) | thinking: n/a | date: 2026-10-2x
+  note          : first run; thin output; sensitivity check only
+- prompt pasted : prompts/B1_L1.txt  (29914 bytes, sha256 16b6972934c0)
+  reply saved   : sensitivity/gemini_flash_lite/responses/gemini__B1__run1.json
+  model/mode    : Gemini Flash-Lite (signed out) | thinking: n/a | date: 2026-10-2x
+  note          : first run; thin output; sensitivity check only
+- prompt pasted : prompts/B2_L2.txt  (25165 bytes, sha256 15f41d3650ae)
+  reply saved   : sensitivity/gemini_flash_lite/responses/gemini__B2__run1.json
+  model/mode    : Gemini Flash-Lite (signed out) | thinking: n/a | date: 2026-10-2x
+  note          : first run; thin output; sensitivity check only
+- prompt pasted : prompts/B3_L3.txt  (21889 bytes, sha256 d8be84afdcce)
+  reply saved   : sensitivity/gemini_flash_lite/responses/gemini__B3__run1.json
+  model/mode    : Gemini Flash-Lite (signed out) | thinking: n/a | date: 2026-10-2x
+  note          : first run; thin output; sensitivity check only
+- prompt pasted : prompts/B4_L4.txt  (24599 bytes, sha256 eb16b7af3e15)
+  reply saved   : sensitivity/gemini_flash_lite/responses/gemini__B4__run1.json
+  model/mode    : Gemini Flash-Lite (signed out) | thinking: n/a | date: 2026-10-2x
+  note          : first run; thin output; sensitivity check only
+
+NOTES ON SETTINGS AND DEVIATIONS
+- ChatGPT, first session: it blocked the full-size B1 prompt (reply withdrawn without an error). B1-B4 were therefore sent as 14 smaller parts
+  (sensitivity/chatgpt_small_parts/prompts/B1a ... B4d, 3-4 threats each). The parts B1b-B4d include the 'Attack vector' line of each card;
+  for B1a, run1 and run2 differ in whether that line was present, and which is which was not recorded.
+  sensitivity/chatgpt_small_parts/prompts_no_attack_vector/ holds the same parts without the attack-vector line (prepared as a second fallback; only B1a used it).
+- ChatGPT, second session (29 Oct 2026): the full prompts B1-B4 were accepted and answered (the earlier attempt with full B1 was
+  withdrawn; this attempt, in a temporary, unpersonalized chat, was not; the cause of the earlier block was not established). These replies replace the small parts in the main panel,
+  so all four models now received byte-identical prompts. B1a was also re-run twice as a small part, with (run3) and without (run4) the attack-vector line.
+- Effect of the replacement (details in results vs sensitivity/chatgpt_small_parts/results): contested items 13 -> 7 of 55;
+  Krippendorff alpha rises for D, R, A, Di, S_strong, S_weak, evidence, validity, goals; falls slightly for tier (0.314 -> 0.295) and E (0.641 -> 0.623).
+  ChatGPT now rates T4.12 as not_a_threat (share valid 1.000 -> 0.982).
+- Claude: claude.ai, incognito chat.
+- DeepSeek: web app, DeepThink on. In B1-B4 the model's own meta.model_self_report says OpenAI/GPT-4.1; the operator confirmed it was DeepSeek.
+  Self-reports are not reliable and are not used in the paper.
+- Gemini: main = Gemini 3.1 Pro (Edu account), run2. The Flash-Lite run1 is kept apart (see above).
+- ChatGPT first session: model version 'GPT-6 as stated by the operator', thinking mode and date not recorded. Second session: GPT-6, Think (composer mode), 29 Oct 2026.
+- No repair prompts were needed: the repair_prompts folders are empty.
+
+CONSISTENCY CHECK OF THE COMMANDS (run 29 Oct 2026)
+======================================================================
+Checked and consistent:
+ 1. The shared blocks (purpose, system, layers, 27-asset register, trust boundaries, timing channels, assumptions W1-W4,
+    definitions, PA-DREAD rubric) are word-for-word identical in all prompt files.
+ 2. Threat ids and counts in every B prompt match manifest.json and the headers ('16 objects', 'PART 2 OF 4', ...). The 14 small parts
+    contain exactly the cards of the four full prompts (identical text; only the closing count line differs); small_nv = small minus the 'Attack vector' line.
+ 3. tools/make_prompts_round1.py regenerates every Round-1 prompt byte-for-byte from the v1 workbook.
+ 4. Asset register, rubric anchors and constants (e_req 350 m, c 0.2998 m/ns, delta_cov 100 ns, h* 11.67) equal the Assets and Rubric sheets of the workbook.
+ 5. The atlas citations in the Round-1 cards match the numbering and titles of Atlas V4.2.
+ 6. Blinding holds: no catalogue category, goal, tier, evidence level, reach, score or band appears in a card. The cards were deliberately scrubbed of
+    hints (adversary-class codes, 'enabler', 'tau' wording, 'precondition' wording).
+ 7. Reproducibility: `make panel` (tools/validate_merge.py and tools/agreement.py on responses/ with the catalogue workbook of data/catalogue/) reproduces results/ exactly
+    (220 rows, 0 differences; checked on 30 Oct 2026,). tools/make_prompts_round1.py rebuilds the prompts byte for byte.
+
+Conflicts and open points found (all closed or recorded here):
+ C3 [RESOLVED 29 Oct 2026] NOT THE SAME TEXT FOR EVERY MODEL. In the first session ChatGPT received 14 small parts (B1a run twice, variants unrecorded, median-collapsed).
+    ChatGPT's full-prompt replies of 29 Oct now fill its seat, so all four models got the identical text. The small-part results are kept as a sensitivity check.
+ C4 [PARTLY RESOLVED] REPRODUCIBILITY RUNS. One test-retest exists: ChatGPT B3 (Layer 3, 12 threats), run1 vs run2, identical prompt, new temporary chat
+    (results/retest_chatgpt_B3_run1_vs_run2.csv: 11/12 same validity, 11/12 same STRIDE primary, 10/12 same tier, 10/12 same D, R, E and A,
+    8/12 same Di_strong, 9/12 same Di_weak; the largest change is T3.11: valid R in run1, duplicate of T3.12 in run2). The other models and layers were not repeated;
+    Gemini run2 is a different model, not a repeat. No test-retest statistic is available for Claude, DeepSeek or Gemini.
+ C5 MINOR WORDING. Rules 2 and 3 of Prompt A mention 'the authors' text' and 'unknown_sources', which do not exist in A. Harmless, left unchanged because the prompts were already used.
+ C6 RECORD KEEPING. For ChatGPT's first session the date and thinking mode (A and the small parts), and for the Gemini Flash-Lite run the date ('2026-10-2x'), were not recorded. The 29 Oct ChatGPT runs are fully recorded. ChatGPT A returned meta.n_threats=38 with 42 threats listed.
+
+
+PAPER FIGURES, COMPLETENESS MAPPING AND PAPER TEXT (added 30 Oct 2026)
+  figures/ holds the four figures of the paper section "Independent Review by a Multi-Vendor Panel of Language Models" (Fig_panel_protocol, _agreement, _disagreement,
+  _completeness, as PDF and PNG in out/) and the scripts that draw them from results/ (run each fig*.py from inside figures/: python fig_agree.py; python fig2.py; python fig3.py; python fig4.py; python fig1.py).
+  fig_agree.py recomputes the 95% percentile bootstrap intervals (1000 resamples, seed 7) used in Fig. 2a and writes out/fig2_alpha_bootstrap.csv.
+  Fig. 2c uses the ChatGPT Layer-3 test-retest (responses/chatgpt__B3__run1.json against retest/responses/chatgpt__B3__run2.json): 69 scores, 80% identical, 97% within one point.
+  completeness/elicitation_mapping_manual.csv maps the 143 threats the four models listed in Prompt A to the catalogue (C = matches a catalogue threat, P = related: narrower or different, N = no counterpart;
+  114 C, 18 P, 11 N; four rows carry a second mapping). completeness/named.json lists, for every catalogue threat, the models that named it. completeness/build_elicitation_mapping.py holds the manual dictionary and writes both files.
+  LIMIT: the mapping is a judgement by ONE analyst and is single-coded; a second coder should repeat it before it is relied on.
+  Numbers quoted in the paper from this mapping: 46 of 55 catalogue threats named by at least one model (41 with a clear match, 5 only related), 39 by two or more, 23 by three or more, 12 by all four,
+  9 by none (T1.06, T1.07, T1.12, T2.09, T2.10, T3.10, T3.11, T4.03, T4.05); per model 37 / 34 / 24 / 25 of 55 (Claude, ChatGPT, DeepSeek, Gemini); threats listed per model 45 / 42 / 26 / 30.
+  The 11 listings without counterpart fall in seven themes: integrity-monitor false acceptance, false rejection and alert flooding (3 models); common-mode or insufficient fault independence across the two checks (2); natural clock faults mimicking an attack (1);
+  ATM misreading of integrity annotations (1); social engineering of operators (1); orbit-determination feed spoofing (1); satellite geometry degradation (1).
+  Other numbers in the paper section (all from results/): alpha and W from agreement_alpha_vs_W.csv; without Claude differs by at most 0.056 (Di weak); leave-one-out alpha of the total score 0.645 to 0.772 over both passes;
+  model_vs_catalogue.csv for Fig. 2b (Claude is closest to the catalogue on 4 of 13 measures, ties included, and furthest on one); 708 scored fields = 588 agree + 41 panel-vs-catalogue + 79 split (panel_summary.csv tags;
+  'panel vs catalogue' means at least 2/3 of the models, i.e. 3 of 4, agree with each other but not with the catalogue; for scores, an interquartile range of at most 1);
+  seven contested threats by the rule in tools/agreement.py: T1.15, T2.03, T1.01, T1.02, T2.10, T1.03, T1.04. Validity verdicts: 212 valid, 3 not_a_threat, 3 duplicate, 2 out_of_scope of 220.
+  The catalogue was not changed in response to the panel (the version reviewed is the version reported).
+
+REPRODUCE THE ANALYSIS (Python 3.9+, pandas numpy scipy openpyxl; from the repository root: make check, make panel, make sensitivity, make figures)
+  by hand, from llm_panel/:
+  python tools/validate_merge.py --out results_rebuilt                          # validate + merge replies (main panel = responses/)
+  python tools/agreement.py --long results_rebuilt/panel_long.csv --out results_rebuilt   # Krippendorff alpha and Kendall W
+  python tools/retest.py responses/chatgpt__B3__run1.json retest/responses/chatgpt__B3__run2.json --out results_rebuilt/retest_chatgpt_B3_run1_vs_run2.csv
+  python tools/make_prompts_round1.py ../data/catalogue/SATERA_Extended_Threat_Catalogue.xlsx prompts_rebuilt   # regenerate the prompts
+  The catalogue workbook is the answer key: never paste it into a chat before the blind runs are done.

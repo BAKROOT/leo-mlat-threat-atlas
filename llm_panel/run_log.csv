@@ -1,0 +1,26 @@
+file,model_version,thinking_mode,date,notes
+chatgpt__A__run1.json,GPT-6 (as stated by user),not recorded,not recorded,
+chatgpt__B1__run1.json,GPT-6,Think (composer mode),2026-10-29,"temporary chat, unpersonalized, no tools, no attachments; full prompt identical to the other models (same file/sha256); prompt hash-checked in the composer before sending; reply hash-verified"
+chatgpt__B2__run1.json,GPT-6,Think (composer mode),2026-10-29,"temporary chat, unpersonalized, no tools, no attachments; full prompt identical to the other models (same file/sha256); prompt hash-checked in the composer before sending; reply hash-verified"
+chatgpt__B3__run1.json,GPT-6,Think (composer mode),2026-10-29,"temporary chat, unpersonalized, no tools, no attachments; full prompt identical to the other models (same file/sha256); prompt hash-checked in the composer before sending; reply hash-verified"
+chatgpt__B4__run1.json,GPT-6,Think (composer mode),2026-10-29,"temporary chat, unpersonalized, no tools, no attachments; full prompt identical to the other models (same file/sha256); prompt hash-checked in the composer before sending; reply hash-verified"
+claude__A__run1.json,Sonnet 5.5,High,2026-10-25,claude.ai incognito chat; full prompt; one chat per prompt
+claude__B1__run1.json,Sonnet 5.5,High,2026-10-25,claude.ai incognito chat; full prompt; one chat per prompt
+claude__B2__run1.json,Sonnet 5.5,High,2026-10-25,claude.ai incognito chat; full prompt; one chat per prompt
+claude__B3__run1.json,Sonnet 5.5,High,2026-10-25,claude.ai incognito chat; full prompt; one chat per prompt
+claude__B4__run1.json,Sonnet 5.5,High,2026-10-25,claude.ai incognito chat; full prompt; one chat per prompt
+deepseek__A__run1.json,DeepSeek (web),DeepThink on,2026-10-25,confirmed by user as DeepSeek; B1-B4 self-reported as OpenAI/GPT-4.1 (unreliable)
+deepseek__B1__run1.json,DeepSeek (web),DeepThink on,2026-10-25,confirmed by user as DeepSeek; B1-B4 self-reported as OpenAI/GPT-4.1 (unreliable)
+deepseek__B2__run1.json,DeepSeek (web),DeepThink on,2026-10-25,confirmed by user as DeepSeek; B1-B4 self-reported as OpenAI/GPT-4.1 (unreliable)
+deepseek__B3__run1.json,DeepSeek (web),DeepThink on,2026-10-25,confirmed by user as DeepSeek; B1-B4 self-reported as OpenAI/GPT-4.1 (unreliable)
+deepseek__B4__run1.json,DeepSeek (web),DeepThink on,2026-10-25,confirmed by user as DeepSeek; B1-B4 self-reported as OpenAI/GPT-4.1 (unreliable)
+gemini__A__run1.json,Gemini Flash-Lite (signed out),n/a,2026-10-2x,first run; thin output; sensitivity check only
+gemini__B1__run1.json,Gemini Flash-Lite (signed out),n/a,2026-10-2x,first run; thin output; sensitivity check only
+gemini__B2__run1.json,Gemini Flash-Lite (signed out),n/a,2026-10-2x,first run; thin output; sensitivity check only
+gemini__B3__run1.json,Gemini Flash-Lite (signed out),n/a,2026-10-2x,first run; thin output; sensitivity check only
+gemini__B4__run1.json,Gemini Flash-Lite (signed out),n/a,2026-10-2x,first run; thin output; sensitivity check only
+gemini__A__run2.json,Gemini 3.1 Pro (Edu account),default,2026-10-25,main Gemini run; new chat per prompt; self-report string unreliable (says 2.5 Flash / GPT-4 / 2.5 Pro)
+gemini__B1__run2.json,Gemini 3.1 Pro (Edu account),default,2026-10-25,main Gemini run; new chat per prompt; self-report string unreliable (says 2.5 Flash / GPT-4 / 2.5 Pro)
+gemini__B2__run2.json,Gemini 3.1 Pro (Edu account),default,2026-10-25,main Gemini run; new chat per prompt; self-report string unreliable (says 2.5 Flash / GPT-4 / 2.5 Pro)
+gemini__B3__run2.json,Gemini 3.1 Pro (Edu account),default,2026-10-25,main Gemini run; new chat per prompt; self-report string unreliable (says 2.5 Flash / GPT-4 / 2.5 Pro)
+gemini__B4__run2.json,Gemini 3.1 Pro (Edu account),default,2026-10-25,main Gemini run; new chat per prompt; self-report string unreliable (says 2.5 Flash / GPT-4 / 2.5 Pro)
