@@ -1,0 +1,19 @@
+metric,value,n_items
+Krippendorff alpha (nominal): layer,0.9511487842962303,55
+Krippendorff alpha (nominal): stride_primary,0.8807798305603757,55
+Krippendorff alpha (nominal): tier,0.2953551687154522,55
+Krippendorff alpha (nominal): evidence,0.7016952896349885,55
+Krippendorff alpha (nominal): is_enabler,0.6606404958677683,55
+Krippendorff alpha (nominal): validity,0.31974373907979026,55
+Krippendorff alpha (nominal): goal Displacement,0.6618947368421046,55
+Krippendorff alpha (nominal): goal Denial,0.7137254901960779,55
+Krippendorff alpha (nominal): goal Deception,0.5882051282051282,55
+Krippendorff alpha (nominal): goal Disclosure,0.6237113402061859,55
+Krippendorff alpha (interval): D,0.8981024797917523,55
+Krippendorff alpha (interval): R,0.7628225348558452,55
+Krippendorff alpha (interval): E,0.6229508196721313,55
+Krippendorff alpha (interval): A,0.8061038487578773,55
+Krippendorff alpha (interval): Di_strong,0.6617036719956821,55
+Krippendorff alpha (interval): Di_weak,0.647896569438895,55
+Krippendorff alpha (interval): S_strong,0.700981314271382,55
+Krippendorff alpha (interval): S_weak,0.7100376239367705,55

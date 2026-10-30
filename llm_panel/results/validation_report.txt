@@ -1,0 +1,59 @@
+
+=== COVERAGE (status of run 1 per file set; ids covered = threats with a usable rating)
+  chatgpt   A:OK  B1:OK  B2:OK  B3:OK  B4:OK   | threats rated: 55/55
+  claude    A:OK  B1:OK  B2:OK  B3:OK  B4:OK   | threats rated: 55/55
+  deepseek  A:OK  B1:OK  B2:OK  B3:OK  B4:OK   | threats rated: 55/55
+  gemini       | threats rated: 55/55
+
+=== chatgpt A run1: OK  (chatgpt__A__run1.json)
+  [warn] meta.n_threats=38 but 42 threats present
+
+=== chatgpt B1 run1: OK  (chatgpt__B1__run1.json)
+
+=== chatgpt B2 run1: OK  (chatgpt__B2__run1.json)
+  [warn] T2.08: enabler but goals given
+  [warn] T2.10: enabler but goals given
+
+=== chatgpt B3 run1: OK  (chatgpt__B3__run1.json)
+  [warn] T3.02: enabler but goals given
+  [warn] T3.06: enabler but goals given
+  [warn] T3.11: R=1 but evidence E1/analogue=True gives 2
+  [warn] T3.12: more than 2 secondary categories
+
+=== chatgpt B4 run1: OK  (chatgpt__B4__run1.json)
+  [warn] T4.04: enabler but goals given
+  [warn] T4.11: enabler but goals given
+
+=== claude A run1: OK  (claude__A__run1.json)
+
+=== claude B1 run1: OK  (claude__B1__run1.json)
+
+=== claude B2 run1: OK  (claude__B2__run1.json)
+
+=== claude B3 run1: OK  (claude__B3__run1.json)
+
+=== claude B4 run1: OK  (claude__B4__run1.json)
+
+=== deepseek A run1: OK  (deepseek__A__run1.json)
+
+=== deepseek B1 run1: OK  (deepseek__B1__run1.json)
+
+=== deepseek B2 run1: OK  (deepseek__B2__run1.json)
+
+=== deepseek B3 run1: OK  (deepseek__B3__run1.json)
+
+=== deepseek B4 run1: OK  (deepseek__B4__run1.json)
+
+=== gemini A run2: OK  (gemini__A__run2.json)
+
+=== gemini B1 run2: OK  (gemini__B1__run2.json)
+
+=== gemini B2 run2: OK  (gemini__B2__run2.json)
+  [warn] T2.08: enabler but goals given
+  [warn] T2.10: enabler but goals given
+
+=== gemini B3 run2: OK  (gemini__B3__run2.json)
+
+=== gemini B4 run2: OK  (gemini__B4__run2.json)
+  [warn] T4.12: R=3 but evidence E1/analogue=True gives 2
+  [warn] T4.13: R=3 but evidence E1/analogue=True gives 2

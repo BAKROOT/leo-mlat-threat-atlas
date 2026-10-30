@@ -1,0 +1,43 @@
+dimension,raters,n_raters,alpha_interval,alpha_ordinal,alpha_lo,alpha_hi,W,W_lo,W_hi,chi2,p,n_items_W,n_items_alpha,mean_pairwise_rho,alpha_reading,W_reading,W_minus_alpha
+D (damage),4 LLMs,4,0.898,,0.762,0.969,0.898,0.794,0.971,132.872,0.0,38,48,0.864,reliable,strong,-0.0
+D (damage),3 LLMs (no Claude),3,0.847,,0.628,0.961,0.891,0.776,0.97,98.922,0.0,38,43,0.837,reliable,strong,0.044
+D (damage),4 LLMs + catalogue,5,0.888,,0.759,0.957,0.867,0.76,0.946,160.393,0.0,38,48,0.834,reliable,strong,-0.021
+R (reproducibility),4 LLMs,4,0.763,,0.645,0.861,0.852,0.779,0.917,184.016,0.0,55,55,0.803,tentative,strong,0.089
+R (reproducibility),3 LLMs (no Claude),3,0.748,,0.629,0.844,0.863,0.788,0.923,139.842,0.0,55,55,0.795,tentative,strong,0.115
+R (reproducibility),4 LLMs + catalogue,5,0.766,,0.66,0.86,0.841,0.765,0.91,227.174,0.0,55,55,0.802,tentative,strong,0.075
+E (exploitability),4 LLMs,4,0.623,,0.386,0.756,0.66,0.494,0.782,142.61,0.0,55,55,0.547,not reliable,moderate,0.037
+E (exploitability),3 LLMs (no Claude),3,0.592,,0.335,0.748,0.689,0.513,0.81,111.545,0.0,55,55,0.533,not reliable,moderate,0.096
+E (exploitability),4 LLMs + catalogue,5,0.626,,0.398,0.758,0.64,0.486,0.759,172.84,0.0,55,55,0.55,not reliable,moderate,0.014
+A (affected users),4 LLMs,4,0.806,,0.735,0.855,0.885,0.834,0.922,191.244,0.0,55,55,0.847,reliable,strong,0.079
+A (affected users),3 LLMs (no Claude),3,0.775,,0.686,0.841,0.887,0.831,0.927,143.769,0.0,55,55,0.831,tentative,strong,0.112
+A (affected users),4 LLMs + catalogue,5,0.799,,0.724,0.851,0.876,0.817,0.917,236.431,0.0,55,55,0.845,tentative,strong,0.077
+Di strong (discoverability),4 LLMs,4,0.662,,0.505,0.783,0.747,0.637,0.839,161.347,0.0,55,55,0.663,not reliable,strong,0.085
+Di strong (discoverability),3 LLMs (no Claude),3,0.699,,0.51,0.823,0.776,0.66,0.869,125.688,0.0,55,55,0.664,tentative,strong,0.077
+Di strong (discoverability),4 LLMs + catalogue,5,0.709,,0.569,0.812,0.761,0.658,0.849,205.468,0.0,55,55,0.701,tentative,strong,0.052
+Di weak,4 LLMs,4,0.648,,0.455,0.777,0.666,0.536,0.785,143.929,0.0,55,55,0.555,not reliable,moderate,0.018
+Di weak,3 LLMs (no Claude),3,0.704,,0.485,0.83,0.751,0.623,0.852,121.66,0.0,55,55,0.626,tentative,strong,0.047
+Di weak,4 LLMs + catalogue,5,0.703,,0.54,0.808,0.684,0.557,0.797,184.804,0.0,55,55,0.606,tentative,moderate,-0.018
+S strong (PA-DREAD total),4 LLMs,4,0.701,,0.516,0.81,0.74,0.598,0.845,109.497,0.0,38,48,0.653,tentative,strong,0.039
+S strong (PA-DREAD total),3 LLMs (no Claude),3,0.698,,0.482,0.825,0.76,0.622,0.873,84.366,0.0,38,43,0.64,tentative,strong,0.063
+S strong (PA-DREAD total),4 LLMs + catalogue,5,0.687,,0.508,0.788,0.705,0.548,0.818,130.343,0.0,38,48,0.631,tentative,strong,0.018
+S weak,4 LLMs,4,0.71,,0.523,0.83,0.736,0.597,0.852,108.948,0.0,38,48,0.648,tentative,strong,0.026
+S weak,3 LLMs (no Claude),3,0.696,,0.467,0.84,0.756,0.604,0.873,83.915,0.0,38,43,0.634,tentative,strong,0.06
+S weak,4 LLMs + catalogue,5,0.705,,0.518,0.817,0.727,0.585,0.838,134.457,0.0,38,48,0.658,tentative,strong,0.022
+Impact strong = D + A,4 LLMs,4,0.838,,0.746,0.899,0.857,0.759,0.923,126.873,0.0,38,48,0.81,reliable,strong,0.02
+Impact strong = D + A,3 LLMs (no Claude),3,0.784,,0.642,0.877,0.862,0.755,0.933,95.634,0.0,38,43,0.792,tentative,strong,0.077
+Impact strong = D + A,4 LLMs + catalogue,5,0.825,,0.736,0.885,0.848,0.738,0.911,156.892,0.0,38,48,0.81,reliable,strong,0.023
+Likelihood strong = R + E + Di,4 LLMs,4,0.695,,0.544,0.793,0.767,0.656,0.85,165.616,0.0,55,55,0.689,tentative,strong,0.072
+Likelihood strong = R + E + Di,3 LLMs (no Claude),3,0.687,,0.504,0.792,0.776,0.659,0.861,125.705,0.0,55,55,0.664,tentative,strong,0.089
+Likelihood strong = R + E + Di,4 LLMs + catalogue,5,0.716,,0.579,0.8,0.765,0.652,0.85,206.556,0.0,55,55,0.706,tentative,strong,0.049
+Likelihood weak,4 LLMs,4,0.657,,0.507,0.761,0.728,0.622,0.804,157.288,0.0,55,55,0.638,not reliable,strong,0.071
+Likelihood weak,3 LLMs (no Claude),3,0.646,,0.473,0.759,0.745,0.628,0.832,120.651,0.0,55,55,0.617,not reliable,strong,0.099
+Likelihood weak,4 LLMs + catalogue,5,0.679,,0.534,0.773,0.73,0.625,0.803,197.039,0.0,55,55,0.662,tentative,strong,0.051
+Tier (ordinal),4 LLMs,4,0.623,0.517,0.386,0.756,0.66,0.494,0.782,142.61,0.0,55,55,0.547,not reliable,moderate,0.037
+Tier (ordinal),3 LLMs (no Claude),3,0.592,0.504,0.335,0.748,0.689,0.513,0.81,111.545,0.0,55,55,0.533,not reliable,moderate,0.096
+Tier (ordinal),4 LLMs + catalogue,5,0.626,0.524,0.398,0.758,0.64,0.486,0.759,172.84,0.0,55,55,0.55,not reliable,moderate,0.014
+Evidence level (ordinal),4 LLMs,4,0.907,0.888,0.84,0.955,0.921,0.862,0.966,198.95,0.0,55,55,0.895,reliable,strong,0.014
+Evidence level (ordinal),3 LLMs (no Claude),3,0.907,0.882,0.847,0.951,0.928,0.874,0.968,150.317,0.0,55,55,0.892,reliable,strong,0.021
+Evidence level (ordinal),4 LLMs + catalogue,5,0.901,0.875,0.834,0.951,0.908,0.842,0.958,245.285,0.0,55,55,0.886,reliable,strong,0.008
+Band strong (ordinal),4 LLMs,4,0.537,0.534,0.289,0.706,0.672,0.478,0.818,99.447,0.0,38,48,0.563,not reliable,moderate,0.135
+Band strong (ordinal),3 LLMs (no Claude),3,0.562,0.567,0.274,0.759,0.725,0.531,0.863,80.485,0.0,38,43,0.588,not reliable,strong,0.163
+Band strong (ordinal),4 LLMs + catalogue,5,0.559,0.557,0.344,0.711,0.677,0.491,0.807,125.168,0.0,38,48,0.596,not reliable,moderate,0.118
