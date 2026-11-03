@@ -12,13 +12,16 @@ import openpyxl
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 JOBS = {
-    "data/catalogue/SATERA_Extended_Threat_Catalogue.xlsx": [
+    "data/catalogue/LEO_MLAT_Threat_Catalogue.xlsx": [
         # (sheet, header row (1-based) or None for a raw dump, output name)
         ("Catalogue", 4, "catalogue_55_threats"), ("Binding", 4, "threat_x_atlas_source_binding"),
         ("Assets", 4, "asset_register_27"), ("SATERA", 4, "satera_17_entries"),
         ("Checks", 4, "paper_statistics_checks"), ("CVE Register", 4, "cve_register_57"),
         ("Worked", 4, "worked_example"), ("Review", 4, "review_of_earlier_workbook"),
         ("Rubric", None, "rubric_raw"),
+        ("Threat Propagation", 4, "threat_propagation_65"), ("Asset-Threat Matrix", 4, "asset_threat_matrix"),
+        ("Asset Connections", 4, "asset_connections_27"), ("Multi-step Attacks", 4, "multistep_attacks"),
+        ("Mitigations", 4, "mitigations_25"),
     ],
     "data/atlas/PRISM-LEO_Threat_Exploit_Atlas.xlsx": [
         ("Threat Atlas", 5, "atlas_78_sources"), ("Asset Register", 5, "asset_register_27"),

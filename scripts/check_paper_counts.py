@@ -12,13 +12,13 @@ Three groups of checks
   B. Scores: R from the evidence level (minus one level when the evidence is from an analogue system only),
      E from the adversary tier, D from the goals and the affected users, S = D+R+E+A+Di and the band from S,
      recomputed for every threat and compared with the value stored in the workbook.
-  C. The workbook's own 'Checks' sheet (112 statistic-by-statistic comparisons): all must read OK.
+  C. The workbook's own 'Checks' sheet (117 statistic-by-statistic comparisons): all must read OK.
 """
 import os, sys
 import pandas as pd
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-CAT = os.path.join(ROOT, "data/catalogue/SATERA_Extended_Threat_Catalogue.xlsx")
+CAT = os.path.join(ROOT, "data/catalogue/LEO_MLAT_Threat_Catalogue.xlsx")
 ATL = os.path.join(ROOT, "data/atlas/PRISM-LEO_Threat_Exploit_Atlas.xlsx")
 
 R_BASE = {"P": 1, "E0": 2, "E1": 3, "E2": 4, "E3": 5}                  # Rubric sheet, evidence -> base R
@@ -80,8 +80,8 @@ def main():
     # ---- C. the workbook's own Checks sheet
     chk = pd.read_excel(CAT, sheet_name="Checks", header=3)
     chk = chk[chk["Check"].isin(["OK", "CHECK", "FAIL", "DIFF"]) | chk["Check"].astype(str).str.upper().isin(["OK"])]
-    check("C", "rows of the workbook's Checks sheet", len(chk), 112)
-    check("C", "rows of the Checks sheet that read OK", int((chk["Check"] == "OK").sum()), 112)
+    check("C", "rows of the workbook's Checks sheet", len(chk), 117)
+    check("C", "rows of the Checks sheet that read OK", int((chk["Check"] == "OK").sum()), 117)
 
     bad = [r for r in results if not r[0]]
     for g in "ABC":
