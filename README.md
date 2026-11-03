@@ -19,7 +19,7 @@ catalogue, the evidence base and the independent review of the catalogue by four
 | Layers, assets, trust boundaries | 4 layers, 27 assets, 3 inter-layer boundaries, 5 timing assets that cut across all layers |
 | Threat catalogue | 55 threats (T1.01 to T4.15; 16, 12, 12 and 15 per layer), each bound to an asset, an adversary class, graded evidence and a PA-DREAD score. It refines the earlier 17-entry SATERA catalogue (see [below](#how-the-catalogue-relates-to-the-17-entry-satera-catalogue)) |
 | Evidence atlas | 78 published sources, 57 CVE records, 25 mitigations; 53 of the 78 sources cross a layer |
-| Validation | Stage 1: a blind panel of 4 language models from 4 vendors rates all 55 threats (220 ratings, all valid JSON, no repairs) and lists threats unprompted. Stage 2: evaluation by the co-authors. Scores and algorithms verified by 388 recomputed checks |
+| Validation | Stage 1: a blind panel of 4 language models from 4 vendors rates all 55 threats (220 ratings, all valid JSON, no repairs) and lists threats unprompted. Stage 2: evaluation by the co-authors (**yet to be done**). Scores and algorithms verified by 388 recomputed checks |
 | Checks that run here | 388 recomputed statistics and scores (`make check`), full re-run of the panel analysis (`make panel`), regeneration of the 4 panel figures (`make figures`) |
 
 ![Agreement of the panel](docs/images/Fig_panel_agreement.png)
@@ -27,14 +27,14 @@ catalogue, the evidence base and the independent review of the catalogue by four
 *Agreement among the four models (a), each model against the catalogue (b) and a test-retest (c). More in
 [docs/RESULTS.md](docs/RESULTS.md).*
 
-## How the catalogue was validated
+## How the catalogue is validated
 
 1. **Independent review by a multi-vendor LLM panel.** Four language models from four vendors rated every threat of the
    catalogue without seeing the catalogue's own ratings, and separately listed the threats they would expect from the
    architecture alone. The prompts, the replies, the agreement statistics and the figures are in `llm_panel/`
    (paper Sec. 4.11).
-2. **Evaluation by the co-authors.** The panel's agreements and disagreements with the catalogue were then evaluated by the
-   co-authors, and the catalogue was finalised.
+2. **Evaluation by the co-authors (**yet to be done**).** The panel's agreements and disagreements with the catalogue will be evaluated by the
+   co-authors once the paper is complete; the catalogue will be finalised afterwards.
 3. **Verification of scores and algorithms.** Every count the paper reports and every PA-DREAD score is recomputed from the
    workbook by `make check` (388 checks), and the panel statistics are recomputed from the stored replies by `make panel`.
 
@@ -112,7 +112,7 @@ Stated plainly so that nobody has to guess; details in [docs/LIMITATIONS.md](doc
 * The edge list of the 41-edge asset dependency graph, and with it the radius and rank-correlation statistics of
   Section 6, are not part of this release. `scripts/asset_reach.py` works from the reach lists stored in the catalogue workbook.
 * The completeness mapping of the language-model listings is single-coded and has not been checked by a second coder.
-* The panel's raters are language models and the human evaluation was done by the co-authors; an independent study with
+* The panel's raters are language models and the evaluation by the co-authors is **yet to be done**, and an independent study with
   external human raters has not been run.
 
 ## Using and extending the work
