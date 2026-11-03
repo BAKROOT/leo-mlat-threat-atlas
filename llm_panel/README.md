@@ -3,7 +3,7 @@
 Four language models from four vendors review the 55-threat catalogue **blind**: they never see the authors' categories, goals,
 tiers, evidence levels or scores. The panel is the first stage of the catalogue's validation: it tests whether the classification and the scores can be
 reproduced by readers who did not write them, shows where readers disagree, and checks whether the catalogue misses threats that
-models expect. The co-authors then evaluated the results and finalised the catalogue. The raters are language models, not domain experts.
+models expect. The co-authors' evaluation of the results, after which the catalogue will be finalised, is **yet to be done**. The raters are language models, not domain experts.
 Paper section: *Independent Review by a Multi-Vendor Panel of Language Models* (Section 4.11).
 
 ![Protocol](../docs/images/Fig_panel_protocol.png)
