@@ -33,7 +33,7 @@
 | Displacement route | for displacement threats, one of eight routes to the solver (Table 8 of the paper) |
 | SATERA entries refined | the SC-1 to SC-17 entries of the earlier SATERA catalogue that this threat refines |
 | SPARTA technique (confidence), ATT&CK technique (confidence), Mapping confidence | technique mappings; `high` (direct match), `medium` (needs a stated inference), `unmapped` |
-| Review status | `Baseline: reproduces Table 5 of the paper` or `Validated: LLM panel and co-author evaluation` |
+| Review status | `Baseline: reproduces Table 4 of the paper` or `Panel-reviewed: co-author evaluation yet to be done` |
 | Related CVEs (n), Related CVEs (IDs) | CVE records of the atlas related to the threat's assets (`—` if none) |
 | Cross-layer propagation | layers and assets the effect can reach: `[A1.1]` the origin, `A1.3` an asset reached, `†` reached only through an inferred dependency (S1: A1.6 hosts A1.4 and A1.5; S2: A4.1 sets the policy of the PTP path A2.3); the last lines give the boundaries to the first check and to the ATM |
 

@@ -34,11 +34,11 @@ For the small-part session, B1a run1 and run2 differ in whether the attack-vecto
 ## Validation of the catalogue
 
 1. **LLM panel (blind).** Four models from four vendors rated all 55 threats without seeing the catalogue's own classification or scores, and listed threats from the architecture alone (the runs above).
-2. **Evaluation by the co-authors.** The co-authors evaluated the panel's agreements and disagreements with the catalogue and finalised it.
+2. **Evaluation by the co-authors (yet to be done).** The co-authors will evaluate the panel's agreements and disagreements with the catalogue once the paper is complete; the catalogue will be finalised afterwards.
 3. **Verification of scores and algorithms.** `make check` recomputes every count the paper states and every PA-DREAD score (388 checks); `make panel` recomputes the panel statistics from the stored replies.
 
 The mapping of the 143 listed threats to the catalogue (completeness) is single-coded and has not been checked by a second coder. The panel statistics are reported for the four models and for the model sets with one model left out, so that no single vendor drives a result.
 
 ## Dates
 
-Catalogue built 20 Oct 2026 and extended with CVE and propagation columns on 29 Oct 2026; final release v1.3 of the catalogue and the atlas 30 Oct 2026; panel runs 25 and 29 Oct 2026; analysis, figures and this repository 30 Oct 2026. Links in the atlas were verified on 13 Oct 2026.
+Catalogue built 20 Oct 2026 and extended with CVE and propagation columns on 29 Oct 2026; release v1.3 of the catalogue and release of the atlas 30 Oct 2026; panel runs 25 and 29 Oct 2026; analysis, figures and this repository 30 Oct 2026. Links in the atlas were verified on 13 Oct 2026.

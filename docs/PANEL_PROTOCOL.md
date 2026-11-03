@@ -4,7 +4,7 @@ How the language-model review was designed, run and analysed. Paper section: 4.1
 
 ## 1. Purpose and position
 
-The catalogue and its scores are the authors' own derivation. The panel is the first stage of validation, followed by the co-authors' evaluation, with three jobs:
+The catalogue and its scores are the authors' own derivation. The panel is the first stage of validation, to be followed by the co-authors' evaluation (**yet to be done**), with three jobs:
 
 1. **Reproducibility**: can the classification and the scores be reproduced by readers who did not write them?
 2. **Disagreement**: on which records and fields do readers disagree with each other or with the catalogue?
