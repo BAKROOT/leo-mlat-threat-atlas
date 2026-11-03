@@ -111,3 +111,8 @@ CVE,CVE rows mapped to at least one register asset,57,57,OK,Workbook v1.2
 CVE,CVE rows linked to at least one catalogue threat,57,57,OK,Workbook v1.2
 CVE,Assets of the register at L3,7,7,OK,Sec. 3 (27 assets)
 CVE,Threats with at least one related CVE,12,12,OK,Workbook v1.2 (mapping in sheet CVE Register)
+Mitigations,Mitigation entries defined (sheet Mitigations),25,25,OK,Atlas (25 mitigations); workbook v1.5
+Mitigations,Mitigation entries cited by at least one threat,25,25,OK,Workbook v1.5
+Mitigations,Mitigation IDs cited in the Catalogue that are not defined,0,0,OK,Workbook v1.5
+Mitigations,"Threats with no mitigation recorded (postulated: no source, no path)",11,11,OK,Workbook v1.5
+Mitigations,Mitigations whose CVE count differs from the CVE Register,0,0,OK,Workbook v1.5

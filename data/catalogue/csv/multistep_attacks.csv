@@ -1,0 +1,99 @@
+#,Multi-step attack,Type,Steps (as stated in the source),Layers,Catalogue threats it supports,Source and verified link,Caveat
+C1,Synchronised multi-transmitter spoofing of multilateration,Attack demonstrated,"1. Time-synchronised SDR transmitters send forged ADS-B
+2. Timing errors look like one genuine emitter, so TDOA checks pass
+3. Ghost aircraft is located within 5 s
+4. A real track is diverted by 15 degrees and its verification flag removed",L1 > L3,"T1.05, T1.06, T3.07","Moser et al. (2016)
+https://doi.org/10.1145/2973750.2973763
+Senn et al. (2025)
+https://doi.org/10.1145/3734477.3734720","Terrestrial MLAT, not LEO. Reaching the ATM picture is not shown."
+C2,Satellite downlink overshadowing,Attack demonstrated,"1. Attacker transmits over a satellite downlink near the ground station
+2. Ground side accepts the attacker's data
+3. Spoofed Earth-observation data accepted by a lab copy of a ground decoder",L2 > L3,"T2.09, T2.01","Salkield et al. (2023)
+https://doi.org/10.1145/3558482.3590190
+Salkield et al. (2023)
+https://www.ndss-symposium.org/wp-content/uploads/2023/06/spacesec2023-231879-paper.pdf",Not an MLAT payload. Second result used a lab replica.
+C3,Time-protocol attack shifts client clocks,Attack demonstrated / theory,"1. On-path or off-path attacker acts on the NTP/PTP exchange
+2. Client time is shifted or synchronisation denied
+3. Delay attacks work even with cryptographic protection",L2 > L4,"T2.06, T2.07, T4.01","Malhotra, Cohen, Brakke & Goldberg (2016)
+https://www.ndss-symposium.org/wp-content/uploads/2017/09/attacking-network-time-protocol.pdf
+Ullmann & Vögeler (2009)
+https://ieeexplore.ieee.org/abstract/document/5340224",Spread to the L1 clocks is the atlas assessment. Ullmann is theoretical (E0).
+C4,Viasat KA-SAT management-network intrusion,Real incident,"1. Intruder enters the management network through a misconfigured VPN
+2. Destructive commands are sent to user terminals
+3. Tens of thousands of modems go offline",L4 > L1,"T4.15, T4.07, T4.06","Viasat (2022)
+https://www.viasat.com/perspectives/corporate/2022/ka-sat-network-cyber-attack-overview/","The satellite was not affected. Terminals, not a surveillance payload."
+C5,Mission-control and flight-software exploitation,Vulnerabilities (talk),"1. Remote code execution on ground command-and-control software
+2. Flight software and the SDLS library also carry CVEs
+3. Stated aim: disrupt or seize a mission",L4 > L1,"T4.15, T1.13, T1.12, T2.11","Olchawa, Starcik, Fradique & Boulaich (2025)
+https://i.blackhat.com/BH-USA-25/Presentations/USA-25-OlchawaStarcik-Burning-Trashing-Spacecraft-Crashing.pdf","Conference talk, 45 CVEs. No end-to-end attack on a live mission is recorded."
+C6,GPS ground-segment error shifts broadcast time,Real fault (not an attack),"1. Ground software flaw triggers when SVN 23 is removed
+2. Broadcast UTC shifts by about 13 microseconds for hours
+3. Receivers using the broadcast time inherit the offset",L4 > L1,"T4.01, T4.02, T1.11","US Air Force, via RNT Foundation (2016)
+https://rntfnd.org/?p=4536","A fault, not an attack. Shows the timing dependency failing top-down."
+C7,"Galileo ground-segment malfunction, July 2019",Real fault (not an attack),"1. Equipment malfunction in the ground segment
+2. Navigation-message updates stop
+3. Navigation and timing interrupted for six days",L4 > L1,"T4.03, T4.07","EUSPA (2020)
+https://www.euspa.europa.eu/newsroom-events/news/galileo-performance-assessment","A fault, not an attack."
+C8,GNSS interference degrades aircraft surveillance,Real incidents,"1. Wide-area GNSS jamming or spoofing
+2. Aircraft navigation and ADS-B surveillance degrade
+3. Flights diverted and a route suspended (Helsinki-Tartu)",L1 > L4,"T1.10, T1.11","Felux, Fol, Figuet, Waltert & Olive (2024)
+https://doi.org/10.33012/navi.657
+EASA (2026)
+https://www.easa.europa.eu/en/newsroom-and-events/news/easa-updates-safety-information-bulletin-gnss-interference
+FAA (2024)
+https://www.FAASafety.gov/SPANS/noticeView.aspx?nid=13415
+ERR News (2024)
+https://news.err.ee/1609328058/finnair-suspends-flights-to-tartu-for-1-month-to-seek-gps-jamming-solution
+Lo, Liu, Ibrahim, Chen, Akos & Walter (2026)
+https://web.stanford.edu/group/scpnt/gpslab/pubs/papers/Lo_ION_ITM_2026_Observations_of_Spoofing.pdf","Aircraft-side GNSS, not the LEO payload clock. Lo 2026 is a preprint."
+C9,"Satellite ADS-C: passive collection, then injection",Attack demonstrated (lab),"1. Over 120,000 live ADS-C messages collected passively
+2. Lab tests show downlink and uplink injection and contract manipulation",L2 > L4,"T2.08, T2.09","Lüscher, Strohmeier & Lenders (2024)
+https://doi.org/10.14722/spacesec.2024.23022","Two separate results, not one attack run. Injection shown in the lab only."
+C10,SATCOM terminal firmware to remote compromise,Vulnerabilities (talks),"1. Backdoors and hard-coded credentials in terminal firmware (2014)
+2. In-service terminals reported remotely reachable and exploitable (2018)",L1 > L2,"T1.15, T4.04","Santamarta (2014)
+https://www.blackhat.com/docs/us-14/materials/us-14-Santamarta-SATCOM-Terminals-Hacking-By-Air-Sea-And-Land-WP.pdf
+Santamarta (2018)
+https://i.blackhat.com/us-18/Thu-August-9/us-18-Santamarta-Last-Call-For-Satcom-Security.pdf","Two talks four years apart, not one chain."
+C11,Exploit delivered over an unauthenticated data link,Claim (simulated only),"1. Exploit sent over an unauthenticated data link
+2. On-board flight software compromised (simulated systems)",L2 > L1,"T1.12, T2.11","Teso (2013)
+https://archive.conference.hitb.org/hitbsecconf2013ams/index.html_p=2991.html",Lab simulation only (E1).
+C12,Spoofed time and false data degrade estimation,Analogue (power grid),"1. Spoofed GPS time corrupts PMU phase measurements; fault detection degrades
+2. Stealthy false-data injection bypasses residual-based detection",analogue,"T1.11, T3.04, T3.07","Zhang et al. (2013)
+https://doi.org/10.1109/TSG.2012.2227342
+Liu, Ning & Reiter (2009; extended 2011)
+https://doi.org/10.1145/1653662.1653666","Power-grid analogue, not air traffic."
+C13,Ghost aircraft and jamming against real ADS-B receivers,Attack demonstrated (lab),"1. Forged 1090ES messages are generated with commodity SDR equipment
+2. Real ADS-B receivers accept them and show ghost aircraft
+3. The same equipment can also jam reception",L1 > L2,"T1.01, T1.02, T1.04, T1.07","Costin & Francillon (2012)
+https://www.eurecom.fr/publication/3788
+Schäfer, Lenders & Martinovic (2013)
+https://doi.org/10.1007/978-3-642-38980-1_16","Ground receivers, not the LEO payload. Atlas note: would reach L3 association if not filtered. Costin is a talk (not peer-reviewed)."
+C14,Satellite takeover through firmware flaws and unprotected telecommand,Attack demonstrated (emulated),"1. Firmware of three real satellites is analysed
+2. Exploitable on-board firmware flaws are found
+3. Telecommand is left unprotected, so the flaws can be reached
+4. Takeover of the satellite is shown on emulated systems",L2 > L1,"T1.12, T1.13, T1.14, T2.11","Willbold et al. (2023)
+https://ieeexplore.ieee.org/document/10351029","Emulation, no live satellite attacked (E1)."
+C15,Secure-boot bypass by fault injection on a satellite user terminal,Attack demonstrated (own device),"1. Voltage fault injection on a real Starlink user terminal
+2. Secure boot is bypassed
+3. Root access is gained on the researcher's own device",L1,T1.14,"Wouters (2022)
+https://infocondb.org/con/black-hat/black-hat-usa-2022/glitched-on-earth-by-humans-a-black-box-security-evaluation-of-the-spacex-starlink-user-terminal","User terminal, not a satellite or payload. Conference talk (not peer-reviewed)."
+C16,Link flooding that exploits the predictable LEO topology,Simulation,"1. The attacker uses the predictable LEO topology
+2. Bottleneck links are chosen as targets
+3. Cheap flooding congests them (Starlink-like constellation simulations)",L2,"T1.08, T1.16, T2.04","Giuliari et al. (2021)
+https://www.usenix.org/conference/atc21/presentation/giuliari",Simulation only (E1). Sources #16 and #21 of the atlas give platforms to repeat such experiments; they add no attack.
+C17,"GNSS receiver capture, then defeat of navigation-message authentication",Attack demonstrated (test receiver),"1. A portable spoofer tracks the live GNSS signals
+2. It smoothly captures the target receiver; simple consistency checks fail to detect it (2008)
+3. If the receiver uses OSNMA, manipulating its time synchronisation lets the spoofed signals through (2025)",L1,T1.11,"Humphreys et al. (2008)
+https://www.ion.org/publications/abstract.cfm?articleID=8132
+Wang et al. (2025)
+https://arxiv.org/abs/2501.09246","Two results 17 years apart, not one run. Wang 2025 is a preprint (controlled setting, commercial receiver and SDRs). Atlas note: threatens any GNSS-disciplined clock in the sync chain."
+C18,GNSS spoofing of aircraft seen in space-based ADS-B data,Real incidents,"1. The GNSS position source of aircraft is spoofed
+2. The spoofing is visible in operational space-based ADS-B data",L1 > L3,T1.03,"Aireon (2026)
+https://aireon.com/wp-content/uploads/2026/04/White-Paper-GNSS-Spoofing-Detection-in-Aviation-1.0-1-1.pdf",Industry white paper (E3). At the 13 Oct 2026 check the page could not be fetched; only its title matched.
+C19,GNSS spoofing displaces vessel positions in AIS,Real incidents (maritime analogue),"1. GNSS spoofing displaces the positions vessels report
+2. 9,883 suspected instances affecting 1,311 vessels since February 2016 are found in public AIS data and with an ISS-mounted sensor",analogue,T1.03,"C4ADS (2019)
+https://c4ads.org/reports/above-us-only-stars/",Not bound to a catalogue threat in the atlas; listed under T1.03 as the closest threat because AIS plays the role of ADS-B.
+C20,Overshadowing of ILS guidance signals,Attack demonstrated (lab),"1. Spoofed ILS signals are sent from COTS SDRs
+2. They control aviation-grade receivers in real time
+3. Simulated autoland runs end with offset touchdowns",L1,T1.07,"Sathaye, Schepers, Ranganathan & Noubir (2019)
+https://www.usenix.org/conference/usenixsecurity19/presentation/sathaye","Aircraft landing guidance, not surveillance. Bound to T1.07 in the atlas."

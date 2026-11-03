@@ -1,0 +1,59 @@
+ID,Asset,Layer,Receives from (and how),Feeds (and how),"Assets it
+can reach"
+A1.1,Aircraft 1090ES transponder,1,,A1.3 Antenna and RF front end (data),13
+A1.2,GNSS positioning and timing service,1,,A1.5 Onboard clock (timing),14
+A1.3,Phased-array antenna and RF front end,1,A1.1 Aircraft transponder (data),A1.4 Signal processor (data),12
+A1.4,Payload signal processor and extraction firmware,1,"A1.3 Antenna and RF front end (data)
+A1.5 Onboard clock (data)
+A1.6 Satellite bus and software (hosting)",A2.1 Observable reports (data),11
+A1.5,Onboard clock subsystem,1,"A1.2 GNSS service (timing)
+A1.6 Satellite bus and software (hosting)
+A2.3 PTP time messages (timing)","A1.4 Signal processor (data)
+A3.2 Ephemeris and clock database (timing)",13
+A1.6,Satellite bus and flight software,1,A2.5 Telecommands and updates (control),"A1.4 Signal processor (hosting)
+A1.5 Onboard clock (hosting)",14
+A1.7,Ground-station antennas and modems,1,A2.4 Downlink and backhaul (data),A3.1 Association module (data),7
+A2.1,Observable reports,2,A1.4 Signal processor (data),A2.2 Inter-satellite links (data),10
+A2.2,Inter-satellite link terminals and crosslinks,2,A2.1 Observable reports (data),A2.4 Downlink and backhaul (data),9
+A2.3,PTP time-transfer messages,2,A4.1 Synchronisation policy (timing),A1.5 Onboard clock (timing),14
+A2.4,Downlink channel and ground backhaul network,2,A2.2 Inter-satellite links (data),A1.7 Ground-station antennas (data),8
+A2.5,Telecommands and software-update packages,2,"A4.1 Synchronisation policy (control)
+A4.3 Key management (control)
+A4.4 Configuration and updates (control)",A1.6 Satellite bus and software (control),15
+A3.1,Measurement-association module,3,"A1.7 Ground-station antennas (data)
+A3.7 CPS computing platform (hosting)",A3.3 Solver and tracker (data),6
+A3.2,Ephemeris and clock-state database,3,"A1.5 Onboard clock (timing)
+A3.7 CPS computing platform (hosting)
+A4.2 Orbit determination (control)",A3.3 Solver and tracker (timing),6
+A3.3,"Localisation solver, EKF/IMM tracker and track database",3,"A3.1 Association module (data)
+A3.2 Ephemeris and clock database (timing)
+A3.7 CPS computing platform (hosting)","A3.4 Integrity monitor (check) (data)
+A3.5 ADS-B cross-check (check) (data)",5
+A3.4,Integrity-monitoring module,3,"A3.3 Solver and tracker (data)
+A3.7 CPS computing platform (hosting)
+A4.4 Configuration and updates (control)",A3.6 ASTERIX encoder (data),3
+A3.5,E-MLAT/ADS-B cross-check module,3,"A3.3 Solver and tracker (data)
+A3.7 CPS computing platform (hosting)",A3.6 ASTERIX encoder (data),3
+A3.6,ASTERIX report encoder and gateway,3,"A3.4 Integrity monitor (check) (data)
+A3.5 ADS-B cross-check (check) (data)
+A3.7 CPS computing platform (hosting)",A4.5 Data feed to ATM (data),2
+A3.7,Central Processing Station computing platform,3,A4.7 Personnel and suppliers (hosting),"A3.1 Association module (hosting)
+A3.2 Ephemeris and clock database (hosting)
+A3.3 Solver and tracker (hosting)
+A3.4 Integrity monitor (check) (hosting)
+A3.5 ADS-B cross-check (check) (hosting)
+A3.6 ASTERIX encoder (hosting)",8
+A4.1,Synchronisation policy and time-reference service,4,A4.8 Mission-operations centre (hosting),"A2.3 PTP time messages (timing)
+A2.5 Telecommands and updates (control)",17
+A4.2,Orbit-determination system and ephemeris products,4,A4.8 Mission-operations centre (hosting),A3.2 Ephemeris and clock database (control),7
+A4.3,Key-management system and credential store,4,A4.8 Mission-operations centre (hosting),A2.5 Telecommands and updates (control),16
+A4.4,Configuration and software-update management system,4,A4.8 Mission-operations centre (hosting),"A2.5 Telecommands and updates (control)
+A3.4 Integrity monitor (check) (control)",16
+A4.5,Surveillance data feed to ATM,4,A3.6 ASTERIX encoder (data),A4.6 ATM system (data),1
+A4.6,ATM surveillance system and controller working position,4,A4.5 Data feed to ATM (data),,0
+A4.7,Operator personnel and suppliers,4,,"A3.7 CPS computing platform (hosting)
+A4.8 Mission-operations centre (hosting)",23
+A4.8,Mission-operations centre and management network,4,A4.7 Personnel and suppliers (hosting),"A4.1 Synchronisation policy (hosting)
+A4.2 Orbit determination (hosting)
+A4.3 Key management (hosting)
+A4.4 Configuration and updates (hosting)",21
