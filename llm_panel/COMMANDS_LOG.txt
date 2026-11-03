@@ -227,5 +227,5 @@ REPRODUCE THE ANALYSIS (Python 3.9+, pandas numpy scipy openpyxl; from the repos
   python tools/validate_merge.py --out results_rebuilt                          # validate + merge replies (main panel = responses/)
   python tools/agreement.py --long results_rebuilt/panel_long.csv --out results_rebuilt   # Krippendorff alpha and Kendall W
   python tools/retest.py responses/chatgpt__B3__run1.json retest/responses/chatgpt__B3__run2.json --out results_rebuilt/retest_chatgpt_B3_run1_vs_run2.csv
-  python tools/make_prompts_round1.py ../data/catalogue/SATERA_Extended_Threat_Catalogue.xlsx prompts_rebuilt   # regenerate the prompts
+  python tools/make_prompts_round1.py ../data/catalogue/LEO_MLAT_Threat_Catalogue.xlsx prompts_rebuilt   # regenerate the prompts
   The catalogue workbook is the answer key: never paste it into a chat before the blind runs are done.

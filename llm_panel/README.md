@@ -45,7 +45,7 @@ From the repository root: `make panel` (analysis) and `make figures`. By hand, f
 python tools/validate_merge.py --out results_rebuilt
 python tools/agreement.py --long results_rebuilt/panel_long.csv --out results_rebuilt
 python tools/retest.py responses/chatgpt__B3__run1.json retest/responses/chatgpt__B3__run2.json --out results_rebuilt/retest_chatgpt_B3_run1_vs_run2.csv
-python tools/make_prompts_round1.py ../data/catalogue/SATERA_Extended_Threat_Catalogue.xlsx prompts_rebuilt   # regenerates the prompts byte for byte
+python tools/make_prompts_round1.py ../data/catalogue/LEO_MLAT_Threat_Catalogue.xlsx prompts_rebuilt   # regenerates the prompts byte for byte
 ```
 
 The sensitivity analysis with ChatGPT's small parts (`make sensitivity` from the repository root): copy `responses/` to a scratch folder,
