@@ -57,7 +57,7 @@ The 17-entry catalogue is background only; all results of this repository concer
 ├── CONTRIBUTING.md, CHANGELOG.md how to help; what changed
 ├── .github/workflows/ci.yml      runs the checks and tests on every push
 ├── data/
-│   ├── catalogue/                SATERA Extended Threat Catalogue (xlsx, master) + csv/ snapshot
+│   ├── catalogue/                LEO-MLAT threat catalogue v1.7, final (xlsx, master) + csv/ snapshot
 │   ├── atlas/                    PRISM-LEO Threat and Exploit Atlas (xlsx, master) + csv/ snapshot
 │   ├── derived/                  values computed from the workbooks (asset reach)
 │   └── README.md                 sheets, versions, validation status, notes
