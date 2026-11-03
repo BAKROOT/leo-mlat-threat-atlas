@@ -3,7 +3,7 @@
 Two workbooks are the master copies. Each has a `csv/` folder with a plain-text snapshot of its data sheets
 (`python scripts/export_csv.py` regenerates them). Values in the CSV files are the cached values stored in the workbooks.
 
-## `catalogue/SATERA_Extended_Threat_Catalogue.xlsx`
+## `catalogue/LEO_MLAT_Threat_Catalogue.xlsx`
 
 The 55-threat catalogue of the paper. Built from the 17-entry SATERA catalogue with STRIDE-tau (enumeration), PASTA (process),
 effect-transfer graphs (propagation) and propagation-aware DREAD (ranking). Blue text marks analyst input, black marks formulas.
@@ -17,15 +17,20 @@ effect-transfer graphs (propagation) and propagation-aware DREAD (ranking). Blue
 | Assets | the 27-asset register with live threat counts and the cross-layer reach of an attack on each asset | `asset_register_27.csv` |
 | SATERA | the earlier 17 entries, corrected and linked to the extended threats | `satera_17_entries.csv` |
 | Worked | the worked displacement application (Tables 4 and 5 of the paper) recomputed from the Catalogue | `worked_example.csv` |
-| Checks | every statistic the paper states about the catalogue, recomputed (112 rows, all OK) | `paper_statistics_checks.csv` |
+| Checks | every statistic the paper states about the catalogue, recomputed (117 rows, all OK) | `paper_statistics_checks.csv` |
 | Review | mistakes found in the earlier SATERA workbook and the correction made | `review_of_earlier_workbook.csv` |
 | CVE Register | the 57 CVE records of the atlas, mapped to assets and threats | `cve_register_57.csv` |
-| Legends | definitions | |
+| Threat Propagation | one row per threat and asset it names (65 rows): route to the ATM system, assets reached, boundaries | `threat_propagation_65.csv` |
+| Asset-Threat Matrix | the 27 assets against the 55 threats (main, other, reachable) | `asset_threat_matrix.csv` |
+| Asset Connections | what each asset receives from and feeds, with the kind of link | `asset_connections_27.csv` |
+| Multi-step Attacks | 20 multi-step attacks, incidents and analogues from the atlas, with steps, layers and the threats they support | `multistep_attacks.csv` |
+| Mitigations | the 25 defences M01 to M25 and how many threats cite each | `mitigations_25.csv` |
+| Dashboard, L1 to L4, Legends, Dashboard Data | summary, live per-layer views, definitions and the formulas that feed the dashboard | |
 
-**Version.** Release v1.3 (30 October 2026): the catalogue of 55 threats (T1.01 to T4.15), reviewed by the LLM panel as described
-below; the co-author evaluation is **yet to be done**, and the catalogue will be finalised after it. Earlier working versions (v1.0 to v1.2) added the CVE Register sheet, the columns *Related CVEs* and *Cross-layer propagation* and
-further checks; the panel analysis gives identical results on all of them. Relative to the file supplied for release, v1.3 changes wording only
-(the *Review status* labels, the README and Review sheets and the section references); no score, formula or data value changed.
+**Version.** Release v1.7 (3 November 2026), the final catalogue and the only version kept: the file is `LEO_MLAT_Threat_Catalogue.xlsx`, without a version number in its name, so that no earlier version can be mistaken for it.
+It holds the 55 threats (T1.01 to T4.15) with the scores and ratings of release v1.3 (30 October 2026); v1.4 to v1.7 add the layout, the dashboard, the sheets Threat Propagation, Asset-Threat Matrix,
+Asset Connections, Multi-step Attacks and Mitigations, and further checks. The panel analysis gives identical results on it. The co-author evaluation is **yet to be done**.
+The change log is in the workbook's sheet *README & Change Log*; earlier working versions were removed and survive only in the git history.
 
 **Validation status.** Every record was reviewed by a blind four-model LLM panel (`llm_panel/`); the evaluation by the co-authors is **yet to be done**. The
 scores and the scoring algorithms were verified (sheet *Checks*, `make check`). The column *Review status* separates 7 *Baseline* records,
