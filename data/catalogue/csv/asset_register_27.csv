@@ -1,4 +1,4 @@
-ID,Asset,Layer,Function,Kind,STRIDE element,TB,Component of Fig. 1,Flags,Threats (workbook),"Threats (paper, Table 6)",Check,CVEs mapped (n),Cross-layer propagation of an attack on this asset
+ID,Asset,Layer,Function,Kind,STRIDE element,TB,Component of Fig. 1,Flags,Threats (workbook),"Threats (paper, Sec. 3.2 / supplement)",Check,CVEs mapped (n),Cross-layer propagation of an attack on this asset
 A1.1,Aircraft 1090ES transponder,1,Emits the signal whose arrival is measured; ADS-B content is an unauthenticated self-report,hardware,external entity,TB0,Aircraft transponders,external,6,6,OK,0,"L1 > L2 > L3 > L4  (4 of 4 layers)
 L1: [A1.1], A1.3, A1.4, A1.7 | L2: A2.1, A2.2, A2.4 | L3: A3.1, A3.3, A3.4, A3.5, A3.6 | L4: A4.5, A4.6
 Boundaries to first check A3.4/A3.5: 2 | to ATM A4.6: 3"
