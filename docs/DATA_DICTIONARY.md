@@ -44,6 +44,11 @@
 * **Assets** (`asset_register_27.csv`): ID, asset, layer, function, kind (hardware, software, service, data), STRIDE element type, trust boundary, component of the architecture figure,
   flags (external, timing, hosting), threats in the workbook and in the paper (check), CVEs mapped, cross-layer propagation of an attack on the asset.
 * **Checks** (`paper_statistics_checks.csv`): Group, Statistic, Workbook (live formula), Paper (value stated in the paper), Check (OK), Paper location.
+* **Threat Propagation** (`threat_propagation_65.csv`): one row per threat and asset it names (65 rows): ID, threat, asset, role (Main or Also), shortest route to the ATM system, assets and layers reached, boundaries to the first check and to the ATM, multi-step attack. Derived from the asset links; an upper bound on where an effect can go.
+* **Asset-Threat Matrix** (`asset_threat_matrix.csv`): one row per threat, one column per asset: M main asset, S other asset named, reach marker for assets the effect can reach.
+* **Asset Connections** (`asset_connections_27.csv`): per asset, what it receives from and feeds (with the kind of link: data, timing, control, hosting) and the assets it can reach. 40 links are identified; the paper counts 41 (see `docs/LIMITATIONS.md`).
+* **Multi-step Attacks** (`multistep_attacks.csv`): 20 chains (C1 to C20) taken from the atlas sources: type (demonstrated, incident, analogue), steps as stated, layers, catalogue threats supported, source, caveat.
+* **Mitigations** (`mitigations_25.csv`): the 25 defences M01 to M25 of the atlas, with the live count of catalogue threats that cite each.
 * **CVE Register** (`cve_register_57.csv`): the 57 CVE records mapped to assets and threats.
 * **Rubric** (`rubric_raw.csv`): the lookup tables (evidence to base R, tier to E, goal to D with its rule, score to band).
 

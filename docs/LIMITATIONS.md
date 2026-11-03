@@ -5,7 +5,7 @@ Read this before relying on the data.
 ## About the catalogue
 
 * **Validation.** All 55 records were reviewed by a blind four-model LLM panel; the evaluation by the co-authors is **yet to be done**. The scores and algorithms were verified (`make check`). The *Review status* column separates 7 *Baseline* records (they reproduce Table 4 of the paper) from 48 *Panel-reviewed* records. Review is not field testing: see the next point.
-* **Scores are ordinal.** They rank threats; they are not probabilities and not rater consensus. Bands are specific to this study.
+* **Scores are ordinal.** They rank threats; they are not probabilities and not rater consensus. The five dimensions are weighted equally and the bands are specific to this study. The scores are concentrated in the upper bands: 47 of the 51 scored threats are High or Critical in each regime.
 * **No field validation yet.** Reconstruction of published attacks as chains, coverage against technique catalogues and independent expert review are future work. Much of the evidence is from analogue systems, and none was obtained on an orbital multilateration network.
 * **Published design only.** The analysis concerns the SATERA reference design as published, not a fielded system. The detection level of the integrity monitor is not published, which is why the strong/weak assumptions W2 and W3 are hypotheses.
 * **Two dependencies are inferred** (S1: A1.6 hosts A1.4 and A1.5; S2: A4.1 sets the policy of the PTP path A2.3). Assets reached only through them carry a dagger in the propagation lists.

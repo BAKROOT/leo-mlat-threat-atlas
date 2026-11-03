@@ -3,6 +3,13 @@
 The full method is in the paper (Sections 3 and 4). This page gives the vocabulary that the data files use.
 Authoritative definitions are in the sheet *Legends* of the catalogue workbook.
 
+## How the three techniques fit together
+
+PASTA is used as it is: its seven stages are the process. Two of the techniques it draws on are extended, once each, and nothing in PASTA is replaced.
+**STRIDE-tau** extends STRIDE with a seventh category, temporal integrity. **Propagation-aware DREAD (PA-DREAD)** adapts DREAD: the five dimensions and the 1 to 5 scale are kept,
+each dimension is read from a named artefact of an earlier stage, and Discoverability is *detection depth* (the first layer whose check flags the effect, 5 meaning that none does)
+rather than how easily an attacker finds the weakness. The paper's Sections 3 and 4 give the reasons.
+
 ## System and layers
 
 LEO MLAT-B is the GNSS-independent surveillance concept of the SATERA reference design: low-Earth-orbit satellites receive aircraft
@@ -47,7 +54,7 @@ The detection level of the integrity monitor is not published; assumptions W1 to
 
 ## PA-DREAD
 
-Propagation-aware DREAD keeps the five DREAD dimensions, each scored 1 to 5 with 5 the riskier end, and reads each from a named artefact of an earlier stage:
+Propagation-aware DREAD adapts DREAD (Discoverability is read as detection depth, the reverse of the classic reading) and keeps the five DREAD dimensions, each scored 1 to 5 with 5 the riskier end, and reads each from a named artefact of an earlier stage:
 
 | Dimension | Read from | 5 | 4 | 3 | 2 | 1 |
 |---|---|---|---|---|---|---|
@@ -59,4 +66,4 @@ Propagation-aware DREAD keeps the five DREAD dimensions, each scored 1 to 5 with
 
 The score S = D + R + E + A + Di (5 to 25) is banded **Low 5 to 9, Medium 10 to 14, High 15 to 19, Critical 20 to 25**, and is computed for a strong and a weak pass wherever the
 regime changes the scenario. Chains are scored on a sufficient scenario. Enablers (threats with no consequence of their own) are ranked through the chains they complete and have no D.
-The scores are ordinal and the bands specific to this study: a score ranks threats; it does not measure a probability.
+The scores are ordinal, equally weighted and the bands specific to this study: a score ranks threats; it does not measure a probability. The scores are concentrated in the upper bands (47 of the 51 scored threats are High or Critical in each regime), so the bands separate threats less than the scores do.
