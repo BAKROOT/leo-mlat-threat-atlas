@@ -22,15 +22,15 @@ effect-transfer graphs (propagation) and propagation-aware DREAD (ranking). Blue
 | CVE Register | the 57 CVE records of the atlas, mapped to assets and threats | `cve_register_57.csv` |
 | Legends | definitions | |
 
-**Version.** Release v1.3 (30 October 2026): the final catalogue of 55 threats (T1.01 to T4.15), validated and evaluated as described
-below. Earlier working versions (v1.0 to v1.2) added the CVE Register sheet, the columns *Related CVEs* and *Cross-layer propagation* and
+**Version.** Release v1.3 (30 October 2026): the catalogue of 55 threats (T1.01 to T4.15), reviewed by the LLM panel as described
+below; the co-author evaluation is **yet to be done**, and the catalogue will be finalised after it. Earlier working versions (v1.0 to v1.2) added the CVE Register sheet, the columns *Related CVEs* and *Cross-layer propagation* and
 further checks; the panel analysis gives identical results on all of them. Relative to the file supplied for release, v1.3 changes wording only
 (the *Review status* labels, the README and Review sheets and the section references); no score, formula or data value changed.
 
-**Validation status.** Every record was validated by a blind four-model LLM panel (`llm_panel/`) and then evaluated by the co-authors; the
+**Validation status.** Every record was reviewed by a blind four-model LLM panel (`llm_panel/`); the evaluation by the co-authors is **yet to be done**. The
 scores and the scoring algorithms were verified (sheet *Checks*, `make check`). The column *Review status* separates 7 *Baseline* records,
-which reproduce the values printed in Table 5 of the paper (five source threats and two enablers), from 48 *Validated* records, which carry
-the same validation but are not printed in the paper's tables. For the latter, the paper fixes the statistics and the identifiers.
+which reproduce the values printed in Table 4 of the paper (five source threats and two enablers), from 48 *Panel-reviewed* records, which carry
+the same panel review but are not printed in the paper's tables. For the latter, the paper fixes the statistics and the identifiers.
 
 **The 17-entry catalogue.** Sheet *SATERA* holds the SATERA project's earlier asset-level catalogue (entries SC-1 to SC-17) with numeric
 DREAD scores, register asset IDs and corrected PASTA stages. The extended catalogue refines it: 44 of the 55 threats refine at least one
