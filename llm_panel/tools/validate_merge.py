@@ -9,7 +9,7 @@ Usage (from the llm_panel folder):
 Options:
     --responses responses      folder with the saved JSON files
     --prompts   prompts        folder with manifest.json
-    --catalogue ../data/catalogue/SATERA_Extended_Threat_Catalogue.xlsx
+    --catalogue ../data/catalogue/LEO_MLAT_Threat_Catalogue.xlsx
     --out       results
 
 File names in the responses folder:  <model>__<prompt>__run<N>.json   e.g. claude__B1__run1.json
@@ -292,7 +292,7 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--responses", default="responses")
     ap.add_argument("--prompts", default="prompts")
-    ap.add_argument("--catalogue", default="../data/catalogue/SATERA_Extended_Threat_Catalogue.xlsx")
+    ap.add_argument("--catalogue", default="../data/catalogue/LEO_MLAT_Threat_Catalogue.xlsx")
     ap.add_argument("--out", default="results")
     a = ap.parse_args()
     os.makedirs(a.out, exist_ok=True)

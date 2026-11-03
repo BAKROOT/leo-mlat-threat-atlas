@@ -4,7 +4,7 @@ Agreement between the LLM raters: Krippendorff's alpha AND Kendall's W, side by 
 
 Usage (from the llm_panel folder, after validate_merge.py has written results/panel_long.csv):
     python tools/agreement.py --long results/panel_long.csv \
-        --catalogue ../data/catalogue/SATERA_Extended_Threat_Catalogue.xlsx --out results
+        --catalogue ../data/catalogue/LEO_MLAT_Threat_Catalogue.xlsx --out results
 
 What it computes (items = threats, raters = models)
   * Krippendorff's alpha with an interval metric and, for ordinal codes, an ordinal metric.
@@ -183,7 +183,7 @@ def stats_for(P, kind_ordinal):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--long", default="results/panel_long.csv")
-    ap.add_argument("--catalogue", default="../data/catalogue/SATERA_Extended_Threat_Catalogue.xlsx")
+    ap.add_argument("--catalogue", default="../data/catalogue/LEO_MLAT_Threat_Catalogue.xlsx")
     ap.add_argument("--out", default="results")
     a = ap.parse_args()
     L = pd.read_csv(a.long)
