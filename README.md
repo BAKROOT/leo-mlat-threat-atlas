@@ -32,7 +32,7 @@ catalogue, the evidence base and the independent review of the catalogue by four
 1. **Independent review by a multi-vendor LLM panel.** Four language models from four vendors rated every threat of the
    catalogue without seeing the catalogue's own ratings, and separately listed the threats they would expect from the
    architecture alone. The prompts, the replies, the agreement statistics and the figures are in `llm_panel/`
-   (paper Sec. 4.11).
+   (paper Sec. 4.10).
 2. **Evaluation by the co-authors (**yet to be done**).** The panel's agreements and disagreements with the catalogue will be evaluated by the
    co-authors once the paper is complete; the catalogue will be finalised afterwards.
 3. **Verification of scores and algorithms.** Every count the paper reports and every PA-DREAD score is recomputed from the
@@ -101,16 +101,17 @@ Without `make`, run the commands listed in the [Makefile](Makefile) directly.
 |---|---|---|
 | 55 threats; 16, 12, 12, 15 per layer; STRIDE-tau counts; 16 postulated; 47 High or Critical (Sec. 4.6) | `data/catalogue/` sheet *Catalogue* | `make check` (group A) |
 | PA-DREAD scores and bands derived from the rubric (Sec. 4.8) | `data/catalogue/` sheets *Rubric*, *Catalogue* | `make check` (group B recomputes R, E, D, S and the band for every threat) |
-| 78 sources, 57 CVEs, 25 mitigations, 53 of 78 sources cross a layer (Secs. 4.4, 6) | `data/atlas/` | `make check` (group A) |
-| Cross-layer reach of the assets (Sec. 6) | `data/catalogue/` sheet *Assets*, `data/derived/asset_reach.csv` | `python scripts/asset_reach.py` |
-| LLM panel: design, agreement, disagreement, completeness (Sec. 4.11, Figs. 8 to 11, Table 8) | `llm_panel/`, [docs/RESULTS.md](docs/RESULTS.md) | `make panel`, `make figures` |
+| 78 sources, 57 CVEs, 25 mitigations, 53 of 78 sources cross a layer (Secs. 4.4, 5) | `data/atlas/` | `make check` (group A) |
+| Cross-layer reach of the assets, fan-in and the reach-against-threat-count correlation (Secs. 5.2, 5.5) | `data/catalogue/` sheet *Assets*, `data/derived/asset_reach.csv` | `python scripts/asset_reach.py` |
+| LLM panel: design, agreement, disagreement, completeness (Sec. 4.10, Table 5 and the supplementary figures) | `llm_panel/`, [docs/RESULTS.md](docs/RESULTS.md) | `make panel`, `make figures` |
 
 ## What is not here (yet)
 
 Stated plainly so that nobody has to guess; details in [docs/LIMITATIONS.md](docs/LIMITATIONS.md).
 
-* The edge list of the 41-edge asset dependency graph, and with it the radius and rank-correlation statistics of
-  Section 6, are not part of this release. `scripts/asset_reach.py` works from the reach lists stored in the catalogue workbook.
+* The edge list of the 41-edge asset dependency graph is not a separate file. The *Asset Connections* sheet records 40 of the 41 edges and
+  reproduces the reach lists of all 27 assets exactly; `scripts/asset_reach.py` reproduces the radius, fan-in and rank-correlation statistics of
+  Section 5 from those lists.
 * The completeness mapping of the language-model listings is single-coded and has not been checked by a second coder.
 * The panel's raters are language models and the evaluation by the co-authors is **yet to be done**, and an independent study with
   external human raters has not been run.

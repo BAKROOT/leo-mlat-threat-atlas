@@ -1,6 +1,10 @@
 # Changelog
 
-## Unreleased
+## 1.1.0 (5 November 2026)
+
+* **Aligned with the audited paper.** Section, figure and table numbers in the README and docs now follow the paper (panel Sec. 4.10 and Table 5; cross-layer analysis Sec. 5; worked table Table 4).
+* `scripts/asset_reach.py` now also reproduces the fan-in of the processing assets (21, 22, 22, 24) and the Spearman correlation between radius and threat count (0.22, p = 0.26; the paper
+  corrected its earlier value of 0.12). The 40 edges of the *Asset Connections* sheet reproduce all 27 reach lists exactly; the paper's 41st edge is still to be recovered (docs/LIMITATIONS.md).
 
 * **Catalogue v1.7 is now the only catalogue.** `data/catalogue/LEO_MLAT_Threat_Catalogue.xlsx` replaces `SATERA_Extended_Threat_Catalogue.xlsx` (release v1.3). The new file has no version
   number in its name so that no earlier version can be mistaken for it. Scores and ratings are those of v1.3 (the checks, the panel analysis and the prompts rebuild all give identical results);
