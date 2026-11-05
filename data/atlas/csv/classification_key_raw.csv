@@ -7,15 +7,15 @@
 ,Attack Category,"The concrete attack type: spoofing, jamming, injection, DoS, MITM, eavesdropping, delay."
 ,Evidence Basis,"What the status rests on, e.g. 'Real hardware, controlled setting' or 'Survey; cites others' PoCs'."
 ,Venue Ranking / Quartile,"Checked 4 Oct 2026. Conferences: ICORE2026, the current CORE edition (replaces CORE2023), from the official ICORE2026 export. Journals: SCImago Journal Rank (SJR) 2025 quartile in the journal's best subject category, read from scimagojr.com. Clarivate JCR quartiles were not used because JCR is subscription-only. Workshops and venues absent from ICORE2026 are marked 'Not ICORE-ranked'. Each row links to its source in the Ranking Source column."
-,Domain,Filter aid mapping each paper to the area of your threat model it informs.
+,Domain,Filter aid mapping each paper to the area of the threat model it informs.
 ,Scope (rows 6-48),"Rows 6-48: peer-reviewed papers from mybibliography.bib that address vulnerabilities, threats or attacks (the original review set). Rows 49 onward: newer peer-reviewed and non-peer-reviewed sources added to form the Threat Atlas. Bibliography entries not used are on Excluded Entries."
 ,Evidence level (E0–E3),
 ,E3  Operational / in the wild,"Attack executed against, or observed on, an operational system or live third-party traffic. Maps to Demonstrated in Real-World."
 ,E2  Real hardware or field,"Attack executed with real RF hardware against real receivers, commercial systems or a live non-safety network under the experimenters' control. Maps to Simulated / Proof-of-Concept."
 ,E1  Simulation or recorded data,"Attack run in simulation or emulation, or injected into recorded real data. Maps to Simulated / Proof-of-Concept."
 ,E0  Analytical only,"Argued, surveyed, proven or modelled; no attack executed by the authors. Maps to Theoretical / Unexploited."
-,Paper Alignment,"Sheet mirroring Tables 1–3 and Fig. 3 of the TDSC draft row by row, with layer codings and evidence levels; its count blocks are the numbers quoted in §2.6.2, the Fig. 3 bars and Table 7."
-,Placement in TDSC Draft,"Where each reviewed paper appears in the draft (table and reference number, or section)."
+,Paper Alignment,"Sheet mirroring Tables 1–3 and Fig. 3 of the TDSC draft row by row, with layer codings and evidence levels; its count blocks are the numbers quoted in §2.6.2, the Fig. 3 bars and Table 7. Table, figure and section numbers here refer to the earlier TDSC draft from which the atlas was built; in the current paper the 41-study synthesis is Section 2.3 with Fig. 1."
+,Placement in TDSC Draft,"Where each reviewed paper appears in the draft (table and reference number, or section) of the earlier TDSC draft."
 ,"Threat Atlas extension (columns Q onward, added 13 Oct 2026)",
 ,Source Type,Peer-reviewed journal / conference / workshop; Preprint / unconfirmed venue; Conference talk / event (non-peer-reviewed); Government / regulator advisory; Documented incident report; Industry / NGO report.
 ,Peer-reviewed (derived),Formula: Yes when Source Type starts with 'Peer-reviewed'.

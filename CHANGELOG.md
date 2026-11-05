@@ -2,6 +2,9 @@
 
 ## 1.1.0 (5 November 2026)
 
+* Consistency pass over the atlas sheets: the BibTeX key of atlas source #20 (Senn et al., WiSec 2025) is now `Senn2025MLATSpoofing`, the key the paper cites (it was `Senn2025UniversalMLAT` and marked "not yet in .bib");
+  the sheets *Paper Alignment* and *Classification Key* state that their Table, figure and section numbers refer to the earlier TDSC draft (in the current paper the 41-study synthesis is Section 2.3, Fig. 1);
+  drafting leftovers ("your bibliography", "your threat model") reworded. No count, score or formula result changed.
 * **One workbook instead of two.** The PRISM-LEO Threat and Exploit Atlas workbook is merged into `data/catalogue/LEO_MLAT_Threat_Catalogue.xlsx`, which is now release v1.8 (30 sheets: the 22 catalogue
   sheets unchanged plus Atlas Overview, Threat Atlas, Asset Evidence, Gap Matrix, Paper Alignment, Atlas Summary, Classification Key and Excluded Entries). The atlas sheets *CVE Register* and *Mitigations*
   are not duplicated: the catalogue versions already held every atlas column with identical values, and the atlas formulas now read them. All 4,640 formulas recalculate to the values of the two

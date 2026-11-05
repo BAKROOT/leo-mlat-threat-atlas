@@ -9,7 +9,7 @@
 8,Table 1,(a) RF / PHY,[36],Schäfer '15,Schafer2015SecureTrack,Yes,A,,P,,E1,Attacks modelled on recorded OpenSky data,Simulated / Proof-of-Concept
 9,Table 1,(a) RF / PHY,"[37],[38]",Ghose / Schäfer '16,Ghose2015Doppler; Schafer2016Doppler,Yes,A,,P,,E1,Simulation,Simulated / Proof-of-Concept
 10,Table 1,(a) RF / PHY,[9],Moser '16,Moser2016MultiDevice,Yes,A,A,P,,E2,Multi-SDR attack launched against the live OpenSky Network (non-ATC),Simulated / Proof-of-Concept
-11,Table 1,(a) RF / PHY,[?] Senn,Senn '25,Senn2025UniversalMLAT,Yes,A,A,P,,E2,Two commercial MLAT systems deployed by the authors at five university sites; live traffic,Simulated / Proof-of-Concept
+11,Table 1,(a) RF / PHY,[?] Senn,Senn '25,Senn2025MLATSpoofing,Yes,A,A,P,,E2,Two commercial MLAT systems deployed by the authors at five university sites; live traffic,Simulated / Proof-of-Concept
 12,Table 1,(a) RF / PHY,[39],Jansen '18,Jansen2018CrowdGPSSec,Yes,A,,P,,E1,Spoofing simulated on recorded ADS-B data,Simulated / Proof-of-Concept
 13,Table 1,(a) RF / PHY,"[29],[30]",Humphreys / Psiaki,Humphreys2008GPSSpoofer; Psiaki2016GNSSSpoofing,Yes,A,,,,E2,Portable spoofer built and tested against a receiver [29]; survey [30],Simulated / Proof-of-Concept
 14,Table 1,(a) RF / PHY,[40],Tibaldo '25,Tibaldo2025GNSSWASP,Yes,A,,,,E1,Proof-of-concept evaluation (check whether hardware was used),Simulated / Proof-of-Concept
