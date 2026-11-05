@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Recompute, from the two workbooks and without using their Excel formulas, the figures that the paper states
+Recompute, from the workbook and without using its Excel formulas, the figures that the paper states
 about the catalogue and the atlas, and re-derive every PA-DREAD score from the rubric.
 
 Usage (from the repository root):   python scripts/check_paper_counts.py
@@ -19,7 +19,6 @@ import pandas as pd
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CAT = os.path.join(ROOT, "data/catalogue/LEO_MLAT_Threat_Catalogue.xlsx")
-ATL = os.path.join(ROOT, "data/atlas/PRISM-LEO_Threat_Exploit_Atlas.xlsx")
 
 R_BASE = {"P": 1, "E0": 2, "E1": 3, "E2": 4, "E3": 5}                  # Rubric sheet, evidence -> base R
 E_OF_TIER = {"T1p": 5, "T1c": 4, "T2": 3, "T3": 2, "T3x": 1}            # Rubric sheet, tier -> E
@@ -33,7 +32,7 @@ def check(group, name, got, want):
 def main():
     cat = pd.read_excel(CAT, sheet_name="Catalogue", header=3)
     cat = cat[cat["ID"].astype(str).str.match(r"T\d\.\d+$")].copy()
-    atl = pd.read_excel(ATL, sheet_name="Threat Atlas", header=4)
+    atl = pd.read_excel(CAT, sheet_name="Threat Atlas", header=4)
     atl = atl[pd.to_numeric(atl["#"], errors="coerce").notna()].copy()
 
     # ---- A. counts stated in the paper
@@ -51,9 +50,9 @@ def main():
     crossing = int((atl["Direction (derived)"] != "Within layer").sum())
     check("A", "atlas sources that cross a layer", crossing, 53)
     check("A", "share of atlas sources that cross a layer (%)", round(100 * crossing / len(atl)), 68)
-    cve = pd.read_excel(ATL, sheet_name="CVE Register", header=4)
+    cve = pd.read_excel(CAT, sheet_name="CVE Register", header=3)
     check("A", "CVE records", int(pd.to_numeric(cve["#"], errors="coerce").notna().sum()), 57)
-    mit = pd.read_excel(ATL, sheet_name="Mitigations", header=4)
+    mit = pd.read_excel(CAT, sheet_name="Mitigations", header=3)
     check("A", "mitigations", int(mit["ID"].astype(str).str.match(r"M\d+$").sum()), 25)
 
     # ---- B. scores re-derived from the rubric

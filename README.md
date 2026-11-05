@@ -57,9 +57,9 @@ The 17-entry catalogue is background only; all results of this repository concer
 ├── CONTRIBUTING.md, CHANGELOG.md how to help; what changed
 ├── .github/workflows/ci.yml      runs the checks and tests on every push
 ├── data/
-│   ├── catalogue/                LEO-MLAT threat catalogue v1.7, final (xlsx, master) + csv/ snapshot
-│   ├── atlas/                    PRISM-LEO Threat and Exploit Atlas (xlsx, master) + csv/ snapshot
-│   ├── derived/                  values computed from the workbooks (asset reach)
+│   ├── catalogue/                the workbook v1.8 (xlsx, master): extended threat catalogue and evidence atlas + csv/ snapshot
+│   ├── atlas/csv/                csv snapshot of the atlas sheets of that workbook
+│   ├── derived/                  values computed from the workbook (asset reach)
 │   └── README.md                 sheets, versions, validation status, notes
 ├── llm_panel/                    the multi-vendor language-model review (see llm_panel/README.md)
 │   ├── prompts/                  the exact prompts sent to every model (A, B1 to B4) + SHA256SUMS.txt
@@ -101,7 +101,7 @@ Without `make`, run the commands listed in the [Makefile](Makefile) directly.
 |---|---|---|
 | 55 threats; 16, 12, 12, 15 per layer; STRIDE-tau counts; 16 postulated; 47 High or Critical (Sec. 4.6) | `data/catalogue/` sheet *Catalogue* | `make check` (group A) |
 | PA-DREAD scores and bands derived from the rubric (Sec. 4.8) | `data/catalogue/` sheets *Rubric*, *Catalogue* | `make check` (group B recomputes R, E, D, S and the band for every threat) |
-| 78 sources, 57 CVEs, 25 mitigations, 53 of 78 sources cross a layer (Secs. 4.4, 5) | `data/atlas/` | `make check` (group A) |
+| 78 sources, 57 CVEs, 25 mitigations, 53 of 78 sources cross a layer (Secs. 4.4, 5) | `data/catalogue/` sheets *Threat Atlas*, *CVE Register*, *Mitigations* (csv in `data/atlas/csv/`) | `make check` (group A) |
 | Cross-layer reach of the assets, fan-in and the reach-against-threat-count correlation (Secs. 5.2, 5.5) | `data/catalogue/` sheet *Assets*, `data/derived/asset_reach.csv` | `python scripts/asset_reach.py` |
 | LLM panel: design, agreement, disagreement, completeness (Sec. 4.10, Table 5 and the supplementary figures) | `llm_panel/`, [docs/RESULTS.md](docs/RESULTS.md) | `make panel`, `make figures` |
 
@@ -120,7 +120,7 @@ Stated plainly so that nobody has to guess; details in [docs/LIMITATIONS.md](doc
 
 * **Re-score or filter the catalogue.** Open the workbook, or load `data/catalogue/csv/catalogue_55_threats.csv`.
   Evidence, R, E, D, S and the bands are formulas over the *Rubric* and *Binding* sheets in the workbook.
-* **Add a source to the atlas.** Append a row to *Threat Atlas* under a new number (existing numbers #1 to #78 are stable).
+* **Add a source to the atlas.** Append a row to the sheet *Threat Atlas* of the workbook under a new number (existing numbers #1 to #78 are stable).
 * **Repeat the review with another model.** [llm_panel/README.md](llm_panel/README.md) and
   [docs/PANEL_PROTOCOL.md](docs/PANEL_PROTOCOL.md) describe the protocol; your replies drop into `llm_panel/responses/`.
 * **Challenge a result.** Every response file, the raw text of every reply and the hash of every prompt are included.

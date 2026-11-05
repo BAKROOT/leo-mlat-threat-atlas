@@ -41,4 +41,4 @@ The mapping of the 143 listed threats to the catalogue (completeness) is single-
 
 ## Dates
 
-Catalogue built 20 Oct 2026 and extended with CVE and propagation columns on 29 Oct 2026; release v1.3 of the catalogue and release of the atlas 30 Oct 2026; final catalogue v1.7 (same scores) 3 Nov 2026; panel runs 25 and 29 Oct 2026; analysis, figures and this repository 30 Oct 2026. Links in the atlas were verified on 13 Oct 2026.
+Catalogue built 20 Oct 2026 and extended with CVE and propagation columns on 29 Oct 2026; release v1.3 of the catalogue and release of the atlas 30 Oct 2026; final catalogue v1.7 (same scores) 3 Nov 2026; atlas merged into the catalogue workbook (v1.8, no value changed) 5 Nov 2026; panel runs 25 and 29 Oct 2026; analysis, figures and this repository 30 Oct 2026. Links in the atlas were verified on 13 Oct 2026.

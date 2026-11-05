@@ -2,6 +2,12 @@
 
 ## 1.1.0 (5 November 2026)
 
+* **One workbook instead of two.** The PRISM-LEO Threat and Exploit Atlas workbook is merged into `data/catalogue/LEO_MLAT_Threat_Catalogue.xlsx`, which is now release v1.8 (30 sheets: the 22 catalogue
+  sheets unchanged plus Atlas Overview, Threat Atlas, Asset Evidence, Gap Matrix, Paper Alignment, Atlas Summary, Classification Key and Excluded Entries). The atlas sheets *CVE Register* and *Mitigations*
+  are not duplicated: the catalogue versions already held every atlas column with identical values, and the atlas formulas now read them. All 4,640 formulas recalculate to the values of the two
+  source workbooks (every cell compared); the Checks sheet still reads 117 of 117 OK. `data/atlas/PRISM-LEO_Threat_Exploit_Atlas.xlsx` and the two atlas CSV copies of *CVE Register* and
+  *Mitigations* are removed (the catalogue CSVs hold them); `data/atlas/csv/asset_register_27.csv` is renamed `asset_evidence_27.csv`. `scripts/export_csv.py` and
+  `scripts/check_paper_counts.py` read the single workbook; `make check` (388 checks), `make test` and the prompts rebuild give identical results.
 * **Aligned with the audited paper.** Section, figure and table numbers in the README and docs now follow the paper (panel Sec. 4.10 and Table 5; cross-layer analysis Sec. 5; worked table Table 4).
 * `scripts/asset_reach.py` now also reproduces the fan-in of the processing assets (21, 22, 22, 24) and the Spearman correlation between radius and threat count (0.22, p = 0.26; the paper
   corrected its earlier value of 0.12). The 40 edges of the *Asset Connections* sheet reproduce all 27 reach lists exactly; the paper's 41st edge is still to be recovered (docs/LIMITATIONS.md).

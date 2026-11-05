@@ -22,4 +22,4 @@
 ,L4 Governance & Integration,3,3,1,0,0,0,1,0,1,0,9
 ,Total,14,3,5,0,4,0,2,1,3,0,32
 ,Legend:,0 = gap,1 source,2-4,5 or more,,,,,,,
-,"Note (29 Oct 2026): the L3 rows above are empty by design, since no published source enters at L3 or targets a CVE-listed L3 component. The seven L3 assets (A3.1 to A3.7) are listed in the Asset Register sheet and in Overview section 7b, with the sources whose bound attacks reach them.",,,,,,,,,,,
+,"Note (29 Oct 2026): the L3 rows above are empty by design, since no published source enters at L3 or targets a CVE-listed L3 component. The seven L3 assets (A3.1 to A3.7) are listed in the Asset Evidence sheet and in Atlas Overview section 7b, with the sources whose bound attacks reach them.",,,,,,,,,,,

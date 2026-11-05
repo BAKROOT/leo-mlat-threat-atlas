@@ -76,7 +76,7 @@
 ,L3 · A3.5 E-MLAT/ADS-B cross-check module,3,2,0,0,0,0
 ,L3 · A3.6 ASTERIX report encoder and gateway,0,0,0,0,0,0
 ,L3 · A3.7 Central Processing Station computing platform,1,1,0,0,0,0
-,"Cross-reference, not added to the total above. The Atlas has no L3 asset group because no source enters at L3; a source is counted here when a threat bound to it acts on the asset (sheet Asset Register). A3.1, A3.2, A3.4 and A3.6 have no source and no CVE: their threats are postulated in the catalogue (dated reading, 29 Oct 2026).",,,,,,
+,"Cross-reference, not added to the total above. The Atlas has no L3 asset group because no source enters at L3; a source is counted here when a threat bound to it acts on the asset (sheet Asset Evidence). A3.1, A3.2, A3.4 and A3.6 have no source and no CVE: their threats are postulated in the catalogue (dated reading, 29 Oct 2026).",,,,,,
 ,8. Mitigation coverage,,,,,,
 ,Measure,Count,,,,,
 ,Mitigations defined,25,,,,,
@@ -95,9 +95,9 @@
 ,CVE IDs listed in Atlas = CVEs linked in register,OK,,,,,
 ,Asset table: Atlas entries and CVEs add up,OK,,,,,
 ,Gap Matrix totals = Atlas entries,OK,,,,,
-,"Asset Register lists 27 assets, 7 of them at L3",OK,,,,,
+,"Asset Evidence lists 27 assets, 7 of them at L3",OK,,,,,
 ,Reading the Atlas (13 Oct 2026),,,,,,
-,The original review set's observation (Summary sheet) still holds for those 43 papers. The added sources qualify it in three ways:,,,,,,
+,The original review set's observation (Atlas Summary sheet) still holds for those 43 papers. The added sources qualify it in three ways:,,,,,,
 ,"1) In-the-wild GNSS interference against aircraft is now documented in peer-reviewed venues (Felux et al. 2024, NAVIGATION; Felux et al. 2025, CyCon), not only in industry and regulator material.",,,,,,
 ,"2) L4 (governance & integration) is no longer empty: Viasat KA-SAT (2022) is a real-world L4-to-L1 compromise, and the Black Hat 2025 disclosures add 45 verified CVEs in ground C2, flight software and the SDLS library. No source enters at L3: processing is reached only by propagation from L1/L2 (e.g. MLAT verification bypass, spoofed downlinks).",,,,,,
 ,"3) Top-down timing failures are real (GPS UTC error 2016, Galileo outage 2019): the cross-cutting timing dependency can fail from L4 without any attacker.",,,,,,

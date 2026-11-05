@@ -1,7 +1,8 @@
 # Data
 
-Two workbooks are the master copies. Each has a `csv/` folder with a plain-text snapshot of its data sheets
-(`python scripts/export_csv.py` regenerates them). Values in the CSV files are the cached values stored in the workbooks.
+One workbook is the master copy: `catalogue/LEO_MLAT_Threat_Catalogue.xlsx` (release v1.8). It holds the extended threat catalogue and the evidence atlas it is built on (sheets below).
+Plain-text snapshots of its data sheets are in `catalogue/csv/` (catalogue sheets) and `atlas/csv/` (atlas sheets); `python scripts/export_csv.py` regenerates them.
+Values in the CSV files are the cached values stored in the workbook.
 
 ## `catalogue/LEO_MLAT_Threat_Catalogue.xlsx`
 
@@ -26,10 +27,11 @@ effect-transfer graphs (propagation) and propagation-aware DREAD (ranking). Blue
 | Multi-step Attacks | 20 multi-step attacks, incidents and analogues from the atlas, with steps, layers and the threats they support | `multistep_attacks.csv` |
 | Mitigations | the 25 defences M01 to M25 and how many threats cite each | `mitigations_25.csv` |
 | Dashboard, L1 to L4, Legends, Dashboard Data | summary, live per-layer views, definitions and the formulas that feed the dashboard | |
+| Atlas sheets (8) | the evidence atlas, described in the next section | `../atlas/csv/` |
 
-**Version.** Release v1.7 (3 November 2026), the final catalogue and the only version kept: the file is `LEO_MLAT_Threat_Catalogue.xlsx`, without a version number in its name, so that no earlier version can be mistaken for it.
+**Version.** Release v1.8 (5 November 2026), the final catalogue and the only version kept: the file is `LEO_MLAT_Threat_Catalogue.xlsx`, without a version number in its name, so that no earlier version can be mistaken for it.
 It holds the 55 threats (T1.01 to T4.15) with the scores and ratings of release v1.3 (30 October 2026); v1.4 to v1.7 add the layout, the dashboard, the sheets Threat Propagation, Asset-Threat Matrix,
-Asset Connections, Multi-step Attacks and Mitigations, and further checks. The panel analysis gives identical results on it. The co-author evaluation is **yet to be done**.
+Asset Connections, Multi-step Attacks and Mitigations, and further checks; v1.8 merges the evidence atlas into the same file (below) without changing any value. The panel analysis gives identical results on it. The co-author evaluation is **yet to be done**.
 The change log is in the workbook's sheet *README & Change Log*; earlier working versions were removed and survive only in the git history.
 
 **Validation status.** Every record was reviewed by a blind four-model LLM panel (`llm_panel/`); the evaluation by the co-authors is **yet to be done**. The
@@ -46,24 +48,26 @@ evidence is from an analogue system only), E from the adversary tier, D from the
 read from the attack graph, S = D+R+E+A+Di, and the bands are Low 5 to 9, Medium 10 to 14, High 15 to 19, Critical 20 to 25.
 Di (and S) are given for a strong and a weak geometric pass. `scripts/check_paper_counts.py` recomputes R, E, D, S and the band for every threat.
 
-## `atlas/PRISM-LEO_Threat_Exploit_Atlas.xlsx`
+## Atlas sheets of the same workbook (`atlas/csv/`)
 
 The evidence base behind the catalogue: 78 published sources coded by layer entered, layer affected, direction, boundaries crossed,
 timing dependency, evidence level (E0 analytical, E1 simulation or recorded data, E2 real hardware, E3 operational system), peer-review
-status and verified link (checked 13 October 2026), plus 57 CVEs and 25 mitigations.
+status and verified link (checked 13 October 2026), plus 57 CVEs and 25 mitigations. Until release v1.7 the atlas was a second workbook
+(`PRISM-LEO_Threat_Exploit_Atlas.xlsx`); v1.8 merged it in. The atlas sheets *CVE Register* and *Mitigations* were not copied again: the catalogue's
+sheets of the same name already hold every atlas column (same values) and the atlas formulas now read them.
 
 | Sheet | Content | CSV |
 |---|---|---|
-| Overview | live summary of the atlas (entries, peer-reviewed share, CVEs, mitigations, evidence levels), with checks | `overview_raw.csv` |
-| Threat Atlas | 78 sources, 40 columns, numbered #1 to #78 (the numbers are stable; new sources get new numbers) | `atlas_78_sources.csv` |
-| Asset Register | the 27 assets with L3 assets, CVE counts and propagation | `asset_register_27.csv` |
-| CVE Register | 57 CVE records, each confirmed as published | `cve_register_57.csv` |
-| Mitigations | 25 standards, regulations and guidance documents | `mitigations_25.csv` |
-| Gap Matrix | live counts of atlas entries by layer and attack category; zero cells are gaps no source covers | `gap_matrix_raw.csv` |
-| Paper Alignment | one row per study of the comparative review of the paper (Section 2) | `paper_alignment.csv` |
-| Classification Key | how each column was classified | `classification_key_raw.csv` |
-| Excluded Entries | bibliography entries not carried in the review table (for example grey literature without a stable link) and the reason | `excluded_entries_raw.csv` |
-| Summary | exploitation status of the original 43-paper review set | |
+| Atlas Overview | live summary of the atlas (entries, peer-reviewed share, CVEs, mitigations, evidence levels), with checks | `atlas/csv/overview_raw.csv` |
+| Threat Atlas | 78 sources, 40 columns, numbered #1 to #78 (the numbers are stable; new sources get new numbers) | `atlas/csv/atlas_78_sources.csv` |
+| Asset Evidence | the 27 assets with L3 assets, atlas sources and CVEs mapped to each, and propagation | `atlas/csv/asset_evidence_27.csv` |
+| CVE Register | 57 CVE records, each confirmed as published (catalogue sheet, listed above) | `catalogue/csv/cve_register_57.csv` |
+| Mitigations | 25 standards, regulations and guidance documents (catalogue sheet, listed above) | `catalogue/csv/mitigations_25.csv` |
+| Gap Matrix | live counts of atlas entries by layer and attack category; zero cells are gaps no source covers | `atlas/csv/gap_matrix_raw.csv` |
+| Paper Alignment | one row per study of the comparative review of the paper (Section 2) | `atlas/csv/paper_alignment.csv` |
+| Classification Key | how each column was classified | `atlas/csv/classification_key_raw.csv` |
+| Excluded Entries | bibliography entries not carried in the review table (for example grey literature without a stable link) and the reason | `atlas/csv/excluded_entries_raw.csv` |
+| Atlas Summary | exploitation status of the original 43-paper review set | |
 
 The atlas holds high-level summaries only: no parameters, procedures or tooling.
 
