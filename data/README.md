@@ -16,7 +16,7 @@ effect-transfer graphs (propagation) and propagation-aware DREAD (ranking). Blue
 | Binding | one row per (threat, atlas source): binding type, evidence level, peer-review status, verified link | `threat_x_atlas_source_binding.csv` |
 | Assets | the 27-asset register with live threat counts and the cross-layer reach of an attack on each asset | `asset_register_27.csv` |
 | SATERA | the earlier 17 entries, corrected and linked to the extended threats | `satera_17_entries.csv` |
-| Worked | the worked displacement application (Tables 4 and 5 of the paper) recomputed from the Catalogue | `worked_example.csv` |
+| Worked | the worked displacement application (Table 4 of the paper) recomputed from the Catalogue | `worked_example.csv` |
 | Checks | every statistic the paper states about the catalogue, recomputed (117 rows, all OK) | `paper_statistics_checks.csv` |
 | Review | mistakes found in the earlier SATERA workbook and the correction made | `review_of_earlier_workbook.csv` |
 | CVE Register | the 57 CVE records of the atlas, mapped to assets and threats | `cve_register_57.csv` |
@@ -60,7 +60,7 @@ status and verified link (checked 13 October 2026), plus 57 CVEs and 25 mitigati
 | CVE Register | 57 CVE records, each confirmed as published | `cve_register_57.csv` |
 | Mitigations | 25 standards, regulations and guidance documents | `mitigations_25.csv` |
 | Gap Matrix | live counts of atlas entries by layer and attack category; zero cells are gaps no source covers | `gap_matrix_raw.csv` |
-| Paper Alignment | one row per row of Tables 1 to 3 of the paper | `paper_alignment.csv` |
+| Paper Alignment | one row per study of the comparative review of the paper (Section 2) | `paper_alignment.csv` |
 | Classification Key | how each column was classified | `classification_key_raw.csv` |
 | Excluded Entries | bibliography entries not carried in the review table (for example grey literature without a stable link) and the reason | `excluded_entries_raw.csv` |
 | Summary | exploitation status of the original 43-paper review set | |
@@ -74,6 +74,6 @@ The atlas holds high-level summaries only: no parameters, procedures or tooling.
 
 ## Notes
 
-* The edge list of the asset dependency graph (41 edges of four kinds: 15 data, 5 timing, 7 control, 14 hosting) is not part of these
-  workbooks, so the radius, fan-in and rank-correlation statistics of Section 6 of the paper are not reproduced from this release.
+* The edge list of the asset dependency graph (41 edges of four kinds: 15 data, 5 timing, 7 control, 14 hosting) is not a file of this release;
+  the radius, fan-in and rank-correlation statistics of Section 6 are reproduced from the propagation lists of the Assets sheet by `scripts/asset_reach.py`. The Asset Connections sheet records 40 of the 41 edges and gives exactly those lists.
   `scripts/asset_reach.py` works from the reach lists stored in the *Assets* sheet.
