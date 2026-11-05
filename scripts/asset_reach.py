@@ -8,18 +8,20 @@ dependencies S1 and S2 carry a dagger). This script parses those lists and write
 number of other assets reached, number of layers reached, number reached only through S1/S2, boundaries to the
 first check and to the ATM, and the number of catalogue threats against the asset.
 
-It then tests one statement of the paper (Section 6.7, finding F2): the operator and supplier asset A4.7, the
+It then tests one statement of the paper (Section 5.5, finding F2): the operator and supplier asset A4.7, the
 mission-operations asset A4.8 and the control assets reach 16 to 23 of the other 26 assets and have 2 to 4 threats
 each. 'The control assets' is read here as A4.1, A4.3 and A4.4 (the L4 assets on the control path); the paper does not
 list them by identifier.
 
-NOT reproduced here: the Spearman correlation and the radius of the dependency graph quoted in the paper. They
-need the edge list of the graph (41 edges), which is a separate input (see data/README.md, 'Notes').
+It also reproduces, from the same lists, the fan-in of the processing assets (A3.3 21, A3.4 22, A3.5 22, A3.6 24) and the
+Spearman rank correlation between radius and threat count (0.22, p = 0.26, 27 assets). The 40 edges recoverable from the
+'Asset Connections' sheet give exactly these lists; the paper counts 41 edges (see docs/LIMITATIONS.md).
 
 Usage (from the repository root):   python scripts/asset_reach.py        Requires pandas, openpyxl.
 """
 import os, re, sys
 import pandas as pd
+from scipy.stats import spearmanr
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 CAT = os.path.join(ROOT, "data/catalogue/LEO_MLAT_Threat_Catalogue.xlsx")
@@ -46,6 +48,12 @@ def main():
     ok = sel.assets_reached.between(16, 23).all() and sel.threats.between(2, 4).all() and len(res) == 27
     print("\nF2 (A4.1, A4.3, A4.4, A4.7, A4.8 reach 16 to 23 of the other 26 assets with 2 to 4 threats each):",
           "PASS" if ok else "FAIL")
+    sets = {r["ID"]: set(re.findall(r"A\d\.\d+", str(r[col]))) - {r["ID"]} for _, r in df.iterrows()}
+    fan = {a: sum(a in v for v in sets.values()) for a in sets}
+    rho, p = spearmanr(res.assets_reached, res.threats)
+    print("fan-in A3.3/A3.4/A3.5/A3.6:", fan["A3.3"], fan["A3.4"], fan["A3.5"], fan["A3.6"])
+    print(f"Spearman radius vs threat count: {rho:.2f} (p = {p:.2f})")
+    ok = ok and [fan[a] for a in ("A3.3", "A3.4", "A3.5", "A3.6")] == [21, 22, 22, 24] and round(rho, 2) == 0.22
     return 0 if ok else 1
 
 if __name__ == "__main__":
