@@ -1,6 +1,6 @@
 # Results of the language-model panel
 
-Narrative summary of paper Section 4.11. Every number is generated from `llm_panel/results/`; full tables are in [RESULTS_TABLES.md](RESULTS_TABLES.md).
+Narrative summary of paper Section 4.10. Every number is generated from `llm_panel/results/`; full tables are in [RESULTS_TABLES.md](RESULTS_TABLES.md).
 
 ## 1. Design
 

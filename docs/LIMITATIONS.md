@@ -12,8 +12,7 @@ Read this before relying on the data.
 
 ## About what is released
 
-* **Dependency-graph edge list not included.** The 41 edges (15 data, 5 timing, 7 control, 14 hosting) are described in the paper but are not a file in this release, so the radius, fan-in and Spearman statistics of Section 6 cannot be reproduced here.
-  `scripts/asset_reach.py` reproduces what can be read from the reach lists of the *Assets* sheet.
+* **Dependency graph: 40 of 41 edges recorded.** The paper counts 41 edges (15 data, 5 timing, 7 control, 14 hosting). The *Asset Connections* sheet records 40 (6 control edges); the missing one is a control edge, probably the inferred link from the synchronisation policy to the PTP exchange (S2), and is still to be recovered. The 40 edges reproduce the propagation lists of all 27 assets exactly, so no reach value, radius or fan-in changes. `scripts/asset_reach.py` reproduces the radius, the fan-in of the processing assets and the Spearman correlation between radius and threat count (0.22, p = 0.26) of Section 5 from those lists.
 * **Atlas text columns** are the authors' summaries of third-party work; follow the verified links to the sources. Links were verified on 13 October 2026.
 
 ## About the language-model panel

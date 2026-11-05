@@ -30,7 +30,7 @@
 | S strong, S weak | S = D + R + E + A + Di, 5 to 25 |
 | Band strong, Band weak | Low (5 to 9), Medium (10 to 14), High (15 to 19), Critical (20 to 25) |
 | First detection predicate / reason for Di; Affected-users basis | the reasons behind the two analyst inputs |
-| Displacement route | for displacement threats, one of eight routes to the solver (Table 8 of the paper) |
+| Displacement route | for displacement threats, one of eight routes to the solver (tabulated in the supplementary material of the paper) |
 | SATERA entries refined | the SC-1 to SC-17 entries of the earlier SATERA catalogue that this threat refines |
 | SPARTA technique (confidence), ATT&CK technique (confidence), Mapping confidence | technique mappings; `high` (direct match), `medium` (needs a stated inference), `unmapped` |
 | Review status | `Baseline: reproduces Table 4 of the paper` or `Panel-reviewed: co-author evaluation yet to be done` |
