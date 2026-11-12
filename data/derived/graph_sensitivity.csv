@@ -1,0 +1,8 @@
+edge_set,edges,reach_A4.7,reach_A4.8,reach_A4.1,reach_A4.4,root,no_path,mean_rho_root,ge2_before_first_check,no_first_check,spearman_rho_s
+Data and timing only,20,0,0,15,0,18,16,2.05,16,22,-0.08
+"Data, timing and control",26,0,0,17,6,20,14,2.05,16,20,-0.04
+All four types (register),40,23,21,17,16,26,0,2.36,24,6,0.22
+All except the inferred S1 and S2,37,16,13,2,6,22,9,1.93,15,15,-0.02
+"Data, timing, control, no inferred",25,0,0,2,6,19,15,1.95,15,21,-0.01
+Data and hosting only,29,14,4,0,0,17,18,1.86,14,24,0.14
+Register with A4.7 split into operators and suppliers,42,23/18,21,17,16,27,0,2.36,24,6,0.11
