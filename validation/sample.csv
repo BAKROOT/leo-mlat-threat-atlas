@@ -1,0 +1,21 @@
+ID,Layer,STRIDE-tau primary,Adversary class,Evidence,Role
+T1.01,L1,S,AC2,E2,Leaf
+T1.03,L1,S,AC1,E3,Leaf
+T1.04,L1,D,AC2,E2,Leaf
+T1.08,L1,D,AC2,E1,Leaf
+T1.11,L1,tau,AC4,E2,Leaf
+T1.15,L1,D,AC6,E3,Leaf
+T2.01,L2,T,AC5,E1,Leaf
+T2.02,L2,S,AC5,E2,Leaf
+T2.10,L2,I,AC5,E3,Leaf
+T2.12,L2,E,AC6,E2,Leaf
+T3.01,L3,T,AC6,P,Leaf
+T3.02,L3,T,AC6,P,Leaf
+T3.03,L3,T,AC6,P,Leaf
+T3.08,L3,T,AC3,E2,Leaf
+T3.11,L3,R,AC6,E2,Enabler
+T4.01,L4,T,AC7,P,Leaf
+T4.05,L4,E,AC7,E0,Leaf
+T4.06,L4,T,AC6,E3,Leaf
+T4.08,L4,T,AC6,P,Leaf
+T4.13,L4,T,AC7,E0,Leaf
