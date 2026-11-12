@@ -20,6 +20,7 @@ catalogue, the evidence base and the independent review of the catalogue by four
 | Threat catalogue | 55 threats (T1.01 to T4.15; 16, 12, 12 and 15 per layer), each bound to an asset, an adversary class, graded evidence and a PA-DREAD score. It refines the earlier 17-entry SATERA catalogue (see [below](#how-the-catalogue-relates-to-the-17-entry-satera-catalogue)) |
 | Evidence atlas | 78 published sources, 57 CVE records, 25 mitigations; 53 of the 78 sources cross a layer |
 | Validation | Stage 1: a blind panel of 4 language models from 4 vendors rates all 55 threats (220 ratings, all valid JSON, no repairs) and lists threats unprompted. Stage 2: evaluation by the co-authors (**yet to be done**). Scores and algorithms verified by 388 recomputed checks |
+| Added in 2.0.0 | Edge register with provenance and sensitivity (`graph/`, `data/derived/`), geometry simulations of per-satellite gain, actual errors and dropped reports (`geometry/`), preconditions per threat (`data/derived/preconditions.csv`), decision rules (`docs/DECISION_RULES.md`), validation protocol and scripts (`validation/`) |
 | Checks that run here | 388 recomputed statistics and scores (`make check`), full re-run of the panel analysis (`make panel`), regeneration of the 4 panel figures (`make figures`) |
 
 ![Agreement of the panel](docs/images/Fig_panel_agreement.png)
@@ -109,9 +110,11 @@ Without `make`, run the commands listed in the [Makefile](Makefile) directly.
 
 Stated plainly so that nobody has to guess; details in [docs/LIMITATIONS.md](docs/LIMITATIONS.md).
 
-* The edge list of the 41-edge asset dependency graph is not a separate file. The *Asset Connections* sheet records 40 of the 41 edges and
-  reproduces the reach lists of all 27 assets exactly; `scripts/asset_reach.py` reproduces the radius, fan-in and rank-correlation statistics of
-  Section 5 from those lists.
+* The dependency graph has 40 edges, with provenance (`data/derived/edge_provenance.csv`); earlier manuscript versions counted 41 and the 41st
+  could not be recovered (adding any single candidate edge changes no reported value). Three edges are inferred and two are author readings; see
+  `data/derived/graph_sensitivity.csv`.
+* The independent human expert validation has a protocol and materials (`validation/`) but **has not been run**.
+* The repository has no DOI yet: one is to be minted for the release that accompanies the submission, and the paper will cite it.
 * The completeness mapping of the language-model listings is single-coded and has not been checked by a second coder.
 * The panel's raters are language models and the evaluation by the co-authors is **yet to be done**, and an independent study with
   external human raters has not been run.

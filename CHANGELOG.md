@@ -1,5 +1,19 @@
 # Changelog
 
+## 2.0.0 (12 November 2026), aligned with manuscript version 2.0 (pre-submission revision)
+
+Workbook version 2.0 (`LEO_MLAT_Threat_Catalogue_v2_0`) corresponds to this release and to the manuscript with the supplementary section *Clarifications, Sensitivity Analyses and Reproducibility Details*.
+
+* **Dependency graph resolved at 40 edges.** `graph/graph.py` writes `graph_edges.csv` (= `data/derived/edge_provenance.csv`: 40 edges, source, kind, status stated / inferred / author reading, boundaries crossed) and `graph_results.json`. The manuscript now counts 40 (15 data, 5 timing, 6 control, 14 hosting); the 41st edge of earlier drafts could not be recovered and no candidate edge changes any reported value. `data/derived/graph_sensitivity.csv` gives the results with data and timing only; plus control; all four types; without the inferred S1 and S2; and with A4.7 split into operators and suppliers.
+* **Geometry.** `geometry/` holds the scripts, parameters and results of the per-satellite gain (e_h = g_i * eps, g_i <= HDOP), the actual horizontal error of the covert step, the stealth window with a residual test, the transfer channel C (threshold relaxation k = 1, 2, 4) and dropped reports. h* = 350/30 = 11.7 is a necessary-condition screening threshold. Results reproduce exactly.
+* **Preconditions and evidence.** `data/derived/preconditions.csv`: class, class entry point, tier, assets, trust boundary, evidence status (direct 8, analogue only 31, postulated 16), enabler for a strong pass. Workbook sheets *Preconditions* and *Direct vs Enabled*; CVE Register columns AA to AC give the mapping type (source-disclosed 51, related surface 4, architectural analogy 2) and confidence.
+* **Validation protocol.** `validation/`: stratified 20-threat sample (seed 20261112), rating form, Krippendorff's alpha with bootstrap intervals (checked against the `krippendorff` package). The human study has **not** been run.
+* `docs/DECISION_RULES.md`: PA-DREAD scope, STRIDE-tau rules, authentication-invariance test, PASTA traceability and graph semantics.
+* `scripts/score_sensitivity.py` (one-point sensitivity of the PA-DREAD totals) takes the catalogue path as an argument.
+* Workbook: Paper Alignment *Ref.* column follows the numbering of the current manuscript; the published chains of Multi-step Attacks are labelled MS1 to MS20 so that they do not clash with the manuscript chains C1 to C6; README "Not claimed" states the 40-edge register.
+* Docs: `docs/LIMITATIONS.md`, `README.md` and `data/README.md` describe the 40-edge register. No score, rating or count of the catalogue changed.
+* Not done: the DOI (to be minted for the submission release), the human expert study, and re-export of `data/catalogue/LEO_MLAT_Threat_Catalogue.xlsx` from the v2.0 Google Sheet (the workbook in this folder is still v1.8 and lacks the new sheets; the new tables are in `data/derived/`).
+
 ## 1.1.0 (5 November 2026)
 
 * Consistency pass over the atlas sheets: the BibTeX key of atlas source #20 (Senn et al., WiSec 2025) is now `Senn2025MLATSpoofing`, the key the paper cites (it was `Senn2025UniversalMLAT` and marked "not yet in .bib");
