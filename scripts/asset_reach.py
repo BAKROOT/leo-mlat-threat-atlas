@@ -15,7 +15,7 @@ list them by identifier.
 
 It also reproduces, from the same lists, the fan-in of the processing assets (A3.3 21, A3.4 22, A3.5 22, A3.6 24) and the
 Spearman rank correlation between radius and threat count (0.22, p = 0.26, 27 assets). The 40 edges recoverable from the
-'Asset Connections' sheet give exactly these lists; the paper counts 41 edges (see docs/LIMITATIONS.md).
+'Asset Connections' sheet give exactly these lists; the manuscript counts 40 edges; provenance and sensitivity are in graph/ and data/derived (see docs/LIMITATIONS.md).
 
 Usage (from the repository root):   python scripts/asset_reach.py        Requires pandas, openpyxl.
 """
