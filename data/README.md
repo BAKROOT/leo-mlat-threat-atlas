@@ -78,6 +78,6 @@ The atlas holds high-level summaries only: no parameters, procedures or tooling.
 
 ## Notes
 
-* The edge list of the asset dependency graph (41 edges of four kinds: 15 data, 5 timing, 7 control, 14 hosting) is not a file of this release;
-  the radius, fan-in and rank-correlation statistics of Section 6 are reproduced from the propagation lists of the Assets sheet by `scripts/asset_reach.py`. The Asset Connections sheet records 40 of the 41 edges and gives exactly those lists.
-  `scripts/asset_reach.py` works from the reach lists stored in the *Assets* sheet.
+* The edge register of the asset dependency graph (40 edges of four kinds: 15 data, 5 timing, 6 control, 14 hosting) is `derived/edge_provenance.csv`
+  (source, kind, provenance status: stated, inferred or author reading, boundaries crossed); `derived/graph_sensitivity.csv` gives the results under subsets of the edges;
+  `derived/preconditions.csv` gives class, tier, evidence status and enabler per threat. Regenerate with `python graph/graph.py`.
