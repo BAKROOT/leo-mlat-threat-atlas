@@ -9,11 +9,12 @@ Illustrative analysis of the effect of a covert range bias on the horizontal err
 | `gain.py` | gain g_i (horizontal norm of column i of K = (G'G)^-1 G'), leverage, RAIM-style residual test, actual error of a 30 m step, shares above h* = 350/30 | `gain_results.json` |
 | `gain2.py` | Monte-Carlo check of the linear model (40 geometries, 4,000 draws each; seed 7); reports dropped to m = 3, 4, 6 | `gain2_results.json` |
 | `gain3.py` | share of samples with an open stealth window for k = 1, 2, 4 and sigma = 10, 30, 100 m | `gain3_results.json` |
+| `raim.py` | RAIM-style residual (chi-square) monitor with P_FA = P_MD = 1e-3: minimum detectable bias, slope and protection level per satellite; stealth window Omega = Omega_L1 ∩ Omega_L3 (eps_L1 = 30 m, the covert 100 ns step) for variants A-D and after T2.04 keeps m = 6, 4, 3 reports; threshold factors k = 1, 2, 4 | `raim_results.json` |
 
-Parameters are named constants at the top of each script: variants (planes x satellites per plane, phasing, elevation limit), aircraft altitude, latitude/longitude/epoch grid, `EREQ` = 350 m, `STEP` = 30 m, `SIG`, `PFA` = 1e-3, random seeds 1 (hdop3) and 7 (gain2). `gain.py` runs its analysis on import (it has no `__main__` guard). Requirements: numpy, scipy.
+Parameters are named constants at the top of each script: variants (planes x satellites per plane, phasing, elevation limit), aircraft altitude, latitude/longitude/epoch grid, `EREQ` = 350 m, `STEP` = 30 m, `SIG`, `PFA` = 1e-3, `P_MD` = 1e-3 (raim.py), `EPS_L1` = 30 m (raim.py), random seeds 1 (hdop3) and 7 (gain2). `gain.py` runs its analysis on import (it has no `__main__` guard). Requirements: numpy, scipy.
 
 ```
-cd geometry && python hdop3.py && python gain.py && python gain2.py && python gain3.py   # about 2 min
+cd geometry && python hdop3.py && python gain.py && python gain2.py && python gain3.py && python raim.py   # about 6 min
 ```
 
 Assumptions that are not results: the residual test is the textbook chi-square test with n-3 degrees of freedom, not the monitor of SATERA (its threshold is not published); sigma is varied; the requirement of 350 m is used as the bound on the error of a single solution, and the statistic (RMS, percentile or maximum) of the standard is to be confirmed before any share is quoted outside the paper.
