@@ -1,0 +1,45 @@
+{
+ "assumptions": {
+  "aircraft": 40,
+  "sigma_m": 30.0,
+  "step_at_s": 60,
+  "duration_s": 600,
+  "region": "3000 km box at 35N"
+ },
+ "eps31_q0.01": {
+  "eps_m": 31.0,
+  "q_m2_per_s": 0.01,
+  "w5_max_displacement_m": 25.18928685798848,
+  "w5_mean_displacement_m": 14.366801750377768,
+  "joint_peak_displacement_m": 18.124444608623786,
+  "joint_displacement_after_60s_m": 9.82950463872913,
+  "joint_time_to_10pct_s": null
+ },
+ "eps31_q1.0": {
+  "eps_m": 31.0,
+  "q_m2_per_s": 1.0,
+  "w5_max_displacement_m": 25.18928685798848,
+  "w5_mean_displacement_m": 14.366801750377768,
+  "joint_peak_displacement_m": 16.141142172628353,
+  "joint_displacement_after_60s_m": 2.189259981567445,
+  "joint_time_to_10pct_s": 91
+ },
+ "eps300_q0.01": {
+  "eps_m": 300.0,
+  "q_m2_per_s": 0.01,
+  "w5_max_displacement_m": 243.7672921740821,
+  "w5_mean_displacement_m": 139.03356532623647,
+  "joint_peak_displacement_m": 175.39785105119776,
+  "joint_displacement_after_60s_m": 95.12423843931435,
+  "joint_time_to_10pct_s": null
+ },
+ "eps300_q1.0": {
+  "eps_m": 300.0,
+  "q_m2_per_s": 1.0,
+  "w5_max_displacement_m": 243.7672921740821,
+  "w5_mean_displacement_m": 139.03356532623647,
+  "joint_peak_displacement_m": 156.2046016705971,
+  "joint_displacement_after_60s_m": 21.186386918394547,
+  "joint_time_to_10pct_s": 91
+ }
+}

@@ -1,0 +1,34 @@
+{
+ "A nominal": {
+  "geometries": 80,
+  "linearity_err_max_rel": 0.00244825645914859,
+  "residual_norm_max_rel": 0.0008785631929892901,
+  "false_alarm_rate": 0.001375,
+  "missed_at_mdb_rate": 0.0009166666666666666,
+  "n_cases_inside": 12,
+  "n_cases_outside": 160,
+  "inside_emp_mean": 0.039166666666666676,
+  "inside_pred_mean": 0.043027107716593765,
+  "inside_absdiff_mean": 0.005484005377028946,
+  "inside_absdiff_max": 0.02222314450440574,
+  "outside_emp_mean": 0.0,
+  "outside_pred_mean": 1.2077645954314419e-11,
+  "outside_absdiff_max": 1.6862160376263502e-10
+ },
+ "A, T2.04 keeps 4": {
+  "geometries": 80,
+  "linearity_err_max_rel": 0.8650240449398642,
+  "residual_norm_max_rel": 2.0877545340796693,
+  "false_alarm_rate": 0.0012083333333333334,
+  "missed_at_mdb_rate": 0.0016666666666666668,
+  "n_cases_inside": 189,
+  "n_cases_outside": 160,
+  "inside_emp_mean": 0.3478042328042329,
+  "inside_pred_mean": 0.3542004871052572,
+  "inside_absdiff_mean": 0.023347428422055953,
+  "inside_absdiff_max": 0.40882035887861456,
+  "outside_emp_mean": 0.10628125,
+  "outside_pred_mean": 0.10665720025656915,
+  "outside_absdiff_max": 0.06888220735871581
+ }
+}

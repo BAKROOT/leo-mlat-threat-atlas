@@ -1,0 +1,45 @@
+{
+ "assumptions": {
+  "sigma_gnss_m": 9.0,
+  "sigma_ptp_m": 6.0,
+  "q": [
+   0.01,
+   1e-08
+  ],
+  "W_s": 60,
+  "y_max_m_per_s": 0.03,
+  "attack_window_s": 1200,
+  "runs": 20,
+  "gate": 4.89
+ },
+ "false_alarm_share_of_runs": 0.0,
+ "gnss": {
+  "largest_undetected_clock_error_m": 0.0,
+  "ns": 0.0,
+  "rate_plateau": null
+ },
+ "ptp": {
+  "largest_undetected_clock_error_m": 0.0,
+  "ns": 0.0,
+  "rate_plateau": null
+ },
+ "joint": {
+  "largest_undetected_clock_error_m": 31.070126524644916,
+  "ns": 103.63617920161747,
+  "rate_plateau": [
+   0.03,
+   100
+  ]
+ },
+ "joint_vs_ymax": {
+  "0.01": 0.0,
+  "0.03": 31.070126524644916,
+  "0.1": 103.56708841548306,
+  "0.3": 103.56708841548306
+ },
+ "gnss_vs_W": {
+  "10": 0.9560038930659942,
+  "60": 0.0,
+  "300": 0.0
+ }
+}

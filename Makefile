@@ -1,7 +1,7 @@
 # One-command checks. Run from the repository root.
 PY ?= python
 
-.PHONY: check panel sensitivity figures export tables test all clean
+.PHONY: check panel sensitivity figures export tables test simulate all clean
 
 check:            ## recompute the paper's counts and every PA-DREAD score from the workbooks
 	$(PY) scripts/check_paper_counts.py
@@ -35,6 +35,11 @@ export:           ## refresh the CSV snapshots of the workbooks
 
 tables:           ## regenerate docs/RESULTS_TABLES.md
 	$(PY) scripts/make_results_tables.py
+
+simulate:         ## geometry, integrity model and end-to-end simulation (about 20 min)
+	cd geometry && $(PY) hdop3.py > /dev/null && $(PY) gain.py > /dev/null && $(PY) gain2.py > /dev/null && $(PY) gain3.py > /dev/null && $(PY) raim.py > /dev/null
+	cd simulation && $(PY) exp_window.py > /dev/null && $(PY) exp_l1.py > /dev/null && $(PY) exp_chain.py > /dev/null && $(PY) exp_w5.py > /dev/null
+	@echo "results written to geometry/*.json and simulation/*.json"
 
 test:             ## everything under pytest
 	$(PY) -m pytest -q

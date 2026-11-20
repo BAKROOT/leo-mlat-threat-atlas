@@ -21,6 +21,7 @@ catalogue, the evidence base and the independent review of the catalogue by four
 | Evidence atlas | 78 published sources, 57 CVE records, 25 mitigations; 53 of the 78 sources cross a layer |
 | Validation | Stage 1: a blind panel of 4 language models from 4 vendors rates all 55 threats (220 ratings, all valid JSON, no repairs) and lists threats unprompted. Stage 2: evaluation by the co-authors (**yet to be done**). Scores and algorithms verified by 388 recomputed checks |
 | Added in 2.0.0 | Edge register with provenance and sensitivity (`graph/`, `data/derived/`), geometry simulations of per-satellite gain, actual errors and dropped reports (`geometry/`), preconditions per threat (`data/derived/preconditions.csv`), decision rules (`docs/DECISION_RULES.md`), validation protocol and scripts (`validation/`) |
+| Added after 2.0.0 | RAIM-style integrity model of the stealth window (`geometry/raim.py`); end-to-end simulation of the chains and of two defences (`simulation/`, `make simulate`); `Dockerfile` for one-command reproduction; workbook file renamed to `LEO_MLAT_Threat_Catalogue_v2_0.xlsx` as named in the paper |
 | Checks that run here | 388 recomputed statistics and scores (`make check`), full re-run of the panel analysis (`make panel`), regeneration of the 4 panel figures (`make figures`) |
 
 ![Agreement of the panel](docs/images/Fig_panel_agreement.png)
