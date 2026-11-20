@@ -5,7 +5,7 @@ Reach: radius = number of other assets reachable; fan-in = number from which rea
 rho_det / rho_root = least number of layer boundaries crossed (each edge counts |layer difference|)
 on any path to the nearer of A3.4/A3.5, and to A4.6."""
 import openpyxl,re,collections,heapq,json,csv,sys,itertools
-XLSX=sys.argv[1] if len(sys.argv)>1 else 'data/catalogue/LEO_MLAT_Threat_Catalogue.xlsx'
+XLSX=sys.argv[1] if len(sys.argv)>1 else 'data/catalogue/LEO_MLAT_Threat_Catalogue_v2_0.xlsx'
 wb=openpyxl.load_workbook(XLSX,data_only=True)
 ws=wb['Asset Connections']
 E=[];names={};layer={}

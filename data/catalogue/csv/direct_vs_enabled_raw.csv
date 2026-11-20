@@ -1,0 +1,15 @@
+"Direct vs Enabled consequences, and evidence crosstab (v2.0)",,,,,,
+"Four of the 55 threats are enablers and are not scored as leaves. Each has a direct consequence on its own asset; the enabled consequence is credited to the chain it widens, not to the enabler (manuscript Table 5 and supplementary 'Enablers: direct and enabled consequences'). Counts in the crosstab are formulas over the Preconditions sheet, which reads the Catalogue.",,,,,,
+Enabler,Name,Asset(s),Direct consequence (on its own asset),Enabled consequence (credited to the chain),Chains widened,Catalogue row
+T2.04,Geometry-targeted dropping of reports,A2.2,"Selected reports are removed: loss of observables, rise in HDOP",Displacement: a larger gain magnifies any bias,C1 and C2 (as an alternative to a weak pass or to T3.06),24
+T3.06,Relaxation of integrity thresholds,"A3.4, A3.5",Thresholds of A3.4/A3.5 change: what the checks flag changes,Every displacement route at once: widens the stealth window,"C1, C3 and C4 (strong pass); also C5 as the threshold-change chain",38
+T3.11,Unattributable records,A3.3,Audit records are altered or unattributable,Repudiation of any other tampering,none of C1-C6 directly; supports repudiation of the other tampering,43
+T4.11,Disclosure of ephemerides and coverage,A4.5,Orbit and coverage information is disclosed,Targeting of geometry-targeted dropping (T2.04),"indirectly C1 and C2, through T2.04",55
+Evidence crosstab (55 threats),"Direct, same system class",Analogue only,Postulated,Total,,
+"E3 (demonstrated, operational)",1,9,0,10,,
+"E2 (demonstrated, real hardware)",7,14,0,21,,
+E1 (simulated),0,6,0,6,,
+E0 (analytical),0,2,0,2,,
+Postulated (no source),0,0,16,16,,
+Total,8,31,16,55,,
+"Manuscript statement to compare (supplement): 8 direct (7 at E2, 1 at E3); 31 analogue only (23 at E2 or E3, 6 at E1, 2 at E0); 16 postulated.",,,,,,

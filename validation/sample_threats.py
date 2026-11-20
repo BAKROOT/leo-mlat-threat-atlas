@@ -4,7 +4,7 @@ Constraints (fixed in advance): >= 4 threats per layer; every STRIDE-tau primary
 by chance. Rejection sampling with a fixed seed; the first accepted draw is written to validation/sample.csv.
 Usage: python validation/sample_threats.py [catalogue.xlsx] [seed]"""
 import sys, csv, random, openpyxl
-XLSX = sys.argv[1] if len(sys.argv) > 1 else 'data/catalogue/LEO_MLAT_Threat_Catalogue.xlsx'
+XLSX = sys.argv[1] if len(sys.argv) > 1 else 'data/catalogue/LEO_MLAT_Threat_Catalogue_v2_0.xlsx'
 SEED = int(sys.argv[2]) if len(sys.argv) > 2 else 20261112
 N = 20
 wb = openpyxl.load_workbook(XLSX, data_only=True)

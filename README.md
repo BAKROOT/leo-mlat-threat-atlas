@@ -58,7 +58,7 @@ The 17-entry catalogue is background only; all results of this repository concer
 ├── CONTRIBUTING.md, CHANGELOG.md how to help; what changed
 ├── .github/workflows/ci.yml      runs the checks and tests on every push
 ├── data/
-│   ├── catalogue/                the workbook v1.8 (xlsx, master): extended threat catalogue and evidence atlas + csv/ snapshot
+│   ├── catalogue/                the workbook v2.0 (LEO_MLAT_Threat_Catalogue_v2_0.xlsx, master): extended threat catalogue and evidence atlas + csv/ snapshot
 │   ├── atlas/csv/                csv snapshot of the atlas sheets of that workbook
 │   ├── derived/                  values computed from the workbook (asset reach)
 │   └── README.md                 sheets, versions, validation status, notes

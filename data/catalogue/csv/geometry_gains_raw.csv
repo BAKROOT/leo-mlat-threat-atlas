@@ -1,0 +1,25 @@
+"Geometry Gains — per-satellite gain, actual errors, stealth window and dropped reports (manuscript supplementary material, v2.0)",,,,,,,,,,
+"Assumed Walker-Star variants, 200 satellites, 500 km, inclination 86 deg, aircraft at 10 km; 12,960 samples per variant (19 latitudes x 8 longitudes x 90 epochs). e_h = g_i*eps; HDOP^2 = sum g_i^2; h* = 350/30 = 11.7 is a necessary-condition screening threshold. Residual test: T = sigma*sqrt(chi2_(n-3)(1-P_FA)), P_FA = 1e-3; sigma 10/30/100 m is illustrative (the monitor of the reference design is not published). The 350 m statistic (RMS, percentile, maximum) is to be confirmed against the standard. Scripts: geometry/hdop*.py, gain*.py; seeds 1 and 7.",,,,,,,,,,
+A. Gain and actual error,,,,,,,,,,
+Variant,>=3 in view,n median,HDOP median,HDOP p99,g_max median,Ratio g_max/HDOP,HDOP > h* (share),g_max > h* (share),Error median (m),Error p99 (m)
+"A 10x20, 0 deg",1,7,0.84,1.2,0.4,0.48,0,0,12,23
+"B 10x20, 5 deg",0.94,5,1.05,7.7,0.57,0.55,0.003,0.003,17,187
+"C 20x10, 0 deg",1,7,1.38,16.6,0.85,0.55,0.017,0.009,26,327
+"D 8x25, 0 deg",1,7,0.8,46.9,0.39,0.47,0.117,0.113,12,1030
+"B. Share of samples with an open stealth window (k = factor by which the threshold is raised; k=2, 4 model the enabler T3.06)",,,,,,,,,,
+Variant,sigma (m),k=1,k=2,k=4,,,,,,
+"A 10x20, 0 deg",10,0.01,0.01,0.02,,,,,,
+"A 10x20, 0 deg",30,0.01,0.09,0.42,,,,,,
+"A 10x20, 0 deg",100,0.29,0.72,0.98,,,,,,
+"B 10x20, 5 deg",10,0.29,0.31,0.33,,,,,,
+"B 10x20, 5 deg",30,0.32,0.4,0.69,,,,,,
+"B 10x20, 5 deg",100,0.64,0.86,1,,,,,,
+"D 8x25, 0 deg",10,0.18,0.25,0.25,,,,,,
+"D 8x25, 0 deg",30,0.25,0.29,0.43,,,,,,
+"D 8x25, 0 deg",100,0.4,0.72,0.99,,,,,,
+"C. Reports dropped (T2.04): 10x20, 0 deg; worst of 400 random subsets per sample; 1,200 samples",,,,,,,,,,
+m reports kept,HDOP median (worst subset),HDOP p95,Share sigma*HDOP > 350 m (sigma 10),(sigma 30),(sigma 100),Share with 30 m step breaching 350 m,,,,
+3,24.1,6305,0.46,0.56,0.73,0.55,,,,
+4,3.2,142,0.23,0.38,0.49,0.35,,,,
+6,2.2,18,0.01,0.14,0.42,0.06,,,,
+Notes,Gain of the best-placed satellite is about half the HDOP in the median sample (ratio 0.47-0.55); in the tail the two coincide. A 30 m step breaches 350 m only where g_max >= 11.7 and in all of those samples it stays below the residual-test detection level. Monte-Carlo check of the linear model: simulated rms error agrees with sigma*HDOP within 2.3 %.,,,,,,,,,

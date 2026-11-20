@@ -8,7 +8,7 @@ import pytest
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PANEL = os.path.join(ROOT, "llm_panel")
-CAT = os.path.join(ROOT, "data/catalogue/LEO_MLAT_Threat_Catalogue.xlsx")
+CAT = os.path.join(ROOT, "data/catalogue/LEO_MLAT_Threat_Catalogue_v2_0.xlsx")
 
 def run(args, cwd=ROOT):
     return subprocess.run([sys.executable] + args, cwd=cwd, capture_output=True, text=True)

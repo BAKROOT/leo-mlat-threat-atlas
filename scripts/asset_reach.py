@@ -24,7 +24,7 @@ import pandas as pd
 from scipy.stats import spearmanr
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-CAT = os.path.join(ROOT, "data/catalogue/LEO_MLAT_Threat_Catalogue.xlsx")
+CAT = os.path.join(ROOT, "data/catalogue/LEO_MLAT_Threat_Catalogue_v2_0.xlsx")
 
 def main():
     df = pd.read_excel(CAT, sheet_name="Assets", header=3)

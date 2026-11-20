@@ -2,7 +2,7 @@
 Usage: python scripts/score_sensitivity.py [catalogue.xlsx]   -> sens_results.json"""
 import openpyxl, numpy as np, json, sys
 from scipy.stats import spearmanr
-wb=openpyxl.load_workbook(sys.argv[1] if len(sys.argv)>1 else 'data/catalogue/LEO_MLAT_Threat_Catalogue.xlsx',data_only=True)
+wb=openpyxl.load_workbook(sys.argv[1] if len(sys.argv)>1 else 'data/catalogue/LEO_MLAT_Threat_Catalogue_v2_0.xlsx',data_only=True)
 ws=wb['Catalogue']; rows=list(ws.iter_rows(min_row=4,values_only=True)); hdr=rows[0]
 ix={h:i for i,h in enumerate(hdr) if h}
 need=['ID','D','R','E','A','Di strong','Di weak','S strong','S weak','Band strong','Band weak','Role']

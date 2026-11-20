@@ -4,6 +4,7 @@
 
 * **Integrity model of the stealth window.** `geometry/raim.py` assumes the textbook least-squares residual (chi-square) test of RAIM (Brown 1992), with P_FA = P_MD = 1e-3 and range error sigma = 10, 30, 100 m, and computes per satellite the minimum detectable bias, the slope and the protection level. The stealth window is the intersection of the L1 window (bias that passes the clock checks; eps_L1 = 30 m, the covert 100 ns step of assumption W1) and the L3 window [e_req/g_i, MDB_i). Results (`raim_results.json`) for variants A-D and for T2.04 leaving 6, 4 or 3 reports: in the nominal 10x20 variant the clock route never opens (g_max <= 0.79, so the 30 m step gives at most 24 m), whereas after T2.04 it opens in at least 4, 32 and 54 % of the samples. The model is an assumption: the SATERA monitor is not published.
 * `geometry/README.md` lists `raim.py`.
+* **Workbook v2.0 in the repository.** `data/catalogue/LEO_MLAT_Threat_Catalogue_v2_0.xlsx` (the file the paper names) replaces the v1.8 copy `LEO_MLAT_Threat_Catalogue.xlsx`; every script, test and README now points to it. The CSV snapshots are re-exported: no value of the catalogue changed (`catalogue_55_threats.csv` is identical); `asset_evidence_27.csv` is removed because the sheet was merged into Assets (columns Q to S); `geometry_gains_raw.csv` and `direct_vs_enabled_raw.csv` are added. `make check` (388 of 388), `make panel` (identical) and `pytest` (9 passed) pass on the new file.
 
 ## 2.0.0 (12 November 2026), aligned with manuscript version 2.0 (pre-submission revision)
 

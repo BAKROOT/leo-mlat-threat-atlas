@@ -11,7 +11,7 @@ import csv, os, sys
 import openpyxl
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-WORKBOOK = "data/catalogue/LEO_MLAT_Threat_Catalogue.xlsx"
+WORKBOOK = "data/catalogue/LEO_MLAT_Threat_Catalogue_v2_0.xlsx"
 JOBS = [
     # (output folder, [(sheet, header row (1-based) or None for a raw dump, output name)])
     ("data/catalogue/csv", [
@@ -23,10 +23,12 @@ JOBS = [
         ("Threat Propagation", 4, "threat_propagation_65"), ("Asset-Threat Matrix", 4, "asset_threat_matrix"),
         ("Asset Connections", 4, "asset_connections_27"), ("Multi-step Attacks", 4, "multistep_attacks"),
         ("Mitigations", 4, "mitigations_25"),
+        # sheets added in workbook v2.0
+        ("Geometry Gains", None, "geometry_gains_raw"), ("Direct vs Enabled", None, "direct_vs_enabled_raw"),
     ]),
     # the atlas sheets; the atlas CVE Register and Mitigations are the catalogue sheets of the same name
     ("data/atlas/csv", [
-        ("Threat Atlas", 5, "atlas_78_sources"), ("Asset Evidence", 5, "asset_evidence_27"),
+        ("Threat Atlas", 5, "atlas_78_sources"),  # Asset Evidence is merged into Assets (columns Q to S) since v1.9
         ("Paper Alignment", 4, "paper_alignment"),
         ("Gap Matrix", None, "gap_matrix_raw"), ("Excluded Entries", None, "excluded_entries_raw"),
         ("Classification Key", None, "classification_key_raw"), ("Atlas Overview", None, "overview_raw"),

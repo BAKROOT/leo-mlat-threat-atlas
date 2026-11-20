@@ -18,7 +18,7 @@ import os, sys
 import pandas as pd
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-CAT = os.path.join(ROOT, "data/catalogue/LEO_MLAT_Threat_Catalogue.xlsx")
+CAT = os.path.join(ROOT, "data/catalogue/LEO_MLAT_Threat_Catalogue_v2_0.xlsx")
 
 R_BASE = {"P": 1, "E0": 2, "E1": 3, "E2": 4, "E3": 5}                  # Rubric sheet, evidence -> base R
 E_OF_TIER = {"T1p": 5, "T1c": 4, "T2": 3, "T3": 2, "T3x": 1}            # Rubric sheet, tier -> E
