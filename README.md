@@ -1,5 +1,7 @@
 # LEO-MLAT Threat Atlas: SATERA threat catalogue, evidence atlas, LLM review panel and analysis code
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.24414178.svg)](https://doi.org/10.5281/zenodo.24414178)  Release 2.1.0 is archived on Zenodo; cite it with this DOI together with the paper.
+
 Research data and code behind the paper **"Cross-Layer Threat Modelling of GNSS-Independent Space-Based
 Multilateration for Air Traffic Surveillance"** by Bilal Ahmad Kamal, Naghmeh Ivaki and Henrique Madeira
 (CISUC, University of Coimbra; manuscript in preparation for IEEE Transactions on Dependable and Secure Computing).

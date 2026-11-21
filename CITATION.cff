@@ -3,6 +3,7 @@ message: "If you use this repository, please cite it together with the manuscrip
 title: "LEO-MLAT Threat Atlas: threat catalogue, evidence atlas, LLM review panel and analysis code for GNSS-independent space-based multilateration"
 type: dataset
 version: "2.1.0"
+doi: "10.5281/zenodo.24414178"
 date-released: "2026-11-21"
 license: CC-BY-4.0
 authors:
