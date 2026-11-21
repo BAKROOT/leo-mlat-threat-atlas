@@ -3,7 +3,7 @@
 This folder records the literature search behind the 41 security studies of the paper's synthesis (supplement, *Review protocol*).
 The 41 studies were selected by the first author for their relevance to GNSS-independent, space-based multilateration surveillance,
 from an earlier search that was not logged, together with studies from other conferences and sources and studies reached by snowballing.
-The search was therefore re-run on 21 November 2026 and logged here. The re-run checks coverage; it is not the origin of the 41.
+The search was therefore re-run on 21 November 2026 and logged here. The re-run checks coverage; it is not the origin of the 41. Besides the database searches, candidate studies were collected manually through Google Scholar and from reference lists; the 18 retained studies that the four databases did not return come from this manual collection or fall outside the search strings (before 2014, grey literature, or other domains).
 
 | File | Content |
 |---|---|
