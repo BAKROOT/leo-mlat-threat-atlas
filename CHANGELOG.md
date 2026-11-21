@@ -1,12 +1,9 @@
 # Changelog
 
-## Unreleased (after 2.1.0)
+## 2.1.0 (21 November 2026), accompanies the submitted manuscript
 
 * **Workbook text and numbers aligned with the paper (file name and version unchanged).** The exploitability tier T3x reads "T3 plus a second class" in the sheets Rubric, Legends and Dashboard Data (the prompts in `llm_panel/` keep the wording the models were shown). The sheet Geometry Gains, sections B and C, now holds the results of the RAIM-style monitor (`geometry/raim_results.json`) that the paper reports in its stealth-window table, in place of the earlier model; the description in A2 and the note are updated. The column *Paper location* of the sheet Checks no longer cites workbook versions: it gives the paper section, or "Workbook only (not stated in the paper)". The csv snapshots are regenerated. No score, rating, count or formula result of the catalogue changed (`make check`: 117 checks pass).
-
 * **Literature search record (`data/search/`).** The search behind the 41 security studies of the synthesis was re-run on 21 November 2026 and logged: the exact strings per database, 3,524 records retrieved, 1,047 duplicates removed, 2,477 unique records, and the coverage of the 41 studies (23 retrieved; the reason for each of the 18 that were not). The 41 studies were selected for relevance by one author from an earlier search that was not logged, so the re-run is a coverage check. The raw exports are not redistributed. No catalogue entry, score or count changed.
-
-## 2.1.0 (21 November 2026), accompanies the submitted manuscript
 
 * **Integrity model of the stealth window.** `geometry/raim.py` assumes the textbook least-squares residual (chi-square) test of RAIM (Brown 1992), with P_FA = P_MD = 1e-3 and range error sigma = 10, 30, 100 m, and computes per satellite the minimum detectable bias, the slope and the protection level. The stealth window is the intersection of the L1 window (bias that passes the clock checks; eps_L1 = 30 m, the covert 100 ns step of assumption W1) and the L3 window [e_req/g_i, MDB_i). Results (`raim_results.json`) for variants A-D and for T2.04 leaving 6, 4 or 3 reports: in the nominal 10x20 variant the clock route never opens (g_max <= 0.79, so the 30 m step gives at most 24 m), whereas after T2.04 it opens in at least 4, 32 and 54 % of the samples. The model is an assumption: the SATERA monitor is not published.
 * `geometry/README.md` lists `raim.py`.
