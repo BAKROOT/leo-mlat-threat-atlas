@@ -63,6 +63,7 @@ The 17-entry catalogue is background only; all results of this repository concer
 ├── data/
 │   ├── catalogue/                the workbook v2.0 (LEO_MLAT_Threat_Catalogue_v2_0.xlsx, master): extended threat catalogue and evidence atlas + csv/ snapshot
 │   ├── atlas/csv/                csv snapshot of the atlas sheets of that workbook
+│   ├── search/                   literature search record of 21 Nov 2026: strings, counts, unique records, coverage of the 41 studies (README inside)
 │   ├── derived/                  values computed from the workbook (asset reach)
 │   └── README.md                 sheets, versions, validation status, notes
 ├── llm_panel/                    the multi-vendor language-model review (see llm_panel/README.md)

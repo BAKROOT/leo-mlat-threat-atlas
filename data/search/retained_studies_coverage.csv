@@ -1,0 +1,42 @@
+#,Study,BibTeX key(s),Retrieved by the 2026-11-21 re-run,Reason if not retrieved
+1,Costin '12,Costin2012ADSB,no,published before 2014
+2,Schäfer '13,Schafer2013ExperimentalADSB,no,published before 2014
+3,Strohmeier '15,Strohmeier2015ADSBSecurity,yes,
+4,Manesh '17,Manesh2017ADSBRisk,yes,
+5,Sciancalepore '21,Sciancalepore2021SOS,yes,
+6,Leonardi '17,Leonardi2017RFFingerprint,yes,
+7,Strohmeier '15b,Strohmeier2015PHYIDS,no,not retrieved by the strings (reason not established)
+8,Schäfer '15,Schafer2015SecureTrack,no,not retrieved by the strings (reason not established)
+9,Ghose / Schäfer '16,Ghose2015Doppler; Schafer2016Doppler,yes,
+10,Moser '16,Moser2016MultiDevice,yes,
+11,Senn '25,Senn2025MLATSpoofing,yes,
+12,Jansen '18,Jansen2018CrowdGPSSec,yes,
+13,Humphreys / Psiaki,Humphreys2008GPSSpoofer; Psiaki2016GNSSSpoofing,no,GNSS spoofing; the strings do not name GNSS (the 2008 entry also predates 2014)
+14,Tibaldo '25,Tibaldo2025GNSSWASP,no,GNSS spoofing; the strings do not name GNSS
+15,Khoei '24,Khoei2024RNNADSB,yes,
+16,Yosef '26,Yosef2026CNNGRU,yes,
+17,Choudhary '22,Choudhary2022ILSVOR,no,ILS and VOR; the strings do not name them
+18,Strohmeier '19,Strohmeier2019SADSB,yes,
+19,Aireon '26,Aireon2026Spoofing,no,"white paper, not indexed by the four databases"
+20,Sampigethaya '11,Sampigethaya2011EEnabled,no,published before 2014
+21,Smith '18,Smith2018ACARSPrivacy,no,ACARS; the strings do not name it
+22,Gurtov '18,Gurtov2018CPDLC,no,CPDLC; the strings do not name it
+23,Santamarta '18,Santamarta2018SATCOM,no,"conference talk and white paper, not indexed"
+24,Pavur '20,Pavur2020VSAT,yes,
+25,Mäurer '22a,Maurer2022LDACS,no,LDACS; the strings do not name it
+26,Mäurer '22b,Maurer2022GapAnalysis,no,aeronautical-communication security; the strings do not name it
+27,Willbold '23,Willbold2023SpaceOdyssey,yes,
+28,Wouters '22,Wouters2022Starlink,no,"conference talk, not indexed"
+29,Giuliari '21,Giuliari2021ICARUS,yes,
+30,Smailes '23,Smailes2023Fingerprinting,yes,
+31,Manulis '21,Manulis2021NewSpace,yes,
+32,Falco '19,Falco2019SpacePrinciples,yes,
+33,Yue '22,Yue2022LEOSecurity,yes,
+34,Sharmin '25,Sharmin2025SIN,yes,
+35,Remy '25,Remy2025SoKSpace,yes,
+36,Wang '26,Wang2026SatReview,no,not retrieved by the strings (reason not established)
+37,Ballard '25,BallardSong2025Orbital,yes,
+38,Belali '26,Belali2026Resilient,yes,
+39,Burks '26,Burks2026Testbed,no,"doctoral thesis, not indexed by the four databases"
+40,PWNSAT '26,PWNSAT2026FlatSat; Marin2026LoweringOrbit,no,"code repository and conference talk, not indexed"
+41,Kon '22 / Hypatia,Kon2022Stargaze; ManzanaresLopez2026Hypatia,yes,
